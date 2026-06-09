@@ -47,7 +47,7 @@ export default function PhotoSlider() {
   return (
     <div
       className="relative w-full overflow-hidden rounded-2xl shadow-2xl bg-black select-none"
-      style={{ aspectRatio: '16/9' }}
+      style={{ minHeight: '420px', maxHeight: '620px', height: '60vw' }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onTouchStart={onTouchStart}
@@ -64,7 +64,7 @@ export default function PhotoSlider() {
           <img
             src={slide.src}
             alt={slide.alt}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
           {/* subtle dark vignette */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
