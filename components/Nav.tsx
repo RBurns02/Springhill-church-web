@@ -24,7 +24,7 @@ export default function Nav() {
         <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://static.wixstatic.com/media/d28003_6c4b55879cc34d02a7f6b21e60b19a9d~mv2.png"
+            src="/logo.png"
             alt="Springhill Pentecostal Church"
             className="h-12 w-auto object-contain"
           />
