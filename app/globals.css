@@ -27,7 +27,7 @@
 
   .btn-primary {
     @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-church-purple text-white font-semibold text-base
-           shadow-lg shadow-church-purple/25 hover:bg-violet-700 active:scale-95
+           shadow-lg shadow-church-purple/25 hover:bg-green-900 active:scale-95
            transition-all duration-200;
   }
 

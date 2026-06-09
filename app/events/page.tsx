@@ -60,7 +60,7 @@ const events = [
 ];
 
 const categoryColors: Record<string, string> = {
-  'Youth':            'bg-violet-100 text-violet-700',
+  'Youth':            'bg-green-100 text-green-800',
   'Community':        'bg-green-100 text-green-700',
   'Worship':          'bg-amber-100 text-amber-700',
   "Women's Ministry": 'bg-pink-100 text-pink-700',

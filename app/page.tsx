@@ -176,7 +176,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {previewEvents.map((evt) => (
               <div key={evt.title} className="card hover:shadow-md transition-shadow duration-200">
-                <div className="h-1.5 w-full bg-gradient-to-r from-church-purple to-violet-400" />
+                <div className="h-1.5 w-full bg-gradient-to-r from-church-purple to-green-400" />
                 <div className="p-6">
                   <div className="flex gap-4 items-start">
                     <div className="flex-shrink-0 w-14 text-center bg-church-purple/10 rounded-xl py-2">
