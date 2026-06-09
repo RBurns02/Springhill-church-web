@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Events | Springhill Pentecostal Church',
@@ -14,6 +15,7 @@ const events = [
     time: '6:30 PM',
     location: 'Main Sanctuary',
     desc: "An evening of worship, games, and the Word specifically designed for students in 6th–12th grade. Come ready to have fun and encounter God.",
+    featured: true,
   },
   {
     date: '2026-06-22',
@@ -22,6 +24,7 @@ const events = [
     time: '12:00 PM',
     location: 'Church Grounds',
     desc: "Bring the whole family! We'll have food, fellowship, games for the kids, and an opportunity to meet your neighbors and church family.",
+    featured: false,
   },
   {
     date: '2026-07-04',
@@ -30,6 +33,7 @@ const events = [
     time: '7:00 PM',
     location: 'Main Sanctuary',
     desc: "A Spirit-led evening of corporate prayer and live worship. No agenda — just time in the presence of God.",
+    featured: false,
   },
   {
     date: '2026-07-12',
@@ -38,6 +42,7 @@ const events = [
     time: '10:00 AM',
     location: 'Fellowship Hall',
     desc: "Our weekly women's study continues through the book of Ruth. All women welcome — bring your Bible and a friend.",
+    featured: false,
   },
   {
     date: '2026-07-19',
@@ -46,6 +51,7 @@ const events = [
     time: '8:00 AM',
     location: 'Fellowship Hall',
     desc: "Men of all ages are invited for breakfast, fellowship, and a short devotional. A great chance to connect and encourage one another.",
+    featured: false,
   },
   {
     date: '2026-07-26',
@@ -54,6 +60,7 @@ const events = [
     time: '7:30 PM',
     location: 'Outdoor Lawn',
     desc: "Bring your blankets and lawn chairs for an outdoor movie night on the church grounds. Family-friendly film, free popcorn provided.",
+    featured: false,
   },
 ];
 
@@ -91,42 +98,49 @@ export default function EventsPage() {
       {/* Events list */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-5 space-y-4">
-          {events.map((evt) => {
+          {events.map((evt, i) => {
             const { month, day, full } = formatDate(evt.date);
             const categoryClass = categoryColors[evt.category] ?? 'bg-slate-50 text-slate-600';
             return (
-              <div key={evt.title} className="card flex flex-col sm:flex-row">
-                {/* Date badge */}
-                <div className="flex-shrink-0 w-full sm:w-20 bg-church-purple/[0.05] flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-slate-100">
-                  <p className="text-church-purple text-[10px] font-bold tracking-widest uppercase">{month}</p>
-                  <p className="font-serif text-4xl sm:text-3xl font-bold text-slate-900 leading-none">{day}</p>
-                </div>
-                {/* Content */}
-                <div className="p-6 flex-1">
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h2 className="text-lg font-bold text-slate-900">{evt.title}</h2>
-                    <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${categoryClass}`}>
-                      {evt.category}
-                    </span>
+              <ScrollReveal key={evt.title} delay={i * 60}>
+                <div className={`card flex flex-col sm:flex-row ${evt.featured ? 'ring-2 ring-church-purple/20' : ''}`}>
+                  {/* Date badge */}
+                  <div className="flex-shrink-0 w-full sm:w-20 bg-church-purple/[0.05] flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-slate-100">
+                    <p className="text-church-purple text-[10px] font-bold tracking-widest uppercase">{month}</p>
+                    <p className="font-serif text-4xl sm:text-3xl font-bold text-slate-900 leading-none">{day}</p>
                   </div>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-3">{evt.desc}</p>
-                  <div className="flex flex-wrap gap-4 text-xs text-slate-400">
-                    <span className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      {full} · {evt.time}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      {evt.location}
-                    </span>
+                  {/* Content */}
+                  <div className="p-6 flex-1">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <h2 className="text-lg font-bold text-slate-900">{evt.title}</h2>
+                      <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${categoryClass}`}>
+                        {evt.category}
+                      </span>
+                      {evt.featured && (
+                        <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-church-gold/10 text-church-gold">
+                          Featured
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-3">{evt.desc}</p>
+                    <div className="flex flex-wrap gap-4 text-xs text-slate-400">
+                      <span className="flex items-center gap-1.5">
+                        <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {full} · {evt.time}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        {evt.location}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>

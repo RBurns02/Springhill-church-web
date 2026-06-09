@@ -1,288 +1,315 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
+import ScrollReveal from '@/components/ScrollReveal';
 
-const regularServices = [
-  { day: 'Sunday',    label: 'Morning Service',      time: '10:00 AM', note: 'Prayer 9:30 AM' },
-  { day: 'Sunday',    label: 'Evening Service',       time: '6:00 PM',  note: 'Prayer 5:30 PM' },
-  { day: 'Wednesday', label: 'Bible Study & Prayer',  time: '7:30 PM',  note: 'Prayer 7:00 PM' },
-  { day: 'Monday',    label: 'Prayer Meeting',        time: '7:00 PM',  note: null              },
+export const metadata: Metadata = {
+  title: 'Springhill Pentecostal Church | Wesson, MS',
+  description:
+    'A Spirit-filled community in Wesson, Mississippi. Join us for worship, Biblical teaching, and life-changing fellowship.',
+};
+
+const serviceTimes = [
+  { day: 'Sunday',    session: 'Morning Service', time: '10:00 AM', icon: '☀️' },
+  { day: 'Sunday',    session: 'Evening Service',  time: '6:00 PM',  icon: '🌅' },
+  { day: 'Wednesday', session: 'Bible Study',      time: '7:30 PM',  icon: '📖' },
 ];
 
-const previewEvents = [
+const expectations = [
   {
-    month: 'JUL', day: '5',
-    title: 'Friends & Family Service',
-    desc:  '1st Sunday of every month — one special service celebrating community and new faces.',
-    time:  '2:00 PM',
+    title: 'Friendly Community',
+    desc:  'From your very first visit you will be greeted with warm smiles and genuine hospitality. We are a family, and we would love for you to be part of it.',
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a4 4 0 00-5.364-3.771M9 20H4v-2a4 4 0 015.364-3.771M15 11a4 4 0 10-8 0 4 4 0 008 0z" />
+      </svg>
+    ),
   },
   {
-    month: 'JUL', day: '9',
-    title: 'Prayer & Praise Night',
-    desc:  'A Spirit-led evening of corporate prayer and live worship. Everyone welcome.',
-    time:  '7:30 PM',
+    title: 'Biblical Preaching',
+    desc:  'Every message is rooted in the Word of God. We believe the Bible is the inspired, infallible authority for faith and life.',
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+      </svg>
+    ),
   },
   {
-    month: 'JUL', day: '19',
-    title: 'Youth Night',
-    desc:  'An evening of worship, games, and the Word for students 12–18.',
-    time:  '6:30 PM',
+    title: 'Spirit-Filled Worship',
+    desc:  'We worship with freedom and expectation. Come ready for heartfelt praise, powerful prayer, and the tangible presence of God.',
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+      </svg>
+    ),
   },
 ];
 
-export default function Home() {
+const upcomingEvents = [
+  { date: 'JUN 15', title: 'Youth Night',          time: '6:30 PM',  location: 'Main Sanctuary', category: 'Youth'     },
+  { date: 'JUN 22', title: 'Community Cookout',     time: '12:00 PM', location: 'Church Grounds', category: 'Community' },
+  { date: 'JUL 4',  title: 'Prayer & Praise Night', time: '7:00 PM',  location: 'Main Sanctuary', category: 'Worship'   },
+];
+
+export default function HomePage() {
   return (
     <>
-      {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-hero-gradient">
-        {/* Animated orbs */}
-        <div
-          className="absolute top-[10%] left-[5%] w-[600px] h-[600px] rounded-full opacity-20 animate-drift"
-          style={{ background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)' }}
-        />
-        <div
-          className="absolute bottom-[10%] right-[5%] w-[500px] h-[500px] rounded-full opacity-15 animate-drift2"
-          style={{ background: 'radial-gradient(circle, #60A5FA 0%, transparent 70%)' }}
-        />
+      {/* ── HERO ───────────────────────────────────────────────────────────── */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="animate-drift absolute top-[-10%] left-[-5%] w-[50vw] h-[50vw] max-w-2xl rounded-full bg-church-purple/25 blur-[100px]" />
+          <div className="animate-drift2 absolute bottom-[-10%] right-[-5%] w-[45vw] h-[45vw] max-w-xl rounded-full bg-church-gold/10 blur-[120px]" />
+        </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-5 text-center text-white py-32">
-          {/* Logo */}
-          <div className="flex justify-center mb-10 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <Image
-              src="/logo.png"
+        <div className="relative z-10 max-w-4xl mx-auto px-5 text-center text-white pt-20 pb-24">
+          <div className="animate-fade-in mb-10" style={{ animationDelay: '0.1s' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo-gold.png"
               alt="Springhill Pentecostal Church"
-              width={160}
-              height={160}
-              className="w-28 md:w-36 h-auto object-contain animate-float mix-blend-screen"
-              style={{ filter: 'invert(1)' }}
-              priority
+              className="h-24 md:h-28 w-auto mx-auto object-contain mix-blend-screen"
             />
           </div>
 
-          <p className="text-shimmer eyebrow mb-6 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            Est. 1935 · Wesson, Mississippi
+          <p className="eyebrow text-church-gold mb-5 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            Springhill Pentecostal Church · Wesson, MS
           </p>
 
-          <h1 className="font-serif font-bold leading-[1.06] mb-8 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <span className="block text-5xl md:text-7xl">Springhill</span>
-            <span className="block text-5xl md:text-7xl">Pentecostal Church</span>
+          <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
+            A Place to Belong.<br />
+            A Place to Grow.<br />
+            <span className="text-shimmer">A Place to Encounter God.</span>
           </h1>
 
-          <p className="text-white/65 text-lg md:text-xl max-w-lg mx-auto mb-12 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
-            A Spirit-filled family in Wesson, MS — where faith comes alive and every person belongs.
+          <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+            Join us as we worship, grow in faith, and build lasting relationships
+            centered on Jesus Christ.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.65s' }}>
             <Link href="/prayer" className="btn-gold">Plan Your Visit</Link>
-            <Link href="/beliefs" className="btn-outline">What We Believe</Link>
+            <Link href="/events" className="btn-outline">Upcoming Events</Link>
           </div>
         </div>
 
-        {/* Scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float opacity-50">
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
-      {/* ── SERVICE TIMES ── */}
-      <section className="py-16 bg-white">
+      {/* ── SERVICE TIMES ──────────────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-5">
-          <div className="text-center mb-10">
-            <p className="eyebrow text-church-purple mb-2">Join Us</p>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-slate-900">Weekly Service Times</h2>
-          </div>
+          <ScrollReveal className="text-center mb-12">
+            <div className="gold-bar mx-auto mb-5" />
+            <h2 className="section-heading mb-3">Join Us This Week</h2>
+            <p className="section-sub max-w-lg mx-auto">
+              We gather multiple times each week to worship, study, and grow together.
+            </p>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {regularServices.map((s) => (
-              <div
-                key={s.label}
-                className="rounded-2xl border border-slate-100 bg-slate-50 p-6 text-center hover:border-church-purple/25 hover:bg-blue-50/40 transition-all duration-200"
-              >
-                <p className="font-serif text-2xl md:text-3xl font-bold text-church-purple mb-1">{s.time}</p>
-                <p className="text-slate-800 font-semibold text-sm">{s.day}</p>
-                <p className="text-slate-500 text-xs mt-1 leading-tight">{s.label}</p>
-                {s.note && <p className="text-slate-400 text-xs mt-2 italic">{s.note}</p>}
-              </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {serviceTimes.map((s, i) => (
+              <ScrollReveal key={s.session} delay={i * 100}>
+                <div className="card p-8 text-center group hover:border-church-purple/30">
+                  <div className="w-14 h-14 rounded-2xl bg-church-purple/[0.07] flex items-center justify-center mx-auto mb-5 text-2xl group-hover:bg-church-purple/[0.14] transition-colors">
+                    {s.icon}
+                  </div>
+                  <p className="eyebrow text-church-purple mb-1">{s.day}</p>
+                  <h3 className="font-serif font-bold text-xl text-slate-900 mb-2">{s.session}</h3>
+                  <p className="text-4xl font-bold text-church-gold font-serif">{s.time}</p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
 
-          <div className="mt-6 text-center">
-            <span className="inline-flex items-center gap-2 text-sm text-church-gold font-medium bg-amber-50 border border-amber-200/60 rounded-full px-5 py-2.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-church-gold flex-shrink-0" />
-              1st Sunday every month — Friends &amp; Family Service at 2:00 PM
-            </span>
-          </div>
+          <ScrollReveal>
+            <div className="text-center">
+              <p className="text-sm text-slate-500 mb-1">
+                <strong className="text-church-gold">1st Sunday of every month</strong> — Friends &amp; Family Service at 2:00 PM
+              </p>
+              <p className="text-sm text-slate-500">1090 Springhill Road · Wesson, MS 39191</p>
+              <a
+                href="https://maps.google.com/?q=1090+Springhill+Road+Wesson+MS+39191"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-church-purple hover:text-church-deep transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Get Directions
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* ── WELCOME ── */}
+      {/* ── WELCOME HOME ───────────────────────────────────────────────────── */}
       <section className="py-20 bg-church-warm">
-        <div className="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="gold-bar mb-6" />
-            <h2 className="section-heading mb-5">
-              You&apos;re Welcome Here,<br />Exactly As You Are
-            </h2>
-            <p className="section-sub mb-5">
-              At Springhill Pentecostal Church, we believe the Holy Spirit is alive and
-              moving today. Whether you&apos;re new to faith or have walked with God for
-              decades, there&apos;s a seat saved for you.
+        <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
+          <ScrollReveal>
+            <div className="gold-bar mb-5" />
+            <h2 className="section-heading mb-5">Welcome Home</h2>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              Whether you&apos;ve been walking with the Lord for decades or you&apos;re just
+              beginning to seek Him, there is a place for you at Springhill. We are a
+              community built on love — for God and for each other.
             </p>
-            <p className="text-slate-500 leading-relaxed mb-8">
-              Since 1935, we have gathered to worship, pray, study the Word, and
-              grow together as a family right here in Wesson, MS. Our doors — and
-              our hearts — are always open.
+            <p className="text-slate-600 leading-relaxed mb-8">
+              We believe in the full gospel: repentance, baptism in Jesus&apos; name, and
+              the infilling of the Holy Ghost. But more than doctrine, we believe in
+              people — and we&apos;d love to walk this journey of faith alongside you.
             </p>
             <Link href="/prayer" className="btn-primary">Plan Your First Visit</Link>
-          </div>
+          </ScrollReveal>
 
-          {/* Church photo placeholder */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-80 md:h-[440px] bg-gradient-to-br from-church-purple/20 to-church-deep/40 flex items-center justify-center">
-            {/* To add photo: <Image src="/church-photo.jpg" fill className="object-cover" alt="Springhill Pentecostal Church" /> */}
-            <div className="text-center text-white/30 px-6">
-              <svg className="w-16 h-16 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <p className="text-sm">Add church photo at /public/church-photo.jpg</p>
+          <ScrollReveal delay={150}>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-church-deep to-church-purple aspect-[4/3] flex items-center justify-center">
+              <div className="text-center text-white/40 p-8">
+                <svg className="w-16 h-16 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M2.25 18.75h19.5M3.75 4.5h16.5a1.5 1.5 0 011.5 1.5v12a1.5 1.5 0 01-1.5 1.5H3.75a1.5 1.5 0 01-1.5-1.5V6a1.5 1.5 0 011.5-1.5z" />
+                </svg>
+                <p className="text-sm font-medium">Church Photo</p>
+                <p className="text-xs mt-1 opacity-60">Upload church-photo.jpg to /public</p>
+              </div>
+              <div className="absolute top-4 right-4 w-20 h-20 border-t-2 border-r-2 border-church-gold/40 rounded-tr-2xl" />
+              <div className="absolute bottom-4 left-4 w-20 h-20 border-b-2 border-l-2 border-church-gold/40 rounded-bl-2xl" />
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* ── PASTOR & FIRST LADY ── */}
+      {/* ── WHAT TO EXPECT ─────────────────────────────────────────────────── */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-5">
-          <div className="text-center mb-14">
-            <div className="gold-bar mx-auto mb-4" />
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900">Pastor &amp; First Lady</h2>
-          </div>
+          <ScrollReveal className="text-center mb-12">
+            <div className="gold-bar mx-auto mb-5" />
+            <h2 className="section-heading mb-3">What to Expect</h2>
+            <p className="section-sub max-w-lg mx-auto">
+              We know visiting a new church can feel uncertain. Here&apos;s what you can
+              expect when you walk through our doors.
+            </p>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="flex flex-col items-center gap-5">
-              <div className="w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-church-purple/20 to-church-deep/30 flex items-center justify-center ring-4 ring-white ring-offset-4">
-                {/* To add photo: <Image src="/pastor.jpg" width={288} height={288} className="object-cover w-full h-full" alt="Pastor Tommy & Lori Lee" /> */}
-                <div className="text-center text-white/30 px-4">
-                  <svg className="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                  <p className="text-xs">Add photo at /public/pastor.jpg</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {expectations.map((e, i) => (
+              <ScrollReveal key={e.title} delay={i * 120}>
+                <div className="card p-8 group hover:border-church-purple/30">
+                  <div className="w-14 h-14 rounded-2xl bg-church-purple/[0.07] flex items-center justify-center mb-5 text-church-purple group-hover:bg-church-purple group-hover:text-white transition-all duration-300">
+                    {e.icon}
+                  </div>
+                  <h3 className="font-serif font-bold text-xl text-slate-900 mb-3">{e.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{e.desc}</p>
                 </div>
-              </div>
-              <p className="font-serif text-2xl font-bold text-slate-800">Tommy &amp; Lori Lee</p>
-            </div>
-
-            <div>
-              <p className="font-serif text-xl text-church-gold mb-6 italic">A message from Pastor</p>
-              <div className="space-y-4 text-slate-600 leading-relaxed">
-                <p>
-                  Welcome to Springhill Pentecostal Church. Whether you are searching for a
-                  new church home or exploring Apostolic faith for the first time, you are
-                  welcome here! We believe that church is more than just a building; it&apos;s a
-                  family where we grow together, support, and love one another.
-                </p>
-                <p>
-                  We strive to grow a congregation of spiritually mature, visionary people
-                  that embodies the principles and actions of the book of Acts church.
-                </p>
-                <p>
-                  If you&apos;re looking for a place to connect, belong and worship, you&apos;ve found
-                  it! We would love for you to join us!
-                </p>
-                <p className="font-semibold text-slate-900 pt-1">— Pastor Tommy Lee</p>
-              </div>
-            </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── SCRIPTURE CALLOUT ── */}
-      <section className="py-20 section-dark">
-        <div className="max-w-3xl mx-auto px-5 text-center">
-          <svg className="w-10 h-10 text-church-gold mx-auto mb-8 opacity-60" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-          </svg>
-          <blockquote className="font-serif text-2xl md:text-3xl text-white leading-relaxed mb-6">
-            &ldquo;But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall
-            be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the
-            uttermost part of the earth.&rdquo;
-          </blockquote>
-          <p className="text-church-gold eyebrow">Acts 1:8</p>
-        </div>
-      </section>
-
-      {/* ── UPCOMING EVENTS ── */}
+      {/* ── EVENTS PREVIEW ─────────────────────────────────────────────────── */}
       <section className="py-20 bg-church-warm">
-        <div className="max-w-6xl mx-auto px-5">
-          <div className="flex items-end justify-between mb-12">
+        <div className="max-w-5xl mx-auto px-5">
+          <ScrollReveal className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
             <div>
               <div className="gold-bar mb-4" />
               <h2 className="section-heading">Upcoming Events</h2>
             </div>
-            <Link href="/events" className="text-church-purple font-semibold text-sm hover:underline hidden sm:block">
-              See all →
-            </Link>
-          </div>
+            <Link href="/events" className="btn-outline-green shrink-0">View All Events</Link>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {previewEvents.map((evt) => (
-              <div key={evt.title} className="card">
-                <div className="h-[3px] w-full bg-gradient-to-r from-church-purple to-blue-400" />
-                <div className="p-6">
-                  <div className="flex gap-4 items-start">
-                    <div className="flex-shrink-0 w-14 text-center bg-church-purple/[0.07] rounded-xl py-2.5 px-1">
-                      <p className="text-church-purple text-[10px] font-bold tracking-widest uppercase">{evt.month}</p>
-                      <p className="text-church-deep text-2xl font-bold font-serif leading-none mt-0.5">{evt.day}</p>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-slate-900 text-base leading-snug mb-1.5">{evt.title}</h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">{evt.desc}</p>
-                      <p className="text-church-gold text-sm font-semibold mt-3">{evt.time}</p>
+            {upcomingEvents.map((evt, i) => (
+              <ScrollReveal key={evt.title} delay={i * 100}>
+                <div className="card overflow-hidden group">
+                  <div className="h-2 bg-church-purple group-hover:bg-church-gold transition-colors duration-300" />
+                  <div className="p-6">
+                    <p className="eyebrow text-church-purple mb-3">{evt.date}</p>
+                    <h3 className="font-serif font-bold text-lg text-slate-900 mb-1">{evt.title}</h3>
+                    <p className="text-xs text-slate-400 mb-4">{evt.category}</p>
+                    <div className="flex flex-col gap-1.5 text-sm text-slate-500">
+                      <span className="flex items-center gap-2">
+                        <svg className="w-3.5 h-3.5 flex-shrink-0 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {evt.time}
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <svg className="w-3.5 h-3.5 flex-shrink-0 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        {evt.location}
+                      </span>
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
-          </div>
-
-          <div className="mt-8 text-center sm:hidden">
-            <Link href="/events" className="btn-primary">See All Events</Link>
           </div>
         </div>
       </section>
 
-      {/* ── DUAL CTA ── */}
+      {/* ── MEET THE PASTOR ────────────────────────────────────────────────── */}
       <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-6">
-          {/* Give */}
-          <div className="rounded-3xl bg-church-dark p-10 text-center flex flex-col items-center">
-            <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-5">
-              <svg className="w-7 h-7 text-church-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+        <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
+          <ScrollReveal delay={150}>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-slate-200 to-slate-300 aspect-[3/4] flex items-center justify-center">
+              <div className="text-center text-slate-400 p-8">
+                <svg className="w-16 h-16 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+                <p className="text-sm font-medium">Pastor Photo</p>
+                <p className="text-xs mt-1 opacity-60">Upload pastor.jpg to /public</p>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-church-gold" />
             </div>
-            <h2 className="font-serif text-2xl font-bold text-white mb-3">Support the Mission</h2>
-            <p className="text-white/55 text-sm leading-relaxed mb-8 max-w-xs">
-              Your giving fuels ministry in Wesson and beyond. Give securely online through Tithe.ly.
-            </p>
-            <Link href="/give" className="btn-gold">Give Now</Link>
-          </div>
+          </ScrollReveal>
 
-          {/* Contact */}
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-10 text-center flex flex-col items-center">
-            <div className="w-14 h-14 rounded-2xl bg-church-purple/[0.08] flex items-center justify-center mb-5">
-              <svg className="w-7 h-7 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-            </div>
-            <h2 className="font-serif text-2xl font-bold text-slate-900 mb-3">Get in Touch</h2>
-            <p className="text-slate-500 text-sm leading-relaxed mb-8 max-w-xs">
-              Prayer request, planning a visit, or just saying hello — we&apos;d love to hear from you.
+          <ScrollReveal>
+            <div className="gold-bar mb-5" />
+            <p className="eyebrow text-church-purple mb-3">Our Pastor</p>
+            <h2 className="font-serif text-4xl font-bold text-slate-900 mb-5">Pastor Tommy Lee</h2>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              With a shepherd&apos;s heart and a passion for the Word of God, Pastor Tommy Lee
+              has dedicated his life to serving this community. His ministry is marked
+              by Spirit-led preaching, compassion for the lost, and a deep love for the
+              local church.
             </p>
-            <Link href="/prayer" className="btn-primary">Send a Message</Link>
-          </div>
+            <p className="text-slate-600 leading-relaxed mb-8">
+              Pastor Lee and his family call Wesson, Mississippi home, and they are
+              committed to seeing Springhill Pentecostal Church be a beacon of hope and
+              transformation in this community.
+            </p>
+            <Link href="/prayer" className="btn-primary">Connect With Us</Link>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ── PRAYER CTA ─────────────────────────────────────────────────────── */}
+      <section className="py-24 section-dark relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-church-purple/30 blur-[120px]" />
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-church-gold/10 blur-[100px]" />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto px-5 text-center">
+          <ScrollReveal>
+            <div className="gold-bar mx-auto mb-6" />
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+              We Would Love to Pray With You
+            </h2>
+            <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+              No matter what you&apos;re facing, our prayer team is here. Submit a request
+              or reach out — we believe prayer changes everything.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/prayer" className="btn-gold">Send a Prayer Request</Link>
+              <Link href="/beliefs" className="btn-outline">What We Believe</Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>

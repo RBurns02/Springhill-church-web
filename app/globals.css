@@ -27,7 +27,7 @@
 
   .btn-primary {
     @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-church-purple text-white font-semibold text-base
-           shadow-md hover:bg-blue-900 active:scale-95 transition-all duration-200;
+           shadow-md hover:bg-church-deep active:scale-95 transition-all duration-200;
   }
 
   .btn-gold {
@@ -40,7 +40,7 @@
            hover:bg-white hover:text-church-purple active:scale-95 transition-all duration-200;
   }
 
-  .btn-outline-blue {
+  .btn-outline-green {
     @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-church-purple text-church-purple font-semibold text-base
            hover:bg-church-purple hover:text-white active:scale-95 transition-all duration-200;
   }
@@ -69,6 +69,18 @@
 
   .eyebrow {
     @apply text-xs font-bold tracking-[0.2em] uppercase;
+  }
+
+  /* Scroll-reveal */
+  .sr-hidden {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+  }
+
+  .sr-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -136,3 +148,7 @@
   background-clip: text;
   animation: shimmer 3s linear infinite;
 }
+
+/* ── Accordion ────────────────────────────────────────────────────────────── */
+details summary::-webkit-details-marker { display: none; }
+details summary { list-style: none; cursor: pointer; }

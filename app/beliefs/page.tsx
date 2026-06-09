@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'What We Believe | Springhill Pentecostal Church',
@@ -10,39 +11,58 @@ export const metadata: Metadata = {
 const beliefs = [
   {
     title: 'The Bible',
-    body: 'The Bible is divinely inspired and God-breathed (pneuma). It is true in all that it teaches. As the infallible Word of God, it is our primary authority for what we believe and teach, and how we live our lives. (2 Tim 3:15-17)',
+    refs: '2 Timothy 3:15–17',
+    body: 'The Bible is divinely inspired and God-breathed. It is true in all that it teaches. As the infallible Word of God, it is our primary authority for what we believe and teach, and how we live our lives. "All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works." (2 Tim. 3:16–17)',
   },
   {
-    title: 'The Oneness of God',
-    body: 'We strictly adhere to the Scriptural teaching of the Oneness of God found in Deuteronomy 6:4 "Hear, O Israel: The LORD our God is one LORD." The New Testament agrees with the Old Testament. The Apostle Paul wrote: "One Lord, one faith, one baptism, One God and Father of all, who is above all, and through all, and in you all." (Isa. 44:6-8, 45:5; Col. 2:9; Eph. 4:5–6)',
+    title: 'One God',
+    refs: 'Deuteronomy 6:4 · Isaiah 44:6–8 · Colossians 2:9 · Ephesians 4:5–6',
+    body: 'We strictly adhere to the Scriptural teaching of the Oneness of God found in Deuteronomy 6:4: "Hear, O Israel: The LORD our God is one LORD." The New Testament agrees with the Old Testament. Paul wrote: "One Lord, one faith, one baptism, One God and Father of all, who is above all, and through all, and in you all." (Eph. 4:5–6) All the fullness of the Godhead dwells bodily in Jesus Christ. (Col. 2:9)',
   },
   {
-    title: 'Sin and Salvation',
-    body: 'Everyone has sinned and is in need of salvation. Salvation comes by grace through faith based on the atoning sacrifice of Jesus Christ (Psa. 51:5; Rom. 3:23-25; 6:23; Eph. 2:8-9).',
+    title: 'Jesus Christ',
+    refs: 'John 1:1–14 · Colossians 2:9 · Philippians 2:9–11',
+    body: 'We believe that Jesus Christ is the Son of God and God manifest in the flesh. "In the beginning was the Word, and the Word was with God, and the Word was God... And the Word was made flesh, and dwelt among us." (John 1:1, 14) He is the only Saviour: "Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved." (Acts 4:12)',
   },
   {
-    title: 'The Gospel',
-    body: 'The Gospel is the good news that Jesus died for our sins on the cross, was buried in the tomb, and rose again on the third day. We express our belief in the gospel through our obedience. We obey the gospel and apply it to our lives by repenting of our sins (death to sin), being baptized in water in the name of Jesus Christ for the removal of our sins (burial), and receiving the gift of the Holy Ghost (resurrection). This threefold experience is the consistent pattern of conversion in the early church (1 Cor. 15:1-4; 2 Thes. 1:8; 1 Pet. 4:17; Mark 1:15; Acts 15:7; Rom. 6:3-4; Acts 2:4, 37-39; 8:9-17; 10:1-48; 19:1-7).',
+    title: 'Salvation',
+    refs: 'Romans 3:23 · Ephesians 2:8–9 · Acts 2:38',
+    body: 'Everyone has sinned and is in need of salvation. "For all have sinned, and come short of the glory of God." (Rom. 3:23) Salvation comes by grace through faith based on the atoning sacrifice of Jesus Christ. "For by grace are ye saved through faith; and that not of yourselves: it is the gift of God." (Eph. 2:8) The new birth experience is received through obedience to the Gospel of Jesus Christ.',
   },
   {
-    title: 'Christian Living',
-    body: 'As Christians we are to love God and love others. We are to worship God joyfully and seek to live a life that is pleasing to Him both inwardly and outwardly—in our thoughts, words, lifestyle, and actions. The Scripture describes our bodies as the temples (or dwelling places) of the Holy Ghost. We are empowered to live a life pleasing to God through the Holy Ghost. We believe that the supernatural gifts of the Spirit are for the church today and are available to all Spirit-filled believers. (Mark 12:28-31; 1 Cor. 6:19, 12:8-10; 2 Cor. 7:1; Rom. 8:13-14; Gal. 5:19-26; Heb. 12:14)',
+    title: 'Repentance',
+    refs: 'Luke 24:47 · Acts 2:38 · 2 Peter 3:9',
+    body: 'We must repent — turn away from sin and toward God. Jesus said: "Repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem." (Luke 24:47) The Lord is "not willing that any should perish, but that all should come to repentance." (2 Pet. 3:9) Repentance is a sincere change of heart and direction, turning from sin and surrendering to Christ.',
   },
   {
-    title: 'Healing',
-    body: 'We believe that healing is available today. As the ancient prophet Isaiah prophesied, our Savior received the stripes on His back for our healing. We believe that divine healing is available to every believer by the laying on of hands and the prayer of faith. The Scripture declares: "And the prayer of faith shall save the sick, and the Lord shall raise him up; and if he have committed sins, they shall be forgiven him." (James 5:15) In every service, there is an opportunity for those who are ill to come forward and be anointed with oil and prayed over by our pastoral team. Prayer cloths are available also. (Psalm 103:2-3; Isaiah 53:5; Matthew 8:16-17; Mark 16:17-18; Acts 8:6-7; James 5:14-16; Acts 19:11–12; 1 Corinthians 12:9, 28)',
+    title: 'Water Baptism in Jesus’ Name',
+    refs: 'Acts 2:38 · Acts 8:16 · Acts 10:48 · Acts 19:5',
+    body: 'We must be water-baptized by immersion in the name of Jesus Christ for the remission of sins. Peter declared: "Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost." (Acts 2:38) Throughout the book of Acts, every recorded baptism was performed in the name of Jesus Christ.',
   },
   {
-    title: 'Heaven',
-    body: 'We believe that a person\'s eternal destination is determined by their response to the Lord Jesus Christ. Heaven is a literal place reserved for those who have obeyed the Gospel message and are living a holy life. (Matt. 5:3, 12, 20; 6:20, 19:21, 25:34; John 14:1–3, 17:24; 2 Cor. 5:1; Heb. 11:16; 1 Peter 1:4; Heb. 9:27; Rev. 19:20)',
+    title: 'Receiving the Holy Ghost',
+    refs: 'Acts 2:4 · Acts 2:38–39 · John 7:37–39',
+    body: 'We are promised the gift of the Holy Ghost with the evidence of speaking in other tongues as the Spirit gives utterance. "And they were all filled with the Holy Ghost, and began to speak with other tongues, as the Spirit gave them utterance." (Acts 2:4) Jesus promised: "He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water." (John 7:38) This gift is available to all who believe.',
   },
   {
-    title: 'Hell',
-    body: 'Scripture describes Hell as "everlasting fire," "torment," "wrath," and "lake of fire." We believe Hell is a literal place of eternal separation from God. (Mat. 25:41; Mark 9:43-48; Heb. 9:27; Rev. 14:9-11, 20:12-15, 21:8)',
+    title: 'Holy Living',
+    refs: '1 Corinthians 6:19–20 · 2 Corinthians 7:1 · Galatians 5:22–26',
+    body: 'As Christians we are called to live holy lives, set apart for God both inwardly and outwardly. "What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own? For ye are bought with a price: therefore glorify God in your body, and in your spirit, which are God\'s." (1 Cor. 6:19–20) We are empowered to live godly lives through the Holy Ghost.',
   },
   {
-    title: 'The Future',
-    body: 'The angels declared to the disciples that the same Jesus that ascended to Heaven is the same one who will come back to earth. We believe that Jesus Christ is coming again to catch away His church (the Rapture or Second Coming of Jesus Christ). We believe that the "dead in Christ" will be resurrected first, and then those who are alive will be caught away. The righteous will inherit eternal life, and the unrighteous will be punished with eternal death. (Acts 1:11; 1 Thes. 4:16-17; Rev. 20:11-15)',
+    title: 'Prayer',
+    refs: 'Philippians 4:6 · James 5:14–16 · 1 Thessalonians 5:17',
+    body: 'We believe in the power and necessity of prayer. "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God." (Phil. 4:6) We are commanded to "pray without ceasing." (1 Thes. 5:17) In every service, those who are ill are invited to come forward and be anointed with oil and prayed over. "The prayer of faith shall save the sick." (James 5:15)',
+  },
+  {
+    title: 'The Church',
+    refs: 'Acts 2:42–47 · 1 Corinthians 12:27 · Ephesians 4:11–16',
+    body: 'The Church is the body of Christ — a community of Spirit-filled believers who gather together for worship, teaching, fellowship, and the breaking of bread. "And they continued stedfastly in the apostles\' doctrine and fellowship, and in breaking of bread, and in prayers." (Acts 2:42) God has set apostles, prophets, evangelists, pastors, and teachers in the Church for the edifying of the body. (Eph. 4:11–12)',
+  },
+  {
+    title: 'The Return of Christ',
+    refs: 'Acts 1:11 · 1 Thessalonians 4:16–17 · Revelation 20:11–15',
+    body: 'We believe that Jesus Christ is coming again. The angels declared: "This same Jesus, which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven." (Acts 1:11) "For the Lord himself shall descend from heaven with a shout... and the dead in Christ shall rise first: Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air." (1 Thes. 4:16–17)',
   },
 ];
 
@@ -60,115 +80,159 @@ export default function BeliefsPage() {
       </section>
 
       {/* Core statement */}
-      <section className="py-14 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-5">
-          <div className="gold-bar mx-auto mb-6" />
-          <div className="card p-8 md:p-10">
-            <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-              We believe that Jesus is the name of the Father, the Son, and the Holy Ghost.{' '}
-              <span className="text-slate-400 text-sm">(Mat. 28:19; John 5:43, 10:30, 12:45, 14:8–9; Phil. 2:9-11)</span>{' '}
-              All the fullness of the godhead rests bodily in Jesus Christ.{' '}
-              <span className="text-slate-400 text-sm">(Col. 2:9)</span>{' '}
-              We believe salvation is a free gift to all who repent of their sins, are baptized in the name of the Lord Jesus Christ, and are filled with the Holy Ghost by the evidence of speaking in other tongues as the Spirit gives the utterance.{' '}
-              <span className="text-slate-400 text-sm">(Acts 2:38, 4:12, 10:44–48; Eph. 2:8, 4:5)</span>{' '}
-              We believe that we are chosen people, separated from the world; and that we should live a holy life both inwardly and outwardly.{' '}
-              <span className="text-slate-400 text-sm">(1 Pet. 2:9; 2 Cor. 6:17-18)</span>
-            </p>
+          <ScrollReveal>
+            <div className="gold-bar mx-auto mb-6" />
+            <div className="card p-8 md:p-10">
+              <p className="text-slate-700 text-base md:text-lg leading-relaxed">
+                We believe that Jesus is the name of the Father, the Son, and the Holy Ghost.{' '}
+                <span className="text-slate-400 text-sm">(Mat. 28:19; John 5:43, 10:30, 12:45, 14:8–9; Phil. 2:9–11)</span>{' '}
+                All the fullness of the Godhead rests bodily in Jesus Christ.{' '}
+                <span className="text-slate-400 text-sm">(Col. 2:9)</span>{' '}
+                We believe salvation is a free gift to all who repent of their sins, are baptized in the name of the Lord Jesus Christ, and are filled with the Holy Ghost by the evidence of speaking in other tongues as the Spirit gives the utterance.{' '}
+                <span className="text-slate-400 text-sm">(Acts 2:38, 4:12, 10:44–48; Eph. 2:8, 4:5)</span>{' '}
+                We believe that we are chosen people, separated from the world; and that we should live a holy life both inwardly and outwardly.{' '}
+                <span className="text-slate-400 text-sm">(1 Pet. 2:9; 2 Cor. 6:17–18)</span>
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Beliefs accordion */}
+      <section className="pb-20 bg-church-warm pt-4">
+        <div className="max-w-3xl mx-auto px-5">
+          <ScrollReveal className="text-center mb-10">
+            <div className="gold-bar mx-auto mb-4" />
+            <h2 className="font-serif text-3xl font-bold text-slate-900">Our Statement of Faith</h2>
+          </ScrollReveal>
+
+          <div className="space-y-3">
+            {beliefs.map((b, i) => (
+              <ScrollReveal key={b.title} delay={i * 40}>
+                <details className="group card overflow-visible">
+                  <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer select-none list-none">
+                    <div className="flex items-center gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-church-purple text-white text-xs font-bold flex items-center justify-center">
+                        {i + 1}
+                      </span>
+                      <div>
+                        <h3 className="font-serif font-bold text-lg text-slate-900 group-open:text-church-purple transition-colors">
+                          {b.title}
+                        </h3>
+                        <p className="text-xs text-slate-400 mt-0.5">{b.refs}</p>
+                      </div>
+                    </div>
+                    <svg
+                      className="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-6 pt-0">
+                    <div className="h-px bg-slate-100 mb-4" />
+                    <p className="text-slate-600 leading-relaxed text-sm">{b.body}</p>
+                  </div>
+                </details>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Beliefs grid */}
-      <section className="pb-20 bg-church-warm pt-10">
-        <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-6">
-          {beliefs.map((b) => (
-            <div key={b.title} className="card p-7">
-              <h2 className="font-serif font-bold text-xl text-stone-900 mb-2 text-center">{b.title}</h2>
-              <div className="gold-bar mx-auto mb-4" />
-              <p className="text-stone-600 leading-relaxed text-sm">{b.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── What Does It Mean To Be Pentecostal ── */}
+      {/* What Does It Mean To Be Pentecostal */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-5">
-          <div className="text-center mb-10">
+          <ScrollReveal className="text-center mb-10">
             <div className="gold-bar mx-auto mb-4" />
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-stone-900">
               What Does It Mean To Be Pentecostal?
             </h2>
-          </div>
+          </ScrollReveal>
 
-          <div className="bg-white rounded-2xl border border-stone-100 shadow-sm p-8 md:p-10 mb-10">
-            <p className="text-stone-700 leading-relaxed mb-4">
-              We call ourselves Pentecostal because we have experienced the same miraculous
-              conversion that the 120 followers — which included the mother of Jesus — experienced
-              in the second chapter of Acts.
-            </p>
-            <p className="text-stone-700 leading-relaxed">
-              According to the Bible (The Acts of the Apostles), the New Testament Church began
-              on the Day of Pentecost, which was fifty days after the resurrection of Jesus Christ.
-              When the crowd heard the noise, saw the commotion, and listened to the message, they
-              asked the Apostles how to be saved. Peter, standing up with the other eleven apostles,
-              preached this message:
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="bg-white rounded-2xl border border-stone-100 shadow-sm p-8 md:p-10 mb-10">
+              <p className="text-stone-700 leading-relaxed mb-4">
+                We call ourselves Pentecostal because we have experienced the same miraculous
+                conversion that the 120 followers — which included the mother of Jesus — experienced
+                in the second chapter of Acts.
+              </p>
+              <p className="text-stone-700 leading-relaxed">
+                According to the Bible, the New Testament Church began on the Day of Pentecost,
+                which was fifty days after the resurrection of Jesus Christ. When the crowd heard
+                the noise and listened to the message, they asked the Apostles how to be saved.
+                Peter, standing with the eleven, preached the pattern of conversion that the
+                church has followed ever since.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {/* Repentance */}
-            <div className="card p-7 text-center">
-              <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🙏</span>
+            <ScrollReveal delay={0}>
+              <div className="card p-7 text-center">
+                <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-7 h-7 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Repentance</h3>
+                <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                  We must repent and turn away from sin, asking Jesus to forgive us.
+                </p>
+                <p className="text-church-purple text-xs font-semibold">Luke 24:47 · 2 Peter 3:9 · Acts 2:38</p>
               </div>
-              <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Repentance</h3>
-              <p className="text-stone-600 text-sm leading-relaxed mb-4">
-                We must repent (turn away from) of our sins. We do this by asking Jesus to forgive us.
-              </p>
-              <p className="text-church-purple text-xs font-semibold">Luke 24:47 · II Peter 3:9 · Acts 2:38</p>
-            </div>
+            </ScrollReveal>
 
-            {/* Baptism */}
-            <div className="card p-7 text-center">
-              <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">💧</span>
+            <ScrollReveal delay={100}>
+              <div className="card p-7 text-center">
+                <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-7 h-7 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                  </svg>
+                </div>
+                <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Baptism</h3>
+                <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                  We must be water-baptized in the Name of Jesus Christ for the remission of our sins.
+                </p>
+                <p className="text-church-purple text-xs font-semibold">John 3:5 · Acts 2:38, 8:16, 10:48, 19:5</p>
               </div>
-              <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Baptism</h3>
-              <p className="text-stone-600 text-sm leading-relaxed mb-4">
-                We must be water-baptized in the Name of Jesus Christ for the remission of our sins.
-              </p>
-              <p className="text-church-purple text-xs font-semibold">John 3:5 · Acts 2:38, 8:16, 10:48, 19:5</p>
-            </div>
+            </ScrollReveal>
 
-            {/* Spirit Infilling */}
-            <div className="card p-7 text-center">
-              <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔥</span>
+            <ScrollReveal delay={200}>
+              <div className="card p-7 text-center">
+                <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-7 h-7 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                  </svg>
+                </div>
+                <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Spirit Infilling</h3>
+                <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                  We are promised the gift of His Spirit with the evidence of speaking in other tongues.
+                </p>
+                <p className="text-church-purple text-xs font-semibold">John 7:37–39 · Acts 2:4, 2:38, 8:17–18, 10:44–47</p>
               </div>
-              <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Spirit Infilling</h3>
-              <p className="text-stone-600 text-sm leading-relaxed mb-4">
-                We are promised the gift of His Spirit with the evidence of speaking in other tongues.
-              </p>
-              <p className="text-church-purple text-xs font-semibold">John 7:37-39 · Acts 2:4, 2:38, 8:17-18, 10:44-47</p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Have Questions CTA */}
       <section className="py-16 section-dark text-center">
         <div className="max-w-2xl mx-auto px-5">
-          <h2 className="font-serif text-3xl font-bold text-white mb-4">
-            Questions? We&apos;d Love to Talk.
-          </h2>
-          <p className="text-white/70 mb-8 text-lg leading-relaxed">
-            Theology can be deep. We&apos;re here to walk through it with you — no question
-            is too big or too small.
-          </p>
-          <Link href="/prayer" className="btn-gold">
-            Get in Touch
-          </Link>
+          <ScrollReveal>
+            <div className="gold-bar mx-auto mb-6" />
+            <h2 className="font-serif text-3xl font-bold text-white mb-4">
+              Have Questions?
+            </h2>
+            <p className="text-white/70 mb-8 text-lg leading-relaxed">
+              Theology can be deep. We&apos;re here to walk through it with you — no question
+              is too big or too small. Reach out and we&apos;ll be happy to talk.
+            </p>
+            <Link href="/prayer" className="btn-gold">Get in Touch</Link>
+          </ScrollReveal>
         </div>
       </section>
     </>

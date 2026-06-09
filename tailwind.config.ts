@@ -9,12 +9,12 @@ const config: Config = {
     extend: {
       colors: {
         church: {
-          purple: '#1A5FA8',   // steel blue
-          deep:   '#0C3464',   // deep navy
+          purple: '#1A4731',   // deep forest green (primary)
+          deep:   '#0D2B1E',   // very dark green
           gold:   '#C9813A',   // warm gold
           cream:  '#FAFAFA',   // near-white
-          warm:   '#F0F5FF',   // very light blue tint
-          dark:   '#0A1628',   // very dark navy
+          warm:   '#F4F4F5',   // light gray
+          dark:   '#18181B',   // charcoal
         },
       },
       fontFamily: {
@@ -22,7 +22,7 @@ const config: Config = {
         sans:  ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'hero-gradient':  'linear-gradient(160deg, #071525 0%, #0C3464 50%, #1A5FA8 100%)',
+        'hero-gradient':  'linear-gradient(to bottom right, #0A1A0E 0%, #0D2B1E 55%, #1A4731 100%)',
         'gold-gradient':  'linear-gradient(135deg, #D97706 0%, #C9813A 100%)',
       },
     },
