@@ -255,38 +255,55 @@ export default function HomePage() {
 
       {/* ── MEET THE PASTOR ────────────────────────────────────────────────── */}
       <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
-          <ScrollReveal delay={150}>
-            <div className="flex items-center justify-center">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/pastor.png"
-                alt="Pastor Tommy Lee and wife"
-                className="w-full mx-auto drop-shadow-xl scale-[2] origin-bottom"
-              />
-            </div>
-          </ScrollReveal>
-
+        <div className="max-w-2xl mx-auto px-5 text-center">
           <ScrollReveal>
-            <div className="gold-bar mb-5" />
-            <p className="eyebrow text-church-purple mb-3">Our Pastor</p>
-            <h2 className="font-serif text-4xl font-bold text-slate-900 mb-6">Pastor &amp; Sister Lee</h2>
-            <p className="text-slate-600 leading-relaxed mb-4">
-              Welcome to Springhill Pentecostal Church. Whether you are searching for a
-              new church home or exploring Apostolic faith for the first time, you are
-              welcome here! We believe that church is more than just a building; it&apos;s a
-              family where we grow together, support, and love one another.
+            {/* Name */}
+            <p className="eyebrow text-church-purple mb-2">Our Pastor</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900 mb-8">
+              Tommy &amp; Lori Lee
+            </h2>
+
+            {/* Oval photo frame */}
+            <div className="flex justify-center mb-6">
+              <div className="relative w-64 h-72 md:w-80 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl ring-2 ring-slate-200">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/pastor.png"
+                  alt="Pastor Tommy and Lori Lee"
+                  className="w-full h-full object-cover object-top scale-110"
+                />
+              </div>
+            </div>
+
+            {/* Script subtitle */}
+            <p className="font-script text-4xl text-slate-700 mb-8">
+              A message from Pastor
             </p>
-            <p className="text-slate-600 leading-relaxed mb-4">
-              We strive to grow a congregation of spiritually mature, visionary people
-              that embodies the principles and actions of the book of Acts church.
-            </p>
-            <p className="text-slate-600 leading-relaxed mb-2">
-              If you&apos;re looking for a place to connect, belong and worship, you&apos;ve found
-              it! We would love for you to join us!
-            </p>
-            <p className="text-church-purple font-semibold mb-8">— Pastor Tommy Lee</p>
-            <Link href="/prayer" className="btn-primary">Connect With Us</Link>
+
+            <div className="gold-bar mx-auto mb-8" />
+
+            {/* Message */}
+            <div className="text-left space-y-4 max-w-xl mx-auto">
+              <p className="text-slate-600 leading-relaxed">
+                Welcome to Springhill Pentecostal Church. Whether you are searching for a
+                new church home or exploring Apostolic faith for the first time, you are
+                welcome here! We believe that church is more than just a building; it&apos;s a
+                family where we grow together, support, and love one another.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                We strive to grow a congregation of spiritually mature, visionary people
+                that embodies the principles and actions of the book of Acts church.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                If you&apos;re looking for a place to connect, belong and worship, you&apos;ve found
+                it! We would love for you to join us!
+              </p>
+              <p className="font-script text-2xl text-church-purple pt-2">— Pastor Tommy Lee</p>
+            </div>
+
+            <div className="mt-10">
+              <Link href="/prayer" className="btn-primary">Connect With Us</Link>
+            </div>
           </ScrollReveal>
         </div>
       </section>

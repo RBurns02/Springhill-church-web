@@ -18,8 +18,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans:  ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        serif:  ['var(--font-playfair)', 'Georgia', 'serif'],
+        sans:   ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        script: ['var(--font-script)', 'cursive'],
       },
       backgroundImage: {
         'hero-gradient':  'linear-gradient(to bottom right, #0A1A0E 0%, #0D2B1E 55%, #1A4731 100%)',
