@@ -14,15 +14,15 @@ const GIVE_URL = 'https://give.tithe.ly';
 
 const verses = [
   {
-    text: '"Bring the whole tithe into the storehouse, that there may be food in my house."',
+    text: '"Bring ye all the tithes into the storehouse, that there may be meat in mine house."',
     ref:  'Malachi 3:10',
   },
   {
-    text: '"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."',
+    text: '"Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver."',
     ref:  '2 Corinthians 9:7',
   },
   {
-    text: '"Honor the Lord with your wealth, with the firstfruits of all your crops."',
+    text: '"Honour the LORD with thy substance, and with the firstfruits of all thine increase."',
     ref:  'Proverbs 3:9',
   },
 ];
