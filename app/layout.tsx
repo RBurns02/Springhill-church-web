@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/og-image.png',
-        width: 1320,
-        height: 2868,
+        width: 1200,
+        height: 630,
         alt: 'Springhill Pentecostal Church – SPC Wesson, MS Est. 1935',
       },
     ],
