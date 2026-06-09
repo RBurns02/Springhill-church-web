@@ -212,7 +212,7 @@ export default function GivePage() {
           <ScrollReveal>
             <h2 className="section-heading mb-4">Questions About Giving?</h2>
             <p className="section-sub mb-8">
-              Our team is happy to help with questions about online giving, tax receipts,
+              Our team is happy to help with questions about online giving
               or designated gifts.
             </p>
             <Link href="/prayer" className="btn-primary">Contact the Church Office</Link>
