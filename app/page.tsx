@@ -64,9 +64,9 @@ export default function HomePage() {
           <div className="animate-fade-in mb-10" style={{ animationDelay: '0.1s' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-gold.png"
+              src="https://static.wixstatic.com/media/d28003_6c4b55879cc34d02a7f6b21e60b19a9d~mv2.png"
               alt="Springhill Pentecostal Church"
-              className="h-24 md:h-28 w-auto mx-auto object-contain mix-blend-screen"
+              className="h-28 md:h-36 w-auto mx-auto object-contain"
             />
           </div>
 

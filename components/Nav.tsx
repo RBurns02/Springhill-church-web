@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
@@ -23,13 +22,11 @@ export default function Nav() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <Image
-            src="/logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://static.wixstatic.com/media/d28003_6c4b55879cc34d02a7f6b21e60b19a9d~mv2.png"
             alt="Springhill Pentecostal Church"
-            width={120}
-            height={60}
             className="h-12 w-auto object-contain"
-            priority
           />
         </Link>
 
