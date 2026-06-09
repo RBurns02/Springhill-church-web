@@ -261,7 +261,7 @@ export default function HomePage() {
         <div className="max-w-2xl mx-auto px-5 text-center">
           <ScrollReveal>
             {/* Name */}
-            <p className="eyebrow text-church-purple mb-2">Our Pastor</p>
+            <p className="eyebrow text-church-purple mb-2">Our Pastor &amp; First Lady</p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900 mb-8">
               Tommy &amp; Lori Lee
             </h2>
