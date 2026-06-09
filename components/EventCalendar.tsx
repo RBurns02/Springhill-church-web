@@ -15,6 +15,7 @@ interface CalEvent {
 
 // Special one-off events keyed by YYYY-MM-DD
 const SPECIAL: Record<string, CalEvent[]> = {
+  '2026-06-13': [{ title: "Men's Camping Trip",           time: 'All Day',  type: 'special' }],
   '2026-06-19': [{ title: 'BLAST — Kids Church',          time: '7:00 PM', type: 'special' }],
   '2026-06-27': [{ title: 'Pastoral Anniversary Service', time: '7:00 PM', type: 'special' }],
 };
