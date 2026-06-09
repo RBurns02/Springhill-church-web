@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-church-cream text-stone-900 font-sans antialiased;
+    @apply bg-white text-slate-900 font-sans antialiased;
   }
 
   h1, h2, h3, h4 {
@@ -18,38 +18,41 @@
 
 @layer components {
   .section-heading {
-    @apply text-3xl md:text-4xl font-serif font-bold text-stone-900 leading-tight;
+    @apply text-3xl md:text-4xl font-serif font-bold text-slate-900 leading-tight;
   }
 
   .section-sub {
-    @apply text-lg text-stone-600 leading-relaxed;
+    @apply text-lg text-slate-600 leading-relaxed;
   }
 
   .btn-primary {
     @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-church-purple text-white font-semibold text-base
-           shadow-lg shadow-church-purple/25 hover:bg-blue-900 active:scale-95
-           transition-all duration-200;
+           shadow-md hover:bg-blue-900 active:scale-95 transition-all duration-200;
   }
 
   .btn-gold {
     @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-church-gold text-white font-semibold text-base
-           shadow-lg shadow-amber-700/25 hover:bg-amber-700 active:scale-95
-           transition-all duration-200;
+           shadow-md hover:bg-amber-700 active:scale-95 transition-all duration-200;
   }
 
   .btn-outline {
     @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-white text-white font-semibold text-base
-           hover:bg-white hover:text-church-purple active:scale-95
-           transition-all duration-200;
+           hover:bg-white hover:text-church-purple active:scale-95 transition-all duration-200;
+  }
+
+  .btn-outline-blue {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-church-purple text-church-purple font-semibold text-base
+           hover:bg-church-purple hover:text-white active:scale-95 transition-all duration-200;
   }
 
   .card {
-    @apply bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden
-           transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+    @apply bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.05);
   }
 
-  .section-warm {
-    @apply bg-church-warm;
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.09), 0 2px 6px rgba(0,0,0,0.04);
   }
 
   .section-dark {
@@ -57,7 +60,15 @@
   }
 
   .gold-bar {
-    @apply h-1 w-14 rounded-full bg-church-gold;
+    @apply h-[3px] w-12 rounded-full bg-church-gold;
+  }
+
+  .page-header {
+    @apply bg-hero-gradient py-24 text-white text-center;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold tracking-[0.2em] uppercase;
   }
 }
 
@@ -93,11 +104,6 @@
 @keyframes shimmer {
   0%   { background-position: -200% center; }
   100% { background-position:  200% center; }
-}
-
-@keyframes pulseRing {
-  0%   { transform: scale(1);   opacity: 0.6; }
-  100% { transform: scale(1.8); opacity: 0; }
 }
 
 .animate-fade-in-up {

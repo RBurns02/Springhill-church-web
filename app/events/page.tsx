@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   description: 'Upcoming events and gatherings at Springhill Pentecostal Church.',
 };
 
-// ─── Event data ────────────────────────────────────────────────────────────────
-// Replace with your real events. Format: YYYY-MM-DD for date.
 const events = [
   {
     date: '2026-06-15',
@@ -15,7 +13,7 @@ const events = [
     category: 'Youth',
     time: '6:30 PM',
     location: 'Main Sanctuary',
-    desc: 'An evening of worship, games, and the Word specifically designed for students in 6th–12th grade. Come ready to have fun and encounter God.',
+    desc: "An evening of worship, games, and the Word specifically designed for students in 6th–12th grade. Come ready to have fun and encounter God.",
   },
   {
     date: '2026-06-22',
@@ -23,7 +21,7 @@ const events = [
     category: 'Community',
     time: '12:00 PM',
     location: 'Church Grounds',
-    desc: 'Bring the whole family! We\'ll have food, fellowship, games for the kids, and an opportunity to meet your neighbors and church family.',
+    desc: "Bring the whole family! We'll have food, fellowship, games for the kids, and an opportunity to meet your neighbors and church family.",
   },
   {
     date: '2026-07-04',
@@ -31,7 +29,7 @@ const events = [
     category: 'Worship',
     time: '7:00 PM',
     location: 'Main Sanctuary',
-    desc: 'A Spirit-led evening of corporate prayer and live worship. No agenda — just time in the presence of God.',
+    desc: "A Spirit-led evening of corporate prayer and live worship. No agenda — just time in the presence of God.",
   },
   {
     date: '2026-07-12',
@@ -39,15 +37,15 @@ const events = [
     category: "Women's Ministry",
     time: '10:00 AM',
     location: 'Fellowship Hall',
-    desc: 'Our weekly women\'s study continues through the book of Ruth. All women welcome — bring your Bible and a friend.',
+    desc: "Our weekly women's study continues through the book of Ruth. All women welcome — bring your Bible and a friend.",
   },
   {
     date: '2026-07-19',
-    title: 'Men\'s Breakfast',
+    title: "Men's Breakfast",
     category: "Men's Ministry",
     time: '8:00 AM',
     location: 'Fellowship Hall',
-    desc: 'Men of all ages are invited for breakfast, fellowship, and a short devotional. A great chance to connect and encourage one another.',
+    desc: "Men of all ages are invited for breakfast, fellowship, and a short devotional. A great chance to connect and encourage one another.",
   },
   {
     date: '2026-07-26',
@@ -55,17 +53,17 @@ const events = [
     category: 'Family',
     time: '7:30 PM',
     location: 'Outdoor Lawn',
-    desc: 'Bring your blankets and lawn chairs for an outdoor movie night on the church grounds. Family-friendly film, free popcorn provided.',
+    desc: "Bring your blankets and lawn chairs for an outdoor movie night on the church grounds. Family-friendly film, free popcorn provided.",
   },
 ];
 
 const categoryColors: Record<string, string> = {
-  'Youth':            'bg-green-100 text-green-800',
-  'Community':        'bg-green-100 text-green-700',
-  'Worship':          'bg-amber-100 text-amber-700',
-  "Women's Ministry": 'bg-pink-100 text-pink-700',
-  "Men's Ministry":   'bg-blue-100 text-blue-700',
-  'Family':           'bg-orange-100 text-orange-700',
+  'Youth':            'bg-emerald-50 text-emerald-700',
+  'Community':        'bg-teal-50 text-teal-700',
+  'Worship':          'bg-amber-50 text-amber-700',
+  "Women's Ministry": 'bg-pink-50 text-pink-700',
+  "Men's Ministry":   'bg-blue-50 text-blue-700',
+  'Family':           'bg-orange-50 text-orange-700',
 };
 
 function formatDate(dateStr: string) {
@@ -81,48 +79,46 @@ export default function EventsPage() {
   return (
     <>
       {/* Page header */}
-      <section className="bg-hero-gradient py-20 text-white text-center">
-        <p className="text-church-gold text-sm font-semibold tracking-widest uppercase mb-3">
-          Gather Together
-        </p>
-        <h1 className="font-serif text-5xl font-bold mb-4">Upcoming Events</h1>
-        <p className="text-white/70 text-lg max-w-xl mx-auto">
-          From worship nights to community cookouts, there's always something happening
-          at Springhill. Come be part of it.
+      <section className="page-header">
+        <p className="eyebrow text-church-gold mb-4">Gather Together</p>
+        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">Events</h1>
+        <p className="text-white/60 text-lg max-w-lg mx-auto leading-relaxed">
+          From worship nights to community cookouts, there&apos;s always something
+          happening at Springhill. Come be part of it.
         </p>
       </section>
 
       {/* Events list */}
-      <section className="py-16 bg-church-warm">
-        <div className="max-w-3xl mx-auto px-5 space-y-6">
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-5 space-y-4">
           {events.map((evt) => {
             const { month, day, full } = formatDate(evt.date);
-            const categoryClass = categoryColors[evt.category] ?? 'bg-stone-100 text-stone-600';
+            const categoryClass = categoryColors[evt.category] ?? 'bg-slate-50 text-slate-600';
             return (
-              <div key={evt.title} className="card flex flex-col sm:flex-row gap-0 hover:shadow-md transition-shadow">
-                {/* Date column */}
-                <div className="flex-shrink-0 w-full sm:w-24 bg-church-purple/8 flex sm:flex-col items-center justify-center p-5 gap-3 sm:gap-0 border-b sm:border-b-0 sm:border-r border-stone-100">
-                  <p className="text-church-purple text-xs font-bold tracking-widest uppercase">{month}</p>
-                  <p className="font-serif text-4xl font-bold text-church-deep leading-none sm:mt-1">{day}</p>
+              <div key={evt.title} className="card flex flex-col sm:flex-row">
+                {/* Date badge */}
+                <div className="flex-shrink-0 w-full sm:w-20 bg-church-purple/[0.05] flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-slate-100">
+                  <p className="text-church-purple text-[10px] font-bold tracking-widest uppercase">{month}</p>
+                  <p className="font-serif text-4xl sm:text-3xl font-bold text-slate-900 leading-none">{day}</p>
                 </div>
                 {/* Content */}
                 <div className="p-6 flex-1">
-                  <div className="flex flex-wrap items-start gap-3 mb-2">
-                    <h2 className="text-xl font-bold text-stone-900">{evt.title}</h2>
-                    <span className={`text-xs font-bold px-3 py-1 rounded-full ${categoryClass}`}>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <h2 className="text-lg font-bold text-slate-900">{evt.title}</h2>
+                    <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${categoryClass}`}>
                       {evt.category}
                     </span>
                   </div>
-                  <p className="text-stone-500 text-sm mb-3 leading-relaxed">{evt.desc}</p>
-                  <div className="flex flex-wrap gap-4 text-sm">
-                    <span className="flex items-center gap-1.5 text-stone-500">
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <p className="text-slate-500 text-sm leading-relaxed mb-3">{evt.desc}</p>
+                  <div className="flex flex-wrap gap-4 text-xs text-slate-400">
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {full} · {evt.time}
                     </span>
-                    <span className="flex items-center gap-1.5 text-stone-500">
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
@@ -135,12 +131,9 @@ export default function EventsPage() {
           })}
         </div>
 
-        {/* Questions CTA */}
         <div className="max-w-3xl mx-auto px-5 mt-12 text-center">
-          <p className="text-stone-500 mb-3">Have a question about an event?</p>
-          <Link href="/prayer" className="btn-primary">
-            Contact Us
-          </Link>
+          <p className="text-slate-400 text-sm mb-4">Have a question about an event?</p>
+          <Link href="/prayer" className="btn-primary">Contact Us</Link>
         </div>
       </section>
     </>

@@ -50,38 +50,36 @@ export default function BeliefsPage() {
   return (
     <>
       {/* Page header */}
-      <section className="bg-hero-gradient py-20 text-white text-center">
-        <p className="text-church-gold text-sm font-semibold tracking-widest uppercase mb-3">
-          Our Foundation
-        </p>
-        <h1 className="font-serif text-5xl font-bold mb-4">What We Believe</h1>
-        <p className="text-white/70 text-lg max-w-xl mx-auto leading-relaxed">
+      <section className="page-header">
+        <p className="eyebrow text-church-gold mb-4">Our Foundation</p>
+        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">What We Believe</h1>
+        <p className="text-white/60 text-lg max-w-xl mx-auto leading-relaxed">
           Our faith is rooted in the Word of God and the foundational truths of
           Apostolic Pentecostal doctrine. Here is what we stand on.
         </p>
       </section>
 
       {/* Core statement */}
-      <section className="py-14 bg-church-cream">
+      <section className="py-14 bg-white">
         <div className="max-w-3xl mx-auto px-5">
           <div className="gold-bar mx-auto mb-6" />
-          <div className="bg-white rounded-2xl border border-stone-100 shadow-sm p-8 md:p-10">
-            <p className="text-stone-700 text-base md:text-lg leading-relaxed">
+          <div className="card p-8 md:p-10">
+            <p className="text-slate-700 text-base md:text-lg leading-relaxed">
               We believe that Jesus is the name of the Father, the Son, and the Holy Ghost.{' '}
-              <span className="text-stone-400 text-sm">(Mat. 28:19; John 5:43, 10:30, 12:45, 14:8–9; Phil. 2:9-11)</span>{' '}
+              <span className="text-slate-400 text-sm">(Mat. 28:19; John 5:43, 10:30, 12:45, 14:8–9; Phil. 2:9-11)</span>{' '}
               All the fullness of the godhead rests bodily in Jesus Christ.{' '}
-              <span className="text-stone-400 text-sm">(Col. 2:9)</span>{' '}
+              <span className="text-slate-400 text-sm">(Col. 2:9)</span>{' '}
               We believe salvation is a free gift to all who repent of their sins, are baptized in the name of the Lord Jesus Christ, and are filled with the Holy Ghost by the evidence of speaking in other tongues as the Spirit gives the utterance.{' '}
-              <span className="text-stone-400 text-sm">(Acts 2:38, 4:12, 10:44–48; Eph. 2:8, 4:5)</span>{' '}
+              <span className="text-slate-400 text-sm">(Acts 2:38, 4:12, 10:44–48; Eph. 2:8, 4:5)</span>{' '}
               We believe that we are chosen people, separated from the world; and that we should live a holy life both inwardly and outwardly.{' '}
-              <span className="text-stone-400 text-sm">(1 Pet. 2:9; 2 Cor. 6:17-18)</span>
+              <span className="text-slate-400 text-sm">(1 Pet. 2:9; 2 Cor. 6:17-18)</span>
             </p>
           </div>
         </div>
       </section>
 
       {/* Beliefs grid */}
-      <section className="pb-20 bg-church-warm">
+      <section className="pb-20 bg-church-warm pt-10">
         <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-6">
           {beliefs.map((b) => (
             <div key={b.title} className="card p-7">
@@ -94,7 +92,7 @@ export default function BeliefsPage() {
       </section>
 
       {/* ── What Does It Mean To Be Pentecostal ── */}
-      <section className="py-20 bg-church-cream">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-5">
           <div className="text-center mb-10">
             <div className="gold-bar mx-auto mb-4" />

@@ -25,27 +25,25 @@ export default function PrayerPage() {
   return (
     <>
       {/* Page header */}
-      <section className="bg-hero-gradient py-20 text-white text-center">
-        <p className="text-church-gold text-sm font-semibold tracking-widest uppercase mb-3">
-          We&apos;re Here For You
-        </p>
-        <h1 className="font-serif text-5xl font-bold mb-4">Prayer &amp; Contact</h1>
-        <p className="text-white/70 text-lg max-w-xl mx-auto leading-relaxed">
+      <section className="page-header">
+        <p className="eyebrow text-church-gold mb-4">We&apos;re Here For You</p>
+        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">Prayer &amp; Contact</h1>
+        <p className="text-white/60 text-lg max-w-xl mx-auto leading-relaxed">
           Submit a prayer request, plan a visit, or just say hello.
           We&apos;d love to hear from you.
         </p>
       </section>
 
-      <section className="py-16 bg-church-warm">
+      <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-12">
 
           {/* ── Form ───────────────────────────────────────────────────────── */}
           <div>
             <div className="gold-bar mb-5" />
-            <h2 className="font-serif text-3xl font-bold text-stone-900 mb-2">
+            <h2 className="font-serif text-3xl font-bold text-slate-900 mb-2">
               Send a Message
             </h2>
-            <p className="text-stone-500 mb-7 leading-relaxed">
+            <p className="text-slate-500 mb-7 leading-relaxed">
               Prayer request, general question, or planning a visit — fill out the
               form below and we&apos;ll get back to you within one business day.
             </p>
@@ -63,52 +61,52 @@ export default function PrayerPage() {
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-semibold text-stone-700 mb-1.5">
+                  <label htmlFor="firstName" className="block text-sm font-semibold text-slate-700 mb-1.5">
                     First Name
                   </label>
                   <input
                     id="firstName" name="firstName" type="text" required placeholder="John"
-                    className="w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-semibold text-stone-700 mb-1.5">
+                  <label htmlFor="lastName" className="block text-sm font-semibold text-slate-700 mb-1.5">
                     Last Name
                   </label>
                   <input
                     id="lastName" name="lastName" type="text" placeholder="Smith"
-                    className="w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-stone-700 mb-1.5">
+                <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-1.5">
                   Email Address
                 </label>
                 <input
                   id="email" name="email" type="email" required placeholder="john@example.com"
-                  className="w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-stone-700 mb-1.5">
-                  Phone <span className="text-stone-400 font-normal">(optional)</span>
+                <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-1.5">
+                  Phone <span className="text-slate-400 font-normal">(optional)</span>
                 </label>
                 <input
                   id="phone" name="phone" type="tel" placeholder="(123) 456-7890"
-                  className="w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
                 />
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-stone-700 mb-1.5">
+                <label htmlFor="subject" className="block text-sm font-semibold text-slate-700 mb-1.5">
                   Subject
                 </label>
                 <select
                   id="subject" name="subject" required
-                  className="w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-stone-900 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
                 >
                   <option value="">Select a subject…</option>
                   <option value="Prayer Request">Prayer Request</option>
@@ -120,13 +118,13 @@ export default function PrayerPage() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-stone-700 mb-1.5">
+                <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-1.5">
                   Message
                 </label>
                 <textarea
                   id="message" name="message" required rows={5}
                   placeholder="Share your prayer request or question here…"
-                  className="w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition resize-none"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition resize-none"
                 />
               </div>
 
@@ -141,7 +139,7 @@ export default function PrayerPage() {
                 Send Message
               </button>
 
-              <p className="text-xs text-stone-400 text-center">
+              <p className="text-xs text-slate-400 text-center">
                 We respect your privacy. Your information will never be shared or sold.
               </p>
             </form>
@@ -152,7 +150,7 @@ export default function PrayerPage() {
 
             {/* Contact details */}
             <div className="card p-7">
-              <h3 className="font-serif font-bold text-xl text-stone-900 mb-5">Church Office</h3>
+              <h3 className="font-serif font-bold text-xl text-slate-900 mb-5">Church Office</h3>
               <ul className="space-y-4">
                 {[
                   {
@@ -187,11 +185,11 @@ export default function PrayerPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-stone-400 uppercase tracking-wide mb-0.5">{item.label}</p>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5">{item.label}</p>
                       {item.href ? (
-                        <a href={item.href} className="text-stone-700 text-sm hover:text-church-purple transition-colors break-all">{item.value}</a>
+                        <a href={item.href} className="text-slate-700 text-sm hover:text-church-purple transition-colors break-all">{item.value}</a>
                       ) : (
-                        <p className="text-stone-700 text-sm">{item.value}</p>
+                        <p className="text-slate-700 text-sm">{item.value}</p>
                       )}
                     </div>
                   </li>
@@ -201,16 +199,16 @@ export default function PrayerPage() {
 
             {/* Service times */}
             <div className="card p-7">
-              <h3 className="font-serif font-bold text-xl text-stone-900 mb-1">Service Times</h3>
+              <h3 className="font-serif font-bold text-xl text-slate-900 mb-1">Service Times</h3>
               <p className="text-xs text-church-gold font-semibold mb-5">
                 1st Sunday of every month — Friends &amp; Family Service at 2:00 PM
               </p>
-              <ul className="divide-y divide-stone-100">
+              <ul className="divide-y divide-slate-100">
                 {services.map((s) => (
                   <li key={s.label} className="py-3 flex items-center justify-between">
                     <div>
-                      <p className="font-semibold text-stone-800 text-sm">{s.label}</p>
-                      <p className="text-stone-400 text-xs">{s.day}{s.prayer ? ` · Prayer ${s.prayer}` : ''}</p>
+                      <p className="font-semibold text-slate-800 text-sm">{s.label}</p>
+                      <p className="text-slate-400 text-xs">{s.day}{s.prayer ? ` · Prayer ${s.prayer}` : ''}</p>
                     </div>
                     <span className="text-church-purple font-bold text-sm">{s.service}</span>
                   </li>
@@ -227,7 +225,7 @@ export default function PrayerPage() {
                 3. Replace this div with:
                    <iframe src="YOUR_EMBED_URL" width="100%" height="100%" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
               */}
-              <div className="text-center text-stone-400 px-4">
+              <div className="text-center text-slate-400 px-4">
                 <svg className="w-10 h-10 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                 </svg>

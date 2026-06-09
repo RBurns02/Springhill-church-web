@@ -9,11 +9,11 @@ const config: Config = {
     extend: {
       colors: {
         church: {
-          purple: '#1A5FA8',   // medium steel blue
+          purple: '#1A5FA8',   // steel blue
           deep:   '#0C3464',   // deep navy
-          gold:   '#C9813A',   // warm gold — unchanged
-          cream:  '#F8FAFB',   // clean near-white
-          warm:   '#EFF6FF',   // very light blue tint
+          gold:   '#C9813A',   // warm gold
+          cream:  '#FAFAFA',   // near-white
+          warm:   '#F0F5FF',   // very light blue tint
           dark:   '#0A1628',   // very dark navy
         },
       },
