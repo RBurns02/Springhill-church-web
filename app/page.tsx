@@ -150,9 +150,9 @@ export default function HomePage() {
 
       {/* ── WELCOME HOME ───────────────────────────────────────────────────── */}
       <section className="py-20 bg-church-warm">
-        <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
+        <div className="max-w-3xl mx-auto px-5 text-center">
           <ScrollReveal>
-            <div className="gold-bar mb-5" />
+            <div className="gold-bar mx-auto mb-5" />
             <h2 className="section-heading mb-5">Welcome Home</h2>
             <p className="text-slate-600 leading-relaxed mb-4">
               Whether you&apos;ve been walking with the Lord for decades or you&apos;re just
@@ -165,17 +165,6 @@ export default function HomePage() {
               people — and we&apos;d love to walk this journey of faith alongside you.
             </p>
             <Link href="/prayer" className="btn-primary">Plan Your First Visit</Link>
-          </ScrollReveal>
-
-          <ScrollReveal delay={150}>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/church8.jpg"
-                alt="Worship at Springhill Pentecostal Church"
-                className="w-full h-full object-cover"
-              />
-            </div>
           </ScrollReveal>
         </div>
       </section>
