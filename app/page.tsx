@@ -39,42 +39,50 @@ export default function Home() {
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-hero-gradient">
-        {/* Subtle cross-hatch texture */}
+        {/* Animated gradient orbs */}
         <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
-          }}
+          className="absolute top-[10%] left-[5%] w-[600px] h-[600px] rounded-full opacity-20 animate-drift"
+          style={{ background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)' }}
+        />
+        <div
+          className="absolute bottom-[10%] right-[5%] w-[500px] h-[500px] rounded-full opacity-15 animate-drift2"
+          style={{ background: 'radial-gradient(circle, #60A5FA 0%, transparent 70%)' }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-[0.07]"
+          style={{ background: 'radial-gradient(circle, #93C5FD 0%, transparent 60%)' }}
         />
 
         <div className="relative z-10 max-w-4xl mx-auto px-5 text-center text-white py-24">
-          {/* Gold logo in hero */}
-          <div className="flex justify-center mb-8">
-            <Image
-              src="/logo-gold.png"
-              alt="Springhill Pentecostal Church"
-              width={200}
-              height={200}
-              className="w-36 md:w-44 h-auto object-contain drop-shadow-2xl"
-              priority
-            />
+          {/* Logo — transparent white version */}
+          <div className="flex justify-center mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-white/5 blur-2xl scale-150" />
+              <Image
+                src="/logo-white.png"
+                alt="Springhill Pentecostal Church"
+                width={200}
+                height={200}
+                className="relative w-36 md:w-44 h-auto object-contain drop-shadow-2xl animate-float"
+                priority
+              />
+            </div>
           </div>
 
-          <p className="text-church-gold font-semibold tracking-widest uppercase text-sm mb-4">
+          <p className="text-shimmer font-semibold tracking-widest uppercase text-sm mb-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             Welcome Home · Est. 1935
           </p>
 
-          <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight mb-5">
+          <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight mb-5 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
             Springhill Pentecostal Church
           </h1>
 
-          <p className="text-white/75 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-white/75 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
             A Spirit-filled community in Wesson, MS where faith comes alive,
             families are built, and every person finds a place to belong.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14 animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
             <Link href="/prayer" className="btn-gold">
               Plan Your Visit
             </Link>
@@ -84,7 +92,7 @@ export default function Home() {
           </div>
 
           {/* Service times strip */}
-          <div className="inline-grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/15 w-full max-w-2xl mx-auto">
+          <div className="inline-grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/15 w-full max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '1.1s' }}>
             {regularServices.map((s) => (
               <div key={s.label} className="bg-white/5 backdrop-blur px-4 py-4 text-center">
                 <p className="text-church-gold font-bold text-base">{s.time}</p>
@@ -230,7 +238,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {previewEvents.map((evt) => (
               <div key={evt.title} className="card hover:shadow-md transition-shadow duration-200">
-                <div className="h-1.5 w-full bg-gradient-to-r from-church-purple to-green-400" />
+                <div className="h-1.5 w-full bg-gradient-to-r from-church-purple to-blue-400" />
                 <div className="p-6">
                   <div className="flex gap-4 items-start">
                     <div className="flex-shrink-0 w-14 text-center bg-church-purple/10 rounded-xl py-2">

@@ -9,47 +9,38 @@ export const metadata: Metadata = {
 
 const beliefs = [
   {
-    icon: '📖',
     title: 'The Bible',
     body: 'The Bible is divinely inspired and God-breathed (pneuma). It is true in all that it teaches. As the infallible Word of God, it is our primary authority for what we believe and teach, and how we live our lives. (2 Tim 3:15-17)',
   },
   {
-    icon: '🕊️',
     title: 'The Oneness of God',
     body: 'We strictly adhere to the Scriptural teaching of the Oneness of God found in Deuteronomy 6:4 "Hear, O Israel: The LORD our God is one LORD." The New Testament agrees with the Old Testament. The Apostle Paul wrote: "One Lord, one faith, one baptism, One God and Father of all, who is above all, and through all, and in you all." (Isa. 44:6-8, 45:5; Col. 2:9; Eph. 4:5–6)',
   },
   {
-    icon: '✝️',
     title: 'Sin and Salvation',
     body: 'Everyone has sinned and is in need of salvation. Salvation comes by grace through faith based on the atoning sacrifice of Jesus Christ (Psa. 51:5; Rom. 3:23-25; 6:23; Eph. 2:8-9).',
   },
   {
-    icon: '🔥',
     title: 'The Gospel',
     body: 'The Gospel is the good news that Jesus died for our sins on the cross, was buried in the tomb, and rose again on the third day. We express our belief in the gospel through our obedience. We obey the gospel and apply it to our lives by repenting of our sins (death to sin), being baptized in water in the name of Jesus Christ for the removal of our sins (burial), and receiving the gift of the Holy Ghost (resurrection). This threefold experience is the consistent pattern of conversion in the early church (1 Cor. 15:1-4; 2 Thes. 1:8; 1 Pet. 4:17; Mark 1:15; Acts 15:7; Rom. 6:3-4; Acts 2:4, 37-39; 8:9-17; 10:1-48; 19:1-7).',
   },
   {
-    icon: '🙌',
     title: 'Christian Living',
     body: 'As Christians we are to love God and love others. We are to worship God joyfully and seek to live a life that is pleasing to Him both inwardly and outwardly—in our thoughts, words, lifestyle, and actions. The Scripture describes our bodies as the temples (or dwelling places) of the Holy Ghost. We are empowered to live a life pleasing to God through the Holy Ghost. We believe that the supernatural gifts of the Spirit are for the church today and are available to all Spirit-filled believers. (Mark 12:28-31; 1 Cor. 6:19, 12:8-10; 2 Cor. 7:1; Rom. 8:13-14; Gal. 5:19-26; Heb. 12:14)',
   },
   {
-    icon: '🩹',
     title: 'Healing',
     body: 'We believe that healing is available today. As the ancient prophet Isaiah prophesied, our Savior received the stripes on His back for our healing. We believe that divine healing is available to every believer by the laying on of hands and the prayer of faith. The Scripture declares: "And the prayer of faith shall save the sick, and the Lord shall raise him up; and if he have committed sins, they shall be forgiven him." (James 5:15) In every service, there is an opportunity for those who are ill to come forward and be anointed with oil and prayed over by our pastoral team. Prayer cloths are available also. (Psalm 103:2-3; Isaiah 53:5; Matthew 8:16-17; Mark 16:17-18; Acts 8:6-7; James 5:14-16; Acts 19:11–12; 1 Corinthians 12:9, 28)',
   },
   {
-    icon: '☁️',
     title: 'Heaven',
     body: 'We believe that a person\'s eternal destination is determined by their response to the Lord Jesus Christ. Heaven is a literal place reserved for those who have obeyed the Gospel message and are living a holy life. (Matt. 5:3, 12, 20; 6:20, 19:21, 25:34; John 14:1–3, 17:24; 2 Cor. 5:1; Heb. 11:16; 1 Peter 1:4; Heb. 9:27; Rev. 19:20)',
   },
   {
-    icon: '⚠️',
     title: 'Hell',
     body: 'Scripture describes Hell as "everlasting fire," "torment," "wrath," and "lake of fire." We believe Hell is a literal place of eternal separation from God. (Mat. 25:41; Mark 9:43-48; Heb. 9:27; Rev. 14:9-11, 20:12-15, 21:8)',
   },
   {
-    icon: '⭐',
     title: 'The Future',
     body: 'The angels declared to the disciples that the same Jesus that ascended to Heaven is the same one who will come back to earth. We believe that Jesus Christ is coming again to catch away His church (the Rapture or Second Coming of Jesus Christ). We believe that the "dead in Christ" will be resurrected first, and then those who are alive will be caught away. The righteous will inherit eternal life, and the unrighteous will be punished with eternal death. (Acts 1:11; 1 Thes. 4:16-17; Rev. 20:11-15)',
   },
@@ -93,14 +84,10 @@ export default function BeliefsPage() {
       <section className="pb-20 bg-church-warm">
         <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-6">
           {beliefs.map((b) => (
-            <div key={b.title} className="card p-7 hover:shadow-md transition-shadow">
-              <div className="flex items-start gap-4">
-                <span className="text-3xl flex-shrink-0 mt-0.5">{b.icon}</span>
-                <div>
-                  <h2 className="font-serif font-bold text-xl text-stone-900 mb-2">{b.title}</h2>
-                  <p className="text-stone-600 leading-relaxed text-sm">{b.body}</p>
-                </div>
-              </div>
+            <div key={b.title} className="card p-7">
+              <h2 className="font-serif font-bold text-xl text-stone-900 mb-2 text-center">{b.title}</h2>
+              <div className="gold-bar mx-auto mb-4" />
+              <p className="text-stone-600 leading-relaxed text-sm">{b.body}</p>
             </div>
           ))}
         </div>
