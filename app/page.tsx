@@ -168,16 +168,13 @@ export default function HomePage() {
           </ScrollReveal>
 
           <ScrollReveal delay={150}>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-church-deep to-church-purple aspect-[4/3] flex items-center justify-center">
-              <div className="text-center text-white/40 p-8">
-                <svg className="w-16 h-16 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M2.25 18.75h19.5M3.75 4.5h16.5a1.5 1.5 0 011.5 1.5v12a1.5 1.5 0 01-1.5 1.5H3.75a1.5 1.5 0 01-1.5-1.5V6a1.5 1.5 0 011.5-1.5z" />
-                </svg>
-                <p className="text-sm font-medium">Church Photo</p>
-                <p className="text-xs mt-1 opacity-60">Upload church-photo.jpg to /public</p>
-              </div>
-              <div className="absolute top-4 right-4 w-20 h-20 border-t-2 border-r-2 border-church-gold/40 rounded-tr-2xl" />
-              <div className="absolute bottom-4 left-4 w-20 h-20 border-b-2 border-l-2 border-church-gold/40 rounded-bl-2xl" />
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/church8.jpg"
+                alt="Worship at Springhill Pentecostal Church"
+                className="w-full h-full object-cover"
+              />
             </div>
           </ScrollReveal>
         </div>
