@@ -257,14 +257,13 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
           <ScrollReveal delay={150}>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[3/4]">
+            <div className="flex items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/pastor.png"
                 alt="Pastor Tommy Lee and wife"
-                className="w-full h-full object-cover object-top"
+                className="w-full max-w-md mx-auto drop-shadow-xl"
               />
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-church-gold" />
             </div>
           </ScrollReveal>
 
