@@ -59,11 +59,12 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-white/5 blur-2xl scale-150" />
               <Image
-                src="/logo-white.png"
+                src="/logo.png"
                 alt="Springhill Pentecostal Church"
                 width={200}
                 height={200}
-                className="relative w-36 md:w-44 h-auto object-contain drop-shadow-2xl animate-float"
+                className="relative w-36 md:w-44 h-auto object-contain animate-float"
+                style={{ filter: 'brightness(0) invert(1)', dropShadow: '0 20px 40px rgba(0,0,0,0.4)' }}
                 priority
               />
             </div>
