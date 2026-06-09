@@ -35,7 +35,7 @@ const beliefs = [
     body: 'We must repent — turn away from sin and toward God. Jesus said: "Repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem." (Luke 24:47) The Lord is "not willing that any should perish, but that all should come to repentance." (2 Pet. 3:9) Repentance is a sincere change of heart and direction, turning from sin and surrendering to Christ.',
   },
   {
-    title: 'Water Baptism in Jesus' Name',
+    title: "Water Baptism in Jesus’ Name",
     refs: 'Acts 2:38 · Acts 8:16 · Acts 10:48 · Acts 19:5',
     body: 'We must be water-baptized by immersion in the name of Jesus Christ for the remission of sins. Peter declared: "Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost." (Acts 2:38) Throughout the book of Acts, every recorded baptism was performed in the name of Jesus Christ.',
   },
