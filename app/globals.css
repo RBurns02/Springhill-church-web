@@ -149,6 +149,15 @@
   animation: shimmer 3s linear infinite;
 }
 
+/* ── Slider progress bar ─────────────────────────────────────────────────── */
+@keyframes progress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+.animate-progress {
+  animation: progress 4.5s linear forwards;
+}
+
 /* ── Accordion ────────────────────────────────────────────────────────────── */
 details summary::-webkit-details-marker { display: none; }
 details summary { list-style: none; cursor: pointer; }

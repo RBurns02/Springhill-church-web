@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
+import PhotoSlider from '@/components/PhotoSlider';
 
 export const metadata: Metadata = {
   title: 'Springhill Pentecostal Church | Wesson, MS',
@@ -178,6 +179,19 @@ export default function HomePage() {
               <div className="absolute top-4 right-4 w-20 h-20 border-t-2 border-r-2 border-church-gold/40 rounded-tr-2xl" />
               <div className="absolute bottom-4 left-4 w-20 h-20 border-b-2 border-l-2 border-church-gold/40 rounded-bl-2xl" />
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ── PHOTO SLIDER ───────────────────────────────────────────────────── */}
+      <section className="py-16 bg-church-dark">
+        <div className="max-w-5xl mx-auto px-5">
+          <ScrollReveal className="text-center mb-8">
+            <div className="gold-bar mx-auto mb-4" />
+            <h2 className="font-serif text-3xl font-bold text-white">Life at Springhill</h2>
+          </ScrollReveal>
+          <ScrollReveal>
+            <PhotoSlider />
           </ScrollReveal>
         </div>
       </section>
