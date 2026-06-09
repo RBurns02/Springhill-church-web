@@ -57,7 +57,7 @@ export default function HomePage() {
       {/* ── HERO ───────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="animate-drift absolute top-[-10%] left-[-5%] w-[50vw] h-[50vw] max-w-2xl rounded-full bg-church-purple/25 blur-[100px]" />
+          <div className="animate-drift absolute top-[-10%] left-[-5%] w-[50vw] h-[50vw] max-w-2xl rounded-full bg-church-purple/30 blur-[100px]" />
           <div className="animate-drift2 absolute bottom-[-10%] right-[-5%] w-[45vw] h-[45vw] max-w-xl rounded-full bg-church-gold/10 blur-[120px]" />
         </div>
 
