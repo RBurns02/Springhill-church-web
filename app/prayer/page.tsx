@@ -160,8 +160,22 @@ export default function PrayerPage() {
               </div>
             </ScrollReveal>
 
-            {/* Service times */}
+            {/* Map */}
             <ScrollReveal delay={150}>
+              <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm" style={{ height: '220px' }}>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  loading="lazy"
+                  title="Springhill Pentecostal Church location"
+                  src="https://maps.google.com/maps?q=1090+Springhill+Road+Wesson+MS+39191&output=embed"
+                />
+              </div>
+            </ScrollReveal>
+
+            {/* Service times */}
+            <ScrollReveal delay={200}>
               <div className="card p-7">
                 <h3 className="font-serif font-bold text-xl text-slate-900 mb-1">Join Us in Person</h3>
                 <p className="text-xs text-church-gold font-semibold mb-5">

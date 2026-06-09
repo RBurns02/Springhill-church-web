@@ -26,11 +26,26 @@ const greatVibes = Great_Vibes({
 export const metadata: Metadata = {
   title: 'Springhill Pentecostal Church',
   description:
-    'A warm, Spirit-filled community in Springhill. Join us for worship, prayer, and fellowship every Sunday.',
+    'A warm, Spirit-filled community in Wesson, MS. Join us for worship, prayer, and fellowship every Sunday.',
+  metadataBase: new URL('https://www.spcwesson.com'),
   openGraph: {
     title: 'Springhill Pentecostal Church',
-    description: 'A warm, Spirit-filled community. Everyone is welcome.',
+    description: 'A Spirit-filled community in Wesson, MS. Everyone is welcome.',
     type: 'website',
+    images: [
+      {
+        url: '/church1.png',
+        width: 1200,
+        height: 630,
+        alt: 'Springhill Pentecostal Church',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Springhill Pentecostal Church',
+    description: 'A Spirit-filled community in Wesson, MS. Everyone is welcome.',
+    images: ['/church1.png'],
   },
 };
 

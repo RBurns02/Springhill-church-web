@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 const serviceTimes = [
   { day: 'Sunday',    session: 'Morning Service', time: '10:00 AM', icon: '☀️' },
   { day: 'Sunday',    session: 'Evening Service',  time: '6:00 PM',  icon: '🌅' },
+  { day: 'Monday',    session: 'Prayer Meeting',   time: '7:00 PM',  icon: '🙏' },
   { day: 'Wednesday', session: 'Bible Study',      time: '7:30 PM',  icon: '📖' },
 ];
 
@@ -111,7 +112,7 @@ export default function HomePage() {
             </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {serviceTimes.map((s, i) => (
               <ScrollReveal key={s.session} delay={i * 100}>
                 <div className="card p-8 text-center group hover:border-church-purple/30">
