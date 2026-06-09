@@ -136,14 +136,8 @@ export default function PrayerPage() {
                     {
                       icon: <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />,
                       label: 'Email',
-                      value: 'info@springhillpentecostal.com',
-                      href: 'mailto:info@springhillpentecostal.com',
-                    },
-                    {
-                      icon: <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />,
-                      label: 'Office Hours',
-                      value: 'Monday – Friday · 9:00 AM – 4:00 PM',
-                      href: undefined,
+                      value: 'pastor@spcwesson.org',
+                      href: 'mailto:pastor@spcwesson.org',
                     },
                   ].map((item) => (
                     <li key={item.label} className="flex items-start gap-3">
