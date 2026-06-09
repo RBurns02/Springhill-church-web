@@ -25,11 +25,12 @@ function recurringFor(date: Date): CalEvent[] {
   const events: CalEvent[] = [];
 
   if (dow === 0) {
-    events.push({ title: 'Morning Service',  time: '10:00 AM', type: 'regular' });
     if (dom <= 7) {
-      events.push({ title: 'Friends & Family', time: '2:00 PM', type: 'regular' });
+      events.push({ title: 'Friends & Family Service', time: '2:00 PM', type: 'regular' });
+    } else {
+      events.push({ title: 'Morning Service',  time: '10:00 AM', type: 'regular' });
+      events.push({ title: 'Evening Service',  time: '6:00 PM',  type: 'regular' });
     }
-    events.push({ title: 'Evening Service',  time: '6:00 PM',  type: 'regular' });
   }
   if (dow === 1) events.push({ title: 'Prayer Meeting', time: '7:00 PM',  type: 'regular' });
   if (dow === 3) events.push({ title: 'Bible Study',    time: '7:30 PM',  type: 'regular' });
