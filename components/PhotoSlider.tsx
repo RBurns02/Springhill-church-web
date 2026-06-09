@@ -10,8 +10,11 @@ const slides = [
   { src: '/church9.jpg', alt: 'Bass player during worship' },
   { src: '/church4.jpg', alt: 'Sound and worship team' },
   { src: '/church10.jpg', alt: 'Prayer at the altar' },
-  { src: '/church2.png', alt: 'Praise and worship' },
-  { src: '/church3.png', alt: 'Spirit-filled service' },
+  { src: '/church11.jpg', alt: 'Keyboard player leading worship' },
+  { src: '/church12.jpg', alt: 'Congregation in worship' },
+  { src: '/church2.png',  alt: 'Praise and worship' },
+  { src: '/church13.png', alt: 'Tambourine in worship' },
+  { src: '/church3.png',  alt: 'Spirit-filled service' },
 ];
 
 const INTERVAL = 4500;
