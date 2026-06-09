@@ -67,7 +67,7 @@ export default function HomePage() {
             <img
               src="/logo-transparent.png"
               alt="Springhill Pentecostal Church"
-              className="h-28 md:h-36 w-auto mx-auto object-contain"
+              className="h-44 md:h-56 w-auto mx-auto object-contain"
               style={{ filter: 'invert(1) brightness(1.1)' }}
             />
           </div>
