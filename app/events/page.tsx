@@ -13,39 +13,39 @@ export default function EventsPage() {
     <>
       {/* Page header */}
       <section className="page-header">
-        <p className="eyebrow text-church-gold mb-4">Gather Together</p>
-        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">Events</h1>
-        <p className="text-white/60 text-lg max-w-lg mx-auto leading-relaxed">
+        <p className="eyebrow text-church-gold mb-5">Gather Together</p>
+        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4 tracking-tight">Events</h1>
+        <p className="text-white/50 text-lg max-w-lg mx-auto leading-relaxed">
           Come be part of what God is doing at Springhill. Everyone is welcome.
         </p>
       </section>
 
       {/* Upcoming special events */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-5">
-          <ScrollReveal className="mb-8">
-            <div className="gold-bar mb-4" />
+          <ScrollReveal className="mb-10">
+            <div className="gold-bar mb-5" />
             <h2 className="section-heading">Upcoming Special Events</h2>
           </ScrollReveal>
 
           <div className="space-y-4">
             <ScrollReveal delay={0}>
               <div className="card flex flex-col sm:flex-row">
-                <div className="flex-shrink-0 w-full sm:w-20 bg-church-purple/[0.05] flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-slate-100">
-                  <p className="text-church-purple text-[10px] font-bold tracking-widest uppercase">JUN</p>
-                  <p className="font-serif text-4xl sm:text-3xl font-bold text-slate-900 leading-none">13</p>
+                <div className="flex-shrink-0 w-full sm:w-20 flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-stone-100">
+                  <p className="text-church-gold text-[10px] font-semibold tracking-widest uppercase">JUN</p>
+                  <p className="font-serif text-4xl sm:text-3xl font-bold text-stone-900 leading-none">13</p>
                 </div>
                 <div className="p-6 flex-1">
                   <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h2 className="text-lg font-bold text-slate-900">Men&apos;s Camping Trip</h2>
-                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-700">Men&apos;s Ministry</span>
+                    <h2 className="text-lg font-bold text-stone-900">Men&apos;s Camping Trip</h2>
+                    <span className="text-[10px] font-semibold px-2.5 py-0.5 tracking-wide uppercase bg-stone-100 text-stone-600">Men&apos;s Ministry</span>
                   </div>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-3">
+                  <p className="text-stone-500 text-sm leading-relaxed mb-3">
                     Men, come out for a time of fellowship, worship, and the outdoors. Details shared at church.
                   </p>
-                  <div className="flex flex-wrap gap-4 text-xs text-slate-400">
+                  <div className="flex flex-wrap gap-4 text-xs text-stone-400">
                     <span className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       Saturday, June 13 · All Day
@@ -57,27 +57,27 @@ export default function EventsPage() {
 
             <ScrollReveal delay={40}>
               <div className="card flex flex-col sm:flex-row">
-                <div className="flex-shrink-0 w-full sm:w-20 bg-church-purple/[0.05] flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-slate-100">
-                  <p className="text-church-purple text-[10px] font-bold tracking-widest uppercase">JUN</p>
-                  <p className="font-serif text-4xl sm:text-3xl font-bold text-slate-900 leading-none">19</p>
+                <div className="flex-shrink-0 w-full sm:w-20 flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-stone-100">
+                  <p className="text-church-gold text-[10px] font-semibold tracking-widest uppercase">JUN</p>
+                  <p className="font-serif text-4xl sm:text-3xl font-bold text-stone-900 leading-none">19</p>
                 </div>
                 <div className="p-6 flex-1">
                   <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h2 className="text-lg font-bold text-slate-900">BLAST — Kids Church</h2>
-                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700">Kids</span>
+                    <h2 className="text-lg font-bold text-stone-900">BLAST — Kids Church</h2>
+                    <span className="text-[10px] font-semibold px-2.5 py-0.5 tracking-wide uppercase bg-stone-100 text-stone-600">Kids</span>
                   </div>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-3">
+                  <p className="text-stone-500 text-sm leading-relaxed mb-3">
                     Theme: Daniel and the Lions Den. Bring your kids out for a night of fun, worship, and the Word!
                   </p>
-                  <div className="flex flex-wrap gap-4 text-xs text-slate-400">
+                  <div className="flex flex-wrap gap-4 text-xs text-stone-400">
                     <span className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       Friday, June 19 · 7:00 PM
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
@@ -90,28 +90,28 @@ export default function EventsPage() {
 
             <ScrollReveal delay={80}>
               <div className="card flex flex-col sm:flex-row">
-                <div className="flex-shrink-0 w-full sm:w-20 bg-church-gold/[0.07] flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-slate-100">
-                  <p className="text-church-gold text-[10px] font-bold tracking-widest uppercase">JUN</p>
-                  <p className="font-serif text-4xl sm:text-3xl font-bold text-slate-900 leading-none">27</p>
+                <div className="flex-shrink-0 w-full sm:w-20 flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-stone-100 bg-church-gold/[0.04]">
+                  <p className="text-church-gold text-[10px] font-semibold tracking-widest uppercase">JUN</p>
+                  <p className="font-serif text-4xl sm:text-3xl font-bold text-stone-900 leading-none">27</p>
                 </div>
                 <div className="p-6 flex-1">
                   <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h2 className="text-lg font-bold text-slate-900">2nd Annual Pastoral Anniversary Service</h2>
-                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700">Special Service</span>
+                    <h2 className="text-lg font-bold text-stone-900">2nd Annual Pastoral Anniversary Service</h2>
+                    <span className="text-[10px] font-semibold px-2.5 py-0.5 tracking-wide uppercase bg-amber-50 text-amber-700">Special Service</span>
                   </div>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-3">
+                  <p className="text-stone-500 text-sm leading-relaxed mb-3">
                     Join us as we celebrate our pastor. Rev. Nathaniel Urshan will be ministering to us.
                     You do not want to miss this special evening.
                   </p>
-                  <div className="flex flex-wrap gap-4 text-xs text-slate-400">
+                  <div className="flex flex-wrap gap-4 text-xs text-stone-400">
                     <span className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       Saturday, June 27 · 7:00 PM
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
@@ -123,20 +123,20 @@ export default function EventsPage() {
             </ScrollReveal>
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-slate-400 text-sm mb-4">Have a question about an event?</p>
+          <div className="mt-14 text-center">
+            <p className="text-stone-400 text-sm mb-5">Have a question about an event?</p>
             <Link href="/prayer" className="btn-primary">Contact Us</Link>
           </div>
         </div>
       </section>
 
       {/* Calendar */}
-      <section className="py-16 bg-church-warm">
+      <section className="py-20 bg-church-warm">
         <div className="max-w-6xl mx-auto px-5">
           <ScrollReveal className="mb-10">
-            <div className="gold-bar mb-4" />
-            <h2 className="section-heading mb-1">Church Calendar</h2>
-            <p className="text-slate-500 text-sm">
+            <div className="gold-bar mb-5" />
+            <h2 className="section-heading mb-2">Church Calendar</h2>
+            <p className="text-stone-500 text-sm">
               Regular services run every week. Tap any day on mobile to see details.
             </p>
           </ScrollReveal>

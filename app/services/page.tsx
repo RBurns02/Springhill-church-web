@@ -12,18 +12,18 @@ export default function ServicesPage() {
     <>
       {/* Page header */}
       <section className="page-header">
-        <p className="eyebrow text-church-gold mb-4">Listen &amp; Be Blessed</p>
-        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">Recent Messages</h1>
-        <p className="text-white/60 text-lg max-w-lg mx-auto leading-relaxed">
+        <p className="eyebrow text-church-gold mb-5">Listen &amp; Be Blessed</p>
+        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4 tracking-tight">Recent Messages</h1>
+        <p className="text-white/50 text-lg max-w-lg mx-auto leading-relaxed">
           Can&apos;t make it in person? Catch up on recent services and sermons anytime, anywhere.
         </p>
       </section>
 
       {/* SoundCloud player */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-5">
-          <ScrollReveal className="mb-10 text-center">
-            <div className="gold-bar mx-auto mb-5" />
+          <ScrollReveal className="mb-12 text-center">
+            <div className="gold-bar mx-auto mb-6" />
             <h2 className="section-heading mb-3">Listen Online</h2>
             <p className="section-sub max-w-xl mx-auto">
               Our recent services are uploaded to SoundCloud. Press play and let the Word minister to you.
@@ -31,14 +31,14 @@ export default function ServicesPage() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+            <div className="overflow-hidden shadow-xl border border-stone-200">
               <iframe
                 width="100%"
                 height="600"
                 scrolling="no"
                 frameBorder="no"
                 allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/spcwesson&color=%23C9813A&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/spcwesson&color=%23C9A84C&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
                 title="Springhill Pentecostal Church on SoundCloud"
               />
             </div>
@@ -61,57 +61,53 @@ export default function ServicesPage() {
       </section>
 
       {/* Info strip */}
-      <section className="py-14 bg-church-warm">
-        <div className="max-w-4xl mx-auto px-5 grid md:grid-cols-3 gap-8 text-center">
+      <section className="py-20 bg-church-warm">
+        <div className="max-w-4xl mx-auto px-5 grid md:grid-cols-3 gap-10 text-center">
           <ScrollReveal delay={0}>
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-church-purple/10 flex items-center justify-center text-church-purple">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-12 h-12 border border-stone-300 flex items-center justify-center text-stone-600">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                 </svg>
               </div>
-              <h3 className="font-serif font-bold text-slate-900">Fresh Word</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">New messages uploaded regularly so you never miss a service.</p>
+              <h3 className="font-serif font-bold text-stone-900">Fresh Word</h3>
+              <p className="text-sm text-stone-500 leading-relaxed">New messages uploaded regularly so you never miss a service.</p>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={100}>
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-church-purple/10 flex items-center justify-center text-church-purple">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+          <ScrollReveal delay={80}>
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-12 h-12 border border-stone-300 flex items-center justify-center text-stone-600">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
                 </svg>
               </div>
-              <h3 className="font-serif font-bold text-slate-900">Listen Anywhere</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">Stream on your phone, tablet, or computer — at home or on the go.</p>
+              <h3 className="font-serif font-bold text-stone-900">Listen Anywhere</h3>
+              <p className="text-sm text-stone-500 leading-relaxed">Stream on your phone, tablet, or computer — at home or on the go.</p>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={200}>
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-church-purple/10 flex items-center justify-center text-church-purple">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+          <ScrollReveal delay={160}>
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-12 h-12 border border-stone-300 flex items-center justify-center text-stone-600">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                 </svg>
               </div>
-              <h3 className="font-serif font-bold text-slate-900">Spirit-Filled Teaching</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">Biblical messages rooted in the Apostolic faith, preached with fire.</p>
+              <h3 className="font-serif font-bold text-stone-900">Spirit-Filled Teaching</h3>
+              <p className="text-sm text-stone-500 leading-relaxed">Biblical messages rooted in the Apostolic faith, preached with fire.</p>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 section-dark text-center relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-church-purple/30 blur-[120px]" />
-          <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-church-gold/10 blur-[100px]" />
-        </div>
+      <section className="py-24 section-dark text-center">
         <div className="relative z-10 max-w-xl mx-auto px-5">
           <ScrollReveal>
-            <div className="gold-bar mx-auto mb-6" />
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Join Us in Person</h2>
-            <p className="text-white/60 leading-relaxed mb-8">
+            <div className="gold-bar mx-auto mb-7" />
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">Join Us in Person</h2>
+            <p className="text-white/55 leading-relaxed mb-10">
               Listening online is a great start — but there&apos;s nothing like being in the room. Come worship with us this Sunday.
             </p>
             <Link href="/prayer" className="btn-gold">Plan Your Visit</Link>

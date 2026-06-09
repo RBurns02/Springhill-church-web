@@ -35,7 +35,7 @@ const beliefs = [
     body: 'We must repent — turn away from sin and toward God. Jesus said: "Repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem." (Luke 24:47) The Lord is "not willing that any should perish, but that all should come to repentance." (2 Pet. 3:9) Repentance is a sincere change of heart and direction, turning from sin and surrendering to Christ.',
   },
   {
-    title: 'Water Baptism in Jesus’ Name',
+    title: 'Water Baptism in Jesus' Name',
     refs: 'Acts 2:38 · Acts 8:16 · Acts 10:48 · Acts 19:5',
     body: 'We must be water-baptized by immersion in the name of Jesus Christ for the remission of sins. Peter declared: "Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost." (Acts 2:38) Throughout the book of Acts, every recorded baptism was performed in the name of Jesus Christ.',
   },
@@ -71,9 +71,9 @@ export default function BeliefsPage() {
     <>
       {/* Page header */}
       <section className="page-header">
-        <p className="eyebrow text-church-gold mb-4">Our Foundation</p>
-        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">What We Believe</h1>
-        <p className="text-white/60 text-lg max-w-xl mx-auto leading-relaxed">
+        <p className="eyebrow text-church-gold mb-5">Our Foundation</p>
+        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4 tracking-tight">What We Believe</h1>
+        <p className="text-white/50 text-lg max-w-xl mx-auto leading-relaxed">
           Our faith is rooted in the Word of God and the foundational truths of
           Apostolic Pentecostal doctrine. Here is what we stand on.
         </p>
@@ -83,17 +83,17 @@ export default function BeliefsPage() {
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-5">
           <ScrollReveal>
-            <div className="gold-bar mx-auto mb-6" />
+            <div className="gold-bar mx-auto mb-8" />
             <div className="card p-8 md:p-10">
-              <p className="text-slate-700 text-base md:text-lg leading-relaxed">
+              <p className="text-stone-700 text-base md:text-lg leading-relaxed">
                 We believe that Jesus is the name of the Father, the Son, and the Holy Ghost.{' '}
-                <span className="text-slate-400 text-sm">(Mat. 28:19; John 5:43, 10:30, 12:45, 14:8–9; Phil. 2:9–11)</span>{' '}
+                <span className="text-stone-400 text-sm">(Mat. 28:19; John 5:43, 10:30, 12:45, 14:8–9; Phil. 2:9–11)</span>{' '}
                 All the fullness of the Godhead rests bodily in Jesus Christ.{' '}
-                <span className="text-slate-400 text-sm">(Col. 2:9)</span>{' '}
+                <span className="text-stone-400 text-sm">(Col. 2:9)</span>{' '}
                 We believe salvation is a free gift to all who repent of their sins, are baptized in the name of the Lord Jesus Christ, and are filled with the Holy Ghost by the evidence of speaking in other tongues as the Spirit gives the utterance.{' '}
-                <span className="text-slate-400 text-sm">(Acts 2:38, 4:12, 10:44–48; Eph. 2:8, 4:5)</span>{' '}
+                <span className="text-stone-400 text-sm">(Acts 2:38, 4:12, 10:44–48; Eph. 2:8, 4:5)</span>{' '}
                 We believe that we are chosen people, separated from the world; and that we should live a holy life both inwardly and outwardly.{' '}
-                <span className="text-slate-400 text-sm">(1 Pet. 2:9; 2 Cor. 6:17–18)</span>
+                <span className="text-stone-400 text-sm">(1 Pet. 2:9; 2 Cor. 6:17–18)</span>
               </p>
             </div>
           </ScrollReveal>
@@ -101,39 +101,39 @@ export default function BeliefsPage() {
       </section>
 
       {/* Beliefs accordion */}
-      <section className="pb-20 bg-church-warm pt-4">
+      <section className="pb-24 bg-church-warm pt-4">
         <div className="max-w-3xl mx-auto px-5">
-          <ScrollReveal className="text-center mb-10">
-            <div className="gold-bar mx-auto mb-4" />
-            <h2 className="font-serif text-3xl font-bold text-slate-900">Our Statement of Faith</h2>
+          <ScrollReveal className="text-center mb-12">
+            <div className="gold-bar mx-auto mb-5" />
+            <h2 className="font-serif text-3xl font-bold text-stone-900 tracking-tight">Our Statement of Faith</h2>
           </ScrollReveal>
 
-          <div className="space-y-3">
+          <div className="space-y-2">
             {beliefs.map((b, i) => (
-              <ScrollReveal key={b.title} delay={i * 40}>
+              <ScrollReveal key={b.title} delay={i * 35}>
                 <details className="group card overflow-visible">
                   <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer select-none list-none">
                     <div className="flex items-center gap-4">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-church-purple text-white text-xs font-bold flex items-center justify-center">
+                      <span className="flex-shrink-0 w-7 h-7 border border-stone-300 text-stone-500 text-xs font-semibold flex items-center justify-center group-open:border-church-gold group-open:text-church-gold transition-colors">
                         {i + 1}
                       </span>
                       <div>
-                        <h3 className="font-serif font-bold text-lg text-slate-900 group-open:text-church-purple transition-colors">
+                        <h3 className="font-serif font-bold text-lg text-stone-900 group-open:text-church-purple transition-colors">
                           {b.title}
                         </h3>
-                        <p className="text-xs text-slate-400 mt-0.5">{b.refs}</p>
+                        <p className="text-xs text-stone-400 mt-0.5">{b.refs}</p>
                       </div>
                     </div>
                     <svg
-                      className="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
-                      fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                      className="w-4 h-4 text-stone-400 flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
                   <div className="px-6 pb-6 pt-0">
-                    <div className="h-px bg-slate-100 mb-4" />
-                    <p className="text-slate-600 leading-relaxed text-sm">{b.body}</p>
+                    <div className="h-px bg-stone-100 mb-5" />
+                    <p className="text-stone-600 leading-relaxed text-sm">{b.body}</p>
                   </div>
                 </details>
               </ScrollReveal>
@@ -143,17 +143,17 @@ export default function BeliefsPage() {
       </section>
 
       {/* What Does It Mean To Be Pentecostal */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-5">
-          <ScrollReveal className="text-center mb-10">
-            <div className="gold-bar mx-auto mb-4" />
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-stone-900">
+          <ScrollReveal className="text-center mb-12">
+            <div className="gold-bar mx-auto mb-5" />
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-stone-900 tracking-tight">
               What Does It Mean To Be Pentecostal?
             </h2>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="bg-white rounded-2xl border border-stone-100 shadow-sm p-8 md:p-10 mb-10">
+            <div className="card p-8 md:p-10 mb-10">
               <p className="text-stone-700 leading-relaxed mb-4">
                 We call ourselves Pentecostal because we have experienced the same miraculous
                 conversion that the 120 followers experienced
@@ -169,50 +169,50 @@ export default function BeliefsPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-5">
             <ScrollReveal delay={0}>
-              <div className="card p-7 text-center">
-                <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-7 h-7 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+              <div className="card p-8 text-center group">
+                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Repentance</h3>
-                <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                <p className="text-stone-500 text-sm leading-relaxed mb-4">
                   We must repent and turn away from sin, asking Jesus to forgive us.
                 </p>
-                <p className="text-church-purple text-xs font-semibold">Luke 24:47 · 2 Peter 3:9 · Acts 2:38</p>
+                <p className="text-church-gold text-xs font-semibold tracking-wide">Luke 24:47 · 2 Peter 3:9 · Acts 2:38</p>
               </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={100}>
-              <div className="card p-7 text-center">
-                <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-7 h-7 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <ScrollReveal delay={80}>
+              <div className="card p-8 text-center group">
+                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                   </svg>
                 </div>
                 <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Baptism</h3>
-                <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                <p className="text-stone-500 text-sm leading-relaxed mb-4">
                   We must be water-baptized in the Name of Jesus Christ for the remission of our sins.
                 </p>
-                <p className="text-church-purple text-xs font-semibold">John 3:5 · Acts 2:38, 8:16, 10:48, 19:5</p>
+                <p className="text-church-gold text-xs font-semibold tracking-wide">John 3:5 · Acts 2:38, 8:16, 10:48, 19:5</p>
               </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={200}>
-              <div className="card p-7 text-center">
-                <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-7 h-7 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <ScrollReveal delay={160}>
+              <div className="card p-8 text-center group">
+                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
                   </svg>
                 </div>
                 <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Spirit Infilling</h3>
-                <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                <p className="text-stone-500 text-sm leading-relaxed mb-4">
                   We are promised the gift of His Spirit with the evidence of speaking in other tongues.
                 </p>
-                <p className="text-church-purple text-xs font-semibold">John 7:37–39 · Acts 2:4, 2:38, 8:17–18, 10:44–47</p>
+                <p className="text-church-gold text-xs font-semibold tracking-wide">John 7:37–39 · Acts 2:4, 2:38, 8:17–18, 10:44–47</p>
               </div>
             </ScrollReveal>
           </div>
@@ -220,14 +220,14 @@ export default function BeliefsPage() {
       </section>
 
       {/* Have Questions CTA */}
-      <section className="py-16 section-dark text-center">
+      <section className="py-20 section-dark text-center">
         <div className="max-w-2xl mx-auto px-5">
           <ScrollReveal>
-            <div className="gold-bar mx-auto mb-6" />
-            <h2 className="font-serif text-3xl font-bold text-white mb-4">
+            <div className="gold-bar mx-auto mb-7" />
+            <h2 className="font-serif text-3xl font-bold text-white mb-4 tracking-tight">
               Have Questions?
             </h2>
-            <p className="text-white/70 mb-8 text-lg leading-relaxed">
+            <p className="text-white/55 mb-10 text-lg leading-relaxed">
               Theology can be deep. We&apos;re here to walk through it with you — no question
               is too big or too small. Reach out and we&apos;ll be happy to talk.
             </p>

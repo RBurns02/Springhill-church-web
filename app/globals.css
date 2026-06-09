@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-white text-slate-900 font-sans antialiased;
+    @apply bg-white text-stone-900 font-sans antialiased;
   }
 
   h1, h2, h3, h4 {
@@ -18,57 +18,66 @@
 
 @layer components {
   .section-heading {
-    @apply text-3xl md:text-4xl font-serif font-bold text-slate-900 leading-tight;
+    @apply text-3xl md:text-4xl font-serif font-bold text-stone-900 leading-tight tracking-tight;
   }
 
   .section-sub {
-    @apply text-lg text-slate-600 leading-relaxed;
+    @apply text-lg text-stone-500 leading-relaxed;
   }
 
+  /* Buttons — no rounded corners, uppercase tracking */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-church-purple text-white font-semibold text-base
-           shadow-md hover:bg-church-deep active:scale-95 transition-all duration-200;
+    @apply inline-flex items-center gap-2 px-8 py-3.5 bg-church-purple text-white
+           text-xs font-semibold tracking-[0.14em] uppercase
+           transition-all duration-300 hover:bg-church-deep active:scale-[0.98];
   }
 
   .btn-gold {
-    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-church-gold text-white font-semibold text-base
-           shadow-md hover:bg-amber-700 active:scale-95 transition-all duration-200;
+    @apply inline-flex items-center gap-2 px-8 py-3.5 bg-church-gold text-white
+           text-xs font-semibold tracking-[0.14em] uppercase
+           transition-all duration-300 hover:brightness-110 active:scale-[0.98];
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-white text-white font-semibold text-base
-           hover:bg-white hover:text-church-purple active:scale-95 transition-all duration-200;
+    @apply inline-flex items-center gap-2 px-8 py-3.5 border border-white text-white
+           text-xs font-semibold tracking-[0.14em] uppercase
+           transition-all duration-300 hover:bg-white hover:text-church-purple active:scale-[0.98];
   }
 
   .btn-outline-green {
-    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-church-purple text-church-purple font-semibold text-base
-           hover:bg-church-purple hover:text-white active:scale-95 transition-all duration-200;
+    @apply inline-flex items-center gap-2 px-8 py-3.5 border border-church-purple text-church-purple
+           text-xs font-semibold tracking-[0.14em] uppercase
+           transition-all duration-300 hover:bg-church-purple hover:text-white active:scale-[0.98];
   }
 
+  /* Cards — subtle border, minimal radius */
   .card {
-    @apply bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.05);
+    @apply bg-white rounded-lg overflow-hidden transition-all duration-300;
+    border: 1px solid #E7E5E4;
   }
 
   .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.09), 0 2px 6px rgba(0,0,0,0.04);
+    transform: translateY(-2px);
+    border-color: rgba(201,168,76,0.35);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.07);
   }
 
   .section-dark {
     @apply bg-church-dark text-white;
   }
 
+  /* Gold bar — thin elegant line */
   .gold-bar {
-    @apply h-[3px] w-12 rounded-full bg-church-gold;
+    @apply h-px w-16 bg-church-gold;
   }
 
   .page-header {
-    @apply bg-hero-gradient py-24 text-white text-center;
+    @apply bg-church-dark py-28 text-white text-center;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
   }
 
   .eyebrow {
-    @apply text-xs font-bold tracking-[0.2em] uppercase;
+    @apply text-xs font-semibold tracking-[0.22em] uppercase;
   }
 
   /* Scroll-reveal */
@@ -98,19 +107,7 @@
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-12px); }
-}
-
-@keyframes drift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(40px, -30px) scale(1.06); }
-  66%       { transform: translate(-20px, 20px) scale(0.96); }
-}
-
-@keyframes drift2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  40%       { transform: translate(-35px, 25px) scale(1.08); }
-  75%       { transform: translate(25px, -15px) scale(0.94); }
+  50%       { transform: translateY(-10px); }
 }
 
 @keyframes shimmer {
@@ -132,21 +129,13 @@
   animation: float 5s ease-in-out infinite;
 }
 
-.animate-drift {
-  animation: drift 20s ease-in-out infinite;
-}
-
-.animate-drift2 {
-  animation: drift2 26s ease-in-out infinite;
-}
-
 .text-shimmer {
-  background: linear-gradient(90deg, #C9813A 0%, #f0b86e 40%, #C9813A 60%, #f0b86e 100%);
+  background: linear-gradient(90deg, #C9A84C 0%, #f0d98a 40%, #C9A84C 60%, #f0d98a 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer 3s linear infinite;
+  animation: shimmer 4s linear infinite;
 }
 
 /* ── Slider progress bar ─────────────────────────────────────────────────── */

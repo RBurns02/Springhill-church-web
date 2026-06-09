@@ -28,25 +28,25 @@ export default function PrayerPage() {
     <>
       {/* Page header */}
       <section className="page-header">
-        <p className="eyebrow text-church-gold mb-4">We&apos;re Here For You</p>
-        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">Prayer Changes Things</h1>
-        <p className="text-white/60 text-lg max-w-xl mx-auto leading-relaxed">
+        <p className="eyebrow text-church-gold mb-5">We&apos;re Here For You</p>
+        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4 tracking-tight">Prayer Changes Things</h1>
+        <p className="text-white/50 text-lg max-w-xl mx-auto leading-relaxed">
           No matter what you&apos;re facing, we would be honored to pray with you.
           Submit a request below — our prayer team reads every one.
         </p>
       </section>
 
       {/* Prayer form + contact */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-14">
+      <section className="py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-16">
 
           {/* Form */}
           <ScrollReveal>
-            <div className="gold-bar mb-5" />
-            <h2 className="font-serif text-3xl font-bold text-slate-900 mb-2">
+            <div className="gold-bar mb-6" />
+            <h2 className="font-serif text-3xl font-bold text-stone-900 mb-2 tracking-tight">
               Send a Prayer Request
             </h2>
-            <p className="text-slate-500 mb-7 leading-relaxed">
+            <p className="text-stone-500 mb-8 leading-relaxed">
               Share what&apos;s on your heart. We will pray over every request with faith
               and sincerity.
             </p>
@@ -63,39 +63,39 @@ export default function PrayerPage() {
               className="space-y-5"
             >
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-1.5">
-                  Your Name <span className="text-slate-400 font-normal">(optional)</span>
+                <label htmlFor="name" className="block text-xs font-semibold tracking-[0.12em] uppercase text-stone-600 mb-2">
+                  Your Name <span className="text-stone-400 normal-case tracking-normal">(optional)</span>
                 </label>
                 <input
                   id="name" name="name" type="text" placeholder="John Smith"
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
+                  className="w-full border border-stone-200 bg-white px-4 py-3 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-church-gold focus:border-church-gold transition text-sm"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-1.5">
-                  Email Address <span className="text-slate-400 font-normal">(optional — if you&apos;d like a reply)</span>
+                <label htmlFor="email" className="block text-xs font-semibold tracking-[0.12em] uppercase text-stone-600 mb-2">
+                  Email Address <span className="text-stone-400 normal-case tracking-normal">(optional — if you&apos;d like a reply)</span>
                 </label>
                 <input
                   id="email" name="email" type="email" placeholder="john@example.com"
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition"
+                  className="w-full border border-stone-200 bg-white px-4 py-3 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-church-gold focus:border-church-gold transition text-sm"
                 />
               </div>
 
               <div>
-                <label htmlFor="request" className="block text-sm font-semibold text-slate-700 mb-1.5">
+                <label htmlFor="request" className="block text-xs font-semibold tracking-[0.12em] uppercase text-stone-600 mb-2">
                   Prayer Request
                 </label>
                 <textarea
                   id="request" name="request" required rows={6}
                   placeholder="Share your prayer request here…"
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-church-purple/40 focus:border-church-purple transition resize-none"
+                  className="w-full border border-stone-200 bg-white px-4 py-3 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-church-gold focus:border-church-gold transition resize-none text-sm"
                 />
               </div>
 
               <div className="flex items-start gap-3">
-                <input id="private" name="private" type="checkbox" className="mt-1 w-4 h-4 accent-church-purple" />
-                <label htmlFor="private" className="text-sm text-slate-600 leading-relaxed">
+                <input id="private" name="private" type="checkbox" className="mt-1 w-4 h-4 accent-church-gold" />
+                <label htmlFor="private" className="text-sm text-stone-600 leading-relaxed">
                   Keep my prayer request private (shared only with our prayer team)
                 </label>
               </div>
@@ -104,18 +104,18 @@ export default function PrayerPage() {
                 Submit Prayer Request
               </button>
 
-              <p className="text-xs text-slate-400 text-center">
+              <p className="text-xs text-stone-400 text-center">
                 We respect your privacy. Your information will never be shared or sold.
               </p>
             </form>
           </ScrollReveal>
 
-          {/* Sidebar — contact + info */}
-          <div className="space-y-6">
+          {/* Sidebar */}
+          <div className="space-y-5">
             <ScrollReveal delay={100}>
               <div className="card p-7">
-                <h3 className="font-serif font-bold text-xl text-slate-900 mb-5">Need Someone to Talk To?</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-5">
+                <h3 className="font-serif font-bold text-xl text-stone-900 mb-5">Need Someone to Talk To?</h3>
+                <p className="text-stone-500 text-sm leading-relaxed mb-6">
                   Sometimes you need more than a form. Our team is here to listen, encourage,
                   and pray with you personally. Don&apos;t hesitate to reach out.
                 </p>
@@ -141,17 +141,17 @@ export default function PrayerPage() {
                     },
                   ].map((item) => (
                     <li key={item.label} className="flex items-start gap-3">
-                      <div className="w-9 h-9 rounded-full bg-church-purple/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-4 h-4 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <div className="w-8 h-8 border border-stone-200 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-4 h-4 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           {item.icon}
                         </svg>
                       </div>
                       <div>
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5">{item.label}</p>
+                        <p className="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-0.5">{item.label}</p>
                         {item.href ? (
-                          <a href={item.href} className="text-slate-700 text-sm hover:text-church-purple transition-colors break-all whitespace-pre-line">{item.value}</a>
+                          <a href={item.href} className="text-stone-700 text-sm hover:text-church-gold transition-colors break-all whitespace-pre-line">{item.value}</a>
                         ) : (
-                          <p className="text-slate-700 text-sm whitespace-pre-line">{item.value}</p>
+                          <p className="text-stone-700 text-sm whitespace-pre-line">{item.value}</p>
                         )}
                       </div>
                     </li>
@@ -162,7 +162,7 @@ export default function PrayerPage() {
 
             {/* Map */}
             <ScrollReveal delay={150}>
-              <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm" style={{ height: '220px' }}>
+              <div className="overflow-hidden border border-stone-200" style={{ height: '220px' }}>
                 <iframe
                   width="100%"
                   height="100%"
@@ -177,11 +177,11 @@ export default function PrayerPage() {
             {/* Service times */}
             <ScrollReveal delay={200}>
               <div className="card p-7">
-                <h3 className="font-serif font-bold text-xl text-slate-900 mb-1">Join Us in Person</h3>
-                <p className="text-xs text-church-gold font-semibold mb-5">
+                <h3 className="font-serif font-bold text-xl text-stone-900 mb-1">Join Us in Person</h3>
+                <p className="text-xs text-church-gold font-semibold mb-5 tracking-wide">
                   1st Sunday of every month — Friends &amp; Family Service at 2:00 PM
                 </p>
-                <ul className="divide-y divide-slate-100">
+                <ul className="divide-y divide-stone-100">
                   {[
                     { label: 'Sunday Morning Service',   day: 'Sunday',    time: '10:00 AM' },
                     { label: 'Sunday Evening Service',   day: 'Sunday',    time: '6:00 PM'  },
@@ -190,10 +190,10 @@ export default function PrayerPage() {
                   ].map((s) => (
                     <li key={s.label} className="py-3 flex items-center justify-between">
                       <div>
-                        <p className="font-semibold text-slate-800 text-sm">{s.label}</p>
-                        <p className="text-slate-400 text-xs">{s.day}</p>
+                        <p className="font-semibold text-stone-800 text-sm">{s.label}</p>
+                        <p className="text-stone-400 text-xs">{s.day}</p>
                       </div>
-                      <span className="text-church-purple font-bold text-sm">{s.time}</span>
+                      <span className="text-church-gold font-bold text-sm">{s.time}</span>
                     </li>
                   ))}
                 </ul>
@@ -204,24 +204,24 @@ export default function PrayerPage() {
       </section>
 
       {/* Scripture cards */}
-      <section className="py-20 section-dark">
+      <section className="py-24 section-dark">
         <div className="max-w-5xl mx-auto px-5">
-          <ScrollReveal className="text-center mb-12">
-            <div className="gold-bar mx-auto mb-5" />
-            <h2 className="font-serif text-3xl font-bold text-white mb-3">
+          <ScrollReveal className="text-center mb-14">
+            <div className="gold-bar mx-auto mb-6" />
+            <h2 className="font-serif text-3xl font-bold text-white mb-3 tracking-tight">
               What the Bible Says About Prayer
             </h2>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-5">
             {scriptures.map((v, i) => (
-              <ScrollReveal key={v.ref} delay={i * 120}>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-7 text-center hover:bg-white/10 transition-colors">
-                  <svg className="w-8 h-8 text-church-gold mx-auto mb-5 opacity-70" fill="currentColor" viewBox="0 0 24 24">
+              <ScrollReveal key={v.ref} delay={i * 100}>
+                <div className="border border-white/10 p-8 text-center hover:border-church-gold/30 transition-colors">
+                  <svg className="w-7 h-7 text-church-gold mx-auto mb-6 opacity-60" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
-                  <p className="text-white/80 text-sm leading-relaxed italic mb-5">{v.text}</p>
-                  <p className="text-church-gold text-sm font-bold">{v.ref}</p>
+                  <p className="text-white/65 text-sm leading-relaxed italic mb-6">{v.text}</p>
+                  <p className="text-church-gold text-xs font-semibold tracking-[0.15em] uppercase">{v.ref}</p>
                 </div>
               </ScrollReveal>
             ))}

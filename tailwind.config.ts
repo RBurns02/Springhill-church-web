@@ -9,12 +9,12 @@ const config: Config = {
     extend: {
       colors: {
         church: {
-          purple: '#2D3748',   // deep slate (primary)
-          deep:   '#1A202C',   // very dark slate
-          gold:   '#C9813A',   // warm gold
-          cream:  '#FAFAFA',   // near-white
-          warm:   '#F4F4F5',   // light gray
-          dark:   '#18181B',   // charcoal
+          purple: '#1C1917',   // charcoal — primary dark
+          deep:   '#0C0A09',   // near-black — hover state
+          gold:   '#C9A84C',   // refined classic gold
+          cream:  '#FAFAF8',   // near-white
+          warm:   '#F0EEE9',   // warm stone section bg
+          dark:   '#1C1917',   // charcoal — dark sections
         },
       },
       fontFamily: {
@@ -23,8 +23,8 @@ const config: Config = {
         script: ['var(--font-script)', 'cursive'],
       },
       backgroundImage: {
-        'hero-gradient':  'linear-gradient(to bottom right, #0D1117 0%, #1A202C 55%, #2D3748 100%)',
-        'gold-gradient':  'linear-gradient(135deg, #D97706 0%, #C9813A 100%)',
+        'hero-gradient':  'linear-gradient(to bottom, #1C1917 0%, #292524 100%)',
+        'gold-gradient':  'linear-gradient(135deg, #D4AF37 0%, #C9A84C 100%)',
       },
     },
   },
