@@ -11,47 +11,47 @@ const beliefs = [
   {
     icon: '📖',
     title: 'The Bible',
-    body: 'We believe the entire Bible is the inspired, infallible Word of God — our final authority in all matters of faith and conduct. Both the Old and New Testaments are God-breathed and profitable for doctrine, correction, and instruction in righteousness (2 Timothy 3:16–17).',
+    body: 'The Bible is divinely inspired and God-breathed (pneuma). It is true in all that it teaches. As the infallible Word of God, it is our primary authority for what we believe and teach, and how we live our lives. (2 Tim 3:15-17)',
   },
   {
     icon: '🕊️',
-    title: 'One God',
-    body: 'We believe in one God — eternally existent, the Creator of heaven and earth. He is Father, Son, and Holy Spirit: three distinct persons yet one divine Being, as revealed in Scripture and especially in the New Testament (Deuteronomy 6:4; Matthew 28:19).',
+    title: 'The Oneness of God',
+    body: 'We strictly adhere to the Scriptural teaching of the Oneness of God found in Deuteronomy 6:4 "Hear, O Israel: The LORD our God is one LORD." The New Testament agrees with the Old Testament. The Apostle Paul wrote: "One Lord, one faith, one baptism, One God and Father of all, who is above all, and through all, and in you all." (Isa. 44:6-8, 45:5; Col. 2:9; Eph. 4:5–6)',
   },
   {
     icon: '✝️',
-    title: 'The Lord Jesus Christ',
-    body: 'We believe that Jesus Christ is the Son of God, fully divine and fully human. Born of a virgin, He lived a sinless life, died on the cross as the perfect sacrifice for our sins, rose bodily from the dead on the third day, and ascended to the Father where He now intercedes for us (John 3:16; 1 Corinthians 15:3–4).',
+    title: 'Sin and Salvation',
+    body: 'Everyone has sinned and is in need of salvation. Salvation comes by grace through faith based on the atoning sacrifice of Jesus Christ (Psa. 51:5; Rom. 3:23-25; 6:23; Eph. 2:8-9).',
   },
   {
     icon: '🔥',
-    title: 'Salvation',
-    body: 'We believe salvation comes by grace alone through faith alone in Jesus Christ. It includes repentance from sin, confession of faith in Christ, water baptism by immersion in the name of Jesus Christ, and the infilling of the Holy Spirit. Salvation is a free gift — not earned by works (Ephesians 2:8–9; Acts 2:38).',
-  },
-  {
-    icon: '💨',
-    title: 'The Holy Spirit',
-    body: 'We believe in the baptism of the Holy Spirit as a distinct gift available to every believer, with the initial evidence of speaking in other tongues as the Spirit gives utterance. We also affirm the ongoing gifts of the Spirit operating in the Church today, including prophecy, healing, and tongues (Acts 1:8; Acts 2:4; 1 Corinthians 12).',
-  },
-  {
-    icon: '💧',
-    title: 'Water Baptism',
-    body: 'We practice baptism by full immersion in water as an outward declaration of an inward work of grace. Baptism is a public declaration of death to the old self and resurrection to new life in Christ (Romans 6:3–4).',
-  },
-  {
-    icon: '🍞',
-    title: 'The Lord\'s Supper',
-    body: 'We observe the Lord\'s Supper — communion — as a memorial of Christ\'s sacrifice, proclaiming His death until He returns. It is a time of reflection, gratitude, and renewed commitment (1 Corinthians 11:23–26).',
+    title: 'The Gospel',
+    body: 'The Gospel is the good news that Jesus died for our sins on the cross, was buried in the tomb, and rose again on the third day. We express our belief in the gospel through our obedience. We obey the gospel and apply it to our lives by repenting of our sins (death to sin), being baptized in water in the name of Jesus Christ for the removal of our sins (burial), and receiving the gift of the Holy Ghost (resurrection). This threefold experience is the consistent pattern of conversion in the early church (1 Cor. 15:1-4; 2 Thes. 1:8; 1 Pet. 4:17; Mark 1:15; Acts 15:7; Rom. 6:3-4; Acts 2:4, 37-39; 8:9-17; 10:1-48; 19:1-7).',
   },
   {
     icon: '🙌',
-    title: 'Divine Healing',
-    body: 'We believe in divine healing for the physical body through the atonement of Christ. We pray for the sick and expect God to heal, whether miraculously or through medicine, according to His perfect will (James 5:14–15; Isaiah 53:5).',
+    title: 'Christian Living',
+    body: 'As Christians we are to love God and love others. We are to worship God joyfully and seek to live a life that is pleasing to Him both inwardly and outwardly—in our thoughts, words, lifestyle, and actions. The Scripture describes our bodies as the temples (or dwelling places) of the Holy Ghost. We are empowered to live a life pleasing to God through the Holy Ghost. We believe that the supernatural gifts of the Spirit are for the church today and are available to all Spirit-filled believers. (Mark 12:28-31; 1 Cor. 6:19, 12:8-10; 2 Cor. 7:1; Rom. 8:13-14; Gal. 5:19-26; Heb. 12:14)',
+  },
+  {
+    icon: '🩹',
+    title: 'Healing',
+    body: 'We believe that healing is available today. As the ancient prophet Isaiah prophesied, our Savior received the stripes on His back for our healing. We believe that divine healing is available to every believer by the laying on of hands and the prayer of faith. The Scripture declares: "And the prayer of faith shall save the sick, and the Lord shall raise him up; and if he have committed sins, they shall be forgiven him." (James 5:15) In every service, there is an opportunity for those who are ill to come forward and be anointed with oil and prayed over by our pastoral team. Prayer cloths are available also. (Psalm 103:2-3; Isaiah 53:5; Matthew 8:16-17; Mark 16:17-18; Acts 8:6-7; James 5:14-16; Acts 19:11–12; 1 Corinthians 12:9, 28)',
+  },
+  {
+    icon: '☁️',
+    title: 'Heaven',
+    body: 'We believe that a person\'s eternal destination is determined by their response to the Lord Jesus Christ. Heaven is a literal place reserved for those who have obeyed the Gospel message and are living a holy life. (Matt. 5:3, 12, 20; 6:20, 19:21, 25:34; John 14:1–3, 17:24; 2 Cor. 5:1; Heb. 11:16; 1 Peter 1:4; Heb. 9:27; Rev. 19:20)',
+  },
+  {
+    icon: '⚠️',
+    title: 'Hell',
+    body: 'Scripture describes Hell as "everlasting fire," "torment," "wrath," and "lake of fire." We believe Hell is a literal place of eternal separation from God. (Mat. 25:41; Mark 9:43-48; Heb. 9:27; Rev. 14:9-11, 20:12-15, 21:8)',
   },
   {
     icon: '⭐',
-    title: 'The Second Coming',
-    body: 'We believe in the literal, bodily return of Jesus Christ. He will come again to gather His Church, raise the dead, judge the living and the dead, and establish His eternal kingdom. This blessed hope is a comfort to every believer (1 Thessalonians 4:16–17; Revelation 22:12).',
+    title: 'The Future',
+    body: 'The angels declared to the disciples that the same Jesus that ascended to Heaven is the same one who will come back to earth. We believe that Jesus Christ is coming again to catch away His church (the Rapture or Second Coming of Jesus Christ). We believe that the "dead in Christ" will be resurrected first, and then those who are alive will be caught away. The righteous will inherit eternal life, and the unrighteous will be punished with eternal death. (Acts 1:11; 1 Thes. 4:16-17; Rev. 20:11-15)',
   },
 ];
 
@@ -65,20 +65,27 @@ export default function BeliefsPage() {
         </p>
         <h1 className="font-serif text-5xl font-bold mb-4">What We Believe</h1>
         <p className="text-white/70 text-lg max-w-xl mx-auto leading-relaxed">
-          Our faith is rooted in the Word of God and the foundational truths of the
-          Pentecostal tradition. Here is what we stand on.
+          Our faith is rooted in the Word of God and the foundational truths of
+          Apostolic Pentecostal doctrine. Here is what we stand on.
         </p>
       </section>
 
-      {/* Intro */}
+      {/* Core statement */}
       <section className="py-14 bg-church-cream">
-        <div className="max-w-2xl mx-auto px-5 text-center">
+        <div className="max-w-3xl mx-auto px-5">
           <div className="gold-bar mx-auto mb-6" />
-          <p className="text-stone-600 text-lg leading-relaxed">
-            These are not merely doctrines on paper — they are the living convictions
-            that shape every sermon preached, every prayer prayed, and every life
-            transformed at Springhill Pentecostal Church.
-          </p>
+          <div className="bg-white rounded-2xl border border-stone-100 shadow-sm p-8 md:p-10">
+            <p className="text-stone-700 text-base md:text-lg leading-relaxed">
+              We believe that Jesus is the name of the Father, the Son, and the Holy Ghost.{' '}
+              <span className="text-stone-400 text-sm">(Mat. 28:19; John 5:43, 10:30, 12:45, 14:8–9; Phil. 2:9-11)</span>{' '}
+              All the fullness of the godhead rests bodily in Jesus Christ.{' '}
+              <span className="text-stone-400 text-sm">(Col. 2:9)</span>{' '}
+              We believe salvation is a free gift to all who repent of their sins, are baptized in the name of the Lord Jesus Christ, and are filled with the Holy Ghost by the evidence of speaking in other tongues as the Spirit gives the utterance.{' '}
+              <span className="text-stone-400 text-sm">(Acts 2:38, 4:12, 10:44–48; Eph. 2:8, 4:5)</span>{' '}
+              We believe that we are chosen people, separated from the world; and that we should live a holy life both inwardly and outwardly.{' '}
+              <span className="text-stone-400 text-sm">(1 Pet. 2:9; 2 Cor. 6:17-18)</span>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -103,10 +110,10 @@ export default function BeliefsPage() {
       <section className="py-16 section-dark text-center">
         <div className="max-w-2xl mx-auto px-5">
           <h2 className="font-serif text-3xl font-bold text-white mb-4">
-            Questions? We'd Love to Talk.
+            Questions? We&apos;d Love to Talk.
           </h2>
           <p className="text-white/70 mb-8 text-lg leading-relaxed">
-            Theology can be deep. We\'re here to walk through it with you — no question
+            Theology can be deep. We&apos;re here to walk through it with you — no question
             is too big or too small.
           </p>
           <Link href="/prayer" className="btn-gold">

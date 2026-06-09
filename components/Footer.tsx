@@ -49,13 +49,8 @@ export default function Footer() {
             Find Us
           </p>
           <address className="not-italic text-sm text-stone-400 space-y-2 leading-relaxed">
-            {/* Replace with your full address */}
-            <p>Wesson, MS</p>
-            <p>
-              <a href="tel:+1234567890" className="hover:text-white transition-colors">
-                (123) 456-7890
-              </a>
-            </p>
+            <p className="text-stone-300 font-medium">Pastor Tommy Lee</p>
+            <p>1090 Springhill Road<br />Wesson, MS 39191</p>
             <p>
               <a href="mailto:info@springhillpentecostal.com" className="hover:text-white transition-colors">
                 info@springhillpentecostal.com
