@@ -63,9 +63,10 @@ export default function HomePage() {
           <div className="animate-fade-in mb-10" style={{ animationDelay: '0.1s' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-gold.png"
+              src="/logo-transparent.png"
               alt="Springhill Pentecostal Church"
-              className="h-28 md:h-36 w-auto mx-auto object-contain mix-blend-screen"
+              className="h-28 md:h-36 w-auto mx-auto object-contain"
+              style={{ filter: 'invert(1) brightness(1.1)' }}
             />
           </div>
 

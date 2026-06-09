@@ -24,7 +24,7 @@ export default function Nav() {
         <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.png"
+            src="/logo-transparent.png"
             alt="Springhill Pentecostal Church"
             className="h-12 w-auto object-contain"
           />

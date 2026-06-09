@@ -7,7 +7,7 @@ export default function Footer() {
       {/* ── Social icons — centered top bar ── */}
       <div className="border-b border-white/10 py-8 flex flex-col items-center gap-4">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo-gold.png" alt="Springhill Pentecostal Church" className="h-16 w-auto object-contain mix-blend-screen" />
+        <img src="/logo-transparent.png" alt="Springhill Pentecostal Church" className="h-16 w-auto object-contain" style={{ filter: 'invert(1) brightness(1.1)' }} />
         <div className="flex items-center gap-6">
 
           {/* Facebook */}
