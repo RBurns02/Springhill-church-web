@@ -256,14 +256,13 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
           <ScrollReveal delay={150}>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-slate-200 to-slate-300 aspect-[3/4] flex items-center justify-center">
-              <div className="text-center text-slate-400 p-8">
-                <svg className="w-16 h-16 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                </svg>
-                <p className="text-sm font-medium">Pastor Photo</p>
-                <p className="text-xs mt-1 opacity-60">Upload pastor.jpg to /public</p>
-              </div>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[3/4]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/pastor.png"
+                alt="Pastor Tommy Lee and wife"
+                className="w-full h-full object-cover object-top"
+              />
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-church-gold" />
             </div>
           </ScrollReveal>
@@ -271,7 +270,7 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="gold-bar mb-5" />
             <p className="eyebrow text-church-purple mb-3">Our Pastor</p>
-            <h2 className="font-serif text-4xl font-bold text-slate-900 mb-5">Pastor Tommy Lee</h2>
+            <h2 className="font-serif text-4xl font-bold text-slate-900 mb-5">Pastor &amp; Sister Lee</h2>
             <p className="text-slate-600 leading-relaxed mb-4">
               With a shepherd&apos;s heart and a passion for the Word of God, Pastor Tommy Lee
               has dedicated his life to serving this community. His ministry is marked
@@ -279,7 +278,7 @@ export default function HomePage() {
               local church.
             </p>
             <p className="text-slate-600 leading-relaxed mb-8">
-              Pastor Lee and his family call Wesson, Mississippi home, and they are
+              Together, Pastor and Sister Lee call Wesson, Mississippi home, and they are
               committed to seeing Springhill Pentecostal Church be a beacon of hope and
               transformation in this community.
             </p>
