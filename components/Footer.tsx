@@ -1,11 +1,12 @@
 import Link from 'next/link';
 
 const navLinks = [
-  { href: '/',        label: 'Home'            },
-  { href: '/events',  label: 'Events'          },
-  { href: '/beliefs', label: 'What We Believe' },
-  { href: '/give',    label: 'Give'            },
-  { href: '/prayer',  label: 'Contact'         },
+  { href: '/',          label: 'Home'            },
+  { href: '/events',    label: 'Events'          },
+  { href: '/services',  label: 'Services'        },
+  { href: '/beliefs',   label: 'What We Believe' },
+  { href: '/give',      label: 'Give'            },
+  { href: '/prayer',    label: 'Contact'         },
 ];
 
 export default function Footer() {
