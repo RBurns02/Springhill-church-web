@@ -156,7 +156,7 @@ export default function BeliefsPage() {
             <div className="bg-white rounded-2xl border border-stone-100 shadow-sm p-8 md:p-10 mb-10">
               <p className="text-stone-700 leading-relaxed mb-4">
                 We call ourselves Pentecostal because we have experienced the same miraculous
-                conversion that the 120 followers — which included the mother of Jesus — experienced
+                conversion that the 120 followers experienced
                 in the second chapter of Acts.
               </p>
               <p className="text-stone-700 leading-relaxed">
