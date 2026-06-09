@@ -145,6 +145,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── PASTOR & FIRST LADY ──────────────────────────────────────────────── */}
+      <section className="py-20 bg-church-warm">
+        <div className="max-w-5xl mx-auto px-5">
+          {/* Section title */}
+          <div className="text-center mb-12">
+            <div className="gold-bar mx-auto mb-4" />
+            <h2 className="font-serif text-4xl font-bold text-stone-900">Pastor &amp; First Lady</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Photo */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-64 h-64 rounded-full overflow-hidden shadow-xl bg-gradient-to-br from-church-purple/20 to-church-deep/30 flex items-center justify-center border-4 border-white">
+                {/*
+                  Add the pastor photo:
+                  1. Save the photo as /public/pastor.jpg
+                  2. Replace this div with:
+                     <Image src="/pastor.jpg" width={256} height={256} className="object-cover w-full h-full" alt="Pastor Tommy & Lori Lee" />
+                */}
+                <div className="text-center text-white/40 px-4">
+                  <svg className="w-14 h-14 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  <p className="text-xs">Add photo at<br />/public/pastor.jpg</p>
+                </div>
+              </div>
+              <p className="font-serif text-2xl font-bold text-stone-800">Tommy &amp; Lori Lee</p>
+            </div>
+
+            {/* Message */}
+            <div>
+              <p className="font-serif text-2xl text-church-gold mb-5 italic">A message from Pastor</p>
+              <div className="space-y-4 text-stone-700 leading-relaxed">
+                <p>
+                  Welcome to Springhill Pentecostal Church. Whether you are searching for a
+                  new church home or exploring Apostolic faith for the first time, you are
+                  welcome here! We believe that church is more than just a building; it&apos;s a
+                  family where we grow together, support, and love one another.
+                </p>
+                <p>
+                  We strive to grow a congregation of spiritually mature, visionary people
+                  that embodies the principles and actions of the book of Acts church.
+                </p>
+                <p>
+                  If you&apos;re looking for a place to connect, belong and worship, you&apos;ve found
+                  it! We would love for you to join us!
+                </p>
+                <p className="font-semibold text-stone-900 pt-1">— Pastor Tommy Lee</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── SCRIPTURE CALLOUT ────────────────────────────────────────────────── */}
       <section className="py-16 section-dark">
         <div className="max-w-3xl mx-auto px-5 text-center">
