@@ -45,9 +45,8 @@ const expectations = [
 ];
 
 const upcomingEvents = [
-  { date: 'JUN 15', title: 'Youth Night',          time: '6:30 PM',  location: 'Main Sanctuary', category: 'Youth'     },
-  { date: 'JUN 22', title: 'Community Cookout',     time: '12:00 PM', location: 'Church Grounds', category: 'Community' },
-  { date: 'JUL 4',  title: 'Prayer & Praise Night', time: '7:00 PM',  location: 'Main Sanctuary', category: 'Worship'   },
+  { date: 'JUN 19', title: 'BLAST — Kids Church',                   time: '7:00 PM', location: 'Springhill Pentecostal Church', category: 'Kids'            },
+  { date: 'JUN 27', title: '2nd Annual Pastoral Anniversary Service', time: '7:00 PM', location: 'Springhill Pentecostal Church', category: 'Special Service' },
 ];
 
 export default function HomePage() {
@@ -221,7 +220,7 @@ export default function HomePage() {
             <Link href="/events" className="btn-outline-green shrink-0">View All Events</Link>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto w-full">
             {upcomingEvents.map((evt, i) => (
               <ScrollReveal key={evt.title} delay={i * 100}>
                 <div className="card overflow-hidden group">
