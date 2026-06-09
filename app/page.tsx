@@ -270,18 +270,22 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="gold-bar mb-5" />
             <p className="eyebrow text-church-purple mb-3">Our Pastor</p>
-            <h2 className="font-serif text-4xl font-bold text-slate-900 mb-5">Pastor &amp; Sister Lee</h2>
+            <h2 className="font-serif text-4xl font-bold text-slate-900 mb-6">Pastor &amp; Sister Lee</h2>
             <p className="text-slate-600 leading-relaxed mb-4">
-              With a shepherd&apos;s heart and a passion for the Word of God, Pastor Tommy Lee
-              has dedicated his life to serving this community. His ministry is marked
-              by Spirit-led preaching, compassion for the lost, and a deep love for the
-              local church.
+              Welcome to Springhill Pentecostal Church. Whether you are searching for a
+              new church home or exploring Apostolic faith for the first time, you are
+              welcome here! We believe that church is more than just a building; it&apos;s a
+              family where we grow together, support, and love one another.
             </p>
-            <p className="text-slate-600 leading-relaxed mb-8">
-              Together, Pastor and Sister Lee call Wesson, Mississippi home, and they are
-              committed to seeing Springhill Pentecostal Church be a beacon of hope and
-              transformation in this community.
+            <p className="text-slate-600 leading-relaxed mb-4">
+              We strive to grow a congregation of spiritually mature, visionary people
+              that embodies the principles and actions of the book of Acts church.
             </p>
+            <p className="text-slate-600 leading-relaxed mb-2">
+              If you&apos;re looking for a place to connect, belong and worship, you&apos;ve found
+              it! We would love for you to join us!
+            </p>
+            <p className="text-church-purple font-semibold mb-8">— Pastor Tommy Lee</p>
             <Link href="/prayer" className="btn-primary">Connect With Us</Link>
           </ScrollReveal>
         </div>
