@@ -33,6 +33,32 @@ export default function EventsPage() {
               <div className="card flex flex-col sm:flex-row">
                 <div className="flex-shrink-0 w-full sm:w-20 bg-church-purple/[0.05] flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-slate-100">
                   <p className="text-church-purple text-[10px] font-bold tracking-widest uppercase">JUN</p>
+                  <p className="font-serif text-4xl sm:text-3xl font-bold text-slate-900 leading-none">13</p>
+                </div>
+                <div className="p-6 flex-1">
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <h2 className="text-lg font-bold text-slate-900">Men&apos;s Camping Trip</h2>
+                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-700">Men&apos;s Ministry</span>
+                  </div>
+                  <p className="text-slate-500 text-sm leading-relaxed mb-3">
+                    Men, come out for a time of fellowship, worship, and the outdoors. Details shared at church.
+                  </p>
+                  <div className="flex flex-wrap gap-4 text-xs text-slate-400">
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Saturday, June 13 · All Day
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={40}>
+              <div className="card flex flex-col sm:flex-row">
+                <div className="flex-shrink-0 w-full sm:w-20 bg-church-purple/[0.05] flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-slate-100">
+                  <p className="text-church-purple text-[10px] font-bold tracking-widest uppercase">JUN</p>
                   <p className="font-serif text-4xl sm:text-3xl font-bold text-slate-900 leading-none">19</p>
                 </div>
                 <div className="p-6 flex-1">

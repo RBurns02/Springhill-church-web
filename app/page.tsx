@@ -46,7 +46,8 @@ const expectations = [
 ];
 
 const upcomingEvents = [
-  { date: 'JUN 19', title: 'BLAST — Kids Church',                   time: '7:00 PM', location: 'Springhill Pentecostal Church', category: 'Kids'            },
+  { date: 'JUN 13', title: "Men's Camping Trip",                     time: 'All Day',  location: '',                             category: "Men's Ministry"  },
+  { date: 'JUN 19', title: 'BLAST — Kids Church',                    time: '7:00 PM', location: 'Springhill Pentecostal Church', category: 'Kids'            },
   { date: 'JUN 27', title: '2nd Annual Pastoral Anniversary Service', time: '7:00 PM', location: 'Springhill Pentecostal Church', category: 'Special Service' },
 ];
 
@@ -221,7 +222,7 @@ export default function HomePage() {
             <Link href="/events" className="btn-outline-green shrink-0">View All Events</Link>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto w-full">
+          <div className="grid md:grid-cols-3 gap-6">
             {upcomingEvents.map((evt, i) => (
               <ScrollReveal key={evt.title} delay={i * 100}>
                 <div className="card overflow-hidden group">
@@ -237,13 +238,15 @@ export default function HomePage() {
                         </svg>
                         {evt.time}
                       </span>
-                      <span className="flex items-center gap-2">
-                        <svg className="w-3.5 h-3.5 flex-shrink-0 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        {evt.location}
-                      </span>
+                      {evt.location && (
+                        <span className="flex items-center gap-2">
+                          <svg className="w-3.5 h-3.5 flex-shrink-0 text-church-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          {evt.location}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
