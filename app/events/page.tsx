@@ -20,20 +20,6 @@ export default function EventsPage() {
         </p>
       </section>
 
-      {/* Calendar */}
-      <section className="py-16 bg-church-warm">
-        <div className="max-w-6xl mx-auto px-5">
-          <ScrollReveal className="mb-10">
-            <div className="gold-bar mb-4" />
-            <h2 className="section-heading mb-1">Church Calendar</h2>
-            <p className="text-slate-500 text-sm">
-              Regular services run every week. Tap any day on mobile to see details.
-            </p>
-          </ScrollReveal>
-          <EventCalendar />
-        </div>
-      </section>
-
       {/* Upcoming special events */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-5">
@@ -115,6 +101,20 @@ export default function EventsPage() {
             <p className="text-slate-400 text-sm mb-4">Have a question about an event?</p>
             <Link href="/prayer" className="btn-primary">Contact Us</Link>
           </div>
+        </div>
+      </section>
+
+      {/* Calendar */}
+      <section className="py-16 bg-church-warm">
+        <div className="max-w-6xl mx-auto px-5">
+          <ScrollReveal className="mb-10">
+            <div className="gold-bar mb-4" />
+            <h2 className="section-heading mb-1">Church Calendar</h2>
+            <p className="text-slate-500 text-sm">
+              Regular services run every week. Tap any day on mobile to see details.
+            </p>
+          </ScrollReveal>
+          <EventCalendar />
         </div>
       </section>
     </>
