@@ -63,8 +63,8 @@ export default function Home() {
                 alt="Springhill Pentecostal Church"
                 width={200}
                 height={200}
-                className="relative w-36 md:w-44 h-auto object-contain animate-float"
-                style={{ filter: 'brightness(0) invert(1)', dropShadow: '0 20px 40px rgba(0,0,0,0.4)' }}
+                className="relative w-36 md:w-44 h-auto object-contain animate-float mix-blend-screen"
+                style={{ filter: 'invert(1)' }}
                 priority
               />
             </div>
