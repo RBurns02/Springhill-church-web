@@ -262,7 +262,7 @@ export default function HomePage() {
               <img
                 src="/pastor.png"
                 alt="Pastor Tommy Lee and wife"
-                className="w-full mx-auto drop-shadow-xl scale-125 origin-bottom"
+                className="w-full mx-auto drop-shadow-xl scale-150 origin-bottom"
               />
             </div>
           </ScrollReveal>
