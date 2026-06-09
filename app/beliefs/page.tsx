@@ -106,6 +106,71 @@ export default function BeliefsPage() {
         </div>
       </section>
 
+      {/* ── What Does It Mean To Be Pentecostal ── */}
+      <section className="py-20 bg-church-cream">
+        <div className="max-w-4xl mx-auto px-5">
+          <div className="text-center mb-10">
+            <div className="gold-bar mx-auto mb-4" />
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-stone-900">
+              What Does It Mean To Be Pentecostal?
+            </h2>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-stone-100 shadow-sm p-8 md:p-10 mb-10">
+            <p className="text-stone-700 leading-relaxed mb-4">
+              We call ourselves Pentecostal because we have experienced the same miraculous
+              conversion that the 120 followers — which included the mother of Jesus — experienced
+              in the second chapter of Acts.
+            </p>
+            <p className="text-stone-700 leading-relaxed">
+              According to the Bible (The Acts of the Apostles), the New Testament Church began
+              on the Day of Pentecost, which was fifty days after the resurrection of Jesus Christ.
+              When the crowd heard the noise, saw the commotion, and listened to the message, they
+              asked the Apostles how to be saved. Peter, standing up with the other eleven apostles,
+              preached this message:
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Repentance */}
+            <div className="card p-7 text-center">
+              <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🙏</span>
+              </div>
+              <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Repentance</h3>
+              <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                We must repent (turn away from) of our sins. We do this by asking Jesus to forgive us.
+              </p>
+              <p className="text-church-purple text-xs font-semibold">Luke 24:47 · II Peter 3:9 · Acts 2:38</p>
+            </div>
+
+            {/* Baptism */}
+            <div className="card p-7 text-center">
+              <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">💧</span>
+              </div>
+              <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Baptism</h3>
+              <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                We must be water-baptized in the Name of Jesus Christ for the remission of our sins.
+              </p>
+              <p className="text-church-purple text-xs font-semibold">John 3:5 · Acts 2:38, 8:16, 10:48, 19:5</p>
+            </div>
+
+            {/* Spirit Infilling */}
+            <div className="card p-7 text-center">
+              <div className="w-14 h-14 rounded-full bg-church-purple/10 flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🔥</span>
+              </div>
+              <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">Spirit Infilling</h3>
+              <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                We are promised the gift of His Spirit with the evidence of speaking in other tongues.
+              </p>
+              <p className="text-church-purple text-xs font-semibold">John 7:37-39 · Acts 2:4, 2:38, 8:17-18, 10:44-47</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 section-dark text-center">
         <div className="max-w-2xl mx-auto px-5">
