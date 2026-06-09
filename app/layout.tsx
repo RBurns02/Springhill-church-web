@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-logo.png',
         width: 1200,
         height: 630,
         alt: 'Springhill Pentecostal Church – SPC Wesson, MS Est. 1935',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Springhill Pentecostal Church',
     description: 'A Spirit-filled community in Wesson, MS. Everyone is welcome.',
-    images: ['/og-image.png'],
+    images: ['/og-logo.png'],
   },
 };
 
