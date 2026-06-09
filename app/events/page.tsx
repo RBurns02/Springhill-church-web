@@ -9,68 +9,26 @@ export const metadata: Metadata = {
 
 const events = [
   {
-    date: '2026-06-15',
-    title: 'Youth Night',
-    category: 'Youth',
-    time: '6:30 PM',
-    location: 'Main Sanctuary',
-    desc: "An evening of worship, games, and the Word specifically designed for students in 6th–12th grade. Come ready to have fun and encounter God.",
-    featured: true,
-  },
-  {
-    date: '2026-06-22',
-    title: 'Community Cookout',
-    category: 'Community',
-    time: '12:00 PM',
-    location: 'Church Grounds',
-    desc: "Bring the whole family! We'll have food, fellowship, games for the kids, and an opportunity to meet your neighbors and church family.",
-    featured: false,
-  },
-  {
-    date: '2026-07-04',
-    title: 'Prayer & Praise Night',
-    category: 'Worship',
+    date: '2026-06-19',
+    title: 'BLAST — Kids Church',
+    category: 'Kids',
     time: '7:00 PM',
-    location: 'Main Sanctuary',
-    desc: "A Spirit-led evening of corporate prayer and live worship. No agenda — just time in the presence of God.",
-    featured: false,
+    location: 'Springhill Pentecostal Church',
+    desc: 'Theme: Daniel and the Lions Den. Bring your kids out for a night of fun, worship, and the Word!',
   },
   {
-    date: '2026-07-12',
-    title: "Women's Bible Study",
-    category: "Women's Ministry",
-    time: '10:00 AM',
-    location: 'Fellowship Hall',
-    desc: "Our weekly women's study continues through the book of Ruth. All women welcome — bring your Bible and a friend.",
-    featured: false,
-  },
-  {
-    date: '2026-07-19',
-    title: "Men's Breakfast",
-    category: "Men's Ministry",
-    time: '8:00 AM',
-    location: 'Fellowship Hall',
-    desc: "Men of all ages are invited for breakfast, fellowship, and a short devotional. A great chance to connect and encourage one another.",
-    featured: false,
-  },
-  {
-    date: '2026-07-26',
-    title: 'Family Movie Night',
-    category: 'Family',
-    time: '7:30 PM',
-    location: 'Outdoor Lawn',
-    desc: "Bring your blankets and lawn chairs for an outdoor movie night on the church grounds. Family-friendly film, free popcorn provided.",
-    featured: false,
+    date: '2026-06-27',
+    title: '2nd Annual Pastoral Anniversary Service',
+    category: 'Special Service',
+    time: '7:00 PM',
+    location: 'Springhill Pentecostal Church',
+    desc: 'Join us as we celebrate our pastor. Rev. Nathaniel Urshan will be ministering to us. You do not want to miss this special evening.',
   },
 ];
 
 const categoryColors: Record<string, string> = {
-  'Youth':            'bg-emerald-50 text-emerald-700',
-  'Community':        'bg-teal-50 text-teal-700',
-  'Worship':          'bg-amber-50 text-amber-700',
-  "Women's Ministry": 'bg-pink-50 text-pink-700',
-  "Men's Ministry":   'bg-blue-50 text-blue-700',
-  'Family':           'bg-orange-50 text-orange-700',
+  'Kids':            'bg-emerald-50 text-emerald-700',
+  'Special Service': 'bg-amber-50 text-amber-700',
 };
 
 function formatDate(dateStr: string) {
@@ -90,8 +48,7 @@ export default function EventsPage() {
         <p className="eyebrow text-church-gold mb-4">Gather Together</p>
         <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">Events</h1>
         <p className="text-white/60 text-lg max-w-lg mx-auto leading-relaxed">
-          From worship nights to community cookouts, there&apos;s always something
-          happening at Springhill. Come be part of it.
+          Come be part of what God is doing at Springhill. Everyone is welcome.
         </p>
       </section>
 
@@ -102,8 +59,8 @@ export default function EventsPage() {
             const { month, day, full } = formatDate(evt.date);
             const categoryClass = categoryColors[evt.category] ?? 'bg-slate-50 text-slate-600';
             return (
-              <ScrollReveal key={evt.title} delay={i * 60}>
-                <div className={`card flex flex-col sm:flex-row ${evt.featured ? 'ring-2 ring-church-purple/20' : ''}`}>
+              <ScrollReveal key={evt.title} delay={i * 80}>
+                <div className="card flex flex-col sm:flex-row">
                   {/* Date badge */}
                   <div className="flex-shrink-0 w-full sm:w-20 bg-church-purple/[0.05] flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-slate-100">
                     <p className="text-church-purple text-[10px] font-bold tracking-widest uppercase">{month}</p>
@@ -116,11 +73,6 @@ export default function EventsPage() {
                       <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${categoryClass}`}>
                         {evt.category}
                       </span>
-                      {evt.featured && (
-                        <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-church-gold/10 text-church-gold">
-                          Featured
-                        </span>
-                      )}
                     </div>
                     <p className="text-slate-500 text-sm leading-relaxed mb-3">{evt.desc}</p>
                     <div className="flex flex-wrap gap-4 text-xs text-slate-400">
