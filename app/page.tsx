@@ -273,7 +273,7 @@ export default function HomePage() {
                 <img
                   src="/pastor.png"
                   alt="Pastor Tommy and Lori Lee"
-                  className="w-full h-full object-cover object-top scale-110"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
             </div>
