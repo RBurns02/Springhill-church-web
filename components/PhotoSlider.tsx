@@ -3,8 +3,13 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 const slides = [
   { src: '/church1.png', alt: 'Worship at Springhill Pentecostal Church' },
+  { src: '/church6.jpg', alt: 'Preaching at Springhill' },
+  { src: '/church8.jpg', alt: 'Congregation in worship' },
   { src: '/church5.jpg', alt: 'Pastor preaching at Springhill' },
+  { src: '/church7.jpg', alt: 'Worshipping with family' },
+  { src: '/church9.jpg', alt: 'Bass player during worship' },
   { src: '/church4.jpg', alt: 'Sound and worship team' },
+  { src: '/church10.jpg', alt: 'Prayer at the altar' },
   { src: '/church2.png', alt: 'Praise and worship' },
   { src: '/church3.png', alt: 'Spirit-filled service' },
 ];
