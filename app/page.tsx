@@ -5,6 +5,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PhotoSlider from '@/components/PhotoSlider';
 import FacebookFeed from '@/components/FacebookFeed';
 import FlipCard from '@/components/FlipCard';
+import ServiceCountdown from '@/components/ServiceCountdown';
 
 export const metadata: Metadata = {
   title: 'Springhill Pentecostal Church | Wesson, MS',
@@ -141,6 +142,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ServiceCountdown />
+
       {/* ── SERVICE TIMES ──────────────────────────────────────────────────── */}
       <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-5">
@@ -236,6 +239,39 @@ export default function HomePage() {
           </ScrollReveal>
           <ScrollReveal>
             <PhotoSlider />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ── LATEST MESSAGE ─────────────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-5">
+          <ScrollReveal className="text-center mb-10">
+            <div className="gold-bar mx-auto mb-6" />
+            <h2 className="section-heading mb-3">Latest Message</h2>
+            <p className="section-sub">
+              Missed a service? Listen to our most recent sermon below.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <iframe
+              width="100%"
+              height="300"
+              scrolling="no"
+              frameBorder="0"
+              allow="autoplay"
+              title="Latest sermon from Springhill Pentecostal Church"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/spcwesson&color=%23C9A84C&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+            />
+            <div className="mt-5 text-center">
+              <Link
+                href="/services"
+                className="text-xs font-semibold tracking-[0.12em] uppercase text-stone-500 hover:text-church-gold transition-colors"
+              >
+                View All Messages →
+              </Link>
+            </div>
           </ScrollReveal>
         </div>
       </section>
