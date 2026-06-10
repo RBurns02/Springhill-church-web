@@ -52,9 +52,9 @@ export default function ContactModal() {
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75"
           onClick={(e) => { if (e.target === e.currentTarget) { setOpen(false); setStatus('idle'); } }}
         >
-          <div className="bg-white w-full max-w-lg shadow-2xl">
+          <div className="bg-white w-full max-w-lg shadow-2xl flex flex-col max-h-[90vh]">
             {/* Header */}
-            <div className="flex items-center justify-between px-8 py-6 border-b border-stone-100">
+            <div className="flex items-center justify-between px-8 py-6 border-b border-stone-100 flex-shrink-0">
               <div>
                 <p className="eyebrow text-stone-400 mb-1">Email</p>
                 <h2 className="font-serif text-xl font-bold text-stone-900">Contact Pastor Tommy Lee</h2>
@@ -71,7 +71,7 @@ export default function ContactModal() {
             </div>
 
             {/* Body */}
-            <div className="px-8 py-7">
+            <div className="px-8 py-7 overflow-y-auto">
               {status === 'sent' ? (
                 <div className="text-center py-8">
                   <div className="w-12 h-12 border border-church-gold flex items-center justify-center mx-auto mb-5 text-church-gold">
