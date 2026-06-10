@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'Prayer | Springhill Pentecostal Church',
+  title: 'Contact Us | Springhill Pentecostal Church',
   description:
-    'Submit a prayer request to Springhill Pentecostal Church. We believe prayer changes things.',
+    'Get in touch with Springhill Pentecostal Church in Wesson, MS. Send a prayer request, get directions, or reach out to our team.',
 };
 
 const scriptures = [
@@ -23,34 +22,116 @@ const scriptures = [
   },
 ];
 
-export default function PrayerPage() {
+export default function ContactPage() {
   return (
     <>
       {/* Page header */}
       <section className="page-header">
-        <p className="eyebrow text-church-gold mb-5">We&apos;re Here For You</p>
-        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4 tracking-tight">Prayer Changes Things</h1>
+        <p className="eyebrow text-church-gold mb-5">We&apos;d Love to Hear From You</p>
+        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4 tracking-tight">Contact Us</h1>
         <p className="text-white/50 text-lg max-w-xl mx-auto leading-relaxed">
-          No matter what you&apos;re facing, we would be honored to pray with you.
-          Submit a request below — our prayer team reads every one.
+          Whether you have a question, need directions, or want someone to pray with you —
+          we&apos;re here.
         </p>
       </section>
 
-      {/* Prayer form + contact */}
-      <section className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-16">
+      {/* ── Contact info cards ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-5">
+          <ScrollReveal className="text-center mb-12">
+            <div className="gold-bar mx-auto mb-6" />
+            <h2 className="section-heading">Get in Touch</h2>
+          </ScrollReveal>
 
-          {/* Form */}
+          <div className="grid md:grid-cols-3 gap-5 mb-10">
+            {/* Address */}
+            <ScrollReveal delay={0}>
+              <div className="card p-8 text-center group">
+                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <p className="eyebrow text-stone-400 mb-3">Address</p>
+                <p className="font-serif font-semibold text-stone-900 mb-2">Springhill Pentecostal Church</p>
+                <a
+                  href="https://maps.google.com/?q=1090+Springhill+Road+Wesson+MS+39191"
+                  target="_blank" rel="noopener noreferrer"
+                  className="text-stone-500 text-sm leading-relaxed hover:text-church-gold transition-colors"
+                >
+                  1090 Springhill Road<br />Wesson, MS 39191
+                </a>
+              </div>
+            </ScrollReveal>
+
+            {/* Email */}
+            <ScrollReveal delay={80}>
+              <div className="card p-8 text-center group">
+                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <p className="eyebrow text-stone-400 mb-3">Email</p>
+                <p className="font-serif font-semibold text-stone-900 mb-2">Pastor Tommy Lee</p>
+                <a
+                  href="mailto:pastor@spcwesson.org"
+                  className="text-stone-500 text-sm hover:text-church-gold transition-colors"
+                >
+                  pastor@spcwesson.org
+                </a>
+              </div>
+            </ScrollReveal>
+
+            {/* Service Times */}
+            <ScrollReveal delay={160}>
+              <div className="card p-8 text-center group">
+                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <p className="eyebrow text-stone-400 mb-3">Service Times</p>
+                <ul className="space-y-1.5 text-sm text-stone-500">
+                  <li><span className="font-semibold text-stone-800">Sunday</span> · 10:00 AM &amp; 6:00 PM</li>
+                  <li><span className="font-semibold text-stone-800">Monday</span> · 7:00 PM</li>
+                  <li><span className="font-semibold text-stone-800">Wednesday</span> · 7:30 PM</li>
+                  <li className="text-church-gold text-xs pt-1">1st Sun · Friends &amp; Family 2:00 PM</li>
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* Map */}
           <ScrollReveal>
-            <div className="gold-bar mb-6" />
-            <h2 className="font-serif text-3xl font-bold text-stone-900 mb-2 tracking-tight">
-              Send a Prayer Request
-            </h2>
-            <p className="text-stone-500 mb-8 leading-relaxed">
-              Share what&apos;s on your heart. We will pray over every request with faith
-              and sincerity.
-            </p>
+            <div className="overflow-hidden border border-stone-200 w-full" style={{ height: '340px' }}>
+              <iframe
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                loading="lazy"
+                title="Springhill Pentecostal Church location"
+                src="https://maps.google.com/maps?q=1090+Springhill+Road+Wesson+MS+39191&output=embed"
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
+      {/* ── Prayer request form ── */}
+      <section className="py-20 bg-church-warm">
+        <div className="max-w-2xl mx-auto px-5">
+          <ScrollReveal className="text-center mb-10">
+            <div className="gold-bar mx-auto mb-6" />
+            <h2 className="section-heading mb-3">Send a Prayer Request</h2>
+            <p className="section-sub">
+              Share what&apos;s on your heart. Our prayer team reads every request and lifts
+              each one before the Lord.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
             {/*
               Formspree setup:
               1. Go to https://formspree.io — create a free account
@@ -109,97 +190,6 @@ export default function PrayerPage() {
               </p>
             </form>
           </ScrollReveal>
-
-          {/* Sidebar */}
-          <div className="space-y-5">
-            <ScrollReveal delay={100}>
-              <div className="card p-7">
-                <h3 className="font-serif font-bold text-xl text-stone-900 mb-5">Need Someone to Talk To?</h3>
-                <p className="text-stone-500 text-sm leading-relaxed mb-6">
-                  Sometimes you need more than a form. Our team is here to listen, encourage,
-                  and pray with you personally. Don&apos;t hesitate to reach out.
-                </p>
-                <ul className="space-y-4">
-                  {[
-                    {
-                      icon: <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />,
-                      label: 'Pastor',
-                      value: 'Pastor Tommy Lee',
-                      href: undefined,
-                    },
-                    {
-                      icon: <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" />,
-                      label: 'Address',
-                      value: '1090 Springhill Road\nWesson, MS 39191',
-                      href: 'https://maps.google.com/?q=1090+Springhill+Road+Wesson+MS+39191',
-                    },
-                    {
-                      icon: <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />,
-                      label: 'Email',
-                      value: 'pastor@spcwesson.org',
-                      href: 'mailto:pastor@spcwesson.org',
-                    },
-                  ].map((item) => (
-                    <li key={item.label} className="flex items-start gap-3">
-                      <div className="w-8 h-8 border border-stone-200 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-4 h-4 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          {item.icon}
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-0.5">{item.label}</p>
-                        {item.href ? (
-                          <a href={item.href} className="text-stone-700 text-sm hover:text-church-gold transition-colors break-all whitespace-pre-line">{item.value}</a>
-                        ) : (
-                          <p className="text-stone-700 text-sm whitespace-pre-line">{item.value}</p>
-                        )}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-
-            {/* Map */}
-            <ScrollReveal delay={150}>
-              <div className="overflow-hidden border border-stone-200" style={{ height: '220px' }}>
-                <iframe
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  loading="lazy"
-                  title="Springhill Pentecostal Church location"
-                  src="https://maps.google.com/maps?q=1090+Springhill+Road+Wesson+MS+39191&output=embed"
-                />
-              </div>
-            </ScrollReveal>
-
-            {/* Service times */}
-            <ScrollReveal delay={200}>
-              <div className="card p-7">
-                <h3 className="font-serif font-bold text-xl text-stone-900 mb-1">Join Us in Person</h3>
-                <p className="text-xs text-church-gold font-semibold mb-5 tracking-wide">
-                  1st Sunday of every month — Friends &amp; Family Service at 2:00 PM
-                </p>
-                <ul className="divide-y divide-stone-100">
-                  {[
-                    { label: 'Sunday Morning Service',   day: 'Sunday',    time: '10:00 AM' },
-                    { label: 'Sunday Evening Service',   day: 'Sunday',    time: '6:00 PM'  },
-                    { label: 'Monday Prayer Meeting',    day: 'Monday',    time: '7:00 PM'  },
-                    { label: 'Wednesday Service',        day: 'Wednesday', time: '7:30 PM'  },
-                  ].map((s) => (
-                    <li key={s.label} className="py-3 flex items-center justify-between">
-                      <div>
-                        <p className="font-semibold text-stone-800 text-sm">{s.label}</p>
-                        <p className="text-stone-400 text-xs">{s.day}</p>
-                      </div>
-                      <span className="text-church-gold font-bold text-sm">{s.time}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-          </div>
         </div>
       </section>
 
