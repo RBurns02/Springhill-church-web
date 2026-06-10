@@ -256,6 +256,8 @@ export default function HomePage() {
             {expectations.map((e, i) => (
               <ScrollReveal key={e.title} delay={i * 100}>
                 <FlipCard
+                  scrollFlip
+                  delay={400 + i * 150}
                   className="h-72"
                   front={
                     <div className="card h-full p-9 flex flex-col">
