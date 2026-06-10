@@ -307,6 +307,64 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── FOLLOW US ──────────────────────────────────────────────────────── */}
+      <section className="py-24 bg-church-warm">
+        <div className="max-w-2xl mx-auto px-5">
+          <ScrollReveal className="text-center mb-10">
+            <div className="gold-bar mx-auto mb-6" />
+            <h2 className="section-heading mb-3">Follow Along</h2>
+            <p className="section-sub">
+              Stay connected with what God is doing at Springhill. Like our page to
+              see service highlights, announcements, and more.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="flex justify-center">
+              <iframe
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GpFMM7VC2%2F&tabs=timeline&width=500&height=600&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&lazy=true"
+                width="500"
+                height="600"
+                style={{ border: 'none', overflow: 'hidden', maxWidth: '100%' }}
+                scrolling="no"
+                frameBorder="0"
+                title="Springhill Pentecostal Church on Facebook"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              />
+            </div>
+
+            {/* Social links row */}
+            <div className="flex justify-center gap-6 mt-8">
+              <a href="https://www.facebook.com/share/1GpFMM7VC2/" target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase text-stone-500 hover:text-church-gold transition-colors">
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                </svg>
+                Facebook
+              </a>
+              <span className="text-stone-300">·</span>
+              <a href="https://www.instagram.com/spcwesson" target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase text-stone-500 hover:text-church-gold transition-colors">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+                Instagram
+              </a>
+              <span className="text-stone-300">·</span>
+              <a href="https://soundcloud.com/spcwesson" target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase text-stone-500 hover:text-church-gold transition-colors">
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M1.175 12.225c-.056 0-.094.037-.1.094l-.344 2.156.344 2.181c.006.06.044.094.1.094.05 0 .094-.037.1-.094l.394-2.181-.394-2.156c-.006-.057-.05-.094-.1-.094m-.899 1.5c-.05 0-.087.037-.093.087l-.3 1.562.3 1.587c.006.05.044.087.093.087.05 0 .087-.037.093-.087l.344-1.587-.344-1.562c-.006-.05-.043-.087-.093-.087m11.312-5.25c-.387 0-.756.075-1.093.206-.169-3.112-2.694-5.581-5.831-5.581-1.006 0-1.95.275-2.762.75v10.35c0 .325.262.587.587.587h9.1c1.025 0 1.856-.831 1.856-1.856 0-.769-.469-1.431-1.144-1.713.025-.181.044-.362.044-.55 0-2.262-1.831-4.093-4.093-4.093l-.662.1z"/>
+                </svg>
+                SoundCloud
+              </a>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* ── PRAYER CTA ─────────────────────────────────────────────────────── */}
       <section className="py-28 section-dark relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
