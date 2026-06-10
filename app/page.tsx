@@ -446,26 +446,14 @@ export default function HomePage() {
             </p>
           </ScrollReveal>
 
-          {/* Facebook feed */}
-          <ScrollReveal className="mb-8">
-            <div className="flex items-center gap-3 mb-6">
-              <svg className="w-4 h-4 fill-current text-stone-500" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-              </svg>
-              <p className="eyebrow text-stone-400">Latest from Facebook</p>
-            </div>
-            <Suspense fallback={
-              <div className="grid sm:grid-cols-2 gap-5">
-                {[0,1,2,3].map(i => <div key={i} className="h-56 bg-stone-100 animate-pulse" />)}
-              </div>
-            }>
-              <FacebookFeed />
-            </Suspense>
-          </ScrollReveal>
-
-          {/* Instagram + SoundCloud links */}
+          {/* Social links */}
           <ScrollReveal>
-            <div className="grid sm:grid-cols-2 gap-5 mt-5">
+            <div className="grid sm:grid-cols-3 gap-5">
+              <Suspense fallback={
+                <div className="card p-7 h-24 animate-pulse bg-stone-100" />
+              }>
+                <FacebookFeed />
+              </Suspense>
               <a href="https://www.instagram.com/spcwesson" target="_blank" rel="noopener noreferrer"
                 className="card p-7 group flex items-center gap-5">
                 <div className="w-11 h-11 border border-stone-200 flex items-center justify-center flex-shrink-0 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
