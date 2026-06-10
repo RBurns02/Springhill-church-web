@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ScrollReveal from '@/components/ScrollReveal';
+import ContactModal from '@/components/ContactModal';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Springhill Pentecostal Church',
@@ -67,21 +68,7 @@ export default function ContactPage() {
 
             {/* Email */}
             <ScrollReveal delay={80}>
-              <div className="card p-8 text-center group">
-                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <p className="eyebrow text-stone-400 mb-3">Email</p>
-                <p className="font-serif font-semibold text-stone-900 mb-2">Pastor Tommy Lee</p>
-                <a
-                  href="mailto:pastor@spcwesson.org"
-                  className="text-stone-500 text-sm hover:text-church-gold transition-colors"
-                >
-                  pastor@spcwesson.org
-                </a>
-              </div>
+              <ContactModal />
             </ScrollReveal>
 
             {/* Service Times */}
