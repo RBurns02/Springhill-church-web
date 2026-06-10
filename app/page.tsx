@@ -12,10 +12,39 @@ export const metadata: Metadata = {
 };
 
 const serviceTimes = [
-  { day: 'Sunday',    session: 'Morning Service', time: '10:00 AM', icon: '☀️' },
-  { day: 'Sunday',    session: 'Evening Service',  time: '6:00 PM',  icon: '🌅' },
-  { day: 'Monday',    session: 'Prayer Meeting',   time: '7:00 PM',  icon: '🙏' },
-  { day: 'Wednesday', session: 'Wednesday Service', time: '7:30 PM',  icon: '🙌' },
+  {
+    day: 'Sunday', session: 'Morning Service', time: '10:00 AM',
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+      </svg>
+    ),
+  },
+  {
+    day: 'Sunday', session: 'Evening Service', time: '6:00 PM',
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+      </svg>
+    ),
+  },
+  {
+    day: 'Monday', session: 'Prayer Meeting', time: '7:00 PM',
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+      </svg>
+    ),
+  },
+  {
+    day: 'Wednesday', session: 'Wednesday Service', time: '7:30 PM',
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+      </svg>
+    ),
+  },
 ];
 
 const expectations = [
@@ -116,7 +145,7 @@ export default function HomePage() {
             {serviceTimes.map((s, i) => (
               <ScrollReveal key={s.session} delay={i * 80}>
                 <div className="card p-8 text-center group">
-                  <div className="w-12 h-12 flex items-center justify-center mx-auto mb-5 text-2xl">
+                  <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
                     {s.icon}
                   </div>
                   <p className="eyebrow text-church-gold mb-2">{s.day}</p>
