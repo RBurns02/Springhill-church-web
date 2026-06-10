@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ScrollReveal from '@/components/ScrollReveal';
 import ContactModal from '@/components/ContactModal';
+import PrayerModal from '@/components/PrayerModal';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Springhill Pentecostal Church',
@@ -36,7 +37,7 @@ export default function ContactPage() {
         </p>
       </section>
 
-      {/* ── Contact info cards ── */}
+      {/* Cards + Map */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-5">
           <ScrollReveal className="text-center mb-12">
@@ -44,34 +45,19 @@ export default function ContactPage() {
             <h2 className="section-heading">Get in Touch</h2>
           </ScrollReveal>
 
+          {/* 3 cards — DOM order matches desired mobile order */}
           <div className="grid md:grid-cols-3 gap-5 mb-10">
-            {/* Address */}
+            {/* 1. Contact Pastor */}
             <ScrollReveal delay={0}>
-              <div className="card p-8 text-center group">
-                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <p className="eyebrow text-stone-400 mb-3">Address</p>
-                <p className="font-serif font-semibold text-stone-900 mb-2">Springhill Pentecostal Church</p>
-                <a
-                  href="https://maps.google.com/?q=1090+Springhill+Road+Wesson+MS+39191"
-                  target="_blank" rel="noopener noreferrer"
-                  className="text-stone-500 text-sm leading-relaxed hover:text-church-gold transition-colors"
-                >
-                  1090 Springhill Road<br />Wesson, MS 39191
-                </a>
-              </div>
-            </ScrollReveal>
-
-            {/* Email */}
-            <ScrollReveal delay={80}>
               <ContactModal />
             </ScrollReveal>
 
-            {/* Service Times */}
+            {/* 2. Prayer Requests */}
+            <ScrollReveal delay={80}>
+              <PrayerModal />
+            </ScrollReveal>
+
+            {/* 3. Service Times */}
             <ScrollReveal delay={160}>
               <div className="card p-8 text-center group">
                 <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
@@ -90,8 +76,9 @@ export default function ContactPage() {
             </ScrollReveal>
           </div>
 
-          {/* Map */}
+          {/* 4. Location / Map */}
           <ScrollReveal>
+            <p className="eyebrow text-stone-400 mb-4 text-center">Location</p>
             <div className="overflow-hidden border border-stone-200 w-full" style={{ height: '340px' }}>
               <iframe
                 width="100%"
@@ -102,80 +89,15 @@ export default function ContactPage() {
                 src="https://maps.google.com/maps?q=1090+Springhill+Road+Wesson+MS+39191&output=embed"
               />
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ── Prayer request form ── */}
-      <section className="py-20 bg-church-warm">
-        <div className="max-w-2xl mx-auto px-5">
-          <ScrollReveal className="text-center mb-10">
-            <div className="gold-bar mx-auto mb-6" />
-            <h2 className="section-heading mb-3">Send a Prayer Request</h2>
-            <p className="section-sub">
-              Share what&apos;s on your heart. Our prayer team reads every request and lifts
-              each one before the Lord.
+            <p className="text-center text-sm text-stone-500 mt-3">
+              <a
+                href="https://maps.google.com/?q=1090+Springhill+Road+Wesson+MS+39191"
+                target="_blank" rel="noopener noreferrer"
+                className="hover:text-church-gold transition-colors"
+              >
+                1090 Springhill Road, Wesson, MS 39191
+              </a>
             </p>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            {/*
-              Formspree setup:
-              1. Go to https://formspree.io — create a free account
-              2. Create a new form → copy the endpoint URL
-              3. Replace YOUR_FORMSPREE_ENDPOINT below
-            */}
-            <form
-              action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT"
-              method="POST"
-              className="space-y-5"
-            >
-              <div>
-                <label htmlFor="name" className="block text-xs font-semibold tracking-[0.12em] uppercase text-stone-600 mb-2">
-                  Your Name <span className="text-stone-400 normal-case tracking-normal">(optional)</span>
-                </label>
-                <input
-                  id="name" name="name" type="text" placeholder="John Smith"
-                  className="w-full border border-stone-200 bg-white px-4 py-3 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-church-gold focus:border-church-gold transition text-sm"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-xs font-semibold tracking-[0.12em] uppercase text-stone-600 mb-2">
-                  Email Address <span className="text-stone-400 normal-case tracking-normal">(optional — if you&apos;d like a reply)</span>
-                </label>
-                <input
-                  id="email" name="email" type="email" placeholder="john@example.com"
-                  className="w-full border border-stone-200 bg-white px-4 py-3 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-church-gold focus:border-church-gold transition text-sm"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="request" className="block text-xs font-semibold tracking-[0.12em] uppercase text-stone-600 mb-2">
-                  Prayer Request
-                </label>
-                <textarea
-                  id="request" name="request" required rows={6}
-                  placeholder="Share your prayer request here…"
-                  className="w-full border border-stone-200 bg-white px-4 py-3 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-church-gold focus:border-church-gold transition resize-none text-sm"
-                />
-              </div>
-
-              <div className="flex items-start gap-3">
-                <input id="private" name="private" type="checkbox" className="mt-1 w-4 h-4 accent-church-gold" />
-                <label htmlFor="private" className="text-sm text-stone-600 leading-relaxed">
-                  Keep my prayer request private (shared only with our prayer team)
-                </label>
-              </div>
-
-              <button type="submit" className="btn-primary w-full justify-center">
-                Submit Prayer Request
-              </button>
-
-              <p className="text-xs text-stone-400 text-center">
-                We respect your privacy. Your information will never be shared or sold.
-              </p>
-            </form>
           </ScrollReveal>
         </div>
       </section>
