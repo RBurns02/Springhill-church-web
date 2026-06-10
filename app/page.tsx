@@ -309,59 +309,66 @@ export default function HomePage() {
 
       {/* ── FOLLOW US ──────────────────────────────────────────────────────── */}
       <section className="py-24 bg-church-warm">
-        <div className="max-w-2xl mx-auto px-5">
-          <ScrollReveal className="text-center mb-10">
+        <div className="max-w-4xl mx-auto px-5">
+          <ScrollReveal className="text-center mb-12">
             <div className="gold-bar mx-auto mb-6" />
-            <h2 className="section-heading mb-3">Follow Along</h2>
+            <h2 className="section-heading mb-3">Stay Connected</h2>
             <p className="section-sub">
-              Stay connected with what God is doing at Springhill. Like our page to
-              see service highlights, announcements, and more.
+              Follow us on social media for service highlights, announcements, and more.
             </p>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <div className="flex justify-center">
-              <iframe
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GpFMM7VC2%2F&tabs=timeline&width=500&height=600&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&lazy=true"
-                width="500"
-                height="600"
-                style={{ border: 'none', overflow: 'hidden', maxWidth: '100%' }}
-                scrolling="no"
-                frameBorder="0"
-                title="Springhill Pentecostal Church on Facebook"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              />
-            </div>
-
-            {/* Social links row */}
-            <div className="flex justify-center gap-6 mt-8">
+          <div className="grid md:grid-cols-3 gap-5">
+            {/* Facebook */}
+            <ScrollReveal delay={0}>
               <a href="https://www.facebook.com/share/1GpFMM7VC2/" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase text-stone-500 hover:text-church-gold transition-colors">
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                </svg>
-                Facebook
+                className="card p-8 text-center group flex flex-col items-center no-underline block">
+                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                  </svg>
+                </div>
+                <p className="eyebrow text-stone-400 mb-2">Facebook</p>
+                <p className="font-serif font-semibold text-stone-900 mb-3">Springhill Pentecostal Church</p>
+                <p className="text-xs text-stone-400 leading-relaxed mb-4">Service highlights, announcements, and community updates.</p>
+                <span className="text-xs font-semibold tracking-[0.12em] uppercase text-church-gold group-hover:text-church-deep transition-colors">View Page →</span>
               </a>
-              <span className="text-stone-300">·</span>
+            </ScrollReveal>
+
+            {/* Instagram */}
+            <ScrollReveal delay={80}>
               <a href="https://www.instagram.com/spcwesson" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase text-stone-500 hover:text-church-gold transition-colors">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                  <circle cx="12" cy="12" r="4"/>
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-                </svg>
-                Instagram
+                className="card p-8 text-center group flex flex-col items-center no-underline block">
+                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                  </svg>
+                </div>
+                <p className="eyebrow text-stone-400 mb-2">Instagram</p>
+                <p className="font-serif font-semibold text-stone-900 mb-3">@spcwesson</p>
+                <p className="text-xs text-stone-400 leading-relaxed mb-4">Photos and moments from our church family.</p>
+                <span className="text-xs font-semibold tracking-[0.12em] uppercase text-church-gold group-hover:text-church-deep transition-colors">View Profile →</span>
               </a>
-              <span className="text-stone-300">·</span>
+            </ScrollReveal>
+
+            {/* SoundCloud */}
+            <ScrollReveal delay={160}>
               <a href="https://soundcloud.com/spcwesson" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase text-stone-500 hover:text-church-gold transition-colors">
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M1.175 12.225c-.056 0-.094.037-.1.094l-.344 2.156.344 2.181c.006.06.044.094.1.094.05 0 .094-.037.1-.094l.394-2.181-.394-2.156c-.006-.057-.05-.094-.1-.094m-.899 1.5c-.05 0-.087.037-.093.087l-.3 1.562.3 1.587c.006.05.044.087.093.087.05 0 .087-.037.093-.087l.344-1.587-.344-1.562c-.006-.05-.043-.087-.093-.087m11.312-5.25c-.387 0-.756.075-1.093.206-.169-3.112-2.694-5.581-5.831-5.581-1.006 0-1.95.275-2.762.75v10.35c0 .325.262.587.587.587h9.1c1.025 0 1.856-.831 1.856-1.856 0-.769-.469-1.431-1.144-1.713.025-.181.044-.362.044-.55 0-2.262-1.831-4.093-4.093-4.093l-.662.1z"/>
-                </svg>
-                SoundCloud
+                className="card p-8 text-center group flex flex-col items-center no-underline block">
+                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
+                  <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M1.175 12.225c-.056 0-.094.037-.1.094l-.344 2.156.344 2.181c.006.06.044.094.1.094.05 0 .094-.037.1-.094l.394-2.181-.394-2.156c-.006-.057-.05-.094-.1-.094m1.79-.581c-.069 0-.119.05-.125.119l-.3 1.812.3 1.837c.006.069.056.119.125.119.069 0 .119-.05.125-.119l.344-1.837-.344-1.812c-.006-.069-.056-.119-.125-.119m1.8-.378c-.075 0-.131.056-.137.131l-.269 1.559.269 1.584c.006.075.063.131.137.131.075 0 .131-.056.138-.131l.306-1.584-.306-1.559c-.006-.075-.063-.131-.138-.131m1.8-.262c-.081 0-.144.063-.15.144l-.237 1.297.237 1.322c.006.081.069.144.15.144.081 0 .144-.063.15-.144l.269-1.322-.269-1.297c-.006-.081-.069-.144-.15-.144m1.8-.131c-.088 0-.156.069-.163.156l-.206 1.166.206 1.191c.006.088.075.156.163.156.088 0 .156-.069.163-.156l.231-1.191-.231-1.166c-.006-.088-.075-.156-.163-.156m1.8-.088c-.094 0-.169.075-.175.169l-.175 1.078.175 1.103c.006.094.081.169.175.169.094 0 .169-.075.175-.169l.2-1.103-.2-1.078c-.006-.094-.081-.169-.175-.169m1.8-.063c-.1 0-.181.081-.188.181l-.144.991.144 1.016c.006.1.088.181.188.181.1 0 .181-.081.188-.181l.163-1.016-.163-.991c-.006-.1-.088-.181-.188-.181m1.8-.044c-.106 0-.194.088-.2.194l-.113.903.113.928c.006.106.094.194.2.194.106 0 .194-.088.2-.194l.128-.928-.128-.903c-.006-.106-.094-.194-.2-.194m2.787-.731c-.056-.019-.113-.031-.172-.031-.3 0-.581.113-.794.3-.094-1.097-.997-1.953-2.106-1.953-.278 0-.544.056-.787.156-.094.038-.119.075-.119.113v7.256c0 .044.031.081.075.088h3.906c.591 0 1.069-.478 1.069-1.069V11.1c0-.272-.131-.519-.347-.666" />
+                  </svg>
+                </div>
+                <p className="eyebrow text-stone-400 mb-2">SoundCloud</p>
+                <p className="font-serif font-semibold text-stone-900 mb-3">SPC Wesson</p>
+                <p className="text-xs text-stone-400 leading-relaxed mb-4">Listen to sermons and worship recordings.</p>
+                <span className="text-xs font-semibold tracking-[0.12em] uppercase text-church-gold group-hover:text-church-deep transition-colors">Listen Now →</span>
               </a>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
