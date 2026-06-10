@@ -188,35 +188,6 @@ export default function BlastPage() {
         </div>
       </section>
 
-      {/* ── LEADERS ── */}
-      <section className="py-24 bg-church-warm">
-        <div className="max-w-3xl mx-auto px-5 text-center">
-          <ScrollReveal>
-            <div className="gold-bar mx-auto mb-6" />
-            <h2 className="section-heading mb-3">Meet the Leaders</h2>
-            <p className="section-sub mb-14">
-              Led by people who genuinely love kids and are passionate
-              about the next generation knowing God.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-8 justify-center">
-              {[
-                { name: 'Seth Cliburn',    initials: 'SC' },
-                { name: 'Kaitlyn Cliburn', initials: 'KC' },
-              ].map((p) => (
-                <div key={p.name} className="flex-1 max-w-xs mx-auto">
-                  <div className="w-20 h-20 bg-church-dark border border-church-gold/30 flex items-center justify-center mx-auto mb-5">
-                    <span className="font-serif text-xl font-bold text-church-gold tracking-wide">{p.initials}</span>
-                  </div>
-                  <p className="font-serif font-bold text-xl text-stone-900 mb-1">{p.name}</p>
-                  <p className="eyebrow text-church-gold">BLAST Kids Leader</p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* ── SCRIPTURE + CTA — gold background ── */}
       <section className="py-28 bg-church-gold">
         <div className="max-w-2xl mx-auto px-5 text-center">
@@ -251,6 +222,9 @@ export default function BlastPage() {
                 Contact Us
               </Link>
             </div>
+            <p className="text-church-dark/40 text-xs mt-10">
+              Led by Seth &amp; Kaitlyn Cliburn
+            </p>
           </ScrollReveal>
         </div>
       </section>
