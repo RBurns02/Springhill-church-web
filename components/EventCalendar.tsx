@@ -34,7 +34,7 @@ function recurringFor(date: Date): CalEvent[] {
     }
   }
   if (dow === 1) events.push({ title: 'Prayer Meeting', time: '7:00 PM',  type: 'regular' });
-  if (dow === 3) events.push({ title: 'Bible Study',    time: '7:30 PM',  type: 'regular' });
+  if (dow === 3) events.push({ title: 'Wednesday Service', time: '7:30 PM', type: 'regular' });
 
   return events;
 }

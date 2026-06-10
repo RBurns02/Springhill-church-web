@@ -186,7 +186,7 @@ export default function PrayerPage() {
                     { label: 'Sunday Morning Service',   day: 'Sunday',    time: '10:00 AM' },
                     { label: 'Sunday Evening Service',   day: 'Sunday',    time: '6:00 PM'  },
                     { label: 'Monday Prayer Meeting',    day: 'Monday',    time: '7:00 PM'  },
-                    { label: 'Wednesday Bible Study',    day: 'Wednesday', time: '7:30 PM'  },
+                    { label: 'Wednesday Service',        day: 'Wednesday', time: '7:30 PM'  },
                   ].map((s) => (
                     <li key={s.label} className="py-3 flex items-center justify-between">
                       <div>

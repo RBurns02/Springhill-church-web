@@ -13,7 +13,7 @@ const serviceTimes = [
   { day: 'Sunday',    session: 'Morning Service', time: '10:00 AM', icon: '☀️' },
   { day: 'Sunday',    session: 'Evening Service',  time: '6:00 PM',  icon: '🌅' },
   { day: 'Monday',    session: 'Prayer Meeting',   time: '7:00 PM',  icon: '🙏' },
-  { day: 'Wednesday', session: 'Bible Study',      time: '7:30 PM',  icon: '📖' },
+  { day: 'Wednesday', session: 'Wednesday Service', time: '7:30 PM',  icon: '🙌' },
 ];
 
 const expectations = [
