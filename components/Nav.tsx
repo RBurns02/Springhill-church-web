@@ -2,11 +2,23 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { getUpcomingEvents } from '@/lib/events';
+
+function buildDropdownItems() {
+  const base = [
+    { label: 'Upcoming Events', href: '/events#upcoming' },
+    { label: 'Calendar',        href: '/events#calendar'  },
+  ];
+  const eventItems = getUpcomingEvents().map(e => ({
+    label: e.title,
+    href: e.detailsUrl ?? `/events/${e.slug}`,
+  }));
+  return [...base, ...eventItems];
+}
 
 const links = [
   { href: '/',          label: 'Home'            },
-  { href: '/events',    label: 'Events'          },
   { href: '/blast',     label: 'Kids'            },
   { href: '/services',  label: 'Services'        },
   { href: '/beliefs',   label: 'What We Believe' },
@@ -17,6 +29,21 @@ const links = [
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [eventsOpen, setEventsOpen] = useState(false);
+  const [desktopEventsOpen, setDesktopEventsOpen] = useState(false);
+  const hoverTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  const dropdownItems = buildDropdownItems();
+  const isEventsActive = pathname.startsWith('/events');
+
+  function handleMouseEnter() {
+    clearTimeout(hoverTimeout.current);
+    setDesktopEventsOpen(true);
+  }
+
+  function handleMouseLeave() {
+    hoverTimeout.current = setTimeout(() => setDesktopEventsOpen(false), 150);
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-white/96 backdrop-blur border-b border-stone-200">
@@ -34,6 +61,82 @@ export default function Nav() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-0.5">
+          <Link
+            href="/"
+            className={`px-4 py-2 text-sm font-medium transition-colors duration-200 border-b-2 ${
+              pathname === '/'
+                ? 'text-stone-900 font-semibold border-church-gold'
+                : 'text-stone-500 hover:text-stone-900 border-transparent'
+            }`}
+          >
+            Home
+          </Link>
+
+          {/* Events with dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Link
+              href="/events"
+              className={`inline-flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors duration-200 border-b-2 ${
+                isEventsActive
+                  ? 'text-stone-900 font-semibold border-church-gold'
+                  : 'text-stone-500 hover:text-stone-900 border-transparent'
+              }`}
+            >
+              Events
+              <svg
+                className={`w-3 h-3 transition-transform duration-200 ${desktopEventsOpen ? 'rotate-180' : ''}`}
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </Link>
+
+            {desktopEventsOpen && (
+              <div
+                className="absolute top-full left-0 w-60 bg-white border border-stone-200 shadow-xl py-2 z-50"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div className="px-4 pb-1 pt-2">
+                  <p className="text-[9px] font-semibold tracking-[0.18em] uppercase text-stone-400 mb-1">Browse</p>
+                  {dropdownItems.slice(0, 2).map(item => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setDesktopEventsOpen(false)}
+                      className="block py-2 text-sm text-stone-600 hover:text-church-gold transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+
+                {dropdownItems.length > 2 && (
+                  <>
+                    <div className="h-px bg-stone-100 mx-4 my-1" />
+                    <div className="px-4 pb-2 pt-1">
+                      <p className="text-[9px] font-semibold tracking-[0.18em] uppercase text-stone-400 mb-1">Upcoming Events</p>
+                      {dropdownItems.slice(2).map(item => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setDesktopEventsOpen(false)}
+                          className="block py-2 text-sm text-stone-600 hover:text-church-gold transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+          </div>
+
           {links.map(({ href, label }) => (
             <Link
               key={href}
@@ -73,24 +176,64 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Mobile menu */}
       {open && (
         <div className="md:hidden border-t border-stone-200 bg-white px-5 pb-6 pt-3">
           <nav className="flex flex-col">
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              className={`py-3.5 text-base font-medium border-b border-stone-100 transition-colors ${
+                pathname === '/' ? 'text-stone-900 font-semibold' : 'text-stone-500 hover:text-stone-900'
+              }`}
+            >
+              Home
+            </Link>
+
+            {/* Events accordion */}
+            <button
+              onClick={() => setEventsOpen(!eventsOpen)}
+              className={`py-3.5 text-base font-medium border-b border-stone-100 transition-colors flex items-center justify-between w-full text-left ${
+                isEventsActive ? 'text-stone-900 font-semibold' : 'text-stone-500 hover:text-stone-900'
+              }`}
+            >
+              Events
+              <svg
+                className={`w-4 h-4 transition-transform duration-200 ${eventsOpen ? 'rotate-180' : ''}`}
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {eventsOpen && (
+              <div className="bg-stone-50 border-b border-stone-100">
+                {dropdownItems.map(item => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => { setOpen(false); setEventsOpen(false); }}
+                    className="block py-3 pl-6 pr-4 text-sm text-stone-500 hover:text-church-gold border-b border-stone-100 last:border-0 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+
             {links.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
                 className={`py-3.5 text-base font-medium border-b border-stone-100 transition-colors ${
-                  pathname === href
-                    ? 'text-stone-900 font-semibold'
-                    : 'text-stone-500 hover:text-stone-900'
+                  pathname === href ? 'text-stone-900 font-semibold' : 'text-stone-500 hover:text-stone-900'
                 }`}
               >
                 {label}
               </Link>
             ))}
+
             <Link
               href="/prayer"
               onClick={() => setOpen(false)}

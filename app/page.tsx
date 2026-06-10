@@ -6,6 +6,7 @@ import PhotoSlider from '@/components/PhotoSlider';
 import FacebookFeed from '@/components/FacebookFeed';
 import FlipCard from '@/components/FlipCard';
 import ServiceCountdown from '@/components/ServiceCountdown';
+import { getUpcomingEvents } from '@/lib/events';
 
 export const metadata: Metadata = {
   title: 'Springhill Pentecostal Church | Wesson, MS',
@@ -89,13 +90,8 @@ const expectations = [
   },
 ];
 
-const upcomingEvents = [
-  { date: 'JUN 13', title: "Men's Camping Trip",                     time: 'All Day',  location: '',                             category: "Men's Ministry"  },
-  { date: 'JUN 19', title: 'BLAST — Kids Church',                    time: '7:00 PM', location: 'Springhill Pentecostal Church', category: 'Kids'            },
-  { date: 'JUN 27', title: '2nd Annual Pastoral Anniversary Service', time: '7:00 PM', location: 'Springhill Pentecostal Church', category: 'Special Service' },
-];
-
 export default function HomePage() {
+  const upcomingEvents = getUpcomingEvents();
   return (
     <>
       {/* ── HERO ───────────────────────────────────────────────────────────── */}
@@ -333,37 +329,57 @@ export default function HomePage() {
             <Link href="/events" className="btn-outline-green shrink-0">View All Events</Link>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-5">
-            {upcomingEvents.map((evt, i) => (
-              <ScrollReveal key={evt.title} delay={i * 80}>
-                <div className="card overflow-hidden group">
-                  <div className="h-px bg-church-gold group-hover:bg-church-purple transition-colors duration-300" />
-                  <div className="p-7">
-                    <p className="eyebrow text-church-gold mb-4">{evt.date}</p>
-                    <h3 className="font-serif font-bold text-lg text-stone-900 mb-1.5">{evt.title}</h3>
-                    <p className="text-xs text-stone-400 mb-5 uppercase tracking-wide">{evt.category}</p>
-                    <div className="flex flex-col gap-2 text-sm text-stone-500">
-                      <span className="flex items-center gap-2">
-                        <svg className="w-3.5 h-3.5 flex-shrink-0 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        {evt.time}
-                      </span>
-                      {evt.location && (
-                        <span className="flex items-center gap-2">
-                          <svg className="w-3.5 h-3.5 flex-shrink-0 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                          </svg>
-                          {evt.location}
-                        </span>
-                      )}
+          {upcomingEvents.length === 0 ? (
+            <ScrollReveal>
+              <p className="text-stone-400 text-sm text-center py-10">No upcoming special events right now. Check back soon.</p>
+            </ScrollReveal>
+          ) : (
+            <div className="grid md:grid-cols-3 gap-5">
+              {upcomingEvents.map((evt, i) => {
+                const href = evt.detailsUrl ?? `/events/${evt.slug}`;
+                return (
+                  <ScrollReveal key={evt.slug} delay={i * 80}>
+                    <div className="card overflow-hidden group flex flex-col h-full">
+                      <div className="h-px bg-church-gold group-hover:bg-church-purple transition-colors duration-300" />
+                      <div className="p-7 flex flex-col flex-1">
+                        <p className="eyebrow text-church-gold mb-4">{evt.month} {evt.day}</p>
+                        <h3 className="font-serif font-bold text-lg text-stone-900 mb-1.5">{evt.title}</h3>
+                        <p className="text-xs text-stone-400 mb-5 uppercase tracking-wide">{evt.category}</p>
+                        <div className="flex flex-col gap-2 text-sm text-stone-500 flex-1">
+                          <span className="flex items-center gap-2">
+                            <svg className="w-3.5 h-3.5 flex-shrink-0 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            {evt.time}
+                          </span>
+                          {evt.location && (
+                            <span className="flex items-center gap-2">
+                              <svg className="w-3.5 h-3.5 flex-shrink-0 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                              {evt.location}
+                            </span>
+                          )}
+                        </div>
+                        <div className="mt-6 pt-5 border-t border-stone-100">
+                          <Link
+                            href={href}
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.12em] uppercase text-church-gold hover:text-church-deep transition-colors"
+                          >
+                            View Details
+                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+                  </ScrollReveal>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
