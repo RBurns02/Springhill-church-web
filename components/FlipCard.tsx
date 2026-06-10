@@ -24,7 +24,7 @@ export default function FlipCard({ front, back, className = '', scrollFlip = fal
           return () => clearTimeout(t);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5, rootMargin: '0px 0px -25% 0px' }
     );
     const el = ref.current;
     if (el) observer.observe(el);
