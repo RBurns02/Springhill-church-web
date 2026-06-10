@@ -1,10 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 
 export default function ContactModal() {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -46,8 +50,8 @@ export default function ContactModal() {
         </span>
       </div>
 
-      {/* Modal overlay */}
-      {open && (
+      {/* Modal overlay — rendered in a portal so fixed positioning works */}
+      {mounted && open && createPortal(
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75"
           onClick={(e) => { if (e.target === e.currentTarget) { setOpen(false); setStatus('idle'); } }}
@@ -153,7 +157,8 @@ export default function ContactModal() {
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
