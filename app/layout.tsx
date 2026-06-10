@@ -51,9 +51,44 @@ export const metadata: Metadata = {
   },
 };
 
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Church',
+  name: 'Springhill Pentecostal Church',
+  url: 'https://www.spcwesson.com',
+  logo: 'https://www.spcwesson.com/og-logo.png',
+  image: 'https://www.spcwesson.com/og-logo.png',
+  description: 'A Spirit-filled Apostolic Pentecostal church in Wesson, MS. Join us for worship, Biblical teaching, and fellowship.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '1090 Springhill Road',
+    addressLocality: 'Wesson',
+    addressRegion: 'MS',
+    postalCode: '39191',
+    addressCountry: 'US',
+  },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday',    opens: '10:00', closes: '12:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday',    opens: '18:00', closes: '20:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Monday',    opens: '19:00', closes: '20:30' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '19:30', closes: '21:00' },
+  ],
+  sameAs: [
+    'https://www.facebook.com/share/1GpFMM7VC2/',
+    'https://www.instagram.com/spcwesson',
+    'https://soundcloud.com/spcwesson',
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${greatVibes.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col">
         <Nav />
         <main className="flex-1">{children}</main>
