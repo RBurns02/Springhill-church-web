@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: 'Contact Us | Springhill Pentecostal Church',
   description:
     'Get in touch with Springhill Pentecostal Church in Wesson, MS. Send a prayer request, get directions, or reach out to our team.',
+  openGraph: {
+    title: 'Contact Us | Springhill Pentecostal Church',
+    description: 'Get in touch, send a prayer request, or get directions to Springhill Pentecostal Church in Wesson, MS.',
+    images: [{ url: '/og-logo.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary_large_image', images: ['/og-logo.png'] },
 };
 
 const scriptures = [

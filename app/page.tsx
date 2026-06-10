@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import ScrollReveal from '@/components/ScrollReveal';
 import PhotoSlider from '@/components/PhotoSlider';
 import FacebookFeed from '@/components/FacebookFeed';
+import FlipCard from '@/components/FlipCard';
 
 export const metadata: Metadata = {
   title: 'Springhill Pentecostal Church | Wesson, MS',
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 const serviceTimes = [
   {
     day: 'Sunday', session: 'Morning Service', time: '10:00 AM',
+    desc: 'Anointed worship, Biblical preaching, and a warm welcome for the whole family. The perfect way to start your week in His presence.',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
@@ -22,6 +24,7 @@ const serviceTimes = [
   },
   {
     day: 'Sunday', session: 'Evening Service', time: '6:00 PM',
+    desc: 'Close the day in His presence. Sunday evening is a more intimate service — deeper worship and prayer as we end the week together.',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
@@ -30,6 +33,7 @@ const serviceTimes = [
   },
   {
     day: 'Monday', session: 'Prayer Meeting', time: '7:00 PM',
+    desc: 'The prayer meeting is the engine of the church. Join us as we seek the Lord, intercede for one another, and believe for breakthrough.',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
@@ -38,6 +42,7 @@ const serviceTimes = [
   },
   {
     day: 'Wednesday', session: 'Wednesday Service', time: '7:30 PM',
+    desc: 'Spirit-filled mid-week worship to carry you through. A full service of praise, the Word, and ministry for every age.',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
@@ -51,6 +56,8 @@ const expectations = [
   {
     title: 'Friendly Community',
     desc:  'From your very first visit you will be greeted with warm smiles and genuine hospitality. We are a family, and we would love for you to be part of it.',
+    scripture: '"Not forsaking the assembling of ourselves together, but exhorting one another: and so much the more, as ye see the day approaching."',
+    scriptureRef: 'Hebrews 10:25',
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a4 4 0 00-5.364-3.771M9 20H4v-2a4 4 0 015.364-3.771M15 11a4 4 0 10-8 0 4 4 0 008 0z" />
@@ -60,6 +67,8 @@ const expectations = [
   {
     title: 'Biblical Preaching',
     desc:  'Every message is rooted in the Word of God. We believe the Bible is the inspired, infallible authority for faith and life.',
+    scripture: '"All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness."',
+    scriptureRef: '2 Timothy 3:16',
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
@@ -69,6 +78,8 @@ const expectations = [
   {
     title: 'Spirit-Filled Worship',
     desc:  'We worship with freedom and expectation. Come ready for heartfelt praise, powerful prayer, and the tangible presence of God.',
+    scripture: '"God is a Spirit: and they that worship him must worship him in spirit and in truth."',
+    scriptureRef: 'John 4:24',
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
@@ -144,14 +155,30 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
             {serviceTimes.map((s, i) => (
               <ScrollReveal key={s.session} delay={i * 80}>
-                <div className="card p-8 text-center group">
-                  <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
-                    {s.icon}
-                  </div>
-                  <p className="eyebrow text-church-gold mb-2">{s.day}</p>
-                  <h3 className="font-serif font-semibold text-lg text-stone-900 mb-3">{s.session}</h3>
-                  <p className="text-3xl font-bold text-church-purple font-serif tracking-tight">{s.time}</p>
-                </div>
+                <FlipCard
+                  scrollFlip
+                  delay={400 + i * 150}
+                  className="h-64"
+                  front={
+                    <div className="card h-full p-8 text-center flex flex-col items-center justify-center">
+                      <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 transition-all duration-300">
+                        {s.icon}
+                      </div>
+                      <p className="eyebrow text-church-gold mb-2">{s.day}</p>
+                      <h3 className="font-serif font-semibold text-lg text-stone-900 mb-3">{s.session}</h3>
+                      <p className="text-3xl font-bold text-church-purple font-serif tracking-tight">{s.time}</p>
+                    </div>
+                  }
+                  back={
+                    <div className="h-full bg-church-dark flex flex-col items-center justify-center p-8 text-center border border-white/10">
+                      <div className="gold-bar mx-auto mb-5" />
+                      <p className="eyebrow text-church-gold mb-4">{s.day}</p>
+                      <p className="text-white/75 text-sm leading-relaxed mb-6">{s.desc}</p>
+                      <p className="font-serif text-2xl font-bold text-white tracking-tight">{s.time}</p>
+                      <p className="text-white/25 text-xs mt-5 tracking-wide">tap to flip</p>
+                    </div>
+                  }
+                />
               </ScrollReveal>
             ))}
           </div>
@@ -228,13 +255,29 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-5">
             {expectations.map((e, i) => (
               <ScrollReveal key={e.title} delay={i * 100}>
-                <div className="card p-9 group">
-                  <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mb-6 text-stone-600 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
-                    {e.icon}
-                  </div>
-                  <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">{e.title}</h3>
-                  <p className="text-stone-500 text-sm leading-relaxed">{e.desc}</p>
-                </div>
+                <FlipCard
+                  className="h-72"
+                  front={
+                    <div className="card h-full p-9 flex flex-col">
+                      <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mb-6 text-stone-600 transition-all duration-300">
+                        {e.icon}
+                      </div>
+                      <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">{e.title}</h3>
+                      <p className="text-stone-500 text-sm leading-relaxed flex-1">{e.desc}</p>
+                      <p className="text-stone-300 text-xs mt-4 tracking-wide">tap for scripture</p>
+                    </div>
+                  }
+                  back={
+                    <div className="h-full bg-church-dark flex flex-col items-center justify-center p-9 text-center border border-white/10">
+                      <svg className="w-8 h-8 text-church-gold opacity-50 mb-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                      </svg>
+                      <p className="text-white/75 text-sm italic leading-relaxed mb-5">{e.scripture}</p>
+                      <p className="text-church-gold text-xs font-semibold tracking-[0.15em] uppercase">{e.scriptureRef}</p>
+                      <p className="text-white/25 text-xs mt-5 tracking-wide">tap to flip</p>
+                    </div>
+                  }
+                />
               </ScrollReveal>
             ))}
           </div>

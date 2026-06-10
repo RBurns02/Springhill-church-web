@@ -37,7 +37,7 @@ export default function ContactModal() {
   return (
     <>
       {/* Email card trigger */}
-      <div className="card p-8 text-center group cursor-pointer" onClick={() => setOpen(true)}>
+      <button className="card p-8 text-center group cursor-pointer w-full text-left" onClick={() => setOpen(true)}>
         <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -48,7 +48,7 @@ export default function ContactModal() {
         <span className="text-stone-500 text-sm group-hover:text-church-gold transition-colors">
           Send a Message
         </span>
-      </div>
+      </button>
 
       {/* Modal overlay — rendered in a portal so fixed positioning works */}
       {mounted && open && createPortal(
@@ -56,12 +56,17 @@ export default function ContactModal() {
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75"
           onClick={(e) => { if (e.target === e.currentTarget) { setOpen(false); setStatus('idle'); } }}
         >
-          <div className="bg-white w-full max-w-lg shadow-2xl flex flex-col max-h-[90vh]">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contact-modal-title"
+            className="bg-white w-full max-w-lg shadow-2xl flex flex-col max-h-[90vh]"
+          >
             {/* Header */}
             <div className="flex items-center justify-between px-8 py-6 border-b border-stone-100 flex-shrink-0">
               <div>
                 <p className="eyebrow text-stone-400 mb-1">Email</p>
-                <h2 className="font-serif text-xl font-bold text-stone-900">Contact Pastor Tommy Lee</h2>
+                <h2 id="contact-modal-title" className="font-serif text-xl font-bold text-stone-900">Contact Pastor Tommy Lee</h2>
               </div>
               <button
                 onClick={() => { setOpen(false); setStatus('idle'); }}

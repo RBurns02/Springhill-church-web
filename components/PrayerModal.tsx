@@ -36,7 +36,7 @@ export default function PrayerModal() {
   return (
     <>
       {/* Prayer request card trigger */}
-      <div className="card p-8 text-center group cursor-pointer" onClick={() => setOpen(true)}>
+      <button className="card p-8 text-center group cursor-pointer w-full text-left" onClick={() => setOpen(true)}>
         <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -47,7 +47,7 @@ export default function PrayerModal() {
         <span className="text-stone-500 text-sm group-hover:text-church-gold transition-colors">
           Send a Request
         </span>
-      </div>
+      </button>
 
       {/* Modal */}
       {mounted && open && createPortal(
@@ -55,12 +55,17 @@ export default function PrayerModal() {
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75"
           onClick={(e) => { if (e.target === e.currentTarget) { setOpen(false); setStatus('idle'); } }}
         >
-          <div className="bg-white w-full max-w-lg shadow-2xl flex flex-col max-h-[90vh]">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="prayer-modal-title"
+            className="bg-white w-full max-w-lg shadow-2xl flex flex-col max-h-[90vh]"
+          >
             {/* Header */}
             <div className="flex items-center justify-between px-8 py-6 border-b border-stone-100 flex-shrink-0">
               <div>
                 <p className="eyebrow text-stone-400 mb-1">Prayer</p>
-                <h2 className="font-serif text-xl font-bold text-stone-900">Send a Prayer Request</h2>
+                <h2 id="prayer-modal-title" className="font-serif text-xl font-bold text-stone-900">Send a Prayer Request</h2>
               </div>
               <button
                 onClick={() => { setOpen(false); setStatus('idle'); }}

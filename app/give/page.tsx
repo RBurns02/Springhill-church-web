@@ -5,6 +5,12 @@ import ScrollReveal from '@/components/ScrollReveal';
 export const metadata: Metadata = {
   title: 'Give | Springhill Pentecostal Church',
   description: 'Give online to support the ministry of Springhill Pentecostal Church in Wesson, MS.',
+  openGraph: {
+    title: 'Give | Springhill Pentecostal Church',
+    description: 'Support the ministry of Springhill Pentecostal Church in Wesson, MS.',
+    images: [{ url: '/og-logo.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary_large_image', images: ['/og-logo.png'] },
 };
 
 const GIVE_URL = 'https://give.tithe.ly';

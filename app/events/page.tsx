@@ -6,6 +6,12 @@ import EventCalendar from '@/components/EventCalendar';
 export const metadata: Metadata = {
   title: 'Events | Springhill Pentecostal Church',
   description: 'Upcoming events and gatherings at Springhill Pentecostal Church.',
+  openGraph: {
+    title: 'Events | Springhill Pentecostal Church',
+    description: 'Upcoming events and gatherings at Springhill Pentecostal Church in Wesson, MS.',
+    images: [{ url: '/og-logo.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary_large_image', images: ['/og-logo.png'] },
 };
 
 export default function EventsPage() {

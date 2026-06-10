@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   title: 'What We Believe | Springhill Pentecostal Church',
   description:
     'Our statement of faith — what Springhill Pentecostal Church believes about Scripture, salvation, the Holy Spirit, and more.',
+  openGraph: {
+    title: 'What We Believe | Springhill Pentecostal Church',
+    description: 'Our statement of faith — Scripture, salvation, the Holy Spirit, and more.',
+    images: [{ url: '/og-logo.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary_large_image', images: ['/og-logo.png'] },
 };
 
 const beliefs = [
