@@ -15,6 +15,8 @@ export type SpcEvent = {
   speaker?: string;
   detailsUrl?: string;  // override slug-based URL (e.g. '/blast')
   gcalUrl: string;
+  theme?: 'outdoor' | 'anniversary';
+  tagline?: string;
 };
 
 export const events: SpcEvent[] = [
@@ -28,6 +30,8 @@ export const events: SpcEvent[] = [
     time: 'All Day',
     location: 'TBA',
     category: "Men's Ministry",
+    theme: 'outdoor',
+    tagline: "A day on the water with your brothers in Christ.",
     description: "Men, come out for a day on the water — fellowship, fun, and time in God's creation. Details shared at church.",
     body: "Join the men of Springhill for a day of kayaking — a time set apart for fellowship, fun, and connection with your brothers in Christ. Get out in God's creation, strengthen friendships, and make memories. Whether you've been coming to Springhill for years or you're brand new, you are welcome.",
     highlights: [
@@ -70,6 +74,8 @@ export const events: SpcEvent[] = [
     location: 'Springhill Pentecostal Church',
     category: 'Special Service',
     featured: true,
+    theme: 'anniversary',
+    tagline: "Two years of faithful, Spirit-filled ministry.",
     description: "Join us as we celebrate our pastor. Rev. Nathaniel Urshan will be ministering to us. You do not want to miss this special evening.",
     body: "Join us for a special evening celebrating Pastor Tommy Lee and two years of faithful, Spirit-filled ministry at Springhill Pentecostal Church. We are honored to have Rev. Nathaniel Urshan ministering to us. Come expecting a powerful move of God — this is a night you do not want to miss.",
     highlights: [
