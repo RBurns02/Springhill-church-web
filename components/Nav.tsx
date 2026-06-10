@@ -7,8 +7,7 @@ import { getUpcomingEvents } from '@/lib/events';
 
 function buildDropdownItems() {
   const base = [
-    { label: 'Upcoming Events', href: '/events#upcoming' },
-    { label: 'Calendar',        href: '/events#calendar'  },
+    { label: 'Events & Calendar', href: '/events' },
   ];
   const eventItems = getUpcomingEvents().map(e => ({
     label: e.title,
@@ -101,38 +100,23 @@ export default function Nav() {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="px-4 pb-1 pt-2">
-                  <p className="text-[9px] font-semibold tracking-[0.18em] uppercase text-stone-400 mb-1">Browse</p>
-                  {dropdownItems.slice(0, 2).map(item => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setDesktopEventsOpen(false)}
-                      className="block py-2 text-sm text-stone-600 hover:text-church-gold transition-colors"
-                    >
-                      {item.label}
-                    </Link>
+                <div className="px-4 py-2">
+                  {dropdownItems.map((item, i) => (
+                    <div key={item.href}>
+                      {i === 1 && <div className="h-px bg-stone-100 my-1" />}
+                      {i === 1 && (
+                        <p className="text-[9px] font-semibold tracking-[0.18em] uppercase text-stone-400 mt-2 mb-1">Upcoming Events</p>
+                      )}
+                      <Link
+                        href={item.href}
+                        onClick={() => setDesktopEventsOpen(false)}
+                        className="block py-2 text-sm text-stone-600 hover:text-church-gold transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    </div>
                   ))}
                 </div>
-
-                {dropdownItems.length > 2 && (
-                  <>
-                    <div className="h-px bg-stone-100 mx-4 my-1" />
-                    <div className="px-4 pb-2 pt-1">
-                      <p className="text-[9px] font-semibold tracking-[0.18em] uppercase text-stone-400 mb-1">Upcoming Events</p>
-                      {dropdownItems.slice(2).map(item => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={() => setDesktopEventsOpen(false)}
-                          className="block py-2 text-sm text-stone-600 hover:text-church-gold transition-colors"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </>
-                )}
               </div>
             )}
           </div>
