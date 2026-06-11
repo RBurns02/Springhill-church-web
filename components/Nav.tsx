@@ -17,7 +17,6 @@ function buildDropdownItems() {
 }
 
 const links = [
-  { href: '/',          label: 'Home'            },
   { href: '/services',  label: 'Services'        },
   { href: '/beliefs',   label: 'What We Believe' },
   { href: '/give',      label: 'Give'            },
