@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import ScrollReveal from '@/components/ScrollReveal';
 import PhotoSlider from '@/components/PhotoSlider';
 import FacebookFeed from '@/components/FacebookFeed';
+import FlipCard from '@/components/FlipCard';
 import ServiceCountdown from '@/components/ServiceCountdown';
 import { getUpcomingEvents } from '@/lib/events';
 
@@ -270,13 +271,29 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-5">
             {expectations.map((e, i) => (
               <ScrollReveal key={e.title} delay={i * 100}>
-                <div className="card p-9 flex flex-col">
-                  <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mb-6 text-stone-600">
-                    {e.icon}
-                  </div>
-                  <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">{e.title}</h3>
-                  <p className="text-stone-500 text-sm leading-relaxed">{e.desc}</p>
-                </div>
+                <FlipCard
+                  className="h-72"
+                  front={
+                    <div className="card h-full p-9 flex flex-col">
+                      <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mb-6 text-stone-600">
+                        {e.icon}
+                      </div>
+                      <h3 className="font-serif font-bold text-xl text-stone-900 mb-3">{e.title}</h3>
+                      <p className="text-stone-500 text-sm leading-relaxed flex-1">{e.desc}</p>
+                      <p className="text-stone-300 text-xs mt-4 tracking-wide">tap for scripture</p>
+                    </div>
+                  }
+                  back={
+                    <div className="h-full bg-church-dark flex flex-col items-center justify-center p-9 text-center border border-white/10">
+                      <svg className="w-8 h-8 text-church-gold opacity-50 mb-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                      </svg>
+                      <p className="text-white/75 text-sm italic leading-relaxed mb-5">{e.scripture}</p>
+                      <p className="text-church-gold text-xs font-semibold tracking-[0.15em] uppercase">{e.scriptureRef}</p>
+                      <p className="text-white/25 text-xs mt-5 tracking-wide">tap to flip back</p>
+                    </div>
+                  }
+                />
               </ScrollReveal>
             ))}
           </div>
