@@ -101,7 +101,7 @@ export default function ContactModal() {
                 </div>
               ) : (
                 <form
-                  action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT"
+                  action="https://formspree.io/f/mbdezdwj"
                   method="POST"
                   onSubmit={handleSubmit}
                   className="space-y-4"
