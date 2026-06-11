@@ -52,20 +52,20 @@ export default function ContactPage() {
           </ScrollReveal>
 
           {/* 3 cards — DOM order matches desired mobile order */}
-          <div className="grid md:grid-cols-3 gap-5 mb-10">
+          <div className="grid md:grid-cols-3 gap-5 mb-10 items-stretch">
             {/* 1. Contact Pastor */}
-            <ScrollReveal delay={0}>
+            <ScrollReveal delay={0} className="h-full">
               <ContactModal />
             </ScrollReveal>
 
             {/* 2. Prayer Requests */}
-            <ScrollReveal delay={80}>
+            <ScrollReveal delay={80} className="h-full">
               <PrayerModal />
             </ScrollReveal>
 
             {/* 3. Service Times */}
-            <ScrollReveal delay={160}>
-              <div className="card p-8 text-center group">
+            <ScrollReveal delay={160} className="h-full">
+              <div className="card p-8 text-center group h-full flex flex-col items-center justify-center">
                 <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />

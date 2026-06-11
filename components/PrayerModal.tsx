@@ -36,7 +36,7 @@ export default function PrayerModal() {
   return (
     <>
       {/* Prayer request card trigger */}
-      <button className="card p-8 text-center group cursor-pointer w-full text-left" onClick={() => setOpen(true)}>
+      <button className="card p-8 text-center group cursor-pointer w-full h-full flex flex-col items-center justify-center" onClick={() => setOpen(true)}>
         <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
