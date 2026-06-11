@@ -35,18 +35,18 @@ export default async function FacebookFeed() {
         href="https://www.facebook.com/share/1GpFMM7VC2/"
         target="_blank"
         rel="noopener noreferrer"
-        className="card p-7 group flex items-center gap-5"
+        className="card p-5 group flex items-center gap-4"
       >
         <div className="w-11 h-11 border border-stone-200 flex items-center justify-center flex-shrink-0 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
           <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
           </svg>
         </div>
-        <div>
+        <div className="min-w-0 flex-1">
           <p className="eyebrow text-stone-400 mb-1">Facebook</p>
-          <p className="font-serif font-semibold text-stone-900 text-sm">Springhill Pentecostal Church</p>
+          <p className="font-serif font-semibold text-stone-900 text-sm truncate">Springhill Pentecostal</p>
         </div>
-        <span className="ml-auto text-xs font-semibold tracking-[0.1em] uppercase text-church-gold group-hover:text-church-deep transition-colors">Follow →</span>
+        <span className="flex-shrink-0 text-xs font-semibold tracking-[0.1em] uppercase text-church-gold group-hover:text-church-deep transition-colors">Follow →</span>
       </a>
     );
   }
