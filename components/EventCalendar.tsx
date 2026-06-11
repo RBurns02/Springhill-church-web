@@ -107,7 +107,7 @@ export default function EventCalendar() {
         {/* Day headers */}
         <div className="grid grid-cols-7 bg-slate-50 border-b border-slate-100">
           {DAY_LABELS.map(d => (
-            <div key={d} className="py-2 text-center text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+            <div key={d} className="h-9 flex items-center justify-center text-[10px] font-bold text-slate-400 uppercase tracking-wider">
               {d}
             </div>
           ))}
