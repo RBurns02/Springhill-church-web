@@ -394,7 +394,7 @@ export default function HomePage() {
 
             {/* Photo frame */}
             <div className="flex justify-center mb-8">
-              <div className="relative w-60 h-72 md:w-72 md:h-80 overflow-hidden" style={{ borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%' }}>
+              <div className="relative w-60 h-72 md:w-72 md:h-80 overflow-hidden" style={{ borderRadius: '50%' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/pastor.png"
