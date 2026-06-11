@@ -338,7 +338,7 @@ export default function HomePage() {
               {upcomingEvents.map((evt, i) => {
                 const href = evt.detailsUrl ?? `/events/${evt.slug}`;
                 return (
-                  <ScrollReveal key={evt.slug} delay={i * 80}>
+                  <ScrollReveal key={evt.slug} delay={i * 80} className="h-full">
                     <div className="card overflow-hidden group flex flex-col h-full">
                       <div className="h-px bg-church-gold group-hover:bg-church-purple transition-colors duration-300" />
                       <div className="p-7 flex flex-col flex-1">
