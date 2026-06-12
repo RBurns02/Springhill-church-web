@@ -13,11 +13,16 @@ interface CalEvent {
   type: 'regular' | 'special';
 }
 
-// Special one-off events keyed by YYYY-MM-DD
+// Special one-off events keyed by YYYY-MM-DD (added alongside recurring)
 const SPECIAL: Record<string, CalEvent[]> = {
   '2026-06-13': [{ title: "Men's Kayaking Trip",           time: 'All Day',  type: 'special' }],
   '2026-06-19': [{ title: 'BLAST — Kids Church',          time: '7:00 PM', type: 'special' }],
   '2026-06-27': [{ title: 'Pastoral Anniversary Service', time: '7:00 PM', type: 'special' }],
+};
+
+// Overrides replace ALL recurring events for that date
+const OVERRIDES: Record<string, CalEvent[]> = {
+  '2026-06-21': [{ title: "Father's Day Service", time: '10:00 AM', type: 'special' }],
 };
 
 function recurringFor(date: Date): CalEvent[] {
@@ -44,7 +49,9 @@ function dateKey(d: Date) {
 }
 
 function eventsFor(date: Date): CalEvent[] {
-  return [...recurringFor(date), ...(SPECIAL[dateKey(date)] ?? [])];
+  const key = dateKey(date);
+  const base = OVERRIDES[key] ?? recurringFor(date);
+  return [...base, ...(SPECIAL[key] ?? [])];
 }
 
 // Full list of events for the side panel, sorted by date
