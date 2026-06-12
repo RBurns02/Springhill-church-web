@@ -15,7 +15,7 @@ export type SpcEvent = {
   speaker?: string;
   detailsUrl?: string;  // override slug-based URL (e.g. '/blast')
   gcalUrl: string;
-  theme?: 'outdoor' | 'anniversary';
+  theme?: 'outdoor' | 'anniversary' | 'fathersday';
   tagline?: string;
 };
 
@@ -74,6 +74,8 @@ export const events: SpcEvent[] = [
     location: 'Springhill Pentecostal Church',
     category: 'Special Service',
     featured: true,
+    theme: 'fathersday' as const,
+    tagline: "Honoring the fathers who lead, love, and serve.",
     description: "Join us for a special Father's Day service celebrating the fathers in our church family. One service only — 10:00 AM.",
     body: "This Father's Day, we're gathering together as one church family to honor the fathers in our congregation and to lift up the name of Jesus. We will have one combined service at 10:00 AM — come expecting a powerful word and a spirit-filled morning of worship. Bring your dad, your grandfather, or any man who has made a difference in your life.",
     highlights: [

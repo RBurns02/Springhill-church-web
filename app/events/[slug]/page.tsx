@@ -32,6 +32,7 @@ export default function EventPage({ params }: { params: { slug: string } }) {
 
   const isOutdoor     = event.theme === 'outdoor';
   const isAnniversary = event.theme === 'anniversary';
+  const isFathersDay  = event.theme === 'fathersday';
 
   return (
     <>
@@ -224,6 +225,113 @@ export default function EventPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
+      ) : isFathersDay ? (
+        /* ── FATHER'S DAY HERO ── */
+        <section
+          className="relative overflow-hidden py-32 md:py-44 text-center text-white"
+          style={{ background: 'linear-gradient(160deg, #060408 0%, #160c03 50%, #060408 100%)' }}
+        >
+          {/* Warm radial glow */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            aria-hidden="true"
+            style={{
+              background: 'radial-gradient(ellipse 65% 55% at 50% 45%, rgba(201,155,60,0.16) 0%, transparent 68%)',
+            }}
+          />
+
+          {/* Light rays from center */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+            {[0, 22, 45, 68, 90, 112, 135, 158, 180, 202, 225, 248, 270, 292, 315, 338].map((deg, i) => (
+              <div
+                key={i}
+                className="absolute"
+                style={{
+                  width: '1px',
+                  height: '55%',
+                  background: 'linear-gradient(to top, transparent, rgba(201,155,60,0.07))',
+                  bottom: '50%',
+                  left: '50%',
+                  transformOrigin: 'bottom center',
+                  transform: `rotate(${deg}deg)`,
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Corner accents */}
+          <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+            <div className="absolute top-8 left-8 w-12 h-12 border-l border-t border-church-gold/15" />
+            <div className="absolute top-8 right-8 w-12 h-12 border-r border-t border-church-gold/15" />
+            <div className="absolute bottom-8 left-8 w-12 h-12 border-l border-b border-church-gold/15" />
+            <div className="absolute bottom-8 right-8 w-12 h-12 border-r border-b border-church-gold/15" />
+          </div>
+
+          <div className="relative z-10 max-w-4xl mx-auto px-5">
+            {/* Badge */}
+            <div
+              className="inline-flex items-center gap-3 border border-church-gold/40 px-6 py-2.5 mb-8 animate-fade-in-up"
+              style={{ animationDelay: '0.05s' }}
+            >
+              <svg className="w-3.5 h-3.5 text-church-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+              <span className="text-church-gold text-[10px] font-semibold tracking-[0.22em] uppercase">Father&apos;s Day</span>
+              <svg className="w-3.5 h-3.5 text-church-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+
+            <p
+              className="eyebrow text-church-gold mb-5 animate-fade-in-up"
+              style={{ animationDelay: '0.15s' }}
+            >
+              {event.category} · {event.fullDate}
+            </p>
+            <h1
+              className="font-serif text-4xl md:text-6xl font-bold mb-5 tracking-tight leading-tight animate-fade-in-up"
+              style={{ animationDelay: '0.25s' }}
+            >
+              Father&apos;s Day<br />
+              <span className="text-church-gold">Service</span>
+            </h1>
+            {event.tagline && (
+              <p
+                className="text-white/45 text-lg max-w-xl mx-auto mb-10 animate-fade-in-up"
+                style={{ animationDelay: '0.35s' }}
+              >
+                {event.tagline}
+              </p>
+            )}
+
+            <div className="gold-bar mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }} />
+
+            <div
+              className="flex flex-wrap items-center justify-center gap-5 text-white/50 text-sm animate-fade-in-up"
+              style={{ animationDelay: '0.45s' }}
+            >
+              <span className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-church-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {event.time} · One Service Only
+              </span>
+              {event.location && (
+                <>
+                  <span className="text-white/20">·</span>
+                  <span className="flex items-center gap-2">
+                    <svg className="w-4 h-4 text-church-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    {event.location}
+                  </span>
+                </>
+              )}
+            </div>
+          </div>
+        </section>
+
       ) : (
         /* ── DEFAULT HERO ── */
         <section className="page-header">
@@ -257,14 +365,14 @@ export default function EventPage({ params }: { params: { slug: string } }) {
       )}
 
       {/* ── DETAILS ── */}
-      <section className={`py-24 ${isAnniversary ? 'bg-stone-50' : 'bg-white'}`}>
+      <section className={`py-24 ${isAnniversary || isFathersDay ? 'bg-stone-50' : 'bg-white'}`}>
         <div className="max-w-3xl mx-auto px-5">
           <div className="grid md:grid-cols-3 gap-12">
 
             {/* Main content */}
             <div className="md:col-span-2">
               <ScrollReveal>
-                <div className={`h-px w-10 mb-6 ${isOutdoor ? 'bg-cyan-500' : 'bg-church-gold'}`} />
+                <div className="h-px w-10 mb-6 bg-church-gold" />
                 <h2 className="font-serif text-2xl font-bold text-stone-900 mb-5">About This Event</h2>
                 <p className="text-stone-600 leading-relaxed text-lg mb-8">{event.body}</p>
 
@@ -272,11 +380,7 @@ export default function EventPage({ params }: { params: { slug: string } }) {
                   <ul className="space-y-3">
                     {event.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-3 text-stone-600 text-sm">
-                        <span
-                          className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${
-                            isOutdoor ? 'bg-cyan-500' : 'bg-church-gold'
-                          }`}
-                        />
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-church-gold" />
                         {h}
                       </li>
                     ))}
@@ -287,27 +391,27 @@ export default function EventPage({ params }: { params: { slug: string } }) {
 
             {/* Sidebar */}
             <ScrollReveal delay={100}>
-              <div className={`space-y-0 border ${isAnniversary ? 'border-church-gold/25' : 'border-stone-200'}`}>
-                {isAnniversary && (
+              <div className={`space-y-0 border ${isAnniversary || isFathersDay ? 'border-church-gold/25' : 'border-stone-200'}`}>
+                {(isAnniversary || isFathersDay) && (
                   <div className="h-1 bg-church-gold" />
                 )}
-                <div className={`p-6 border-b ${isAnniversary ? 'border-church-gold/15' : 'border-stone-100'}`}>
-                  <p className={`eyebrow mb-1 ${isOutdoor ? 'text-cyan-600' : 'text-church-gold'}`}>Date</p>
+                <div className={`p-6 border-b ${isAnniversary || isFathersDay ? 'border-church-gold/15' : 'border-stone-100'}`}>
+                  <p className="eyebrow mb-1 text-church-gold">Date</p>
                   <p className="font-serif font-bold text-stone-900">{event.fullDate}</p>
                 </div>
-                <div className={`p-6 border-b ${isAnniversary ? 'border-church-gold/15' : 'border-stone-100'}`}>
-                  <p className={`eyebrow mb-1 ${isOutdoor ? 'text-cyan-600' : 'text-church-gold'}`}>Time</p>
+                <div className={`p-6 border-b ${isAnniversary || isFathersDay ? 'border-church-gold/15' : 'border-stone-100'}`}>
+                  <p className="eyebrow mb-1 text-church-gold">Time</p>
                   <p className="font-serif font-bold text-stone-900">{event.time}</p>
                 </div>
                 {event.location && (
-                  <div className={`p-6 border-b ${isAnniversary ? 'border-church-gold/15' : 'border-stone-100'}`}>
-                    <p className={`eyebrow mb-1 ${isOutdoor ? 'text-cyan-600' : 'text-church-gold'}`}>Location</p>
+                  <div className={`p-6 border-b ${isAnniversary || isFathersDay ? 'border-church-gold/15' : 'border-stone-100'}`}>
+                    <p className="eyebrow mb-1 text-church-gold">Location</p>
                     <p className="font-serif font-bold text-stone-900">{event.location}</p>
                   </div>
                 )}
                 {event.speaker && (
-                  <div className={`p-6 border-b ${isAnniversary ? 'border-church-gold/15' : 'border-stone-100'}`}>
-                    <p className={`eyebrow mb-1 ${isOutdoor ? 'text-cyan-600' : 'text-church-gold'}`}>Speaker</p>
+                  <div className={`p-6 border-b ${isAnniversary || isFathersDay ? 'border-church-gold/15' : 'border-stone-100'}`}>
+                    <p className="eyebrow mb-1 text-church-gold">Speaker</p>
                     <p className="font-serif font-bold text-stone-900">{event.speaker}</p>
                   </div>
                 )}
@@ -316,11 +420,7 @@ export default function EventPage({ params }: { params: { slug: string } }) {
                     href={event.gcalUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase transition-colors ${
-                      isOutdoor
-                        ? 'text-stone-500 hover:text-cyan-600'
-                        : 'text-stone-500 hover:text-church-gold'
-                    }`}
+                    className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase transition-colors text-stone-500 hover:text-church-gold"
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
@@ -383,6 +483,46 @@ export default function EventPage({ params }: { params: { slug: string } }) {
               </h2>
               <p className="text-white/45 leading-relaxed mb-10">
                 Have questions about the service? Reach out — we&apos;re happy to help.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/prayer" className="btn-gold">Contact Us</Link>
+                <Link href="/events" className="btn-outline">All Events</Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+      ) : isFathersDay ? (
+        <section className="py-28 relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #060408 0%, #160c03 50%, #060408 100%)' }}>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,155,60,0.12) 0%, transparent 70%)' }}
+          />
+          <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+            {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
+              <div
+                key={i}
+                className="absolute"
+                style={{
+                  width: '1px',
+                  height: '55%',
+                  background: 'linear-gradient(to top, transparent, rgba(201,155,60,0.06))',
+                  bottom: '50%',
+                  left: '50%',
+                  transformOrigin: 'bottom center',
+                  transform: `rotate(${deg}deg)`,
+                }}
+              />
+            ))}
+          </div>
+          <div className="relative z-10 max-w-2xl mx-auto px-5 text-center">
+            <ScrollReveal>
+              <div className="gold-bar mx-auto mb-6" />
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
+                We&apos;d Love to See You There
+              </h2>
+              <p className="text-white/45 leading-relaxed mb-10">
+                Bring your father, your grandfather — any man who has made a difference in your life.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/prayer" className="btn-gold">Contact Us</Link>
