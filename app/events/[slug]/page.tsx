@@ -4,6 +4,8 @@ import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import { getEventBySlug, events } from '@/lib/events';
 
+export const revalidate = 3600; // rebuild every hour so expired event pages redirect
+
 export async function generateStaticParams() {
   return events.map((e) => ({ slug: e.slug }));
 }
