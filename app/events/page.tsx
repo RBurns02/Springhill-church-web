@@ -4,7 +4,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import EventCalendar from '@/components/EventCalendar';
 import { getUpcomingEvents } from '@/lib/events';
 
-export const revalidate = 3600; // rebuild every hour so expired events drop off
+export const dynamic = 'force-dynamic'; // always render fresh so expired events drop off immediately
 
 export const metadata: Metadata = {
   title: 'Events | Springhill Pentecostal Church',

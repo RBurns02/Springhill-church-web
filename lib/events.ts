@@ -22,7 +22,7 @@ export type SpcEvent = {
 export const events: SpcEvent[] = [
   {
     slug: 'mens-kayaking-trip',
-    expires: new Date('2026-06-14T00:00:00'),
+    expires: new Date('2026-06-13T23:59:59Z'),
     month: 'JUN',
     day: '13',
     fullDate: 'Saturday, June 13, 2026',
@@ -44,7 +44,7 @@ export const events: SpcEvent[] = [
   },
   {
     slug: 'blast-kids-church',
-    expires: new Date('2026-06-20T00:00:00'),
+    expires: new Date('2026-06-19T23:59:59Z'),
     month: 'JUN',
     day: '19',
     fullDate: 'Friday, June 19, 2026',
@@ -65,7 +65,7 @@ export const events: SpcEvent[] = [
   },
   {
     slug: 'fathers-day-service',
-    expires: new Date('2026-06-22T00:00:00'),
+    expires: new Date('2026-06-21T23:59:59Z'),
     month: 'JUN',
     day: '21',
     fullDate: 'Sunday, June 21, 2026',
@@ -88,7 +88,7 @@ export const events: SpcEvent[] = [
   },
   {
     slug: 'pastoral-anniversary',
-    expires: new Date('2026-06-28T00:00:00'),
+    expires: new Date('2026-06-27T23:59:59Z'),
     month: 'JUN',
     day: '27',
     fullDate: 'Saturday, June 27, 2026',
