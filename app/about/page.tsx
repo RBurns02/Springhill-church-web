@@ -73,7 +73,7 @@ export default function AboutPage() {
             <ScrollReveal delay={100}>
               <div className="relative overflow-hidden aspect-[4/5] bg-stone-100">
                 <Image
-                  src="/church1.png"
+                  src="/church-exterior.png"
                   alt="Springhill Pentecostal Church"
                   fill
                   className="object-cover"
