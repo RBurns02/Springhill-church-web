@@ -129,7 +129,7 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.65s' }}>
-            <Link href="/prayer" className="btn-gold">Plan Your Visit</Link>
+            <Link href="/new-here" className="btn-gold">New Here?</Link>
             <Link href="/events" className="btn-outline">Upcoming Events</Link>
           </div>
         </div>
@@ -208,7 +208,7 @@ export default function HomePage() {
               the infilling of the Holy Ghost. But more than doctrine, we believe in
               people — and we&apos;d love to walk this journey of faith alongside you.
             </p>
-            <Link href="/prayer" className="btn-primary">Plan Your First Visit</Link>
+            <Link href="/new-here" className="btn-primary">New Here? Start Here</Link>
           </ScrollReveal>
         </div>
       </section>
