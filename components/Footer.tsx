@@ -2,8 +2,10 @@ import Link from 'next/link';
 
 const navLinks = [
   { href: '/',          label: 'Home'            },
+  { href: '/about',     label: 'About'           },
+  { href: '/new-here',  label: 'New Here?'       },
   { href: '/events',    label: 'Events'          },
-  { href: '/services',  label: 'Services'        },
+  { href: '/services',  label: 'Messages'        },
   { href: '/beliefs',   label: 'What We Believe' },
   { href: '/give',      label: 'Give'            },
   { href: '/prayer',    label: 'Contact'         },

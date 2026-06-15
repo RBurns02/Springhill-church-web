@@ -17,7 +17,8 @@ function buildDropdownItems() {
 }
 
 const links = [
-  { href: '/services',  label: 'Services'        },
+  { href: '/about',     label: 'About'           },
+  { href: '/services',  label: 'Messages'        },
   { href: '/beliefs',   label: 'What We Believe' },
   { href: '/give',      label: 'Give'            },
   { href: '/prayer',    label: 'Prayer'          },
@@ -135,7 +136,7 @@ export default function Nav() {
         </nav>
 
         <div className="hidden md:flex items-center">
-          <Link href="/prayer" className="btn-primary text-[11px] px-6 py-3">
+          <Link href="/new-here" className="btn-primary text-[11px] px-6 py-3">
             Plan Your Visit
           </Link>
         </div>
@@ -217,7 +218,7 @@ export default function Nav() {
             ))}
 
             <Link
-              href="/prayer"
+              href="/new-here"
               onClick={() => setOpen(false)}
               className="btn-primary mt-5 justify-center"
             >

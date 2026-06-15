@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Suspense } from 'react';
 import ScrollReveal from '@/components/ScrollReveal';
 import PhotoSlider from '@/components/PhotoSlider';
@@ -379,11 +380,13 @@ export default function HomePage() {
             {/* Photo frame */}
             <div className="flex justify-center mb-8">
               <div className="relative w-60 h-72 md:w-72 md:h-80 overflow-hidden" style={{ borderRadius: '50%' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/pastor.png"
                   alt="Pastor Tommy and Lori Lee"
-                  className="w-full h-full object-cover object-center"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 240px, 288px"
+                  priority
                 />
               </div>
             </div>
