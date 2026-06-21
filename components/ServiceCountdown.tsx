@@ -11,6 +11,15 @@ const SERVICES: Service[] = [
   { day: 3, hour: 19, minute: 30, label: 'Wednesday Service'       },
 ];
 
+// Services that don't meet on specific dates (YYYY-MM-DD)
+const SKIPPED: Record<string, string[]> = {
+  '2026-06-21': ['Sunday Evening Service'], // Father's Day — one service only
+};
+
+function dateKey(d: Date) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
 function getNextService() {
   const now = new Date();
   let soonest: { label: string; target: Date } | null = null;
@@ -21,6 +30,11 @@ function getNextService() {
     const diff = (s.day - now.getDay() + 7) % 7;
     target.setDate(target.getDate() + diff);
     if (target.getTime() <= now.getTime()) target.setDate(target.getDate() + 7);
+
+    // Skip services cancelled on this specific date
+    const skipped = SKIPPED[dateKey(target)] ?? [];
+    if (skipped.includes(s.label)) continue;
+
     if (!soonest || target < soonest.target) soonest = { label: s.label, target };
   }
 
