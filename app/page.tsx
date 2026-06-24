@@ -199,7 +199,8 @@ export default function HomePage() {
           src="/church-exterior.png"
           alt="Springhill Pentecostal Church"
           fill
-          className="object-cover object-center"
+          className="object-cover"
+          style={{ objectPosition: '35% 60%' }}
           sizes="100vw"
         />
         {/* Dark overlay */}
