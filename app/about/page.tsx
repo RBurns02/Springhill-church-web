@@ -109,8 +109,10 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 gap-5">
             {values.map((v, i) => (
               <ScrollReveal key={v.heading} delay={i * 60}>
-                <div className="card p-8 h-full">
-                  <div className="h-px w-8 bg-church-gold mb-5" />
+                <div className="card p-8 h-full overflow-hidden relative">
+                  <p className="font-serif text-5xl font-bold text-church-gold/25 leading-none mb-5 select-none">
+                    {String(i + 1).padStart(2, '0')}
+                  </p>
                   <h3 className="font-serif font-bold text-stone-900 text-lg mb-3">{v.heading}</h3>
                   <p className="text-stone-500 text-sm leading-relaxed">{v.body}</p>
                 </div>
