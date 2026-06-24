@@ -193,22 +193,40 @@ export default function HomePage() {
       </section>
 
       {/* ── WELCOME HOME ───────────────────────────────────────────────────── */}
-      <section className="py-24 bg-church-warm">
-        <div className="max-w-3xl mx-auto px-5 text-center">
+      <section className="relative py-36 overflow-hidden flex items-center">
+        {/* Background photo */}
+        <Image
+          src="/church-exterior.png"
+          alt="Springhill Pentecostal Church"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-church-dark/75" />
+        {/* Gold gradient at bottom for depth */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+          style={{ background: 'linear-gradient(to top, rgba(201,168,76,0.06), transparent)' }}
+        />
+
+        <div className="relative z-10 max-w-2xl mx-auto px-5 text-center">
           <ScrollReveal>
             <div className="gold-bar mx-auto mb-6" />
-            <h2 className="section-heading mb-6">Welcome Home</h2>
-            <p className="text-stone-600 leading-relaxed mb-5 text-lg">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+              Welcome Home
+            </h2>
+            <p className="text-white/70 leading-relaxed mb-5 text-lg">
               Whether you&apos;ve been walking with the Lord for decades or you&apos;re just
               beginning to seek Him, there is a place for you at Springhill. We are a
               community built on love — for God and for each other.
             </p>
-            <p className="text-stone-500 leading-relaxed mb-10">
+            <p className="text-white/55 leading-relaxed mb-10">
               We believe in the full gospel: repentance, baptism in Jesus&apos; name, and
               the infilling of the Holy Ghost. But more than doctrine, we believe in
               people — and we&apos;d love to walk this journey of faith alongside you.
             </p>
-            <Link href="/new-here" className="btn-primary">New Here? Start Here</Link>
+            <Link href="/new-here" className="btn-gold">New Here? Start Here</Link>
           </ScrollReveal>
         </div>
       </section>
