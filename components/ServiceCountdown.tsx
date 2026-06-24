@@ -13,8 +13,14 @@ const SERVICES: Service[] = [
 
 // Services that don't meet on specific dates (YYYY-MM-DD)
 const SKIPPED: Record<string, string[]> = {
-  '2026-06-21': ['Sunday Evening Service'], // Father's Day — one service only
+  '2026-06-21': ['Sunday Evening Service'],                              // Father's Day — one service only
+  '2026-06-28': ['Sunday Morning Service', 'Sunday Evening Service'],   // Post-anniversary Sunday — 2 PM only
 };
+
+// One-time services on a specific date
+const ONE_TIME: { date: string; hour: number; minute: number; label: string }[] = [
+  { date: '2026-06-28', hour: 14, minute: 0, label: 'Sunday Service' },
+];
 
 function dateKey(d: Date) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -36,6 +42,13 @@ function getNextService() {
     if (skipped.includes(s.label)) continue;
 
     if (!soonest || target < soonest.target) soonest = { label: s.label, target };
+  }
+
+  // Check one-time services
+  for (const ot of ONE_TIME) {
+    const target = new Date(`${ot.date}T${String(ot.hour).padStart(2, '0')}:${String(ot.minute).padStart(2, '0')}:00`);
+    if (target.getTime() <= now.getTime()) continue;
+    if (!soonest || target < soonest.target) soonest = { label: ot.label, target };
   }
 
   return soonest!;
