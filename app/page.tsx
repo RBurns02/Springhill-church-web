@@ -143,6 +143,29 @@ export default function HomePage() {
 
       <ServiceCountdown />
 
+      {/* ── STATS BAR ──────────────────────────────────────────────────────── */}
+      <div className="bg-church-gold">
+        <div className="max-w-5xl mx-auto px-5">
+          <div className="flex flex-wrap items-center justify-center divide-y sm:divide-y-0 sm:divide-x divide-black/10">
+            {[
+              { value: '1935', label: 'Established' },
+              { value: 'Wesson, MS', label: 'Home' },
+              { value: '90+', label: 'Years of Faith' },
+              { value: 'Spirit-Filled', label: 'Since Day One' },
+            ].map(({ value, label }) => (
+              <div key={label} className="flex flex-col items-center justify-center px-10 py-6 w-1/2 sm:w-auto">
+                <span className="font-serif text-2xl md:text-3xl font-bold text-church-dark leading-none">
+                  {value}
+                </span>
+                <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-church-dark/55 mt-1.5">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* ── SERVICE TIMES ──────────────────────────────────────────────────── */}
       <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-5">
