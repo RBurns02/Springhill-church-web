@@ -100,6 +100,23 @@ export default function HomePage() {
       {/* ── HERO ───────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center justify-center bg-church-dark overflow-hidden">
 
+        {/* Dot-grid texture */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }} />
+
+        {/* Ambient glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 75% 55% at 50% 42%, rgba(91,70,148,0.22) 0%, rgba(201,168,76,0.06) 50%, transparent 70%)',
+        }} />
+
+        {/* Corner accents */}
+        <div className="absolute top-7 left-7 w-14 h-14 border-t border-l border-church-gold/25 pointer-events-none" />
+        <div className="absolute top-7 right-7 w-14 h-14 border-t border-r border-church-gold/25 pointer-events-none" />
+        <div className="absolute bottom-7 left-7 w-14 h-14 border-b border-l border-church-gold/25 pointer-events-none" />
+        <div className="absolute bottom-7 right-7 w-14 h-14 border-b border-r border-church-gold/25 pointer-events-none" />
+
         <div className="max-w-4xl mx-auto px-5 text-center text-white pt-20 pb-28">
           <div className="animate-fade-in mb-12" style={{ animationDelay: '0.1s' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -113,9 +130,11 @@ export default function HomePage() {
 
           <div className="gold-bar mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }} />
 
-          <p className="eyebrow text-church-gold mb-6 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
-            Springhill Pentecostal Church · Wesson, MS
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-6 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
+            <span className="h-px w-10 bg-church-gold/40" />
+            <p className="eyebrow text-church-gold">Springhill Pentecostal Church · Wesson, MS</p>
+            <span className="h-px w-10 bg-church-gold/40" />
+          </div>
 
           <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight mb-8 animate-fade-in-up tracking-tight" style={{ animationDelay: '0.35s' }}>
             A Place to Belong.<br />
