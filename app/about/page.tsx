@@ -37,12 +37,25 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="page-header">
-        <p className="eyebrow text-church-gold mb-5">Est. 1935</p>
-        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4 tracking-tight">About Springhill</h1>
-        <p className="text-white/50 text-lg max-w-xl mx-auto leading-relaxed">
-          Nearly a century of faith, family, and the fire of God — right here in Wesson, Mississippi.
-        </p>
+      <section className="relative py-40 flex items-center justify-center overflow-hidden">
+        <Image
+          src="/church-exterior.png"
+          alt="Springhill Pentecostal Church"
+          fill
+          className="object-cover"
+          style={{ objectPosition: '35% 60%' }}
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-church-dark/75" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%)' }} />
+        <div className="relative z-10 text-center text-white px-5">
+          <p className="eyebrow text-church-gold mb-5">Est. 1935</p>
+          <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4 tracking-tight">About Springhill</h1>
+          <p className="text-white/55 text-lg max-w-xl mx-auto leading-relaxed">
+            Nearly a century of faith, family, and the fire of God — right here in Wesson, Mississippi.
+          </p>
+        </div>
       </section>
 
       {/* Our Story */}
