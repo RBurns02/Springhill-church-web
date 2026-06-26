@@ -17,6 +17,7 @@ export type SpcEvent = {
   gcalUrl: string;
   theme?: 'outdoor' | 'anniversary' | 'fathersday';
   tagline?: string;
+  rescheduled?: boolean;
 };
 
 export const events: SpcEvent[] = [
@@ -108,6 +109,7 @@ export const events: SpcEvent[] = [
       'Service begins promptly at 7:00 PM',
     ],
     speaker: 'Rev. Nathaniel Urshan',
+    rescheduled: true,
     gcalUrl: 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=2nd+Annual+Pastoral+Anniversary+Service&dates=20260627T190000%2F20260627T210000&location=1090+Springhill+Road%2C+Wesson%2C+MS&details=Annual+Pastoral+Anniversary+Service+with+Rev.+Nathaniel+Urshan',
   },
 ];

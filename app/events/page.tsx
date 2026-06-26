@@ -62,8 +62,8 @@ export default function EventsPage() {
                 const href = event.detailsUrl ?? `/events/${event.slug}`;
                 return (
                   <ScrollReveal key={event.slug} delay={i * 40}>
-                    <div className={`card flex flex-col sm:flex-row group ${event.featured ? 'ring-1 ring-church-gold/30' : ''}`}>
-                      <div className={`flex-shrink-0 w-full sm:w-20 flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-stone-100 ${event.featured ? 'bg-church-gold/[0.04]' : ''}`}>
+                    <div className={`card flex flex-col sm:flex-row group ${event.rescheduled ? 'ring-1 ring-red-300/50' : event.featured ? 'ring-1 ring-church-gold/30' : ''}`}>
+                      <div className={`flex-shrink-0 w-full sm:w-20 flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-stone-100 ${event.rescheduled ? 'bg-red-50/60' : event.featured ? 'bg-church-gold/[0.04]' : ''}`}>
                         <p className="text-church-gold text-[10px] font-semibold tracking-widest uppercase">{event.month}</p>
                         <p className="font-serif text-4xl sm:text-3xl font-bold text-stone-900 leading-none">{event.day}</p>
                       </div>
@@ -74,6 +74,9 @@ export default function EventsPage() {
                             <span className={`text-[10px] font-semibold px-2.5 py-0.5 tracking-wide uppercase ${event.featured ? 'bg-amber-50 text-amber-700' : 'bg-stone-100 text-stone-600'}`}>
                               {event.category}
                             </span>
+                            {event.rescheduled && (
+                              <span className="text-[10px] font-bold px-2.5 py-0.5 bg-red-100 text-red-600 uppercase tracking-wide">Rescheduled</span>
+                            )}
                           </div>
                           <p className="text-stone-500 text-sm leading-relaxed mb-3">{event.description}</p>
                           <div className="flex flex-wrap gap-4 text-xs text-stone-400">

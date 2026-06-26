@@ -408,9 +408,14 @@ export default function HomePage() {
                 return (
                   <ScrollReveal key={evt.slug} delay={i * 80} className="h-full">
                     <div className="card overflow-hidden group flex flex-col h-full">
-                      <div className="h-px bg-church-gold group-hover:bg-church-purple transition-colors duration-300" />
+                      <div className={`h-px ${evt.rescheduled ? 'bg-red-400' : 'bg-church-gold group-hover:bg-church-purple'} transition-colors duration-300`} />
                       <div className="p-7 flex flex-col flex-1">
-                        <p className="eyebrow text-church-gold mb-4">{evt.month} {evt.day}</p>
+                        <div className="flex items-center justify-between mb-4">
+                          <p className="eyebrow text-church-gold">{evt.month} {evt.day}</p>
+                          {evt.rescheduled && (
+                            <span className="text-[10px] font-bold px-2 py-0.5 bg-red-100 text-red-600 uppercase tracking-wide">Rescheduled</span>
+                          )}
+                        </div>
                         <h3 className="font-serif font-bold text-lg text-stone-900 mb-1.5">{evt.title}</h3>
                         <p className="text-xs text-stone-400 mb-5 uppercase tracking-wide">{evt.category}</p>
                         <div className="flex flex-col gap-2 text-sm text-stone-500 flex-1">

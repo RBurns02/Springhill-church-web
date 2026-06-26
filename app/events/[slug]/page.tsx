@@ -162,20 +162,20 @@ export default function EventPage({ params }: { params: { slug: string } }) {
           {/* Rescheduled stamp */}
           <div className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center">
             <div className="flex flex-col items-center text-center" style={{ transform: 'rotate(-14deg)' }}>
-              <div className="border-4 border-red-500/70 px-10 py-5">
-                <p className="font-serif font-bold text-red-400/90 tracking-[0.15em] uppercase"
-                  style={{ fontSize: 'clamp(2.8rem, 8vw, 6rem)', lineHeight: 1 }}>
+              <div className="border-[5px] border-red-500 px-12 py-6 bg-black/60">
+                <p className="font-serif font-bold text-red-400 tracking-[0.12em] uppercase"
+                  style={{ fontSize: 'clamp(3rem, 9vw, 7rem)', lineHeight: 1 }}>
                   Rescheduled
                 </p>
               </div>
-              <p className="font-bold text-red-400/75 tracking-[0.3em] uppercase text-sm mt-3">
+              <p className="font-bold text-red-300 tracking-[0.28em] uppercase text-base mt-4">
                 Until Further Notice
               </p>
             </div>
           </div>
 
           {/* Dim existing content behind the stamp */}
-          <div className="absolute inset-0 z-10 pointer-events-none bg-black/30" />
+          <div className="absolute inset-0 z-10 pointer-events-none bg-black/50" />
 
           <div className="relative z-10 max-w-4xl mx-auto px-5">
             {/* Anniversary badge */}
