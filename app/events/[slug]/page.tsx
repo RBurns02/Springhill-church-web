@@ -159,6 +159,24 @@ export default function EventPage({ params }: { params: { slug: string } }) {
             <span className="absolute text-church-gold opacity-[0.08] text-6xl" style={{ top: '48%', left: '50%', transform: 'translate(-50%,-50%)' }}>✦</span>
           </div>
 
+          {/* Rescheduled stamp */}
+          <div className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center">
+            <div className="flex flex-col items-center text-center" style={{ transform: 'rotate(-14deg)' }}>
+              <div className="border-4 border-red-500/70 px-10 py-5">
+                <p className="font-serif font-bold text-red-400/90 tracking-[0.15em] uppercase"
+                  style={{ fontSize: 'clamp(2.8rem, 8vw, 6rem)', lineHeight: 1 }}>
+                  Rescheduled
+                </p>
+              </div>
+              <p className="font-bold text-red-400/75 tracking-[0.3em] uppercase text-sm mt-3">
+                Until Further Notice
+              </p>
+            </div>
+          </div>
+
+          {/* Dim existing content behind the stamp */}
+          <div className="absolute inset-0 z-10 pointer-events-none bg-black/30" />
+
           <div className="relative z-10 max-w-4xl mx-auto px-5">
             {/* Anniversary badge */}
             <div
@@ -374,6 +392,17 @@ export default function EventPage({ params }: { params: { slug: string } }) {
             {/* Main content */}
             <div className="md:col-span-2">
               <ScrollReveal>
+                {isAnniversary && (
+                  <div className="flex items-start gap-3 border border-red-200 bg-red-50 px-5 py-4 mb-8">
+                    <svg className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                    </svg>
+                    <div>
+                      <p className="font-bold text-red-700 text-sm">This event has been rescheduled.</p>
+                      <p className="text-red-600 text-sm mt-0.5">A new date will be announced. Check back soon or contact us for more information.</p>
+                    </div>
+                  </div>
+                )}
                 <div className="h-px w-10 mb-6 bg-church-gold" />
                 <h2 className="font-serif text-2xl font-bold text-stone-900 mb-5">About This Event</h2>
                 <p className="text-stone-600 leading-relaxed text-lg mb-8">{event.body}</p>
