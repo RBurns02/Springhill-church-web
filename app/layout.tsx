@@ -99,7 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script
           src="https://embed.tawk.to/6a3f21c935d7381d4b091eac/default"
           strategy="lazyOnload"
-          crossOrigin="*"
+          crossOrigin="anonymous"
         />
       </body>
     </html>
