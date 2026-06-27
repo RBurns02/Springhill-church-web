@@ -23,6 +23,7 @@ const SPECIAL: Record<string, CalEvent[]> = {
 // Overrides replace ALL recurring events for that date
 const OVERRIDES: Record<string, CalEvent[]> = {
   '2026-06-21': [{ title: "Father's Day Service", time: '10:00 AM', type: 'special' }],
+  '2026-06-28': [{ title: 'Sunday Service',        time: '2:00 PM',  type: 'special' }],
 };
 
 function recurringFor(date: Date): CalEvent[] {

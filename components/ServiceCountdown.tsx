@@ -13,11 +13,14 @@ const SERVICES: Service[] = [
 
 // Services that don't meet on specific dates (YYYY-MM-DD)
 const SKIPPED: Record<string, string[]> = {
-  '2026-06-21': ['Sunday Evening Service'], // Father's Day — one service only
+  '2026-06-21': ['Sunday Evening Service'],                            // Father's Day — one service only
+  '2026-06-28': ['Sunday Morning Service', 'Sunday Evening Service'], // One service at 2 PM
 };
 
 // One-time services on a specific date
-const ONE_TIME: { date: string; hour: number; minute: number; label: string }[] = [];
+const ONE_TIME: { date: string; hour: number; minute: number; label: string }[] = [
+  { date: '2026-06-28', hour: 14, minute: 0, label: 'Sunday Service' },
+];
 
 function dateKey(d: Date) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
