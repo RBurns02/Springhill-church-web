@@ -97,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Analytics />
         <SpeedInsights />
         <Script
-          src="https://embed.tawk.to/6a3f21c935d7381d4b091eac/default"
+          src="https://embed.tawk.to/6a3f2815eafe991d4bf9fd32/1js3b95kv"
           strategy="lazyOnload"
           crossOrigin="anonymous"
         />
