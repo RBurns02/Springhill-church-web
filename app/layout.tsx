@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display, Great_Vibes } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import Script from 'next/script';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
@@ -96,11 +95,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <Analytics />
         <SpeedInsights />
-        <Script
-          src="https://embed.tawk.to/6a3f2815eafe991d4bf9fd32/1js3b95kv"
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-        />
       </body>
     </html>
   );
