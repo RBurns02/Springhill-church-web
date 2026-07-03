@@ -15,11 +15,14 @@ const SERVICES: Service[] = [
 const SKIPPED: Record<string, string[]> = {
   '2026-06-21': ['Sunday Evening Service'],                            // Father's Day — one service only
   '2026-06-28': ['Sunday Morning Service', 'Sunday Evening Service'], // One service at 2 PM
+  '2026-07-05': ['Sunday Evening Service'],                            // Lake Service — morning only
+  '2026-07-12': ['Sunday Morning Service', 'Sunday Evening Service'], // Merge Service at 12 PM
 };
 
 // One-time services on a specific date
 const ONE_TIME: { date: string; hour: number; minute: number; label: string }[] = [
   { date: '2026-06-28', hour: 14, minute: 0, label: 'Sunday Service' },
+  { date: '2026-07-12', hour: 12, minute: 0, label: 'Merge Service'  },
 ];
 
 function dateKey(d: Date) {
