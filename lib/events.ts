@@ -256,6 +256,7 @@ export const events: SpcEvent[] = [
     category: 'Special Service',
     featured: true,
     speaker: 'Bro. David Cheramie',
+    speakerImage: '/david-cheramie.jpg',
     description: "Bro. David Cheramie will be ministering both Sunday morning and Sunday evening. You do not want to miss this.",
     body: "Join us for a special Sunday as we welcome Bro. David Cheramie to Springhill Pentecostal Church. He will be ministering both in the morning service at 10:00 AM and the evening service at 6:00 PM. Come expecting God to move.",
     highlights: [
