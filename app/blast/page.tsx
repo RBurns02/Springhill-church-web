@@ -5,7 +5,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 export const metadata: Metadata = {
   title: 'BLAST Kids Church | Springhill Pentecostal Church',
   description:
-    'BLAST Kids Church at Springhill Pentecostal Church — a fun, interactive monthly ministry for kids ages 5–11 in Wesson, MS.',
+    'BLAST Kids Church — Jonah & the Whale. A fun, interactive monthly ministry for kids ages 5–11 in Wesson, MS.',
   openGraph: {
     title: 'BLAST Kids Church | Springhill Pentecostal Church',
     description: 'A fun, interactive monthly ministry for kids ages 5–11. Bible stories, games, worship, and more.',
@@ -50,29 +50,64 @@ const features = [
 export default function BlastPage() {
   return (
     <>
-      {/* ── HERO ── */}
-      <section className="relative bg-church-dark overflow-hidden py-28 md:py-36 text-center">
+      {/* ── HERO — deep ocean theme ── */}
+      <section
+        className="relative overflow-hidden py-28 md:py-40 text-center text-white"
+        style={{ background: 'linear-gradient(160deg, #020d1a 0%, #073352 50%, #041a2e 100%)' }}
+      >
+        {/* Ambient glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 70% 55% at 50% 45%, rgba(34,211,238,0.10) 0%, transparent 65%)',
+        }} />
 
-        {/* Decorative gold stars */}
-        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-          <span className="absolute text-church-gold opacity-20 text-5xl" style={{ top: '12%', left: '6%' }}>✦</span>
-          <span className="absolute text-church-gold opacity-15 text-3xl" style={{ top: '28%', left: '14%' }}>✦</span>
-          <span className="absolute text-church-gold opacity-25 text-4xl" style={{ top: '60%', left: '5%' }}>✦</span>
-          <span className="absolute text-church-gold opacity-20 text-2xl" style={{ top: '80%', left: '18%' }}>✦</span>
-          <span className="absolute text-church-gold opacity-20 text-5xl" style={{ top: '10%', right: '7%' }}>✦</span>
-          <span className="absolute text-church-gold opacity-15 text-3xl" style={{ top: '35%', right: '12%' }}>✦</span>
-          <span className="absolute text-church-gold opacity-25 text-4xl" style={{ top: '65%', right: '6%' }}>✦</span>
-          <span className="absolute text-church-gold opacity-10 text-6xl" style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>✦</span>
+        {/* Concentric ripple rings */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          {[500, 750, 1050, 1400].map((size) => (
+            <div
+              key={size}
+              className="absolute rounded-full border border-cyan-400/[0.06]"
+              style={{ width: size, height: size, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+            />
+          ))}
         </div>
 
+        {/* Bubble glints */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          {[
+            [8,20],[14,65],[6,82],[91,15],[87,58],[93,80],
+            [44,10],[56,88],[28,48],[72,36],[20,38],[80,72],
+            [35,25],[65,75],[50,5],
+          ].map(([x, y], i) => (
+            <div key={i} className="absolute rounded-full bg-cyan-300/25"
+              style={{ left: `${x}%`, top: `${y}%`, width: i % 3 === 0 ? 6 : 4, height: i % 3 === 0 ? 6 : 4 }} />
+          ))}
+        </div>
+
+        {/* Wave at bottom */}
+        <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,45 C360,90 1080,0 1440,45 L1440,90 L0,90 Z" fill="rgba(255,255,255,0.02)" />
+          <path d="M0,65 C480,25 960,80 1440,65 L1440,90 L0,90 Z" fill="rgba(255,255,255,0.035)" />
+        </svg>
+
         <div className="relative z-10 max-w-4xl mx-auto px-5">
-          <p className="eyebrow text-church-gold mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          {/* Theme badge */}
+          <div className="inline-flex items-center gap-3 border border-cyan-400/30 px-5 py-2 mb-8 animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
+            <svg className="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5c.75-1.079 1.75-2 3-2s2.25.921 3 2 1.75 2 3 2 2.25-.921 3-2 1.75-2 3-2" />
+            </svg>
+            <span className="text-cyan-300 text-[10px] font-semibold tracking-[0.22em] uppercase">August 2026 · Jonah &amp; the Whale</span>
+            <svg className="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5c.75-1.079 1.75-2 3-2s2.25.921 3 2 1.75 2 3 2 2.25-.921 3-2 1.75-2 3-2" />
+            </svg>
+          </div>
+
+          <p className="eyebrow text-cyan-400 mb-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             Children&apos;s Ministry · Springhill Pentecostal Church
           </p>
 
           <h1
-            className="font-serif font-black text-white leading-none tracking-tight mb-3 animate-fade-in-up"
-            style={{ fontSize: 'clamp(5rem, 18vw, 11rem)', animationDelay: '0.2s' }}
+            className="font-serif font-black leading-none tracking-tight mb-3 animate-fade-in-up"
+            style={{ fontSize: 'clamp(5rem, 18vw, 11rem)', animationDelay: '0.2s', color: '#22d3ee' }}
           >
             BLAST
           </h1>
@@ -81,11 +116,11 @@ export default function BlastPage() {
             Kids Church
           </p>
 
-          <div className="gold-bar mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: '0.35s' }} />
+          <div className="h-px w-16 bg-cyan-400/40 mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: '0.35s' }} />
 
           <p className="text-white/55 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
-            A high-energy monthly experience where kids ages 5–11 discover the
-            Bible, make friends, and encounter God in ways that are just for them.
+            This month we&apos;re diving deep into the story of Jonah and the Whale —
+            one of the greatest adventures in all of Scripture.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.55s' }}>
@@ -113,8 +148,51 @@ export default function BlastPage() {
         </div>
       </div>
 
-      {/* ── WHAT IS BLAST ── */}
+      {/* ── THIS MONTH'S STORY ── */}
       <section className="py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-5">
+          <ScrollReveal className="text-center mb-14">
+            <div className="h-px w-16 bg-cyan-500/50 mx-auto mb-6" />
+            <p className="eyebrow text-cyan-600 mb-3">This Month&apos;s Story</p>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-stone-900 tracking-tight">
+              Jonah &amp; the Whale
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                num: '01',
+                heading: 'God Calls Jonah',
+                body: "God told Jonah to go to Nineveh — but Jonah ran the other way. He got on a ship and tried to hide from God. Sound familiar? We all run sometimes.",
+              },
+              {
+                num: '02',
+                heading: 'Inside the Whale',
+                body: "A great storm hit the ship, and Jonah was thrown overboard. Then God sent a giant fish to swallow him whole! For three days, Jonah sat in the dark — and finally prayed.",
+              },
+              {
+                num: '03',
+                heading: 'A Second Chance',
+                body: "God heard Jonah's prayer and the whale spit him out. Jonah went to Nineveh, preached the Word — and the whole city turned to God. That's the mercy of God.",
+              },
+            ].map((s) => (
+              <ScrollReveal key={s.num}>
+                <div className="border border-stone-100 p-8 h-full hover:border-cyan-200 transition-colors group">
+                  <p className="font-serif text-5xl font-black leading-none mb-5 text-cyan-500/20 group-hover:text-cyan-500/35 transition-colors">
+                    {s.num}
+                  </p>
+                  <h3 className="font-serif font-bold text-stone-900 text-lg mb-3">{s.heading}</h3>
+                  <p className="text-stone-500 text-sm leading-relaxed">{s.body}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHAT IS BLAST ── */}
+      <section className="py-24 bg-church-warm">
         <div className="max-w-5xl mx-auto px-5">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <ScrollReveal>
@@ -134,7 +212,6 @@ export default function BlastPage() {
               <Link href="/events" className="btn-primary">Find the Next Date</Link>
             </ScrollReveal>
 
-            {/* Info panel */}
             <ScrollReveal delay={100}>
               <div className="space-y-0 border border-stone-200">
                 {[
@@ -156,10 +233,20 @@ export default function BlastPage() {
       </section>
 
       {/* ── WHAT HAPPENS ── */}
-      <section className="py-24 section-dark">
-        <div className="max-w-5xl mx-auto px-5">
+      <section
+        className="relative py-24 overflow-hidden text-white"
+        style={{ background: 'linear-gradient(160deg, #020d1a 0%, #073352 50%, #041a2e 100%)' }}
+      >
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(34,211,238,0.07) 0%, transparent 65%)',
+        }} />
+        <svg className="absolute bottom-0 left-0 w-full opacity-40" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.03)" />
+        </svg>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-5">
           <ScrollReveal className="text-center mb-16">
-            <div className="gold-bar mx-auto mb-6" />
+            <div className="h-px w-16 bg-cyan-400/40 mx-auto mb-6" />
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-white tracking-tight mb-3">
               What Happens at BLAST?
             </h2>
@@ -172,11 +259,11 @@ export default function BlastPage() {
           <div className="grid md:grid-cols-3 gap-5">
             {features.map((f, i) => (
               <ScrollReveal key={f.title} delay={i * 100}>
-                <div className="border border-white/10 p-8 hover:border-church-gold/40 transition-colors group">
-                  <p className="font-serif text-5xl font-black text-church-gold/25 leading-none mb-6 group-hover:text-church-gold/40 transition-colors">
+                <div className="border border-white/10 p-8 hover:border-cyan-400/30 transition-colors group">
+                  <p className="font-serif text-5xl font-black text-cyan-400/20 leading-none mb-6 group-hover:text-cyan-400/35 transition-colors">
                     {f.number}
                   </p>
-                  <div className="w-10 h-10 border border-white/20 flex items-center justify-center mb-5 text-white/60 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
+                  <div className="w-10 h-10 border border-white/20 flex items-center justify-center mb-5 text-white/60 group-hover:border-cyan-400 group-hover:text-cyan-400 transition-all duration-300">
                     {f.icon}
                   </div>
                   <h3 className="font-serif font-bold text-xl text-white mb-3">{f.title}</h3>
@@ -188,7 +275,7 @@ export default function BlastPage() {
         </div>
       </section>
 
-      {/* ── SCRIPTURE + CTA — gold background ── */}
+      {/* ── SCRIPTURE + CTA ── */}
       <section className="py-28 bg-church-gold">
         <div className="max-w-2xl mx-auto px-5 text-center">
           <ScrollReveal>
@@ -196,11 +283,10 @@ export default function BlastPage() {
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
             <blockquote className="font-serif text-2xl md:text-3xl font-bold text-church-dark italic leading-relaxed mb-5">
-              &ldquo;Suffer little children, and forbid them not, to come unto me:
-              for of such is the kingdom of heaven.&rdquo;
+              &ldquo;Salvation is of the LORD.&rdquo;
             </blockquote>
             <p className="text-church-dark/50 text-xs font-semibold tracking-[0.2em] uppercase mb-14">
-              Matthew 19:14
+              Jonah 2:9
             </p>
 
             <div className="h-px w-16 bg-church-dark/20 mx-auto mb-10" />
