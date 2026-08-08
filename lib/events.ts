@@ -18,6 +18,7 @@ export type SpcEvent = {
   theme?: 'outdoor' | 'anniversary' | 'fathersday';
   tagline?: string;
   rescheduled?: boolean;
+  speakerImage?: string;
 };
 
 export const events: SpcEvent[] = [
@@ -188,6 +189,7 @@ export const events: SpcEvent[] = [
     category: 'Special Service',
     featured: true,
     speaker: 'Rev. Dustin Hughes',
+    speakerImage: '/dustin-hughes.jpg',
     description: "Join us for a special Sunday evening service featuring Rev. Dustin Hughes ministering in the Word.",
     body: "Come join us for a powerful Sunday evening service as we welcome Rev. Dustin Hughes to the Springhill pulpit. Come expecting a word from God — this is a service you do not want to miss.",
     highlights: [

@@ -1,5 +1,6 @@
 import { notFound, redirect } from 'next/navigation';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import { getEventBySlug, events } from '@/lib/events';
@@ -422,6 +423,17 @@ export default function EventPage({ params }: { params: { slug: string } }) {
 
             {/* Sidebar */}
             <ScrollReveal delay={100}>
+              {event.speakerImage && (
+                <div className="relative w-full aspect-[3/4] mb-5 overflow-hidden">
+                  <Image
+                    src={event.speakerImage}
+                    alt={event.speaker ?? 'Speaker'}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 320px"
+                  />
+                </div>
+              )}
               <div className={`space-y-0 border ${isAnniversary || isFathersDay ? 'border-church-gold/25' : 'border-stone-200'}`}>
                 {(isAnniversary || isFathersDay) && (
                   <div className="h-1 bg-church-gold" />
