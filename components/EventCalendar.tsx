@@ -19,6 +19,10 @@ const SPECIAL: Record<string, CalEvent[]> = {
   '2026-06-19': [{ title: 'BLAST — Kids Church',         time: '7:00 PM', type: 'special' }],
   '2026-06-27': [{ title: 'Anniversary — Rescheduled',   time: '—',       type: 'special' }],
   '2026-07-04': [{ title: 'July 4th Celebration',        time: '5:00 PM', type: 'special' }],
+  '2026-08-08': [{ title: 'Rev. Dustin Hughes',          time: '6:00 PM', type: 'special' }],
+  '2026-08-15': [{ title: 'Couples Seminar',             time: '10:00 AM', type: 'special' }],
+  '2026-08-21': [{ title: 'BLAST — Kids Church',         time: '7:00 PM', type: 'special' }],
+  '2026-08-23': [{ title: 'Bro. David Cheramie',         time: 'AM & PM', type: 'special' }],
 };
 
 // Overrides replace ALL recurring events for that date
