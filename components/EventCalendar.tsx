@@ -28,6 +28,8 @@ const OVERRIDES: Record<string, CalEvent[]> = {
   '2026-06-28': [{ title: 'Sunday Service',        time: '2:00 PM',  type: 'special' }],
   '2026-07-05': [{ title: 'Lake Service',           time: '10:00 AM', type: 'special' }],
   '2026-07-12': [{ title: 'Merge Service',          time: '12:00 PM', type: 'special' }],
+  // The November 25 Wednesday service is moved to Tuesday, November 24.
+  '2026-11-25': [],
 };
 
 function recurringFor(date: Date): CalEvent[] {
