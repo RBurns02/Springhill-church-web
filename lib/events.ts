@@ -23,6 +23,27 @@ export type SpcEvent = {
 
 export const events: SpcEvent[] = [
   {
+    slug: 'midweek-service-tuesday-nov-24',
+    expires: new Date('2026-11-24T23:59:59Z'),
+    month: 'NOV',
+    day: '24',
+    fullDate: 'Tuesday, November 24, 2026',
+    title: 'Midweek Service — Tuesday This Week',
+    time: '7:30 PM',
+    location: 'Springhill Pentecostal Church · 1090 Springhill Road, Wesson, MS',
+    category: 'Schedule Update',
+    featured: true,
+    description: 'This week only, our regular Wednesday night service is moving to Tuesday, November 24, at 7:30 PM. There will be no Wednesday service on November 25.',
+    body: 'Join us for our midweek worship service on Tuesday, November 24, at 7:30 PM instead of Wednesday this week. There will be no Wednesday night service on November 25. Regular Wednesday services resume the following week.',
+    highlights: [
+      'Tuesday, November 24 · 7:30 PM',
+      'No service Wednesday, November 25',
+      'Regular Wednesday schedule resumes the following week',
+      '1090 Springhill Road · Wesson, MS',
+    ],
+    gcalUrl: 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Springhill+Midweek+Service+-+Tuesday&dates=20261124T193000%2F20261124T210000&location=1090+Springhill+Road%2C+Wesson%2C+MS&details=This+week+only%3A+Tuesday+service+replaces+Wednesday+service.',
+  },
+  {
     slug: 'mens-kayaking-trip',
     expires: new Date('2026-06-13T23:59:59Z'),
     month: 'JUN',
