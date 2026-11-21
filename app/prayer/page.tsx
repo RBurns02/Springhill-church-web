@@ -1,138 +1,20 @@
 import type { Metadata } from 'next';
-import ScrollReveal from '@/components/ScrollReveal';
 import ContactModal from '@/components/ContactModal';
 import PrayerModal from '@/components/PrayerModal';
+import { SpcPageHero, SpcSectionHeading, SpcQuote, spcMapsUrl } from '@/components/SpcPageKit';
 
-export const metadata: Metadata = {
-  title: 'Contact Us | Springhill Pentecostal Church',
-  description:
-    'Get in touch with Springhill Pentecostal Church in Wesson, MS. Send a prayer request, get directions, or reach out to our team.',
-  openGraph: {
-    title: 'Contact Us | Springhill Pentecostal Church',
-    description: 'Get in touch, send a prayer request, or get directions to Springhill Pentecostal Church in Wesson, MS.',
-    images: [{ url: '/og-logo.png', width: 1200, height: 630 }],
-  },
-  twitter: { card: 'summary_large_image', images: ['/og-logo.png'] },
-};
-
+export const metadata: Metadata = { title: 'Prayer & Contact | Springhill Pentecostal Church', description: 'Send a prayer request, contact Pastor Tommy Lee, or find Springhill Pentecostal Church at 1090 Springhill Road in Wesson, MS.' };
 const scriptures = [
-  {
-    ref:  'Philippians 4:6',
-    text: '"Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God."',
-  },
-  {
-    ref:  'Jeremiah 33:3',
-    text: '"Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not."',
-  },
-  {
-    ref:  'Matthew 7:7',
-    text: '"Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you."',
-  },
+  { text:'“Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.”', cite:'Philippians 4:6' },
+  { text:'“Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not.”', cite:'Jeremiah 33:3' },
+  { text:'“Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you.”', cite:'Matthew 7:7' },
 ];
-
-export default function ContactPage() {
-  return (
-    <>
-      {/* Page header */}
-      <section className="page-header">
-        <p className="eyebrow text-church-gold mb-5">We&apos;d Love to Hear From You</p>
-        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4 tracking-tight">Contact Us</h1>
-        <p className="text-white/50 text-lg max-w-xl mx-auto leading-relaxed">
-          Whether you have a question, need directions, or want someone to pray with you —
-          we&apos;re here.
-        </p>
-      </section>
-
-      {/* Cards + Map */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-5">
-          <ScrollReveal className="text-center mb-12">
-            <div className="gold-bar mx-auto mb-6" />
-            <h2 className="section-heading">Get in Touch</h2>
-          </ScrollReveal>
-
-          {/* 3 cards — DOM order matches desired mobile order */}
-          <div className="grid md:grid-cols-3 gap-5 mb-10 items-stretch">
-            {/* 1. Contact Pastor */}
-            <ScrollReveal delay={0} className="h-full">
-              <ContactModal />
-            </ScrollReveal>
-
-            {/* 2. Prayer Requests */}
-            <ScrollReveal delay={80} className="h-full">
-              <PrayerModal />
-            </ScrollReveal>
-
-            {/* 3. Service Times */}
-            <ScrollReveal delay={160} className="h-full">
-              <div className="card p-8 text-center group h-full flex flex-col items-center justify-center">
-                <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <p className="eyebrow text-stone-400 mb-3">Service Times</p>
-                <ul className="space-y-1.5 text-sm text-stone-500">
-                  <li><span className="font-semibold text-stone-800">Sunday</span> · 10:00 AM &amp; 6:00 PM</li>
-                  <li><span className="font-semibold text-stone-800">Monday</span> · 7:00 PM</li>
-                  <li><span className="font-semibold text-stone-800">Wednesday</span> · 7:30 PM</li>
-                  <li className="text-church-gold text-xs pt-1">1st Sun · Friends &amp; Family 2:00 PM</li>
-                </ul>
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* 4. Location / Map */}
-          <ScrollReveal>
-            <p className="eyebrow text-stone-400 mb-4 text-center">Location</p>
-            <div className="overflow-hidden border border-stone-200 w-full" style={{ height: '340px' }}>
-              <iframe
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                loading="lazy"
-                title="Springhill Pentecostal Church location"
-                src="https://maps.google.com/maps?q=1090+Springhill+Road+Wesson+MS+39191&output=embed"
-              />
-            </div>
-            <p className="text-center text-sm text-stone-500 mt-3">
-              <a
-                href="https://maps.google.com/?q=1090+Springhill+Road+Wesson+MS+39191"
-                target="_blank" rel="noopener noreferrer"
-                className="hover:text-church-gold transition-colors"
-              >
-                1090 Springhill Road, Wesson, MS 39191
-              </a>
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Scripture cards */}
-      <section className="py-24 section-dark">
-        <div className="max-w-5xl mx-auto px-5">
-          <ScrollReveal className="text-center mb-14">
-            <div className="gold-bar mx-auto mb-6" />
-            <h2 className="font-serif text-3xl font-bold text-white mb-3 tracking-tight">
-              What the Bible Says About Prayer
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-5">
-            {scriptures.map((v, i) => (
-              <ScrollReveal key={v.ref} delay={i * 100}>
-                <div className="border border-white/10 p-8 text-center hover:border-church-gold/30 transition-colors">
-                  <svg className="w-7 h-7 text-church-gold mx-auto mb-6 opacity-60" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                  <p className="text-white/65 text-sm leading-relaxed italic mb-6">{v.text}</p>
-                  <p className="text-church-gold text-xs font-semibold tracking-[0.15em] uppercase">{v.ref}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  );
+export default function PrayerPage() {
+  return <div className="spc-subpage">
+    <SpcPageHero eyebrow="Prayer & contact" title="We're here" accent="for you." description="Whether you need someone to pray with you, have a question, or want to contact Pastor Tommy Lee, we'd love to hear from you." image="/church10.jpg" imageAlt="Prayer at the altar at Springhill Pentecostal Church" variant="forest" primary={{text:'Reach out to us',href:'#spc-contact-options'}} />
+    <section id="spc-contact-options" className="spc-sub-section"><div className="spc-container"><SpcSectionHeading eyebrow="Reach out" title="How can we help?" description="Choose an option below. The existing secure contact and prayer forms are preserved in this redesign." /><div className="spc-contact-actions"><ContactModal /><PrayerModal /></div></div></section>
+    <section className="spc-sub-section spc-sub-section--sand"><div className="spc-container spc-sub-2col"><div><SpcSectionHeading eyebrow="Find us" title="Join us in Wesson." description="Our doors are open for Sunday worship, Monday prayer, and Wednesday service."/><p style={{lineHeight:1.9,color:'#526256'}}>1090 Springhill Road<br/>Wesson, MS 39191<br/>Sunday: 10:00 AM &amp; 6:00 PM<br/>Monday: 7:00 PM · Wednesday: 7:30 PM<br/>First Sunday: 2:00 PM only</p><a href={spcMapsUrl} target="_blank" rel="noopener noreferrer" className="spc-text-link" style={{marginTop:22}}>Get directions <span aria-hidden="true">↗</span></a></div><div className="spc-contact-map"><iframe title="Springhill Pentecostal Church map, Wesson MS" loading="lazy" src="https://maps.google.com/maps?q=1090+Springhill+Road+Wesson+MS+39191&output=embed" /></div></div></section>
+    <section className="spc-sub-section spc-sub-section--forest"><div className="spc-container"><SpcSectionHeading eyebrow="Hold on to the Word" title="What Scripture says about prayer." dark/><div className="spc-sub-cards">{scriptures.map((v,i)=><article key={v.cite} className="spc-sub-card spc-sub-card--dark"><span className="spc-sub-card-num">0{i+1}</span><h3>{v.cite}</h3><p>{v.text}</p></article>)}</div></div></section>
+    <SpcQuote cite="James 5:16">“The effectual fervent prayer of a righteous man availeth much.”</SpcQuote>
+  </div>;
 }

@@ -1,20 +1,19 @@
 import type { Config } from 'tailwindcss';
 
+// Retain the existing utility names for compatibility across every original route.
+// The old `church-purple` utility now maps to the updated forest-green primary.
 const config: Config = {
-  content: [
-    './app/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-  ],
+  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
         church: {
-          purple: '#1C1917',   // charcoal — primary dark
-          deep:   '#0C0A09',   // near-black — hover state
-          gold:   '#C9A84C',   // refined classic gold
-          cream:  '#FAFAF8',   // near-white
-          warm:   '#F0EEE9',   // warm stone section bg
-          dark:   '#1C1917',   // charcoal — dark sections
+          purple: '#173e31',
+          deep:   '#0d2822',
+          gold:   '#c7a76a',
+          cream:  '#f8f7f1',
+          warm:   '#f0eee5',
+          dark:   '#0d2822',
         },
       },
       fontFamily: {
@@ -23,8 +22,8 @@ const config: Config = {
         script: ['var(--font-script)', 'cursive'],
       },
       backgroundImage: {
-        'hero-gradient':  'linear-gradient(to bottom, #1C1917 0%, #292524 100%)',
-        'gold-gradient':  'linear-gradient(135deg, #D4AF37 0%, #C9A84C 100%)',
+        'hero-gradient': 'linear-gradient(to bottom, #0d2822 0%, #173e31 100%)',
+        'gold-gradient': 'linear-gradient(135deg, #d8bc81 0%, #c7a76a 100%)',
       },
     },
   },

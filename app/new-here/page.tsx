@@ -1,174 +1,24 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ScrollReveal from '@/components/ScrollReveal';
+import { SpcPageHero, SpcSectionHeading, SpcSectionCta, SpcImage, SpcQuote, spcMapsUrl } from '@/components/SpcPageKit';
 
-export const metadata: Metadata = {
-  title: 'New Here | Springhill Pentecostal Church',
-  description: 'Thinking about visiting Springhill Pentecostal Church? You are welcome here. Come as you are.',
-  openGraph: {
-    title: 'New Here | Springhill Pentecostal Church',
-    description: 'You are welcome here. Come as you are — Springhill Pentecostal Church in Wesson, MS.',
-    images: [{ url: '/og-logo.png', width: 1200, height: 630 }],
-  },
-  twitter: { card: 'summary_large_image', images: ['/og-logo.png'] },
-};
+export const metadata: Metadata = { title: 'Plan Your Visit | Springhill Pentecostal Church', description: 'Visiting Springhill Pentecostal Church in Wesson? Find our location, weekly service times, and what to expect before you come.' };
 
 const pillars = [
-  {
-    icon: (
-      <svg className="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-    heading: 'Real People',
-    body: "We're not a perfect church — we're a family of people who love God and love each other. You'll be greeted with a genuine handshake, not a stranger's smile.",
-  },
-  {
-    icon: (
-      <svg className="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
-    heading: 'A Place to Belong',
-    body: "Whether you've been in church your whole life or you're stepping through those doors for the first time — you have a place here. Everyone belongs before they believe.",
-  },
-  {
-    icon: (
-      <svg className="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-      </svg>
-    ),
-    heading: 'The Word, Preached Straight',
-    body: "Every Sunday you'll hear the Bible taught with clarity and conviction — not watered down, not complicated. Just the truth of God's Word, applied to real life.",
-  },
-  {
-    icon: (
-      <svg className="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-      </svg>
-    ),
-    heading: 'Spirit-Filled Worship',
-    body: "Worship at Springhill is alive. We sing, we pray, and we expect God to move. Come with an open heart — you may encounter something you didn't know you were looking for.",
-  },
+  { title:'Real people', copy:"We're a church family who loves God and one another. You'll find friendly faces and a genuine welcome." },
+  { title:'A place to belong', copy:"Whether you've been in church your whole life or this will be your first visit, you're welcome here." },
+  { title:'The Word preached straight', copy:"We believe in Biblical teaching with clarity, conviction, and room to grow in your walk with God." },
+  { title:'Spirit-filled worship', copy:"We sing, pray, and worship with expectation that God will move in our midst." },
 ];
 
 export default function NewHerePage() {
-  return (
-    <>
-      {/* Hero */}
-      <section className="page-header">
-        <p className="eyebrow text-church-gold mb-5">Welcome</p>
-        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4 tracking-tight">
-          You&apos;re Welcome Here
-        </h1>
-        <p className="text-white/50 text-lg max-w-xl mx-auto leading-relaxed">
-          Wherever you&apos;re coming from — whatever your story — there&apos;s a seat for you at Springhill.
-        </p>
-      </section>
-
-      {/* Opening statement */}
-      <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-5">
-          <ScrollReveal className="text-center mb-16">
-            <div className="gold-bar mx-auto mb-6" />
-            <h2 className="section-heading mb-6">Come As You Are</h2>
-            <p className="text-stone-500 text-lg leading-relaxed max-w-2xl mx-auto">
-              Springhill Pentecostal Church is a family — and like any good family, you don&apos;t have
-              to earn your place at the table. We&apos;re not here to judge where you&apos;ve been.
-              We&apos;re here to walk with you toward where God is taking you.
-            </p>
-          </ScrollReveal>
-
-          {/* 4 pillars */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {pillars.map((p, i) => (
-              <ScrollReveal key={p.heading} delay={i * 60}>
-                <div className="card p-7 h-full">
-                  <div className="w-16 h-16 rounded-xl bg-church-gold/10 border border-church-gold/30 flex items-center justify-center mb-6 text-church-gold">
-                    {p.icon}
-                  </div>
-                  <h3 className="font-serif font-bold text-stone-900 text-lg mb-3">{p.heading}</h3>
-                  <p className="text-stone-500 text-sm leading-relaxed">{p.body}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Scripture banner */}
-      <section className="py-20 section-dark">
-        <div className="max-w-3xl mx-auto px-5 text-center">
-          <ScrollReveal>
-            <svg className="w-8 h-8 text-church-gold mx-auto mb-6 opacity-60" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-            </svg>
-            <p className="font-serif text-2xl md:text-3xl text-white/80 leading-relaxed italic mb-6 max-w-2xl mx-auto">
-              &ldquo;Come unto me, all ye that labour and are heavy laden,
-              and I will give you rest.&rdquo;
-            </p>
-            <p className="text-church-gold text-xs font-semibold tracking-[0.2em] uppercase">Matthew 11:28</p>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Service info */}
-      <section className="py-20 bg-church-warm">
-        <div className="max-w-3xl mx-auto px-5">
-          <ScrollReveal className="text-center mb-12">
-            <div className="gold-bar mx-auto mb-6" />
-            <h2 className="section-heading">Join Us</h2>
-          </ScrollReveal>
-
-          <div className="grid sm:grid-cols-3 gap-5">
-            {[
-              { day: 'Sunday',    times: '10:00 AM & 6:00 PM' },
-              { day: 'Monday',    times: '7:00 PM' },
-              { day: 'Wednesday', times: '7:30 PM' },
-            ].map((s, i) => (
-              <ScrollReveal key={s.day} delay={i * 60}>
-                <div className="card p-7 text-center">
-                  <p className="eyebrow text-church-gold mb-2">{s.day}</p>
-                  <p className="font-serif font-bold text-stone-900 text-lg">{s.times}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal>
-            <p className="text-center text-stone-500 text-sm mt-6">
-              <a
-                href="https://maps.google.com/?q=1090+Springhill+Road+Wesson+MS+39191"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-church-gold transition-colors"
-              >
-                1090 Springhill Road, Wesson, MS 39191
-              </a>
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 section-dark">
-        <div className="max-w-2xl mx-auto px-5 text-center">
-          <ScrollReveal>
-            <div className="gold-bar mx-auto mb-6" />
-            <h2 className="font-serif text-3xl font-bold text-white mb-4">
-              We&apos;d Love to Meet You
-            </h2>
-            <p className="text-white/50 leading-relaxed mb-10">
-              Have a question before you visit? Want someone to pray with you?
-              Reach out — we&apos;re real people and we&apos;d love to hear from you.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/prayer" className="btn-gold">Get in Touch</Link>
-              <Link href="/beliefs" className="btn-outline">What We Believe</Link>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-    </>
-  );
+  return <div className="spc-subpage">
+    <SpcPageHero eyebrow="Your first Sunday starts here" title="You're welcome" accent="here." description="You don't need to have it all figured out before walking through our doors. Come as you are — we'd love to meet you." image="/church7.jpg" imageAlt="Springhill church family worshipping together" primary={{ text:'Get directions', href:'#spc-visit-details' }} secondary={{ text:'What to expect', href:'#spc-first-visit' }} note="No registration needed to attend a service." />
+    <div className="spc-sub-schedule" aria-label="Church service schedule"><div><span>Sunday morning</span><strong>10:00 AM</strong><small>Worship &amp; the Word</small></div><div><span>Sunday evening</span><strong>6:00 PM</strong><small>Except the first Sunday</small></div><div><span>Monday prayer</span><strong>7:00 PM</strong><small>Join us in prayer</small></div><div><span>Wednesday</span><strong>7:30 PM</strong><small>Midweek service</small></div></div>
+    <section id="spc-first-visit" className="spc-sub-section"><div className="spc-container"><SpcSectionHeading eyebrow="You belong here" title="Here's what to expect." description="If visiting somewhere new feels uncertain, you're not alone. We want your first visit to feel like coming home." /><div className="spc-sub-cards spc-sub-cards--two">{pillars.map((p,i)=><article className="spc-sub-card" key={p.title}><span className="spc-sub-card-num">{String(i+1).padStart(2,'0')}</span><h3>{p.title}</h3><p>{p.copy}</p></article>)}</div></div></section>
+    <section id="spc-visit-details" className="spc-sub-section spc-sub-section--soft"><div className="spc-container spc-sub-2col"><div className="spc-sub-copy"><p className="spc-eyebrow spc-eyebrow--green">Find your way</p><h2>We saved you a seat.</h2><p><strong>Springhill Pentecostal Church</strong><br/>1090 Springhill Road<br/>Wesson, Mississippi 39191</p><p>Our regular Sunday services are at 10:00 AM and 6:00 PM. On the first Sunday of each month, we meet for one Friends &amp; Family service at <strong>2:00 PM only</strong>.</p><p>Monday prayer meeting begins at 7:00 PM and Wednesday service begins at 7:30 PM. For holiday or special-service changes, check the church events calendar.</p><a href={spcMapsUrl} target="_blank" rel="noopener noreferrer" className="spc-button spc-button--green">Open directions <span aria-hidden="true">↗</span></a></div><SpcImage src="/church-exterior.png" alt="The church exterior to help visitors recognize the building" /></div></section>
+    <SpcQuote cite="Matthew 11:28">“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</SpcQuote>
+    <section className="spc-sub-section"><div className="spc-container"><SpcSectionHeading eyebrow="One more thing" title="Questions before you come?" description="We know every family is different. Here are a few useful answers; for anything else, simply reach out." /><div className="spc-beliefs-list"><details className="spc-belief"><summary><span className="spc-belief-title">Do I need to register?</span></summary><p>No. You are welcome to attend any regular service without registering.</p></details><details className="spc-belief"><summary><span className="spc-belief-title">What time is the first-Sunday service?</span></summary><p>On the first Sunday of each month, our Friends &amp; Family service begins at 2:00 PM. It replaces the usual 10:00 AM and 6:00 PM Sunday services.</p></details><details className="spc-belief"><summary><span className="spc-belief-title">Can I contact someone first?</span></summary><p>Of course. Visit our Prayer &amp; Contact page to send a note to Pastor Tommy Lee or share a prayer request.</p></details></div></div></section>
+    <SpcSectionCta eyebrow="We'll see you soon" title="There's a place for you here." description="Bring your family. Bring a friend. Come worship with us this week." primary={{text:'Find us on the map',href:spcMapsUrl}} secondary={{text:'Contact the church',href:'/prayer'}} />
+  </div>;
 }

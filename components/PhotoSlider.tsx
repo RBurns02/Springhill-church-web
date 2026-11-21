@@ -1,124 +1,76 @@
 'use client';
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
-const slides = [
-  { src: '/church1.png', alt: 'Worship at Springhill Pentecostal Church' },
-  { src: '/church6.jpg', alt: 'Preaching at Springhill' },
-  { src: '/church8.jpg', alt: 'Congregation in worship' },
-  { src: '/church5.jpg', alt: 'Pastor preaching at Springhill' },
-  { src: '/church7.jpg', alt: 'Worshipping with family' },
-  { src: '/church9.jpg', alt: 'Bass player during worship' },
-  { src: '/church4.jpg', alt: 'Sound and worship team' },
-  { src: '/church10.jpg', alt: 'Prayer at the altar' },
-  { src: '/church11.jpg', alt: 'Keyboard player leading worship' },
-  { src: '/church12.jpg', alt: 'Congregation in worship' },
-  { src: '/church2.png',  alt: 'Praise and worship' },
-  { src: '/church13.png', alt: 'Tambourine in worship' },
-  { src: '/church3.png',  alt: 'Spirit-filled service' },
+const photos = [
+  { src: '/church1.png', alt: 'Worship at Springhill Pentecostal Church', caption: 'Worship together' },
+  { src: '/church8.jpg', alt: 'Springhill congregation in worship', caption: 'One church family' },
+  { src: '/church6.jpg', alt: 'Preaching from the pulpit at Springhill', caption: 'Rooted in the Word' },
+  { src: '/church10.jpg', alt: 'Prayer at the altar at Springhill', caption: 'A place of prayer' },
+  { src: '/church9.jpg', alt: 'Music during worship at Springhill', caption: 'Lifting up His name' },
+  { src: '/church12.jpg', alt: 'Springhill worship service', caption: 'Gathered in His presence' },
+  { src: '/church13.png', alt: 'Praise and worship at Springhill', caption: 'Joy in the house' },
+  { src: '/church2.png', alt: 'Praise and worship at Springhill', caption: 'A place of praise' },
+  { src: '/church3.png', alt: 'Spirit-filled service at Springhill', caption: 'United in faith' },
+  { src: '/church4.jpg', alt: 'Sound and worship team at Springhill', caption: 'Serving together' },
+  { src: '/church5.jpg', alt: 'Pastor preaching at Springhill', caption: 'Sharing the Word' },
+  { src: '/church7.jpg', alt: 'Worship with family at Springhill', caption: 'Every generation' },
+  { src: '/church11.jpg', alt: 'Keyboard player during worship at Springhill', caption: 'Heartfelt worship' },
 ];
 
-const INTERVAL = 4500;
-
 export default function PhotoSlider() {
-  const [current, setCurrent]   = useState(0);
-  const [paused, setPaused]     = useState(false);
-  const touchStartX             = useRef<number | null>(null);
-  const timerRef                = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [index, setIndex] = useState(0);
+  const [userPaused, setUserPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const touchX = useRef<number | null>(null);
+  const next = useCallback(() => setIndex(i => (i + 1) % photos.length), []);
+  const prev = useCallback(() => setIndex(i => (i - 1 + photos.length) % photos.length), []);
 
-  const goTo = useCallback((index: number) => {
-    setCurrent((index + slides.length) % slides.length);
-  }, []);
-
-  const next = useCallback(() => goTo(current + 1), [current, goTo]);
-  const prev = useCallback(() => goTo(current - 1), [current, goTo]);
-
-  // Auto-advance
   useEffect(() => {
-    if (paused) return;
-    timerRef.current = setTimeout(next, INTERVAL);
-    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-  }, [current, paused, next]);
-
-  // Touch / swipe
-  const onTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-    setPaused(true);
-  };
-  const onTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const diff = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
-    touchStartX.current = null;
-    setPaused(false);
-  };
+    if (userPaused || hovered || focused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const timer = window.setInterval(next, 5500);
+    return () => window.clearInterval(timer);
+  }, [userPaused, hovered, focused, next]);
 
   return (
     <div
-      className="relative w-full overflow-hidden rounded-2xl shadow-2xl bg-black select-none"
-      style={{ minHeight: '420px', maxHeight: '620px', height: '60vw' }}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
+      onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+      onFocusCapture={() => setFocused(true)}
+      onBlurCapture={e => { if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFocused(false); }}
+      onTouchStart={e => { touchX.current = e.touches[0].clientX; }}
+      onTouchEnd={e => {
+        if (touchX.current === null) return;
+        const diff = touchX.current - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 35) { diff > 0 ? next() : prev(); setUserPaused(true); }
+        touchX.current = null;
+      }}
     >
-      {/* Slides */}
-      {slides.map((slide, i) => (
-        <div
-          key={slide.src}
-          className="absolute inset-0 transition-opacity duration-700"
-          style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={slide.src}
-            alt={slide.alt}
-            className="w-full h-full object-contain"
-          />
-          {/* subtle dark vignette */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+      <div className="spc-gallery" role="group" aria-roledescription="carousel" aria-label="Life at Springhill photo gallery">
+        <div className="spc-gallery-images">
+          {photos.map((photo, i) => (
+            <Image className="spc-gallery-image" data-active={i === index ? 'true' : 'false'}
+              aria-hidden={i !== index} key={photo.src} src={photo.src} alt={photo.alt}
+              fill sizes="(max-width: 720px) 100vw, 1176px" priority={i === 0} />
+          ))}
         </div>
-      ))}
-
-      {/* Prev / Next arrows */}
-      <button
-        onClick={prev}
-        aria-label="Previous"
-        className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 flex items-center justify-center text-white transition-colors"
-      >
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      <button
-        onClick={next}
-        aria-label="Next"
-        className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 flex items-center justify-center text-white transition-colors"
-      >
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-      {/* Dot indicators */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => { goTo(i); setPaused(false); }}
-            aria-label={`Go to slide ${i + 1}`}
-            className={`rounded-full transition-all duration-300 ${
-              i === current
-                ? 'w-6 h-2 bg-white'
-                : 'w-2 h-2 bg-white/50 hover:bg-white/80'
-            }`}
-          />
+        <div className="spc-gallery-bottom">
+          <p className="spc-gallery-caption">{photos[index].caption}</p>
+          <div className="spc-gallery-controls">
+            <button className="spc-gallery-button" type="button" onClick={prev} aria-label="Previous photo">←</button>
+            <button className="spc-gallery-button" type="button" onClick={() => setUserPaused(p => !p)} aria-label={userPaused ? 'Play slideshow' : 'Pause slideshow'}>{userPaused ? '▶' : 'Ⅱ'}</button>
+            <button className="spc-gallery-button" type="button" onClick={next} aria-label="Next photo">→</button>
+          </div>
+        </div>
+      </div>
+      <div className="spc-gallery-progress" aria-label="Choose gallery photo">
+        {photos.map((photo, i) => (
+          <button type="button" key={photo.src} onClick={() => { setIndex(i); setUserPaused(true); }}
+            data-active={i === index ? 'true' : 'false'}
+            aria-label={`Photo ${i + 1}: ${photo.caption}`} aria-current={i === index ? 'true' : undefined} />
         ))}
       </div>
-
-      {/* Progress bar */}
-      {!paused && (
-        <div className="absolute bottom-0 left-0 h-[3px] bg-church-gold z-10 animate-progress" key={current} />
-      )}
+      <p className="spc-gallery-helper">A glimpse of life at Springhill · Use the arrows or swipe to explore</p>
     </div>
   );
 }

@@ -1,128 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ScrollReveal from '@/components/ScrollReveal';
 import EventCalendar from '@/components/EventCalendar';
 import { getUpcomingEvents } from '@/lib/events';
+import { SpcPageHero, SpcSectionHeading, SpcSectionCta } from '@/components/SpcPageKit';
 
-export const dynamic = 'force-dynamic'; // always render fresh so expired events drop off immediately
-
-export const metadata: Metadata = {
-  title: 'Events | Springhill Pentecostal Church',
-  description: 'Upcoming events and gatherings at Springhill Pentecostal Church.',
-  openGraph: {
-    title: 'Events | Springhill Pentecostal Church',
-    description: 'Upcoming events and gatherings at Springhill Pentecostal Church in Wesson, MS.',
-    images: [{ url: '/og-logo.png', width: 1200, height: 630 }],
-  },
-  twitter: { card: 'summary_large_image', images: ['/og-logo.png'] },
-};
-
-const clockIcon = (
-  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-  </svg>
-);
-
-const pinIcon = (
-  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-  </svg>
-);
-
+export const dynamic = 'force-dynamic';
+export const metadata: Metadata = { title: 'Events & Calendar | Springhill Pentecostal Church', description: 'See upcoming events and the church calendar at Springhill Pentecostal Church, Wesson, Mississippi.' };
 export default function EventsPage() {
-  const upcomingEvents = getUpcomingEvents();
-
-  return (
-    <>
-      {/* Page header */}
-      <section className="page-header">
-        <p className="eyebrow text-church-gold mb-5">Gather Together</p>
-        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4 tracking-tight">Events</h1>
-        <p className="text-white/50 text-lg max-w-lg mx-auto leading-relaxed">
-          Come be part of what God is doing at Springhill. Everyone is welcome.
-        </p>
-      </section>
-
-      {/* Upcoming special events */}
-      <section id="upcoming" className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-5">
-          <ScrollReveal className="mb-10">
-            <div className="gold-bar mb-5" />
-            <h2 className="section-heading">Upcoming Special Events</h2>
-          </ScrollReveal>
-
-          {upcomingEvents.length === 0 ? (
-            <ScrollReveal>
-              <p className="text-stone-400 text-sm py-10 text-center">No upcoming special events right now. Check back soon.</p>
-            </ScrollReveal>
-          ) : (
-            <div className="space-y-4">
-              {upcomingEvents.map((event, i) => {
-                const href = event.detailsUrl ?? `/events/${event.slug}`;
-                return (
-                  <ScrollReveal key={event.slug} delay={i * 40}>
-                    <div className={`card flex flex-col sm:flex-row group ${event.rescheduled ? 'ring-1 ring-red-300/50' : event.featured ? 'ring-1 ring-church-gold/30' : ''}`}>
-                      <div className={`flex-shrink-0 w-full sm:w-20 flex sm:flex-col items-center justify-center p-5 sm:p-4 gap-3 sm:gap-1 border-b sm:border-b-0 sm:border-r border-stone-100 ${event.rescheduled ? 'bg-red-50/60' : event.featured ? 'bg-church-gold/[0.04]' : ''}`}>
-                        <p className="text-church-gold text-[10px] font-semibold tracking-widest uppercase">{event.month}</p>
-                        <p className="font-serif text-4xl sm:text-3xl font-bold text-stone-900 leading-none">{event.day}</p>
-                      </div>
-                      <div className="p-6 flex-1 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                        <div className="flex-1">
-                          <div className="flex flex-wrap items-center gap-2 mb-2">
-                            <h2 className="text-lg font-bold text-stone-900">{event.title}</h2>
-                            <span className={`text-[10px] font-semibold px-2.5 py-0.5 tracking-wide uppercase ${event.featured ? 'bg-amber-50 text-amber-700' : 'bg-stone-100 text-stone-600'}`}>
-                              {event.category}
-                            </span>
-                            {event.rescheduled && (
-                              <span className="text-[10px] font-bold px-2.5 py-0.5 bg-red-100 text-red-600 uppercase tracking-wide">Rescheduled</span>
-                            )}
-                          </div>
-                          <p className="text-stone-500 text-sm leading-relaxed mb-3">{event.description}</p>
-                          <div className="flex flex-wrap gap-4 text-xs text-stone-400">
-                            <span className="flex items-center gap-1.5">{clockIcon}{event.fullDate} · {event.time}</span>
-                            {event.location && <span className="flex items-center gap-1.5">{pinIcon}{event.location}</span>}
-                          </div>
-                        </div>
-                        <div className="flex-shrink-0">
-                          <Link
-                            href={href}
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.12em] uppercase text-church-gold hover:text-church-deep transition-colors"
-                          >
-                            View Details
-                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                            </svg>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                );
-              })}
-            </div>
-          )}
-
-          <div className="mt-14 text-center">
-            <p className="text-stone-400 text-sm mb-5">Have a question about an event?</p>
-            <Link href="/prayer" className="btn-primary">Contact Us</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Calendar */}
-      <section id="calendar" className="py-20 bg-church-warm">
-        <div className="max-w-6xl mx-auto px-5">
-          <ScrollReveal className="mb-10">
-            <div className="gold-bar mb-5" />
-            <h2 className="section-heading mb-2">Church Calendar</h2>
-            <p className="text-stone-500 text-sm">
-              Regular services run every week. Tap any day on mobile to see details.
-            </p>
-          </ScrollReveal>
-          <EventCalendar />
-        </div>
-      </section>
-    </>
-  );
+  const upcoming = getUpcomingEvents();
+  return <div className="spc-subpage">
+    <SpcPageHero eyebrow="Gather with us" title="Life happens" accent="together." description="From weekly services to special gatherings, there's always a place for you at Springhill. See what's coming up." image="/church4.jpg" imageAlt="Members of the Springhill music and worship team" primary={{text:'View the calendar',href:'#spc-calendar'}} secondary={{text:'Plan your visit',href:'/new-here'}} />
+    <section className="spc-sub-section spc-sub-section--soft" id="spc-upcoming"><div className="spc-container"><SpcSectionHeading eyebrow="Save the date" title="Upcoming special events." description="New events will appear here as they are announced. Our regular weekly services continue year-round." /><div className="spc-event-list">{upcoming.length ? upcoming.map(event=><article className="spc-event-row" key={event.slug}><div className="spc-event-date-card"><span>{event.month}</span><strong>{event.day}</strong></div><div className="spc-event-row-body"><p className="spc-eyebrow spc-eyebrow--green">{event.category}{event.rescheduled ? ' · Rescheduled' : ''}</p><h3>{event.title}</h3><p>{event.fullDate} · {event.time}</p><p>{event.description}</p><Link href={event.detailsUrl ?? `/events/${event.slug}`} className="spc-text-link">Event details <span aria-hidden="true">→</span></Link></div></article>) : <div className="spc-event-empty"><p className="spc-eyebrow spc-eyebrow--green">This month</p><h3>No special events currently listed.</h3><p>You're still invited to worship with us this week. Check the calendar below for regular services, and revisit this page for new announcements.</p><Link href="/new-here" className="spc-text-link" style={{marginTop:20}}>See service times <span aria-hidden="true">→</span></Link></div>}</div></div></section>
+    <section className="spc-sub-section" id="spc-calendar"><div className="spc-container"><SpcSectionHeading eyebrow="Church calendar" title="Find a time to join us." description="Browse our full calendar. Tap or click a day to view its service details." /><div className="spc-calendar-shell"><EventCalendar /></div></div></section>
+    <section className="spc-sub-section spc-sub-section--sand"><div className="spc-container"><div style={{marginBottom:42,display:'flex',flexWrap:'wrap',alignItems:'center',justifyContent:'space-between',gap:18}}><div><p className="spc-eyebrow spc-eyebrow--green">Children's ministry</p><h2 style={{fontFamily:'Georgia,serif',fontSize:36,fontWeight:400,margin:'8px 0 0'}}>BLAST Kids Church</h2></div><Link href="/blast" className="spc-button spc-button--green">Learn about BLAST →</Link></div><SpcSectionHeading eyebrow="A weekly rhythm" title="There's a gathering every week."/><div className="spc-sub-cards">{[{title:'Sunday worship',body:'10:00 AM and 6:00 PM · First Sunday at 2:00 PM only'},{title:'Monday prayer',body:'7:00 PM · A time to seek God together'},{title:'Wednesday service',body:'7:30 PM · Midweek worship and the Word'}].map((v,i)=><article className="spc-sub-card" key={v.title}><span className="spc-sub-card-num">0{i+1}</span><h3>{v.title}</h3><p>{v.body}</p></article>)}</div></div></section>
+    <SpcSectionCta eyebrow="See you at Springhill" title="You are always welcome." description="Have a question about an event or need more information about the church? We'd love to hear from you." primary={{text:'Contact us',href:'/prayer'}} secondary={{text:'Plan your visit',href:'/new-here'}} />
+  </div>;
 }

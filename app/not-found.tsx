@@ -1,26 +1,2 @@
 import Link from 'next/link';
-
-export default function NotFound() {
-  return (
-    <section className="min-h-[70vh] flex items-center justify-center bg-white px-5">
-      <div className="text-center max-w-md">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/logo-transparent.png"
-          alt="Springhill Pentecostal Church"
-          className="h-16 w-auto mx-auto mb-10 opacity-15"
-        />
-        <div className="gold-bar mx-auto mb-6" />
-        <p className="font-serif text-8xl font-bold text-stone-100 mb-3 leading-none">404</p>
-        <h1 className="font-serif text-2xl font-bold text-stone-900 mb-3 tracking-tight">Page Not Found</h1>
-        <p className="text-stone-500 mb-10 leading-relaxed">
-          Looks like this page has moved on. Let&apos;s get you back to familiar ground.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link href="/" className="btn-primary">Go Home</Link>
-          <Link href="/prayer" className="btn-outline-green">Contact Us</Link>
-        </div>
-      </div>
-    </section>
-  );
-}
+export default function NotFound() { return <div className="spc-subpage"><section className="spc-subhero spc-subhero--no-photo"><div className="spc-subhero-copy"><p className="spc-eyebrow spc-eyebrow--green">Page not found · 404</p><div className="spc-hero-mark"/><h1 className="spc-subhero-title">Let's get you <em>back home.</em></h1><p className="spc-subhero-description">That page isn't available, but you're always welcome at Springhill.</p><Link href="/" className="spc-button spc-button--green">Back to the homepage →</Link></div></section></div>; }
