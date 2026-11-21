@@ -4,9 +4,11 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import './spc-redesign.css';
-import './spc-pages.css'; // Review-only redesign; remove this import to revert the theme.
+import './spc-pages.css';
+import './spc-motion.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import SpcMotion from '@/components/SpcMotion';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
@@ -53,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${greatVibes.variable}`}>
       <head><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /></head>
       <body className="min-h-screen flex flex-col">
+        <SpcMotion />
         <Nav />
         <main className="flex-1" id="main-content">{children}</main>
         <Footer />

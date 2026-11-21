@@ -30,7 +30,7 @@ export function SpcPageHero({ eyebrow, title, accent, description, image, imageA
         </div>}
         {note && <p className="spc-subhero-note"><span aria-hidden="true" />{note}</p>}
       </div>
-      {image && <div className="spc-subhero-media">
+      {image && <div className="spc-subhero-media" data-spc-parallax="hero">
         <Image src={image} alt={imageAlt || ''} fill priority sizes="(max-width: 780px) 100vw, 48vw" style={{ objectPosition: photoPosition || 'center' }} />
         <span className="spc-subhero-corner">Springhill · Wesson, MS</span>
       </div>}
@@ -39,7 +39,7 @@ export function SpcPageHero({ eyebrow, title, accent, description, image, imageA
 }
 
 export function SpcSectionHeading({ eyebrow, title, description, dark = false }: { eyebrow: string; title: string; description?: string; dark?: boolean }) {
-  return <div className={`spc-sub-section-heading ${dark ? 'spc-on-dark' : ''}`}>
+  return <div className={`spc-sub-section-heading spc-reveal ${dark ? 'spc-on-dark' : ''}`}>
     <p className={`spc-eyebrow ${dark ? 'spc-eyebrow--gold' : 'spc-eyebrow--green'}`}>{eyebrow}</p>
     <h2>{title}</h2>
     {description && <p>{description}</p>}
@@ -51,7 +51,7 @@ export function SpcSectionCta({ eyebrow, title, description, primary, secondary 
   primary: { text: string; href: string }; secondary?: { text: string; href: string };
 }) {
   return <section className="spc-subcta">
-    <div className="spc-container spc-subcta-inner">
+    <div className="spc-container spc-subcta-inner spc-reveal">
       <div><p className="spc-eyebrow spc-eyebrow--gold">{eyebrow}</p><h2>{title}</h2><p>{description}</p></div>
       <div className="spc-subcta-actions"><Link href={primary.href} className="spc-button spc-button--light">{primary.text} <span aria-hidden="true">↗</span></Link>{secondary && <Link href={secondary.href} className="spc-button spc-button--outline">{secondary.text}</Link>}</div>
     </div>
@@ -59,11 +59,11 @@ export function SpcSectionCta({ eyebrow, title, description, primary, secondary 
 }
 
 export function SpcImage({ src, alt, caption, className = '' }: { src: string; alt: string; caption?: string; className?: string }) {
-  return <figure className={`spc-editorial-photo ${className}`}><div className="spc-editorial-photo-inner"><Image src={src} alt={alt} fill sizes="(max-width: 780px) 100vw, 50vw" /></div>{caption && <figcaption>{caption}</figcaption>}</figure>;
+  return <figure className={`spc-editorial-photo ${className}`}><div className="spc-editorial-photo-inner" data-spc-parallax="soft"><Image src={src} alt={alt} fill sizes="(max-width: 780px) 100vw, 50vw" /></div>{caption && <figcaption>{caption}</figcaption>}</figure>;
 }
 
 export function SpcQuote({ children, cite }: { children: ReactNode; cite: string }) {
-  return <blockquote className="spc-scripture-quote"><p>{children}</p><cite>{cite}</cite></blockquote>;
+  return <blockquote className="spc-scripture-quote"><div className="spc-reveal"><p>{children}</p><cite>{cite}</cite></div></blockquote>;
 }
 
 export const spcMapsUrl = 'https://maps.google.com/?q=1090+Springhill+Road+Wesson+MS+39191';

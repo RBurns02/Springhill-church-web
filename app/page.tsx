@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import PhotoSlider from '@/components/PhotoSlider';
-import SpcMotion from '@/components/SpcMotion';
 import { getUpcomingEvents } from '@/lib/events';
 
 export const dynamic = 'force-dynamic';
@@ -30,7 +29,6 @@ export default function HomePage() {
   const upcomingEvents = getUpcomingEvents().slice(0, 2);
   return (
     <div className="spc-site">
-      <SpcMotion />
       <section className="spc-hero" aria-labelledby="spc-hero-heading">
         <div className="spc-hero-copy">
           <p className="spc-eyebrow">Wesson, Mississippi <span aria-hidden="true">·</span> Est. 1935</p>
@@ -43,7 +41,7 @@ export default function HomePage() {
           </div>
           <p className="spc-hero-footnote"><span aria-hidden="true" /> Everyone is welcome. No registration needed.</p>
         </div>
-        <div className="spc-hero-photo">
+        <div className="spc-hero-photo" data-spc-parallax="hero">
           <Image src="/church1.png" alt="Congregation worshipping at Springhill Pentecostal Church" fill priority sizes="(max-width: 720px) 100vw, 48vw" />
           <p className="spc-photo-rail">Welcome to Springhill</p>
           <div className="spc-service-note">
@@ -72,23 +70,28 @@ export default function HomePage() {
             <Link href="/new-here" className="spc-text-link">What to expect on your first visit <span className="spc-arrow" aria-hidden="true">→</span></Link>
           </div>
           <div className="spc-welcome-photos spc-reveal">
-            <div className="spc-photo-main"><Image src="/church8.jpg" alt="Springhill congregation gathered in worship" fill sizes="(max-width: 720px) 55vw, 28vw" /></div>
-            <div className="spc-photo-side"><Image src="/church9.jpg" alt="Music ministry at Springhill" fill sizes="(max-width: 720px) 40vw, 20vw" /></div>
+            <div className="spc-photo-main" data-spc-parallax="soft"><Image src="/church8.jpg" alt="Springhill congregation gathered in worship" fill sizes="(max-width: 720px) 55vw, 28vw" /></div>
+            <div className="spc-photo-side" data-spc-parallax="soft"><Image src="/church9.jpg" alt="Music ministry at Springhill" fill sizes="(max-width: 720px) 40vw, 20vw" /></div>
             <div className="spc-welcome-stamp"><strong>1935</strong><small>Established in faith</small></div>
           </div>
         </div>
       </section>
 
       <section className="spc-why" aria-labelledby="spc-expect-heading">
-        <div className="spc-container">
-          <div className="spc-section-head spc-reveal">
-            <div><p className="spc-eyebrow spc-eyebrow--green">A little of what we&apos;re about</p><h2 id="spc-expect-heading" className="spc-section-title">Come as you are.</h2></div>
-            <p className="spc-text">You don&apos;t have to know what to expect before you come. Here&apos;s what makes a service at Springhill feel like home.</p>
+        <div className="spc-container spc-why-editorial">
+          <div className="spc-why-picture spc-reveal" data-spc-parallax="soft">
+            <Image src="/church10.jpg" alt="Church family praying at the altar at Springhill" fill sizes="(max-width: 720px) 100vw, 42vw" />
+            <span>THE HEART OF SPRINGHILL</span>
           </div>
-          <div className="spc-expectations">
-            <article className="spc-expectation spc-reveal"><HeartIcon/><h3>Real community</h3><p>Friendly faces and a church family that will walk beside you through every season of life.</p></article>
-            <article className="spc-expectation spc-reveal"><BookIcon/><h3>Biblical preaching</h3><p>Clear, faithful teaching from the Word of God, with room to ask questions and grow.</p></article>
-            <article className="spc-expectation spc-reveal"><SparkIcon/><h3>Spirit-filled worship</h3><p>Heartfelt praise, prayer, and an expectation that God still moves among His people.</p></article>
+          <div className="spc-why-detail">
+            <p className="spc-eyebrow spc-eyebrow--green spc-reveal">What to expect</p>
+            <h2 id="spc-expect-heading" className="spc-section-title spc-reveal">Come as you are.<br/><em>Leave encouraged.</em></h2>
+            <p className="spc-text spc-reveal">Real worship, genuine community, and the Word of God. Not just a list of things we do — it's the reason we're here.</p>
+            <div className="spc-expectation-lines">
+              <article className="spc-expectation-line spc-reveal"><HeartIcon/><div><h3>Real community</h3><p>Friendly faces and a church family that will walk beside you.</p></div></article>
+              <article className="spc-expectation-line spc-reveal"><BookIcon/><div><h3>Biblical preaching</h3><p>Faithful teaching from the Word of God, with room to grow.</p></div></article>
+              <article className="spc-expectation-line spc-reveal"><SparkIcon/><div><h3>Spirit-filled worship</h3><p>Heartfelt praise, prayer, and a genuine expectation that God moves.</p></div></article>
+            </div>
           </div>
         </div>
       </section>
@@ -134,7 +137,7 @@ export default function HomePage() {
 
       <section className="spc-pastor" aria-labelledby="spc-pastor-heading">
         <div className="spc-container spc-pastor-grid">
-          <div className="spc-pastor-portrait spc-reveal"><Image src="/pastor.png" alt="Pastor Tommy and Lori Lee of Springhill Pentecostal Church" fill sizes="(max-width: 720px) 100vw, 40vw" /></div>
+          <div className="spc-pastor-portrait spc-reveal" data-spc-parallax="soft"><Image src="/pastor.png" alt="Pastor Tommy and Lori Lee of Springhill Pentecostal Church" fill sizes="(max-width: 720px) 100vw, 40vw" /></div>
           <div className="spc-pastor-content spc-reveal">
             <p className="spc-eyebrow spc-eyebrow--green">Meet our pastor &amp; first lady</p>
             <h2 id="spc-pastor-heading" className="spc-section-title">Pastor Tommy &amp; Lori Lee</h2>
