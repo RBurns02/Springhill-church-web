@@ -8,6 +8,7 @@ const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/events', label: 'Events' },
+  { href: '/blast', label: 'Kids' },
   { href: '/services', label: 'Messages' },
   { href: '/beliefs', label: 'Beliefs' },
   { href: '/give', label: 'Give' },
@@ -51,8 +52,6 @@ export default function Nav() {
         {links.map(link => (
           <Link key={link.href} href={link.href} onClick={() => setOpen(false)} aria-current={pathname === link.href ? 'page' : undefined}>{link.label}</Link>
         ))}
-        <Link href="/blast" onClick={() => setOpen(false)}>BLAST Kids Church</Link>
-        <Link href="/prayer" onClick={() => setOpen(false)}>Prayer &amp; Contact</Link>
         <Link href="/new-here" onClick={() => setOpen(false)}>Plan Your Visit ↗</Link>
       </nav>
     </header>

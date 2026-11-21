@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
           <div>
             <p className="spc-eyebrow spc-eyebrow--gold" style={{marginBottom:20}}>Stay connected</p>
-            <p>Sunday · 10:00 AM &amp; 6:00 PM<br/>Monday · 7:00 PM<br/>Wednesday · 7:30 PM<br/>First Sunday · 2:00 PM only</p>
+            <p>Sunday · 10:00 AM &amp; 6:00 PM<br/>Prayer gatherings · as announced<br/>Wednesday · 7:30 PM<br/>First Sunday · 2:00 PM only</p>
             <p style={{marginTop:17}}>
               <a href="https://www.facebook.com/share/1GpFMM7VC2/" target="_blank" rel="noopener noreferrer">Facebook</a>
               {' · '}

@@ -1,0 +1,48 @@
+/* Focused post-redesign cleanup. Keep existing visual system intact. */
+@media (min-width:1141px) and (max-width:1250px) {
+  .spc-desktop-links { gap: 12px; }
+  .spc-desktop-links a { font-size: 11px; }
+  .spc-nav-inner { gap: 12px; }
+  .spc-nav-cta { padding: 15px 12px; }
+}
+@media (max-width:1140px) {
+  .spc-desktop-links, .spc-nav-cta { display: none; }
+  .spc-menu-trigger { display: flex; }
+}
+.spc-mobile-menu { max-height: calc(100dvh - 72px); overflow-y: auto; overscroll-behavior: contain; }
+.spc-upcoming-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 27px; margin-top: 24px; }
+.spc-giving-panel .spc-giving-contact { color: #fff2c8; border-bottom-color: #e4ca8f; margin-top: 20px; }
+.spc-giving-panel .spc-giving-contact:hover { color: white; }
+.spc-calendar-shell .rounded-2xl { border-radius: 4px; }
+.spc-calendar-shell button:focus-visible { outline: 3px solid var(--spc-gold); outline-offset: -2px; }
+
+/* One small illustrated kids-ministry feature, not another numbered-card row. */
+.spc-blast-feature { background: radial-gradient(ellipse at 85% 55%, #215d69 0%, #103a4e 51%, #0c3448 100%); color: white; padding: clamp(58px, 7vw, 95px) 0; overflow:hidden; position:relative; }
+.spc-blast-feature::before { content:''; position:absolute; inset:0; opacity:.12; pointer-events:none; background-image:radial-gradient(#fff 1px, transparent 1px); background-size:78px 78px; }
+.spc-blast-feature-grid { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,.88fr); gap:65px; align-items:center; position:relative; }
+.spc-blast-feature-copy { position:relative; z-index:2; }
+.spc-blast-feature-copy .spc-eyebrow { color:#c6dec1; }
+.spc-blast-feature-copy h2 { font:400 clamp(45px,5.2vw,71px)/1.07 var(--spc-font-serif); letter-spacing:-.055em; margin:17px 0 22px; }
+.spc-blast-feature-copy h2 em { font-weight:400; font-style:italic; color:#ffcf78; }
+.spc-blast-feature-copy>p:not(.spc-eyebrow) { color:#d3e7e2; line-height:1.8; max-width:490px; margin-bottom:28px; font-size:16px; }
+.spc-blast-feature-copy .spc-button--light { display:inline-flex; }
+.spc-blast-feature-note { display:block; color:#d2e5d6; margin-top:19px; font-size:12px; line-height:1.6; }
+.spc-blast-feature-art { position:relative; min-width:0; }
+.spc-blast-feature-art svg { width:100%; max-width:530px; display:block; margin:0 auto; filter:drop-shadow(0 13px 25px rgba(4,30,38,.14)); }
+.spc-blast-feature-stamp { position:absolute; right:0; top:8%; color:#123f4c; background:#f7dfab; padding:11px 15px; letter-spacing:.12em; font-weight:800; font-size:9px; transform:rotate(7deg); box-shadow:6px 7px 0 rgba(3,26,37,.23); }
+.spc-blast-feature-rocket { animation:spc-blast-feature-float 4.5s ease-in-out infinite; transform-origin:295px 200px; }
+.spc-blast-feature-planet { animation:spc-blast-feature-bob 6s ease-in-out infinite; }
+.spc-blast-feature-planet-small { animation:spc-blast-feature-bob 5s -2s ease-in-out infinite reverse; }
+@keyframes spc-blast-feature-float { 0%,100% {transform:translateY(0) rotate(-1deg)} 50% {transform:translateY(-14px) rotate(1deg)} }
+@keyframes spc-blast-feature-bob { 0%,100% {transform:translateY(0)} 50% {transform:translateY(-12px)} }
+@media (max-width:780px) {
+  .spc-blast-feature-grid { grid-template-columns:1fr; gap:0; }
+  .spc-blast-feature-art { max-width:440px; width:100%; margin:0 auto -24px; }
+  .spc-blast-feature-copy h2 { font-size:clamp(42px,10vw,58px); }
+  .spc-blast-feature-copy>p:not(.spc-eyebrow) { font-size:15px; }
+  .spc-blast-feature-stamp { right:0; top:12%; font-size:8px; }
+  .spc-upcoming-actions { flex-direction:column; align-items:flex-start; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .spc-blast-feature-rocket, .spc-blast-feature-planet, .spc-blast-feature-planet-small { animation:none!important; }
+}

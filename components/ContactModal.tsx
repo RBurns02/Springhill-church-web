@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import { useAccessibleModal } from '@/components/useAccessibleModal';
 
 export default function ContactModal() {
   const [open, setOpen] = useState(false);
@@ -9,6 +10,8 @@ export default function ContactModal() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => { setMounted(true); }, []);
+  const close = useCallback(() => { setOpen(false); setStatus('idle'); }, []);
+  const { triggerRef, dialogRef } = useAccessibleModal(open, close);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -37,7 +40,7 @@ export default function ContactModal() {
   return (
     <>
       {/* Email card trigger */}
-      <button className="card p-8 text-center group cursor-pointer w-full h-full flex flex-col items-center justify-center" onClick={() => setOpen(true)}>
+      <button ref={triggerRef} type="button" className="card p-8 text-center group cursor-pointer w-full h-full flex flex-col items-center justify-center" onClick={() => setOpen(true)}>
         <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -54,9 +57,11 @@ export default function ContactModal() {
       {mounted && open && createPortal(
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75"
-          onClick={(e) => { if (e.target === e.currentTarget) { setOpen(false); setStatus('idle'); } }}
+          onClick={(e) => { if (e.target === e.currentTarget) close(); }}
         >
           <div
+            ref={dialogRef}
+            tabIndex={-1}
             role="dialog"
             aria-modal="true"
             aria-labelledby="contact-modal-title"
@@ -69,7 +74,7 @@ export default function ContactModal() {
                 <h2 id="contact-modal-title" className="font-serif text-xl font-bold text-stone-900">Contact Pastor Tommy Lee</h2>
               </div>
               <button
-                onClick={() => { setOpen(false); setStatus('idle'); }}
+                onClick={close}
                 className="w-8 h-8 flex items-center justify-center text-stone-400 hover:text-stone-600 transition-colors"
                 aria-label="Close"
               >
@@ -82,7 +87,7 @@ export default function ContactModal() {
             {/* Body */}
             <div className="px-8 py-7 overflow-y-auto">
               {status === 'sent' ? (
-                <div className="text-center py-8">
+                <div className="text-center py-8" role="status" aria-live="polite">
                   <div className="w-12 h-12 border border-church-gold flex items-center justify-center mx-auto mb-5 text-church-gold">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -93,7 +98,7 @@ export default function ContactModal() {
                     Thank you for reaching out. Pastor Tommy Lee will get back to you soon.
                   </p>
                   <button
-                    onClick={() => { setOpen(false); setStatus('idle'); }}
+                    onClick={close}
                     className="mt-6 btn-primary"
                   >
                     Close
@@ -148,7 +153,7 @@ export default function ContactModal() {
                   </div>
 
                   {status === 'error' && (
-                    <p className="text-red-500 text-xs">Something went wrong. Please try again or email us directly.</p>
+                    <p className="text-red-500 text-xs" role="alert">Something went wrong. Please try again, or reach out through our Facebook page.</p>
                   )}
 
                   <button

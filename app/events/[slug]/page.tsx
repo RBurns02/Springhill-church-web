@@ -1,7 +1,7 @@
 import { notFound, redirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getEventBySlug, events } from '@/lib/events';
+import { getEventBySlug, events, isUpcomingEvent } from '@/lib/events';
 import { SpcPageHero, SpcSectionHeading, SpcSectionCta, SpcImage, spcMapsUrl } from '@/components/SpcPageKit';
 
 export const dynamic = 'force-dynamic';
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default function EventDetailPage({ params }: { params: { slug: string } }) {
   const event = getEventBySlug(params.slug);
   if (!event) notFound();
-  if (event.expires <= new Date()) redirect('/events');
+  if (!isUpcomingEvent(event)) redirect('/events');
   if (event.detailsUrl) redirect(event.detailsUrl);
   const themeLabel = event.theme === 'outdoor' ? 'Gathering outdoors' : event.theme === 'anniversary' ? 'A time to celebrate' : event.theme === 'fathersday' ? 'Special Sunday service' : 'Church family event';
   return <div className="spc-subpage">

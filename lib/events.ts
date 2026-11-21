@@ -1,6 +1,6 @@
 export type SpcEvent = {
   slug: string;
-  expires: Date;        // redirect to /events after this date
+  expires: Date;        // event date marker: YYYY-MM-DDT23:59:59Z
   month: string;
   day: string;
   fullDate: string;
@@ -269,9 +269,23 @@ export const events: SpcEvent[] = [
   },
 ];
 
+// Use the church's local calendar day instead of the UTC timestamp. Otherwise
+// evening events could disappear from the site hours before they begin.
+export function churchTodayKey(now = new Date()): string {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit',
+  }).formatToParts(now);
+  const get = (type: 'year' | 'month' | 'day') => parts.find(part => part.type === type)?.value ?? '';
+  return `${get('year')}-${get('month')}-${get('day')}`;
+}
+
+export function isUpcomingEvent(event: SpcEvent, now = new Date()): boolean {
+  return event.expires.toISOString().slice(0, 10) >= churchTodayKey(now);
+}
+
 export function getUpcomingEvents(): SpcEvent[] {
-  const now = new Date();
-  return events.filter((e) => e.expires > now);
+  return events.filter(e => isUpcomingEvent(e))
+    .sort((a, b) => a.expires.getTime() - b.expires.getTime());
 }
 
 export function getEventBySlug(slug: string): SpcEvent | undefined {

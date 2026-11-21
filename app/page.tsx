@@ -2,15 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import PhotoSlider from '@/components/PhotoSlider';
+import BlastHomeFeature from '@/components/BlastHomeFeature';
 import { getUpcomingEvents } from '@/lib/events';
 
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Springhill Pentecostal Church | Welcome Home | Wesson, MS',
-  description: 'Find a place to worship and grow at Springhill Pentecostal Church in Wesson, Mississippi. Sunday 10 AM & 6 PM, Monday 7 PM, Wednesday 7:30 PM. First Sundays at 2 PM only.',
+  description: 'Find a place to worship and grow at Springhill Pentecostal Church in Wesson, Mississippi. Sunday 10 AM & 6 PM, Wednesday 7:30 PM. First Sundays at 2 PM only; prayer gatherings as announced.',
 };
-
-const mapsUrl = 'https://maps.google.com/?q=1090+Springhill+Road+Wesson+MS+39191';
 
 function ChurchIcon() {
   return <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><path d="M24 4v12m-7-6h14M8 44V23L24 13l16 10v21M4 44h40M19 44V31h10v13M14 26h5M29 26h5"/></svg>;
@@ -51,12 +50,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="spc-weekly" aria-label="Weekly service times and location">
+      <section className="spc-weekly" aria-label="Worship schedule and prayer gatherings">
         <div className="spc-container spc-weekly-inner">
-          <div className="spc-weekly-item"><span>Sunday Worship</span><strong>10:00 AM &amp; 6:00 PM</strong><small>First Sunday of each month: 2:00 PM only</small></div>
-          <div className="spc-weekly-item"><span>Monday Prayer</span><strong>7:00 PM</strong><small>Gathering in prayer</small></div>
+          <div className="spc-weekly-item"><span>Sunday Worship</span><strong>10 AM &amp; 6 PM</strong><small>Except the first Sunday of each month</small></div>
+          <div className="spc-weekly-item"><span>First Sunday</span><strong>2:00 PM only</strong><small>One Friends &amp; Family service</small></div>
           <div className="spc-weekly-item"><span>Wednesday</span><strong>7:30 PM</strong><small>Midweek service</small></div>
-          <div className="spc-weekly-item"><span>Find Us</span><strong>Wesson, Mississippi</strong><small><a href={mapsUrl} target="_blank" rel="noopener noreferrer">1090 Springhill Road · Directions ↗</a></small></div>
+          <div className="spc-weekly-item"><span>Prayer Gatherings</span><strong>As announced</strong><small>Often Monday at 7 PM · <Link href="/events">Check updates ↗</Link></small></div>
         </div>
       </section>
 
@@ -76,6 +75,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <BlastHomeFeature />
 
       <section className="spc-why" aria-labelledby="spc-expect-heading">
         <div className="spc-container spc-why-editorial">
@@ -121,7 +122,7 @@ export default function HomePage() {
             <p>From Sunday services to special gatherings, we want you to feel part of the family.</p>
             <div className="spc-events-content">
               {upcomingEvents.length === 0 ? (
-                <><strong>Join us this week</strong><p>No special events are currently listed. Come worship with us at a regular weekly service, or check our calendar for updates.</p></>
+                <><strong>Join us this week</strong><p>No special gatherings are currently announced. Sunday and Wednesday services continue, and new BLAST dates will be listed when confirmed.</p></>
               ) : upcomingEvents.map(event => (
                 <div key={event.slug} className="mb-5 last:mb-0">
                   <p className="spc-event-date">{event.fullDate} · {event.time}</p>

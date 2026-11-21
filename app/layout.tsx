@@ -6,6 +6,7 @@ import './globals.css';
 import './spc-redesign.css';
 import './spc-pages.css';
 import './spc-motion.css';
+import './spc-site-cleanup.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import SpcMotion from '@/components/SpcMotion';
@@ -44,7 +45,6 @@ const schema = {
   openingHoursSpecification: [
     { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '10:00', closes: '12:00' },
     { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '18:00', closes: '20:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Monday', opens: '19:00', closes: '20:30' },
     { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '19:30', closes: '21:00' },
   ],
   sameAs: ['https://www.facebook.com/share/1GpFMM7VC2/', 'https://www.instagram.com/spcwesson', 'https://soundcloud.com/spcwesson'],

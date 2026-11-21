@@ -8,12 +8,7 @@ const photos = [
   { src: '/church6.jpg', alt: 'Preaching from the pulpit at Springhill', caption: 'Rooted in the Word' },
   { src: '/church10.jpg', alt: 'Prayer at the altar at Springhill', caption: 'A place of prayer' },
   { src: '/church9.jpg', alt: 'Music during worship at Springhill', caption: 'Lifting up His name' },
-  { src: '/church12.jpg', alt: 'Springhill worship service', caption: 'Gathered in His presence' },
   { src: '/church13.png', alt: 'Praise and worship at Springhill', caption: 'Joy in the house' },
-  { src: '/church2.png', alt: 'Praise and worship at Springhill', caption: 'A place of praise' },
-  { src: '/church3.png', alt: 'Spirit-filled service at Springhill', caption: 'United in faith' },
-  { src: '/church4.jpg', alt: 'Sound and worship team at Springhill', caption: 'Serving together' },
-  { src: '/church5.jpg', alt: 'Pastor preaching at Springhill', caption: 'Sharing the Word' },
   { src: '/church7.jpg', alt: 'Worship with family at Springhill', caption: 'Every generation' },
   { src: '/church11.jpg', alt: 'Keyboard player during worship at Springhill', caption: 'Heartfelt worship' },
 ];
@@ -55,11 +50,11 @@ export default function PhotoSlider() {
           ))}
         </div>
         <div className="spc-gallery-bottom">
-          <p className="spc-gallery-caption">{photos[index].caption}</p>
+          <p className="spc-gallery-caption" aria-live="polite" aria-atomic="true">{photos[index].caption}</p>
           <div className="spc-gallery-controls">
-            <button className="spc-gallery-button" type="button" onClick={prev} aria-label="Previous photo">←</button>
-            <button className="spc-gallery-button" type="button" onClick={() => setUserPaused(p => !p)} aria-label={userPaused ? 'Play slideshow' : 'Pause slideshow'}>{userPaused ? '▶' : 'Ⅱ'}</button>
-            <button className="spc-gallery-button" type="button" onClick={next} aria-label="Next photo">→</button>
+            <button className="spc-gallery-button" type="button" onClick={() => { prev(); setUserPaused(true); }} aria-label="Previous photo">←</button>
+            <button className="spc-gallery-button" type="button" onClick={() => setUserPaused(p => !p)} aria-pressed={userPaused} aria-label={userPaused ? 'Play slideshow' : 'Pause slideshow'}>{userPaused ? '▶' : 'Ⅱ'}</button>
+            <button className="spc-gallery-button" type="button" onClick={() => { next(); setUserPaused(true); }} aria-label="Next photo">→</button>
           </div>
         </div>
       </div>

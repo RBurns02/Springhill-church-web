@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { events } from '@/lib/events';
 
 const DAY_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const MONTH_NAMES = [
@@ -13,17 +14,13 @@ interface CalEvent {
   type: 'regular' | 'special';
 }
 
-// Special one-off events keyed by YYYY-MM-DD (added alongside recurring)
-const SPECIAL: Record<string, CalEvent[]> = {
-  '2026-06-13': [{ title: "Men's Kayaking Trip",         time: 'All Day', type: 'special' }],
-  '2026-06-19': [{ title: 'BLAST — Kids Church',         time: '7:00 PM', type: 'special' }],
-  '2026-06-27': [{ title: 'Anniversary — Rescheduled',   time: '—',       type: 'special' }],
-  '2026-07-04': [{ title: 'July 4th Celebration',        time: '5:00 PM', type: 'special' }],
-  '2026-08-08': [{ title: 'Rev. Dustin Hughes',          time: '6:00 PM', type: 'special' }],
-  '2026-08-15': [{ title: 'Couples Seminar',             time: '10:00 AM', type: 'special' }],
-  '2026-08-21': [{ title: 'BLAST — Kids Church',         time: '7:00 PM', type: 'special' }],
-  '2026-08-23': [{ title: 'Bro. David Cheramie',         time: 'AM & PM', type: 'special' }],
-};
+// A single event list feeds both Upcoming Events and the calendar. New dates
+// are added in lib/events.ts; no duplicate date entry is needed here.
+const SPECIAL: Record<string, CalEvent[]> = {};
+for (const event of events) {
+  const key = event.expires.toISOString().slice(0, 10);
+  (SPECIAL[key] ??= []).push({ title: event.title, time: event.time, type: 'special' });
+}
 
 // Overrides replace ALL recurring events for that date
 const OVERRIDES: Record<string, CalEvent[]> = {
@@ -46,7 +43,6 @@ function recurringFor(date: Date): CalEvent[] {
       events.push({ title: 'Evening Service',  time: '6:00 PM',  type: 'regular' });
     }
   }
-  if (dow === 1) events.push({ title: 'Prayer Meeting', time: '7:00 PM',  type: 'regular' });
   if (dow === 3) events.push({ title: 'Wednesday Service', time: '7:30 PM', type: 'regular' });
 
   return events;
@@ -58,8 +54,9 @@ function dateKey(d: Date) {
 
 function eventsFor(date: Date): CalEvent[] {
   const key = dateKey(date);
-  const base = OVERRIDES[key] ?? recurringFor(date);
-  return [...base, ...(SPECIAL[key] ?? [])];
+  // A special-service override takes the place of that day's recurring services.
+  if (OVERRIDES[key]) return OVERRIDES[key];
+  return [...recurringFor(date), ...(SPECIAL[key] ?? [])];
 }
 
 // Full list of events for the side panel, sorted by date
@@ -84,8 +81,8 @@ export default function EventCalendar() {
   const totalDays = new Date(year, month + 1, 0).getDate();
   const todayKey  = dateKey(today);
 
-  const prevMonth = () => { if (month === 0) { setMonth(11); setYear(y => y - 1); } else setMonth(m => m - 1); };
-  const nextMonth = () => { if (month === 11) { setMonth(0); setYear(y => y + 1); } else setMonth(m => m + 1); };
+  const prevMonth = () => { setSelected(null); if (month === 0) { setMonth(11); setYear(y => y - 1); } else setMonth(m => m - 1); };
+  const nextMonth = () => { setSelected(null); if (month === 11) { setMonth(0); setYear(y => y + 1); } else setMonth(m => m + 1); };
 
   const cells: (Date | null)[] = [
     ...Array(firstDow).fill(null),
@@ -145,6 +142,8 @@ export default function EventCalendar() {
               <button
                 key={key}
                 onClick={() => setSelected(isSelected ? null : key)}
+                aria-pressed={isSelected}
+                aria-label={`${date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}${evts.length ? `, ${evts.length} event${evts.length > 1 ? 's' : ''}` : ', no events'}`}
                 className={`min-h-[72px] sm:min-h-[88px] p-1.5 text-left transition-colors ${
                   isSelected ? 'bg-church-purple/8 ring-1 ring-inset ring-church-purple/30' : 'hover:bg-slate-50'
                 }`}

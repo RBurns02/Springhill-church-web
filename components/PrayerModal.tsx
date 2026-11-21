@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import { useAccessibleModal } from '@/components/useAccessibleModal';
 
 export default function PrayerModal() {
   const [open, setOpen] = useState(false);
@@ -9,12 +10,15 @@ export default function PrayerModal() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => { setMounted(true); }, []);
+  const close = useCallback(() => { setOpen(false); setStatus('idle'); }, []);
+  const { triggerRef, dialogRef } = useAccessibleModal(open, close);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus('sending');
     const form = e.currentTarget;
     const data = new FormData(form);
+    data.append('_type', 'prayer');
 
     try {
       const res = await fetch(form.action, {
@@ -36,7 +40,7 @@ export default function PrayerModal() {
   return (
     <>
       {/* Prayer request card trigger */}
-      <button className="card p-8 text-center group cursor-pointer w-full h-full flex flex-col items-center justify-center" onClick={() => setOpen(true)}>
+      <button ref={triggerRef} type="button" className="card p-8 text-center group cursor-pointer w-full h-full flex flex-col items-center justify-center" onClick={() => setOpen(true)}>
         <div className="w-12 h-12 border border-stone-200 flex items-center justify-center mx-auto mb-5 text-stone-500 group-hover:border-church-gold group-hover:text-church-gold transition-all duration-300">
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -53,9 +57,11 @@ export default function PrayerModal() {
       {mounted && open && createPortal(
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75"
-          onClick={(e) => { if (e.target === e.currentTarget) { setOpen(false); setStatus('idle'); } }}
+          onClick={(e) => { if (e.target === e.currentTarget) close(); }}
         >
           <div
+            ref={dialogRef}
+            tabIndex={-1}
             role="dialog"
             aria-modal="true"
             aria-labelledby="prayer-modal-title"
@@ -68,7 +74,7 @@ export default function PrayerModal() {
                 <h2 id="prayer-modal-title" className="font-serif text-xl font-bold text-stone-900">Send a Prayer Request</h2>
               </div>
               <button
-                onClick={() => { setOpen(false); setStatus('idle'); }}
+                onClick={close}
                 className="w-8 h-8 flex items-center justify-center text-stone-400 hover:text-stone-600 transition-colors"
                 aria-label="Close"
               >
@@ -81,7 +87,7 @@ export default function PrayerModal() {
             {/* Body */}
             <div className="px-8 py-7 overflow-y-auto">
               {status === 'sent' ? (
-                <div className="text-center py-8">
+                <div className="text-center py-8" role="status" aria-live="polite">
                   <div className="w-12 h-12 border border-church-gold flex items-center justify-center mx-auto mb-5 text-church-gold">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -92,7 +98,7 @@ export default function PrayerModal() {
                     Our prayer team will lift your request before the Lord. You are not alone.
                   </p>
                   <button
-                    onClick={() => { setOpen(false); setStatus('idle'); }}
+                    onClick={close}
                     className="mt-6 btn-primary"
                   >
                     Close
@@ -137,14 +143,15 @@ export default function PrayerModal() {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <input id="prayer-private" name="private" type="checkbox" className="mt-1 w-4 h-4 accent-church-gold" />
+                    <input id="prayer-private" name="confidentiality_requested" type="checkbox" className="mt-1 w-4 h-4 accent-church-gold" />
                     <label htmlFor="prayer-private" className="text-sm text-stone-600 leading-relaxed">
-                      Keep my request private (shared only with our prayer team)
+                      Please handle my request confidentially
                     </label>
                   </div>
+                  <p className="text-xs text-stone-500 leading-relaxed">Checking this box flags your request for confidential handling, but it is still delivered to the church’s receiving inbox. Please avoid details you do not want sent electronically.</p>
 
                   {status === 'error' && (
-                    <p className="text-red-500 text-xs">Something went wrong. Please try again.</p>
+                    <p className="text-red-500 text-xs" role="alert">Something went wrong. Please try again.</p>
                   )}
 
                   <button
@@ -156,7 +163,7 @@ export default function PrayerModal() {
                   </button>
 
                   <p className="text-xs text-stone-400 text-center">
-                    We respect your privacy. Your information will never be shared or sold.
+                    Please only include information you are comfortable submitting online.
                   </p>
                 </form>
               )}
