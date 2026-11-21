@@ -128,7 +128,7 @@ export default function BlastPage() {
     <section className="blast-hero">
       <div className="spc-container blast-hero-inner">
         <div className="blast-hero-copy">
-          <p className="blast-kicker"><span aria-hidden="true">✳</span> SPRINGHILL KIDS MINISTRY</p>
+          <p className="blast-kicker">SPRINGHILL KIDS MINISTRY</p>
           <h1>Little hearts.<br/><em>Big faith.</em></h1>
           <p className="blast-hero-description">At BLAST Kids Church, every gathering is an adventure in God's Word. Kids learn, laugh, worship, and discover just how much Jesus loves them.</p>
           <div className="blast-hero-actions">
