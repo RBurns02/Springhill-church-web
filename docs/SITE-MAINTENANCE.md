@@ -16,7 +16,7 @@ This checklist is for future updates to the live church website.
 - Verify any permanent schedule change before updating `app/page.tsx`, `app/new-here/page.tsx`, `components/Footer.tsx`, `app/prayer/page.tsx`, `app/events/page.tsx` and the website's structured metadata in `app/layout.tsx`.
 
 ## Giving
-`app/give/page.tsx` currently links to the Tithe.ly **church search**, not a verified Springhill checkout. If the church supplies the actual direct giving URL, confirm the receiving church before replacing `GIVE_URL` and the explanatory wording. Do not invent a merchant-specific link.
+`app/give/page.tsx` uses the verified Springhill Pentecostal Church giving form: `https://give.tithe.ly/?formId=b092eb22-6865-11ee-90fc-1260ab546d11`. Verified against Tithe.ly's public organization search (name and address: 1090 Springhill Rd, Wesson, MS 39191), linked location's public forms list, and public form details. Preserve this direct form URL as the main giving destination unless the church provides a replacement. The secondary My Church portal is for donor account management. Any changes to giving URLs must be checked against the correct church recipient; a live donation was not performed during verification.
 
 ## Contact and prayer request forms
 `components/ContactModal.tsx` and `components/PrayerModal.tsx` both currently POST to the existing Formspree endpoint. The requests are differentiated by `_type`.
