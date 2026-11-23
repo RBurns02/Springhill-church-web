@@ -121,3 +121,9 @@
 @media(prefers-reduced-motion:reduce) {
   .spc-logo-hero *, .spc-logo-hero::before,.spc-logo-hero::after { animation:none!important; transition:none!important; }
 }
+
+/* Mobile homepage: lead with the large SPC logo, then the welcome message. */
+@media (max-width:720px) {
+  .spc-site .spc-hero > .spc-logo-hero { order: -1; }
+  .spc-site .spc-hero > .spc-hero-copy { order: 0; }
+}
