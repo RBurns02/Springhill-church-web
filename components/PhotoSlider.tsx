@@ -3,14 +3,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const photos = [
-  { src: '/church1.png', alt: 'Worship at Springhill Pentecostal Church', caption: 'Worship together' },
-  { src: '/church8.jpg', alt: 'Springhill congregation in worship', caption: 'One church family' },
-  { src: '/church6.jpg', alt: 'Preaching from the pulpit at Springhill', caption: 'Rooted in the Word' },
-  { src: '/church10.jpg', alt: 'Prayer at the altar at Springhill', caption: 'A place of prayer' },
-  { src: '/church9.jpg', alt: 'Music during worship at Springhill', caption: 'Lifting up His name' },
-  { src: '/church13.png', alt: 'Praise and worship at Springhill', caption: 'Joy in the house' },
-  { src: '/church7.jpg', alt: 'Worship with family at Springhill', caption: 'Every generation' },
-  { src: '/church11.jpg', alt: 'Keyboard player during worship at Springhill', caption: 'Heartfelt worship' },
+  { src: '/church1.png', alt: 'Springhill congregation worshipping together', caption: 'Gathered in His presence' },
+  { src: '/church2.png', alt: 'Ministry moment at Springhill Pentecostal Church', caption: 'Rooted in the Word' },
+  { src: '/church9.jpg', alt: 'Keyboard player during a Springhill service', caption: 'Heartfelt music' },
+  { src: '/church13.png', alt: 'Church members praying and ministering', caption: 'Standing together in faith' },
+  { src: '/church4.jpg', alt: 'Sound and lighting ministry at Springhill', caption: 'Serving behind the scenes' },
+  { src: '/church5.jpg', alt: 'Preaching from the Springhill pulpit', caption: 'The Word preached' },
 ];
 
 export default function PhotoSlider() {

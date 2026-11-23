@@ -32,7 +32,7 @@ export default function Nav() {
       <div className="spc-container spc-nav-inner">
         <Link href="/" className="spc-brand" aria-label="Springhill Pentecostal Church, home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="spc-brand-logo" src="/logo-transparent.png" alt="" aria-hidden="true" />
+          <img className="spc-brand-logo" src="/logo.png" alt="" aria-hidden="true" />
           <span className="spc-brand-name"><strong>Springhill</strong><small>PENTECOSTAL CHURCH · WESSON, MS</small></span>
         </Link>
         <nav className="spc-desktop-links" aria-label="Main navigation">

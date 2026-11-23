@@ -10,13 +10,14 @@ type HeroProps = {
   image?: string;
   imageAlt?: string;
   photoPosition?: string;
+  imageFit?: 'cover' | 'contain';
   variant?: 'cream' | 'forest' | 'ocean';
   primary?: { text: string; href: string };
   secondary?: { text: string; href: string };
   note?: string;
 };
 
-export function SpcPageHero({ eyebrow, title, accent, description, image, imageAlt, photoPosition, variant = 'cream', primary, secondary, note }: HeroProps) {
+export function SpcPageHero({ eyebrow, title, accent, description, image, imageAlt, photoPosition, imageFit = 'cover', variant = 'cream', primary, secondary, note }: HeroProps) {
   return (
     <section className={`spc-subhero spc-subhero--${variant} ${image ? '' : 'spc-subhero--no-photo'}`}>
       <div className="spc-subhero-copy">
@@ -30,8 +31,8 @@ export function SpcPageHero({ eyebrow, title, accent, description, image, imageA
         </div>}
         {note && <p className="spc-subhero-note"><span aria-hidden="true" />{note}</p>}
       </div>
-      {image && <div className="spc-subhero-media" data-spc-parallax="hero">
-        <Image src={image} alt={imageAlt || ''} fill priority sizes="(max-width: 780px) 100vw, 48vw" style={{ objectPosition: photoPosition || 'center' }} />
+      {image && <div className={`spc-subhero-media ${imageFit === 'contain' ? 'spc-subhero-media--contained' : ''}`} data-spc-parallax={imageFit === 'cover' ? 'hero' : undefined}>
+        <Image src={image} alt={imageAlt || ''} fill priority sizes="(max-width: 780px) 100vw, 48vw" style={{ objectFit: imageFit, objectPosition: photoPosition || 'center' }} />
         <span className="spc-subhero-corner">Springhill · Wesson, MS</span>
       </div>}
     </section>

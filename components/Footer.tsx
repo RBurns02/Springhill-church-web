@@ -15,7 +15,7 @@ export default function Footer() {
           <div>
             <h3>Springhill Pentecostal Church</h3>
             <p>Rooted in the Word. Growing in faith. Together in Wesson, Mississippi since 1935.</p>
-            <p style={{marginTop:12}}>1090 Springhill Road<br/>Wesson, MS 39191</p>
+            <p style={{marginTop:12}}>1090 Springhill Road<br/>Wesson, MS 39191</p><p style={{marginTop:10}}><a href="mailto:pastor@spcwesson.com">pastor@spcwesson.com</a></p>
           </div>
           <div>
             <p className="spc-eyebrow spc-eyebrow--gold" style={{marginBottom:20}}>Explore</p>

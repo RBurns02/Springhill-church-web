@@ -46,3 +46,78 @@
 @media (prefers-reduced-motion:reduce) {
   .spc-blast-feature-rocket, .spc-blast-feature-planet, .spc-blast-feature-planet-small { animation:none!important; }
 }
+
+
+/* 2026 photo refresh: preserve every original, improve framing site-wide. */
+.spc-brand-logo { width: 62px; height: 58px; object-fit: contain; }
+.spc-logo-hero {
+  position: relative; isolation: isolate;
+  background: radial-gradient(ellipse at 51% 47%, #365a4d 0%, #173e34 47%, #102f29 100%);
+  display: grid; place-items: center;
+}
+.spc-logo-hero::before {
+  content: ""; position: absolute; inset: 8%; border-radius: 50%;
+  border: 1px solid rgba(212,182,115,.25);
+  box-shadow: 0 0 0 38px rgba(224,204,141,.035), 0 0 0 86px rgba(224,204,141,.02);
+  pointer-events: none;
+}
+.spc-logo-hero::after { background: linear-gradient(180deg,transparent 72%,rgba(8,30,24,.37)); }
+.spc-hero-photo.spc-logo-hero > img.spc-hero-logo-image {
+  object-fit: contain !important; object-position: center !important;
+  padding: clamp(45px,5vw,87px) clamp(35px,5vw,70px);
+  mix-blend-mode: screen;
+  transform: none !important; filter: contrast(1.04) saturate(1.06);
+}
+.spc-logo-hero-eyebrow, .spc-logo-hero-footnote {
+  position:absolute; z-index:2; left:0; right:0; text-align:center;
+  color:#e5dfc8; text-transform:uppercase; font-size:10px;
+  font-weight:750; letter-spacing:.16em; padding:0 25px;
+  pointer-events:none;
+}
+.spc-logo-hero-eyebrow { top:25px; }
+.spc-logo-hero-footnote { bottom:22px; color:#e9c987; letter-spacing:.18em; }
+.spc-welcome-photos .spc-photo-main > img { object-fit: cover; object-position: center 53%; }
+.spc-welcome-photos .spc-photo-side { min-height:0; aspect-ratio:1; margin-top:0; }
+.spc-welcome-photos .spc-photo-side > img { object-fit:contain; padding:8px; background:#e5e8df; }
+.spc-why-picture--framed { background:linear-gradient(145deg,#e4eadc,#cad7ca); }
+.spc-why-picture--framed > img { object-fit:contain !important; object-position:center !important; transform:none!important; filter:contrast(1.035) saturate(1.035); }
+.spc-subhero-media--contained {
+  background:radial-gradient(ellipse at 50% 44%,#537b70 0%,#294b42 58%,#173e35 100%);
+  isolation:isolate;
+}
+.spc-subhero-media--contained::before {
+  content:""; position:absolute; inset:7%;
+  border:1px solid rgba(236,234,201,.22); pointer-events:none;
+}
+.spc-subhero-media--contained::after { background:linear-gradient(180deg,transparent 78%,rgba(9,29,25,.22)); }
+.spc-subhero-media--contained > img {
+  object-fit:contain!important;
+  padding: clamp(22px,3vw,42px);
+  transform:none!important;
+  filter:contrast(1.035) saturate(1.05);
+}
+.spc-editorial-photo--natural .spc-editorial-photo-inner { aspect-ratio:4/5; background:linear-gradient(150deg,#edf0e6,#dce5dc); }
+.spc-editorial-photo--natural .spc-editorial-photo-inner > img { object-fit:contain!important; object-position:center!important; padding:7px; transform:none!important; filter:contrast(1.04) saturate(1.04); }
+.spc-editorial-photo--portrait .spc-editorial-photo-inner { aspect-ratio:4/5; background:#ddd8d0; }
+.spc-editorial-photo--portrait .spc-editorial-photo-inner > img { object-fit:cover!important; object-position:center!important; transform:none!important; }
+.spc-gallery { background:radial-gradient(ellipse at center,#416c5a,#213e32); }
+.spc-gallery-image { object-fit:contain!important; object-position:center!important; }
+.spc-contact-email-direct { margin: 25px auto 0; text-align:center; max-width:620px; font-size:14px; line-height:1.7; color:#51665a; }
+.spc-contact-email-direct a { color:#1a6c52; font-weight:750; text-decoration:underline; text-underline-offset:4px; overflow-wrap:anywhere; }
+.spc-contact-email-direct a:focus-visible { outline:3px solid var(--spc-gold); outline-offset:4px; }
+@media(max-width:780px) {
+  .spc-logo-hero { min-height:440px; }
+  .spc-logo-hero-eyebrow { top:17px; font-size:9px; letter-spacing:.1em; }
+  .spc-logo-hero-footnote { bottom:18px; font-size:9px; }
+  .spc-hero-photo.spc-logo-hero > img.spc-hero-logo-image { padding:47px 40px; }
+  .spc-why-picture--framed { min-height:490px; }
+  .spc-welcome-photos .spc-photo-side { min-height:0; }
+}
+@media(max-width:430px) {
+  .spc-logo-hero { min-height:385px; }
+  .spc-hero-photo.spc-logo-hero > img.spc-hero-logo-image { padding:44px 31px; }
+  .spc-why-picture--framed { min-height:390px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .spc-logo-hero *, .spc-logo-hero::before,.spc-logo-hero::after { animation:none!important; transition:none!important; }
+}

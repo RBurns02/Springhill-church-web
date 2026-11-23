@@ -153,7 +153,7 @@ export default function ContactModal() {
                   </div>
 
                   {status === 'error' && (
-                    <p className="text-red-500 text-xs" role="alert">Something went wrong. Please try again, or reach out through our Facebook page.</p>
+                    <p className="text-red-500 text-xs" role="alert">Something went wrong. Please try again or <a className="underline" href="mailto:pastor@spcwesson.com">email Pastor Tommy Lee directly</a>.</p>
                   )}
 
                   <button
@@ -163,6 +163,7 @@ export default function ContactModal() {
                   >
                     {status === 'sending' ? 'Sending…' : 'Send Message'}
                   </button>
+                  <p className="text-center text-xs text-stone-500">You can also email <a className="underline" href="mailto:pastor@spcwesson.com">pastor@spcwesson.com</a> directly.</p>
                 </form>
               )}
             </div>

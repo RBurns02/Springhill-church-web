@@ -11,9 +11,6 @@ export const metadata: Metadata = {
   description: 'Find a place to worship and grow at Springhill Pentecostal Church in Wesson, Mississippi. Sunday 10 AM & 6 PM, Wednesday 7:30 PM. First Sundays at 2 PM only; prayer gatherings as announced.',
 };
 
-function ChurchIcon() {
-  return <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><path d="M24 4v12m-7-6h14M8 44V23L24 13l16 10v21M4 44h40M19 44V31h10v13M14 26h5M29 26h5"/></svg>;
-}
 function HeartIcon() {
   return <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M16 27 5.5 16.8C-2 8.5 9 1 16 10c7-9 18-1.5 10.5 6.8L16 27Z"/></svg>;
 }
@@ -40,13 +37,10 @@ export default function HomePage() {
           </div>
           <p className="spc-hero-footnote"><span aria-hidden="true" /> Everyone is welcome. No registration needed.</p>
         </div>
-        <div className="spc-hero-photo" data-spc-parallax="hero">
-          <Image src="/church1.png" alt="Congregation worshipping at Springhill Pentecostal Church" fill priority sizes="(max-width: 720px) 100vw, 48vw" />
-          <p className="spc-photo-rail">Welcome to Springhill</p>
-          <div className="spc-service-note">
-            <ChurchIcon />
-            <div><strong>Worship with us Sunday</strong><small>10:00 AM &amp; 6:00 PM · First Sunday: 2:00 PM only</small></div>
-          </div>
+        <div className="spc-hero-photo spc-logo-hero">
+          <Image className="spc-hero-logo-image" src="/logo-gold.png" alt="Springhill Pentecostal Church logo" fill priority sizes="(max-width: 720px) 100vw, 48vw" />
+          <p className="spc-logo-hero-eyebrow">Springhill Pentecostal Church · Wesson, Mississippi</p>
+          <p className="spc-logo-hero-footnote">Rooted in faith since 1935</p>
         </div>
       </section>
 
@@ -69,8 +63,8 @@ export default function HomePage() {
             <Link href="/new-here" className="spc-text-link">What to expect on your first visit <span className="spc-arrow" aria-hidden="true">→</span></Link>
           </div>
           <div className="spc-welcome-photos spc-reveal">
-            <div className="spc-photo-main" data-spc-parallax="soft"><Image src="/church8.jpg" alt="Springhill congregation gathered in worship" fill sizes="(max-width: 720px) 55vw, 28vw" /></div>
-            <div className="spc-photo-side" data-spc-parallax="soft"><Image src="/church9.jpg" alt="Music ministry at Springhill" fill sizes="(max-width: 720px) 40vw, 20vw" /></div>
+            <div className="spc-photo-main"><Image src="/photography/spc-new-10.webp" alt="Prayer at the altar during a Springhill service" fill sizes="(max-width: 720px) 55vw, 28vw" /></div>
+            <div className="spc-photo-side"><Image src="/photography/spc-new-00.webp" alt="Members of Springhill praying together at the altar" fill sizes="(max-width: 720px) 40vw, 20vw" /></div>
             <div className="spc-welcome-stamp"><strong>1935</strong><small>Established in faith</small></div>
           </div>
         </div>
@@ -80,8 +74,8 @@ export default function HomePage() {
 
       <section className="spc-why" aria-labelledby="spc-expect-heading">
         <div className="spc-container spc-why-editorial">
-          <div className="spc-why-picture spc-reveal" data-spc-parallax="soft">
-            <Image src="/church10.jpg" alt="Church family praying at the altar at Springhill" fill sizes="(max-width: 720px) 100vw, 42vw" />
+          <div className="spc-why-picture spc-why-picture--framed spc-reveal">
+            <Image src="/photography/spc-new-06.webp" alt="Three men worshipping with hands raised at Springhill" fill sizes="(max-width: 720px) 100vw, 42vw" />
             <span>THE HEART OF SPRINGHILL</span>
           </div>
           <div className="spc-why-detail">
@@ -132,20 +126,6 @@ export default function HomePage() {
               ))}
             </div>
             <Link href="/events" className="spc-text-link">See the church calendar <span className="spc-arrow" aria-hidden="true">→</span></Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="spc-pastor" aria-labelledby="spc-pastor-heading">
-        <div className="spc-container spc-pastor-grid">
-          <div className="spc-pastor-portrait spc-reveal" data-spc-parallax="soft"><Image src="/pastor.png" alt="Pastor Tommy and Lori Lee of Springhill Pentecostal Church" fill sizes="(max-width: 720px) 100vw, 40vw" /></div>
-          <div className="spc-pastor-content spc-reveal">
-            <p className="spc-eyebrow spc-eyebrow--green">Meet our pastor &amp; first lady</p>
-            <h2 id="spc-pastor-heading" className="spc-section-title">Pastor Tommy &amp; Lori Lee</h2>
-            <p className="spc-text">We&apos;re grateful for the leadership and heart Pastor Tommy and Lori Lee bring to Springhill.</p>
-            <blockquote className="spc-pastor-quote">“We believe that church is more than just a building; it&apos;s a family where we grow together, support, and love one another.”</blockquote>
-            <p className="spc-text">Whether you&apos;re searching for a church home or learning about Apostolic faith for the first time, we would love for you to join us.</p>
-            <Link href="/about" className="spc-text-link">Get to know Springhill <span className="spc-arrow" aria-hidden="true">→</span></Link>
           </div>
         </div>
       </section>
