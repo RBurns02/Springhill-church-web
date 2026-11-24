@@ -16,75 +16,103 @@ function MangerIllustration() {
   return (
     <svg className="xmas-tree-svg" viewBox="0 0 650 560" aria-hidden="true" focusable="false">
       <defs>
-        <radialGradient id="xmas-sky-glow"><stop stopColor="#2a4a80" stopOpacity=".45"/><stop offset="1" stopColor="#2a4a80" stopOpacity="0"/></radialGradient>
-        <radialGradient id="xmas-star-halo" cx=".5" cy=".5" r=".5"><stop stopColor="#fffde0"/><stop offset=".55" stopColor="#f5c54e" stopOpacity=".5"/><stop offset="1" stopColor="#f5c54e" stopOpacity="0"/></radialGradient>
-        <radialGradient id="xmas-warm-glow" cx=".5" cy=".75" r=".55"><stop stopColor="#f5c54e" stopOpacity=".7"/><stop offset=".6" stopColor="#f59a30" stopOpacity=".3"/><stop offset="1" stopColor="#f59a30" stopOpacity="0"/></radialGradient>
+        <radialGradient id="xmas-sky-glow"><stop stopColor="#f5c54e" stopOpacity=".14"/><stop offset="1" stopColor="#f5c54e" stopOpacity="0"/></radialGradient>
+        <radialGradient id="xmas-warm-glow" cx=".5" cy=".5" r=".5"><stop stopColor="#f5c54e" stopOpacity=".6"/><stop offset="1" stopColor="#f5c54e" stopOpacity="0"/></radialGradient>
       </defs>
-      {/* Sky glow */}
-      <ellipse cx="325" cy="295" rx="275" ry="250" fill="url(#xmas-sky-glow)" />
-      {/* Background stars */}
-      <circle cx="118" cy="82" r="2" fill="#fffde8" opacity=".85"/><circle cx="175" cy="145" r="1.5" fill="#fffde8" opacity=".6"/><circle cx="502" cy="68" r="2.2" fill="#fffde8" opacity=".8"/><circle cx="560" cy="130" r="1.5" fill="#fffde8" opacity=".55"/><circle cx="88" cy="195" r="1.5" fill="#fffde8" opacity=".5"/><circle cx="568" cy="210" r="1.8" fill="#fffde8" opacity=".65"/><circle cx="145" cy="315" r="1.5" fill="#fffde8" opacity=".4"/><circle cx="525" cy="345" r="1.5" fill="#fffde8" opacity=".45"/><circle cx="98" cy="385" r="1.5" fill="#fffde8" opacity=".35"/><circle cx="558" cy="395" r="1.5" fill="#fffde8" opacity=".4"/>
-      {/* Warm glow from the manger */}
-      <ellipse className="xmas-manger-glow-anim" cx="325" cy="385" rx="178" ry="132" fill="url(#xmas-warm-glow)" />
-      {/* Star of Bethlehem beams (behind everything) */}
-      <path d="M325 112 L317 28 L333 28 Z" fill="#f5c54e" opacity=".45"/>
-      <path d="M318 118 L312 232 L338 232 Z" fill="#f5c54e" opacity=".28"/>
-      <path d="M270 112 L180 104 L180 120 Z" fill="#f5c54e" opacity=".38"/>
-      <path d="M380 112 L470 104 L470 120 Z" fill="#f5c54e" opacity=".38"/>
-      {/* Star glow */}
-      <ellipse cx="325" cy="112" rx="52" ry="52" fill="url(#xmas-star-halo)" />
-      {/* 5-pointed star */}
-      <path className="xmas-star-top" d="M325 83 L333 105 L355 105 L337 119 L344 141 L325 128 L306 141 L313 119 L295 105 L317 105 Z" fill="#f5c54e"/>
-      {/* Rolling hills */}
-      <path d="M0 450 Q80 415 160 440 Q240 465 320 428 Q400 391 480 428 Q560 465 650 445 L650 560 H0Z" fill="#1a3d26"/>
-      <path d="M0 490 Q120 468 240 482 Q360 496 480 472 Q560 452 650 468 L650 560 H0Z" fill="#0f2318"/>
-      {/* Stable roof */}
-      <path d="M196 288 L325 232 L454 288 Z" fill="#5a3015"/>
-      <path d="M196 288 L204 285 L325 237 L446 285 L454 288" fill="none" stroke="#6b3a1a" strokeWidth="4"/>
-      {/* Stable side posts */}
-      <rect x="196" y="287" width="13" height="150" rx="3" fill="#7a4530"/>
-      <rect x="441" y="287" width="13" height="150" rx="3" fill="#7a4530"/>
-      {/* Stable back wall (dark interior) */}
-      <rect x="209" y="287" width="232" height="150" fill="#1e0e04"/>
-      {/* Interior warm light overlay */}
-      <rect x="209" y="287" width="232" height="150" fill="url(#xmas-warm-glow)" opacity=".75"/>
-      {/* Hay on stable floor */}
-      <path d="M209 428 Q250 418 290 426 Q325 416 360 426 Q402 418 441 428 L441 437 L209 437Z" fill="#7a5520" opacity=".8"/>
-      <path d="M220 428 Q224 420 228 428" fill="none" stroke="#c4902a" strokeWidth="2.5" opacity=".7"/>
-      <path d="M240 428 Q244 418 248 428" fill="none" stroke="#c4902a" strokeWidth="2" opacity=".6"/>
-      <path d="M400 428 Q404 420 408 428" fill="none" stroke="#c4902a" strokeWidth="2.5" opacity=".7"/>
-      <path d="M420 428 Q424 418 428 428" fill="none" stroke="#c4902a" strokeWidth="2" opacity=".6"/>
-      {/* Manger / feed box */}
-      <path d="M294 358 L356 358 L360 397 L290 397 Z" fill="#8b5020"/>
-      <line x1="308" y1="358" x2="304" y2="397" stroke="#6b3810" strokeWidth="3" opacity=".7"/>
-      <line x1="325" y1="358" x2="325" y2="397" stroke="#6b3810" strokeWidth="3" opacity=".7"/>
-      <line x1="342" y1="358" x2="346" y2="397" stroke="#6b3810" strokeWidth="3" opacity=".7"/>
-      <rect x="294" y="397" width="8" height="22" rx="2" fill="#7a4015"/>
-      <rect x="348" y="397" width="8" height="22" rx="2" fill="#7a4015"/>
-      {/* Hay in manger */}
-      <path d="M290 360 Q325 350 360 360" fill="none" stroke="#c4a030" strokeWidth="7" strokeLinecap="round" opacity=".85"/>
-      {/* Baby (swaddled, glowing) */}
-      <ellipse cx="325" cy="371" rx="30" ry="14" fill="#f5c54e" opacity=".35"/>
-      <ellipse cx="325" cy="372" rx="20" ry="9" fill="#fff8e8"/>
-      <circle cx="323" cy="364" r="7" fill="#f0c888"/>
-      <path d="M305 373 Q325 378 345 373" fill="none" stroke="#e8e0d0" strokeWidth="5" strokeLinecap="round" opacity=".9"/>
-      {/* Mary (kneeling, left) */}
-      <path d="M220 326 Q244 310 265 324 Q278 345 274 420 Q255 428 236 420 Q218 408 220 326Z" fill="#1a3060"/>
-      <circle cx="252" cy="310" r="14" fill="#1e3870"/>
-      <path d="M229 312 Q252 290 275 312 Q270 346 252 356 Q234 346 229 312Z" fill="#2a4a88"/>
-      <ellipse cx="252" cy="310" rx="8" ry="9" fill="#d4a070" opacity=".75"/>
-      <path d="M262 348 Q274 356 290 364" fill="none" stroke="#1a3060" strokeWidth="9" strokeLinecap="round"/>
-      {/* Joseph (standing, right) */}
-      <line x1="413" y1="280" x2="416" y2="435" stroke="#7a4520" strokeWidth="6" strokeLinecap="round"/>
-      <path d="M378 306 Q400 292 420 306 L424 435 Q400 442 376 435 Z" fill="#1a3045"/>
-      <circle cx="400" cy="285" r="17" fill="#1a3045"/>
-      <path d="M374 288 Q400 266 426 288 Q422 318 400 324 Q378 318 374 288Z" fill="#243a60"/>
-      <ellipse cx="400" cy="285" rx="10" ry="11" fill="#c49060" opacity=".7"/>
-      <path d="M390 295 Q400 306 410 295" fill="none" stroke="#8a5030" strokeWidth="4" strokeLinecap="round" opacity=".8"/>
+
+      {/* Ambient warm glow (centered on table) */}
+      <ellipse cx="325" cy="360" rx="310" ry="230" fill="url(#xmas-sky-glow)"/>
+
+      {/* String lights */}
+      <path d="M56 122 Q325 144 594 128" stroke="#c4a040" strokeWidth="2.5" fill="none"/>
+      <circle cx="96"  cy="126" r="8" fill="#f5c54e"/><circle cx="96"  cy="126" r="14" fill="#f5c54e" opacity=".2"/>
+      <circle cx="148" cy="130" r="8" fill="#c03030"/><circle cx="148" cy="130" r="14" fill="#c03030" opacity=".15"/>
+      <circle cx="200" cy="133" r="8" fill="#2d7a3a"/><circle cx="200" cy="133" r="14" fill="#2d7a3a" opacity=".12"/>
+      <circle cx="252" cy="136" r="8" fill="#f5c54e"/><circle cx="252" cy="136" r="14" fill="#f5c54e" opacity=".2"/>
+      <circle cx="304" cy="138" r="8" fill="#c03030"/><circle cx="304" cy="138" r="14" fill="#c03030" opacity=".15"/>
+      <circle cx="356" cy="138" r="8" fill="#2d7a3a"/><circle cx="356" cy="138" r="14" fill="#2d7a3a" opacity=".12"/>
+      <circle cx="408" cy="136" r="8" fill="#f5c54e"/><circle cx="408" cy="136" r="14" fill="#f5c54e" opacity=".2"/>
+      <circle cx="460" cy="133" r="8" fill="#c03030"/><circle cx="460" cy="133" r="14" fill="#c03030" opacity=".15"/>
+      <circle cx="512" cy="130" r="8" fill="#2d7a3a"/><circle cx="512" cy="130" r="14" fill="#2d7a3a" opacity=".12"/>
+      <circle cx="558" cy="128" r="8" fill="#f5c54e"/><circle cx="558" cy="128" r="14" fill="#f5c54e" opacity=".2"/>
+
+      {/* Person A — woman, left, red */}
+      <path d="M158 460 L162 272 Q166 260 190 258 Q214 260 218 272 L222 460 Z" fill="#c0362a"/>
+      <rect x="183" y="254" width="14" height="14" rx="5" fill="#d4906a"/>
+      <circle cx="190" cy="230" r="24" fill="#d4906a"/>
+      {/* Hair – dark, shoulder-length */}
+      <path d="M166 234 Q170 208 190 202 Q210 208 214 234 Q209 213 190 209 Q171 213 166 234Z" fill="#2e1208"/>
+      <path d="M166 234 Q159 265 164 278 L175 274 Q170 260 170 236Z" fill="#2e1208"/>
+      <path d="M214 234 Q221 265 216 278 L205 274 Q210 260 210 236Z" fill="#2e1208"/>
+      <circle cx="183" cy="229" r="2.8" fill="#2e1208"/>
+      <circle cx="197" cy="229" r="2.8" fill="#2e1208"/>
+      <path d="M183 238 Q190 245 197 238" fill="none" stroke="#8a4824" strokeWidth="2.2" strokeLinecap="round"/>
+
+      {/* Person B — man, center, navy */}
+      <path d="M293 460 L297 272 Q301 260 325 258 Q349 260 353 272 L357 460 Z" fill="#1e3a62"/>
+      <rect x="318" y="254" width="14" height="14" rx="5" fill="#7a4020"/>
+      <circle cx="325" cy="230" r="25" fill="#7a4020"/>
+      {/* Hair – short, very dark */}
+      <path d="M300 234 Q304 208 325 202 Q346 208 350 234 Q345 212 325 208 Q305 212 300 234Z" fill="#120808"/>
+      <circle cx="317" cy="229" r="2.8" fill="#120808"/>
+      <circle cx="333" cy="229" r="2.8" fill="#120808"/>
+      {/* Big smile – laughing */}
+      <path d="M316 240 Q325 249 334 240" fill="none" stroke="#4a1808" strokeWidth="2.5" strokeLinecap="round"/>
+
+      {/* Person C — woman, right, green */}
+      <path d="M428 460 L432 272 Q436 260 460 258 Q484 260 488 272 L492 460 Z" fill="#2a5e3a"/>
+      <rect x="453" y="254" width="14" height="14" rx="5" fill="#e0b888"/>
+      <circle cx="460" cy="230" r="24" fill="#e0b888"/>
+      {/* Hair – medium brown, wavy */}
+      <path d="M436 234 Q440 208 460 202 Q480 208 484 234 Q479 213 460 209 Q441 213 436 234Z" fill="#8a5428"/>
+      <path d="M436 234 Q429 265 434 278 L445 274 Q440 260 440 236Z" fill="#8a5428"/>
+      <path d="M484 234 Q491 265 486 278 L475 274 Q480 260 480 236Z" fill="#8a5428"/>
+      <circle cx="453" cy="229" r="2.8" fill="#3a1a08"/>
+      <circle cx="467" cy="229" r="2.8" fill="#3a1a08"/>
+      <path d="M453 238 Q460 245 467 238" fill="none" stroke="#8a5024" strokeWidth="2.2" strokeLinecap="round"/>
+
+      {/* Table cloth (drawn over lower bodies) */}
+      <rect x="108" y="332" width="434" height="84" rx="12" fill="#fffbf5"/>
+      <rect x="108" y="332" width="434" height="16" rx="12" fill="#f0e8da"/>
+      <path d="M108 412 Q325 426 542 412 L542 417 Q325 431 108 417 Z" fill="#e8dac8"/>
+
+      {/* Candle glow on tablecloth */}
+      <ellipse cx="325" cy="348" rx="42" ry="16" fill="url(#xmas-warm-glow)"/>
+
+      {/* Plates */}
+      <circle cx="190" cy="356" r="23" fill="#f0e8de"/><circle cx="190" cy="356" r="16" fill="#fffdf8"/>
+      <circle cx="325" cy="354" r="23" fill="#f0e8de"/><circle cx="325" cy="354" r="16" fill="#fffdf8"/>
+      <circle cx="460" cy="356" r="23" fill="#f0e8de"/><circle cx="460" cy="356" r="16" fill="#fffdf8"/>
+
+      {/* Wine glasses */}
+      <path d="M220 334 L216 350 Q214 360 224 360 Q234 360 232 350 L228 334 Z" fill="#c8e8d8" opacity=".8"/>
+      <rect x="223" y="360" width="2.5" height="8" rx="1" fill="#c8e8d8" opacity=".8"/>
+      <rect x="219" y="368" width="11" height="2.5" rx="1" fill="#c8e8d8" opacity=".8"/>
+      <path d="M353 334 L349 350 Q347 360 357 360 Q367 360 365 350 L361 334 Z" fill="#c8e8d8" opacity=".8"/>
+      <rect x="356" y="360" width="2.5" height="8" rx="1" fill="#c8e8d8" opacity=".8"/>
+      <rect x="352" y="368" width="11" height="2.5" rx="1" fill="#c8e8d8" opacity=".8"/>
+      <path d="M488 334 L484 350 Q482 360 492 360 Q502 360 500 350 L496 334 Z" fill="#c8e8d8" opacity=".8"/>
+      <rect x="491" y="360" width="2.5" height="8" rx="1" fill="#c8e8d8" opacity=".8"/>
+      <rect x="487" y="368" width="11" height="2.5" rx="1" fill="#c8e8d8" opacity=".8"/>
+
+      {/* Candle */}
+      <rect x="321" y="295" width="8" height="40" rx="3" fill="#f8f5ee"/>
+      <path d="M323 294 Q325 283 327 294" fill="#f5c54e" className="xmas-flame-shape"/>
+      <ellipse cx="325" cy="295" rx="5" ry="3" fill="#f5c54e" opacity=".6"/>
+      <ellipse cx="325" cy="335" rx="13" ry="5" fill="#c4a040" opacity=".9"/>
+
+      {/* Holly centerpiece */}
+      <ellipse cx="292" cy="333" rx="19" ry="9" fill="#1a4428"/>
+      <circle cx="285" cy="329" r="5.5" fill="#b82020"/>
+      <circle cx="292" cy="327" r="5.5" fill="#b82020"/>
+      <circle cx="299" cy="329" r="5.5" fill="#b82020"/>
+
       {/* Sparkles */}
-      <XmasSpark x={296} y={48} s={.9} /><XmasSpark x={356} y={52} s={.8} color="#c8d8ff" />
-      <XmasSpark x={158} y={178} s={1.0} /><XmasSpark x={500} y={165} s={.95} color="#f9d070" />
-      <XmasSpark x={118} y={440} s={.8} color="#d8eecc" /><XmasSpark x={535} y={430} s={.75} color="#d8eecc" />
+      <XmasSpark x={128} y={148} s={0.9} color="#f5c54e"/>
+      <XmasSpark x={280} y={153} s={0.85}/>
+      <XmasSpark x={542} y={144} s={0.8} color="#f5c54e"/>
+      <XmasSpark x={72} y={440} s={0.72} color="#c8e8cc"/>
+      <XmasSpark x={590} y={432} s={0.72} color="#c8e8cc"/>
     </svg>
   );
 }
