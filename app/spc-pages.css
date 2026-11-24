@@ -13,6 +13,9 @@
 .spc-subhero-media img { object-fit: cover; }
 .spc-subhero-media:after { content: ''; position: absolute; inset: 40% 0 0; pointer-events: none; background: linear-gradient(180deg,transparent,rgba(8,31,23,.4)); }
 .spc-subhero-corner { position: absolute; z-index: 2; bottom: 30px; left: 32px; text-transform: uppercase; font-size: 10px; letter-spacing: .15em; color: #fff; border-left: 2px solid var(--spc-gold); padding: 8px 11px; }
+.spc-subhero-media--contained { background: #f5f0e8; }
+.spc-subhero-media--contained::after { display: none; }
+.spc-subhero-media--contained .spc-subhero-corner { display: none; }
 .spc-subhero--forest { background: var(--spc-forest-deep); color: white; }
 .spc-subhero--forest .spc-eyebrow { color: var(--spc-gold); }
 .spc-subhero--forest .spc-subhero-title em { color: #d5be83; }
@@ -133,6 +136,7 @@
   .spc-subhero { grid-template-columns: 1fr; min-height: auto; }
   .spc-subhero-copy { padding: 58px 22px 58px; }
   .spc-subhero-media { min-height: 340px; }
+  .spc-subhero-media--contained { min-height: 0; aspect-ratio: 3/4; }
   .spc-subhero-title { font-size: clamp(44px,11vw,66px); }
   .spc-subhero-description { font-size: 15px; }
   .spc-sub-section { padding: 70px 0; }
