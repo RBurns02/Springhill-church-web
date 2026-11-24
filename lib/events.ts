@@ -63,6 +63,7 @@ export const events: SpcEvent[] = [
     title: "Christmas Banquet",
     time: "6:00 PM",
     category: "Church Family Event",
+    detailsUrl: '/christmas-banquet',
     description: "Celebrate the Christmas season with the Springhill church family at 6:00 PM.",
     body: "Join us for our Christmas Banquet as we celebrate the season and enjoy fellowship together.",
     month: "DEC",

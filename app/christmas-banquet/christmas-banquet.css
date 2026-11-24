@@ -1,0 +1,172 @@
+/* Christmas Banquet: illustrated ministry page.
+   Animation is decorative; all content and links remain accessible without it. */
+.xmas-page { --xmas-navy:#091929; --xmas-ink:#0d2a1a; --xmas-gold:#f5c54e; --xmas-red:#c03030; --xmas-green:#1a4634; overflow-x:clip; }
+.xmas-page .spc-container { width:min(1176px,calc(100% - 72px)); }
+.xmas-page em { font-weight:400; font-style:italic; }
+
+/* ── Hero ── */
+.xmas-hero { position:relative; isolation:isolate; overflow:hidden; color:#fff; background:radial-gradient(ellipse at 82% 48%,#18365e 0%,#09192c 48%,#060f1e 100%); }
+.xmas-hero::before { content:""; position:absolute; inset:0; pointer-events:none; background-image:radial-gradient(#fffde0 1px,transparent 1.5px); background-size:62px 68px; opacity:.18; }
+.xmas-hero::after { content:""; pointer-events:none; position:absolute; width:520px; height:520px; border:1px solid rgba(200,228,200,.07); border-radius:50%; top:-330px; left:10%; }
+.xmas-hero-inner { display:grid; grid-template-columns:1fr 1fr; align-items:center; min-height:620px; gap:0; position:relative; z-index:1; }
+.xmas-hero-copy { padding:80px 10px 90px 0; position:relative; z-index:3; }
+.xmas-kicker { display:flex; align-items:center; gap:12px; color:#b8dfc8; letter-spacing:.18em; font-size:11px; font-weight:800; margin:0 0 28px; }
+.xmas-kicker span { font-size:20px; color:#f5c54e; line-height:1; }
+.xmas-hero h1 { font:400 clamp(64px,7vw,108px)/.98 var(--spc-font-serif); letter-spacing:-.062em; margin:0; }
+.xmas-hero h1 em { color:#f5c54e; }
+.xmas-hero-description { color:#cae0dc; font-size:17px; line-height:1.78; max-width:480px; margin:28px 0 32px; }
+.xmas-hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
+.xmas-button { display:inline-flex; align-items:center; justify-content:center; gap:14px; padding:17px 24px; text-transform:uppercase; font-weight:800; font-size:11px; letter-spacing:.095em; transition:transform .25s ease,background .25s ease,box-shadow .25s ease; text-decoration:none; }
+.xmas-button:hover { transform:translateY(-3px); }
+.xmas-button:focus-visible { outline:3px solid #f5c54e; outline-offset:5px; }
+.xmas-button--gold { background:#f5c54e; color:#0d2a1a; box-shadow:0 12px 30px rgba(6,18,32,.22); }
+.xmas-button--gold:hover { background:#ffd87a; box-shadow:0 15px 30px rgba(6,18,32,.3); }
+.xmas-button--outline { background:rgba(255,255,255,.04); border:1px solid rgba(220,235,220,.38); color:#fff; }
+.xmas-button--outline:hover { background:rgba(255,255,255,.12); }
+.xmas-hero-footnote { color:#a4c8c0; margin:28px 0 0; font-size:12px; display:flex; gap:9px; align-items:center; }
+.xmas-candle-dot { width:7px; height:7px; border-radius:50%; background:#f5c54e; box-shadow:0 0 0 5px rgba(245,197,78,.12); animation:xmas-glow 2.8s ease-in-out infinite; }
+.xmas-hero-visual { position:relative; min-width:0; max-width:660px; width:100%; transform:translateY(var(--spc-depth-y,0px)); transition:transform .2s linear; }
+.xmas-tree-svg { overflow:visible; width:100%; display:block; filter:drop-shadow(0 12px 28px rgba(2,14,30,.18)); }
+.xmas-art-label { position:absolute; font-size:10px; font-weight:800; letter-spacing:.14em; color:#ddeedd; white-space:nowrap; }
+.xmas-art-label--top { top:10%; right:0; transform:rotate(7deg); }
+.xmas-art-label--top span { color:#f5c54e; font-size:16px; }
+.xmas-art-label--bottom { left:5%; bottom:10%; transform:rotate(-8deg); background:#1a3f28; color:#f5c54e; padding:11px 16px; box-shadow:6px 7px 0 rgba(4,20,12,.3); }
+.xmas-hero-corner { position:absolute; right:28px; bottom:17px; letter-spacing:.4em; font-size:9px; font-weight:800; opacity:.4; }
+
+/* ── Fact strip ── */
+.xmas-fact-strip { background:#f4e8ca; color:#2a3a28; }
+.xmas-facts { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); }
+.xmas-facts>div { padding:26px 21px 28px; border-left:1px solid rgba(30,65,32,.15); }
+.xmas-facts>div:first-child { border-left:0; padding-left:0; }
+.xmas-facts span { display:block; font:800 10px/1.2 var(--font-inter),sans-serif; letter-spacing:.17em; color:#6a7a62; margin-bottom:10px; }
+.xmas-facts strong { display:block; font:400 clamp(19px,2vw,24px)/1.15 var(--spc-font-serif); }
+
+/* ── Welcome / details section ── */
+.xmas-welcome { background:#fffdf8; }
+.xmas-welcome-grid { display:grid; grid-template-columns:.95fr 1.05fr; align-items:center; gap:clamp(40px,6vw,100px); }
+.xmas-candle-stage { position:relative; background:#f8f0dc; aspect-ratio:1/1.05; display:grid; place-items:center; padding:20px; overflow:hidden; }
+.xmas-candle-stage::before { content:""; position:absolute; inset:20px; border:1px solid rgba(80,55,15,.13); pointer-events:none; }
+.xmas-candle-svg { width:100%; max-width:540px; transform:translateY(var(--spc-depth-y,0px)); }
+.xmas-candle-caption { position:absolute; bottom:23px; left:29px; color:#6a5230; font-size:10px; letter-spacing:.17em; font-weight:800; }
+.xmas-display { font:400 clamp(42px,4.5vw,65px)/1.12 var(--spc-font-serif); letter-spacing:-.052em; margin:15px 0 24px; }
+.xmas-display em { color:#1e6b4a; }
+.xmas-intro-text { font-size:16px; color:#5a6a5c; line-height:1.85; max-width:510px; margin:0 0 21px; }
+.xmas-detail-list { border-top:1px solid #dce0d5; }
+.xmas-detail { display:flex; gap:19px; padding:22px 0; border-bottom:1px solid #dce0d5; }
+.xmas-detail-icon { display:grid; flex:none; place-items:center; width:46px; height:46px; border-radius:50%; background:#edf1e6; color:#234e35; font-size:21px; transition:transform .3s ease,background .3s ease; }
+.xmas-detail:hover .xmas-detail-icon { background:#f8dba2; transform:rotate(-12deg) scale(1.1); }
+.xmas-detail h3 { font:400 26px/1.2 var(--spc-font-serif); letter-spacing:-.025em; margin:0 0 6px; }
+.xmas-detail p { line-height:1.75; color:#657065; font-size:14px; margin:0; }
+.xmas-event-actions { margin-top:30px; display:flex; flex-direction:column; gap:14px; align-items:flex-start; }
+.xmas-maps-links { display:flex; gap:24px; align-items:center; }
+
+/* ── Text link (light bg version) ── */
+.xmas-text-link { display:inline-flex; align-items:center; gap:14px; font-size:12px; font-weight:800; letter-spacing:.11em; text-transform:uppercase; color:#1e6b4a; border-bottom:2px solid #1e6b4a; padding-bottom:8px; text-decoration:none; transition:gap .25s ease; }
+.xmas-text-link:hover { gap:22px; }
+.xmas-text-link:focus-visible { outline:3px solid #f5c54e; outline-offset:5px; }
+
+/* ── Gather / season section (dark) ── */
+.xmas-gather { background:#0e2d1f; color:#fff; padding-bottom:95px; }
+.xmas-gather-header { margin:0 auto 42px; max-width:850px; text-align:center; }
+.xmas-gather-header .xmas-display { color:#fff; margin:16px 0 17px; }
+.xmas-gather-header .xmas-display em { color:#f5c54e; }
+.xmas-gather-header>p:last-child { color:#cce0d2; font-size:15px; line-height:1.8; max-width:620px; margin:0 auto; }
+.xmas-gather-grid { display:grid; grid-template-columns:1.2fr .8fr; align-items:center; gap:28px; }
+.xmas-star-stage { background:radial-gradient(circle at 50% 48%,#1a4a2e 0%,#0c2a1a 55%,#071a10 100%); position:relative; overflow:hidden; min-height:400px; display:grid; place-items:center; }
+.xmas-star-svg { width:100%; height:auto; max-width:640px; display:block; transform:translateY(var(--spc-depth-y,0px)); }
+.xmas-star-caption { position:absolute; bottom:17px; left:22px; font-size:10px; color:#a8d8b8; font-weight:800; letter-spacing:.15em; }
+.xmas-gather-steps { padding:22px 5px 24px 20px; }
+.xmas-gather-steps-kicker { font-size:10px; letter-spacing:.15em; color:#f5c54e; font-weight:800; margin-bottom:23px; }
+.xmas-gather-steps-kicker span { margin-left:8px; font-size:16px; }
+.xmas-chapter { border-top:1px solid rgba(220,245,230,.22); }
+.xmas-chapter:last-of-type { border-bottom:1px solid rgba(220,245,230,.22); }
+.xmas-chapter summary { display:flex; justify-content:space-between; align-items:center; gap:15px; font:400 24px/1.25 var(--spc-font-serif); cursor:pointer; padding:21px 0; color:#fffaf0; list-style:none; }
+.xmas-chapter summary::-webkit-details-marker { display:none; }
+.xmas-chapter-plus { font:400 26px/1 sans-serif; flex:none; color:#f5c54e; transition:transform .25s ease; }
+.xmas-chapter[open] .xmas-chapter-plus { transform:rotate(45deg); }
+.xmas-chapter>p { font-size:14px; color:#cce0d5; line-height:1.85; padding:0 32px 22px 0; margin:0; animation:xmas-detail-anim .3s ease both; }
+.xmas-gather .xmas-text-link { color:#7acba4; border-bottom-color:#7acba4; margin-top:18px; }
+.xmas-gather .xmas-text-link:focus-visible { outline-color:#f5c54e; }
+
+/* ── SpcPageKit overrides ── */
+.xmas-page .spc-scripture-quote { background:#f5edda; color:#1f3a28; padding:54px 20px; }
+.xmas-page .spc-scripture-quote cite { color:#5a7a60; }
+.xmas-page .spc-subcta { background:#1a4634; }
+.xmas-page .spc-subcta h2 { max-width:720px; }
+
+/* ── SVG animations ── */
+.xmas-tree-body { animation:xmas-float 5.2s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+.xmas-star-top { transform-box:fill-box; transform-origin:center; animation:xmas-star-pulse 3s ease-in-out infinite; }
+.xmas-spark { transform-box:fill-box; transform-origin:center; animation:xmas-twinkle 3.2s ease-in-out infinite; }
+.xmas-spark:nth-of-type(2n) { animation-delay:-1.6s; }
+.xmas-spark:nth-of-type(3n) { animation-delay:-.8s; }
+.xmas-flame-shape { transform-box:fill-box; transform-origin:center bottom; animation:xmas-flame 2.6s ease-in-out infinite; }
+.xmas-holly-group { transform-box:fill-box; transform-origin:center; animation:xmas-sway 4.8s ease-in-out infinite; }
+.xmas-halo-ring { transform-box:fill-box; transform-origin:center; animation:xmas-rotate 52s linear infinite; }
+.xmas-main-star { transform-box:fill-box; transform-origin:center; animation:xmas-star-pulse 4.2s ease-in-out infinite; }
+.xmas-snowflake-one { animation:xmas-drift 7s ease-in-out infinite; }
+.xmas-snowflake-two { animation:xmas-drift 6s -3s ease-in-out infinite reverse; }
+.xmas-snowflake-three { animation:xmas-snow-drift 5s ease-in-out infinite; }
+
+@keyframes xmas-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+@keyframes xmas-glow { 0%,100%{transform:scale(.93);opacity:.7} 50%{transform:scale(1.08);opacity:1} }
+@keyframes xmas-flame { 0%,100%{transform:scaleX(.9) skewX(-3deg)} 50%{transform:scaleX(1.1) skewX(4deg)} }
+@keyframes xmas-twinkle { 0%,100%{opacity:.5;transform:scale(.75)} 50%{opacity:1;transform:scale(1.3)} }
+@keyframes xmas-rotate { to{transform:rotate(360deg)} }
+@keyframes xmas-drift { 0%,100%{transform:translateX(-8px)} 50%{transform:translateX(10px)} }
+@keyframes xmas-sway { 0%,100%{transform:rotate(-4deg)} 50%{transform:rotate(5deg)} }
+@keyframes xmas-star-pulse { 0%,100%{transform:scale(.96);opacity:.85} 50%{transform:scale(1.04);opacity:1} }
+@keyframes xmas-snow-drift { 0%{transform:translateY(-8px) translateX(0);opacity:0} 40%{opacity:1} 100%{transform:translateY(24px) translateX(6px);opacity:0} }
+@keyframes xmas-detail-anim { from{opacity:0;transform:translateY(-4px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── Responsive ── */
+@media(max-width:1050px) {
+ .xmas-hero-inner { grid-template-columns:1fr 1fr; }
+ .xmas-hero-copy { padding-left:0; }
+ .xmas-hero h1 { font-size:clamp(60px,7vw,88px); }
+ .xmas-hero-visual { margin-right:-15px; }
+ .xmas-welcome-grid { gap:38px; }
+ .xmas-gather-grid { grid-template-columns:1.05fr .95fr; }
+}
+@media(max-width:780px) {
+ .xmas-page .spc-container { width:calc(100% - 40px); }
+ .xmas-hero-inner { grid-template-columns:1fr; }
+ .xmas-hero-copy { padding:60px 0 12px; }
+ .xmas-hero h1 { font-size:clamp(56px,12vw,76px); }
+ .xmas-hero-description { font-size:15px; margin:22px 0 23px; }
+ .xmas-hero-visual { max-width:490px; margin:0 auto; }
+ .xmas-art-label--top { right:0; top:7%; }
+ .xmas-art-label--bottom { bottom:10%; }
+ .xmas-hero-corner { display:none; }
+ .xmas-facts { grid-template-columns:repeat(2,1fr); }
+ .xmas-facts>div { padding:20px 14px; border-bottom:1px solid rgba(30,65,32,.15); }
+ .xmas-facts>div:nth-child(odd) { border-left:0; }
+ .xmas-facts>div:first-child { padding-left:14px; }
+ .xmas-facts>div:nth-child(n+3) { border-bottom:0; }
+ .xmas-welcome-grid,.xmas-gather-grid { grid-template-columns:1fr; gap:30px; }
+ .xmas-welcome-grid .xmas-candle-stage { order:2; max-width:490px; width:100%; justify-self:center; }
+ .xmas-candle-stage { aspect-ratio:1.1; }
+ .xmas-welcome-grid .xmas-welcome-copy { order:1; }
+ .xmas-star-stage { min-height:0; }
+ .xmas-gather-steps { padding:5px 0 0; }
+ .xmas-gather-header { text-align:left; }
+ .xmas-gather-header>p:last-child { margin-left:0; }
+ .xmas-display { font-size:clamp(38px,9vw,54px); }
+ .xmas-maps-links { flex-direction:column; gap:12px; align-items:flex-start; }
+}
+@media(max-width:430px) {
+ .xmas-hero-copy { padding-top:46px; }
+ .xmas-hero h1 { font-size:clamp(50px,12vw,60px); }
+ .xmas-hero-actions { flex-direction:column; align-items:stretch; }
+ .xmas-button { width:100%; }
+ .xmas-art-label { font-size:8px; }
+ .xmas-kicker { font-size:9px; letter-spacing:.12em; }
+ .xmas-facts strong { font-size:19px; }
+ .xmas-candle-stage { padding:5px; }
+ .xmas-gather .xmas-chapter summary { font-size:21px; }
+ .xmas-detail h3 { font-size:23px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .xmas-page *, .xmas-page *::before, .xmas-page *::after { animation:none!important; transition-duration:.01ms!important; scroll-behavior:auto!important; }
+ .xmas-hero-visual,.xmas-candle-svg,.xmas-star-svg { transform:none!important; }
+}
