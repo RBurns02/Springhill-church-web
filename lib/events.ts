@@ -31,6 +31,7 @@ export const events: SpcEvent[] = [
     time: "2:00 PM",
     category: "Special Service",
     speaker: "Rev. David Medine",
+    speakerImage: "/david-medine.webp",
     description: "Join us for Friends & Family service with guest minister Rev. David Medine at 2:00 PM.",
     body: "Invite your friends and family to Springhill for a special Sunday service with Rev. David Medine. We look forward to worshiping together.",
     month: "DEC",
