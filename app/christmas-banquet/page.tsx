@@ -12,56 +12,79 @@ function XmasSpark({ x, y, s = 1, color = '#f5c54e' }: { x: number; y: number; s
   return <path className="xmas-spark" d={'M'+x+' '+(y-9*s)+' L'+(x+2.5*s)+' '+(y-2.5*s)+' L'+(x+9*s)+' '+y+' L'+(x+2.5*s)+' '+(y+2.5*s)+' L'+x+' '+(y+9*s)+' L'+(x-2.5*s)+' '+(y+2.5*s)+' L'+(x-9*s)+' '+y+' L'+(x-2.5*s)+' '+(y-2.5*s)+' Z'} fill={color} />;
 }
 
-function TreeIllustration() {
+function MangerIllustration() {
   return (
     <svg className="xmas-tree-svg" viewBox="0 0 650 560" aria-hidden="true" focusable="false">
       <defs>
-        <radialGradient id="xmas-tree-bg"><stop stopColor="#2a5080" stopOpacity=".45"/><stop offset="1" stopColor="#2a5080" stopOpacity="0"/></radialGradient>
+        <radialGradient id="xmas-sky-glow"><stop stopColor="#2a4a80" stopOpacity=".45"/><stop offset="1" stopColor="#2a4a80" stopOpacity="0"/></radialGradient>
         <radialGradient id="xmas-star-halo" cx=".5" cy=".5" r=".5"><stop stopColor="#fffde0"/><stop offset=".55" stopColor="#f5c54e" stopOpacity=".5"/><stop offset="1" stopColor="#f5c54e" stopOpacity="0"/></radialGradient>
+        <radialGradient id="xmas-warm-glow" cx=".5" cy=".75" r=".55"><stop stopColor="#f5c54e" stopOpacity=".7"/><stop offset=".6" stopColor="#f59a30" stopOpacity=".3"/><stop offset="1" stopColor="#f59a30" stopOpacity="0"/></radialGradient>
       </defs>
-      {/* Background glow */}
-      <ellipse cx="325" cy="295" rx="275" ry="250" fill="url(#xmas-tree-bg)" />
+      {/* Sky glow */}
+      <ellipse cx="325" cy="295" rx="275" ry="250" fill="url(#xmas-sky-glow)" />
       {/* Background stars */}
-      <circle cx="118" cy="82" r="2" fill="#fffde8" opacity=".85"/><circle cx="175" cy="145" r="1.5" fill="#fffde8" opacity=".6"/><circle cx="502" cy="68" r="2.2" fill="#fffde8" opacity=".8"/><circle cx="560" cy="130" r="1.5" fill="#fffde8" opacity=".55"/><circle cx="88" cy="195" r="1.5" fill="#fffde8" opacity=".5"/><circle cx="568" cy="210" r="1.8" fill="#fffde8" opacity=".65"/><circle cx="145" cy="310" r="1.5" fill="#fffde8" opacity=".45"/><circle cx="528" cy="345" r="1.5" fill="#fffde8" opacity=".5"/>
-      {/* Star glow at top */}
-      <ellipse cx="325" cy="66" rx="48" ry="48" fill="url(#xmas-star-halo)" opacity=".9"/>
-      {/* Main tree group — floats */}
-      <g className="xmas-tree-body">
-        {/* Tree star */}
-        <path className="xmas-star-top" d="M325 46 L330 61 L346 61 L334 71 L338 86 L325 77 L312 86 L316 71 L304 61 L320 61 Z" fill="#f5c54e"/>
-        {/* Tier 1 */}
-        <path d="M325 95 L375 185 L275 185 Z" fill="#1f5530"/>
-        <path d="M325 95 L340 125 L325 118 L310 125 Z" fill="#d4ece0" opacity=".7"/>
-        {/* Tier 2 */}
-        <path d="M325 155 L425 295 L225 295 Z" fill="#236038"/>
-        <path d="M325 155 L348 200 L325 192 L302 200 Z" fill="#d4ece0" opacity=".65"/>
-        {/* Tier 3 */}
-        <path d="M325 245 L460 415 L190 415 Z" fill="#1f5530"/>
-        <path d="M325 245 L352 295 L325 285 L298 295 Z" fill="#d4ece0" opacity=".6"/>
-        {/* Snow on tier edges */}
-        <path d="M275 185 Q300 178 325 183 Q350 178 375 185" fill="none" stroke="#e4f0ea" strokeWidth="8" strokeLinecap="round" opacity=".7"/>
-        <path d="M225 295 Q275 286 325 292 Q375 286 425 295" fill="none" stroke="#e4f0ea" strokeWidth="8" strokeLinecap="round" opacity=".65"/>
-        <path d="M190 415 Q255 404 325 410 Q395 404 460 415" fill="none" stroke="#e4f0ea" strokeWidth="8" strokeLinecap="round" opacity=".6"/>
-        {/* Trunk */}
-        <rect x="307" y="415" width="36" height="62" rx="4" fill="#6b3c20"/>
-        {/* Snow drift at base */}
-        <ellipse cx="325" cy="490" rx="130" ry="22" fill="#e8f2ee" opacity=".3"/>
-        {/* Ornaments tier 1 */}
-        <circle cx="316" cy="155" r="9" fill="#c83030"/><circle cx="338" cy="162" r="8" fill="#f5c54e"/>
-        {/* Ornaments tier 2 */}
-        <circle cx="288" cy="230" r="10" fill="#4a8fd4"/><circle cx="340" cy="220" r="9" fill="#c83030"/><circle cx="368" cy="245" r="8" fill="#f5c54e"/><circle cx="310" cy="262" r="8" fill="#e4f0ef"/>
-        {/* Ornaments tier 3 */}
-        <circle cx="270" cy="325" r="11" fill="#f5c54e"/><circle cx="312" cy="308" r="10" fill="#c83030"/><circle cx="355" cy="320" r="9" fill="#4a8fd4"/><circle cx="398" cy="344" r="10" fill="#c83030"/><circle cx="250" cy="375" r="8" fill="#e4f0ef"/><circle cx="290" cy="370" r="9" fill="#4ab89a"/><circle cx="362" cy="368" r="8" fill="#f5c54e"/><circle cx="410" cy="373" r="8" fill="#4a8fd4"/>
-        {/* String of lights hint */}
-        <path d="M290 270 Q310 262 330 268 Q350 262 370 270" fill="none" stroke="#f5c54e" strokeWidth="2.5" strokeLinecap="round" opacity=".7"/>
-        <path d="M252 362 Q285 352 325 358 Q365 352 400 362" fill="none" stroke="#f5c54e" strokeWidth="2.5" strokeLinecap="round" opacity=".65"/>
-        {/* Presents at base */}
-        <rect x="225" y="455" width="45" height="38" rx="3" fill="#c83030"/><rect x="225" y="460" width="45" height="4" fill="#f5c54e"/><rect x="244" y="455" width="4" height="38" fill="#f5c54e"/>
-        <rect x="386" y="460" width="40" height="34" rx="3" fill="#4a8fd4"/><rect x="386" y="466" width="40" height="4" fill="#e4f0ef"/><rect x="403" y="460" width="4" height="34" fill="#e4f0ef"/>
-        <rect x="286" y="470" width="30" height="24" rx="2" fill="#236038"/><rect x="286" y="474" width="30" height="4" fill="#f5c54e"/>
-      </g>
-      <XmasSpark x={298} y={48} s={.9} /><XmasSpark x={354} y={52} s={.8} color="#c8d8ff" />
-      <XmasSpark x={175} y={340} s={1.1} /><XmasSpark x={488} y={280} s={1.0} color="#f9d070" /><XmasSpark x={130} y={450} s={.8} color="#c8d8ff" /><XmasSpark x={525} y={418} s={.75} />
+      <circle cx="118" cy="82" r="2" fill="#fffde8" opacity=".85"/><circle cx="175" cy="145" r="1.5" fill="#fffde8" opacity=".6"/><circle cx="502" cy="68" r="2.2" fill="#fffde8" opacity=".8"/><circle cx="560" cy="130" r="1.5" fill="#fffde8" opacity=".55"/><circle cx="88" cy="195" r="1.5" fill="#fffde8" opacity=".5"/><circle cx="568" cy="210" r="1.8" fill="#fffde8" opacity=".65"/><circle cx="145" cy="315" r="1.5" fill="#fffde8" opacity=".4"/><circle cx="525" cy="345" r="1.5" fill="#fffde8" opacity=".45"/><circle cx="98" cy="385" r="1.5" fill="#fffde8" opacity=".35"/><circle cx="558" cy="395" r="1.5" fill="#fffde8" opacity=".4"/>
+      {/* Warm glow from the manger */}
+      <ellipse className="xmas-manger-glow-anim" cx="325" cy="385" rx="178" ry="132" fill="url(#xmas-warm-glow)" />
+      {/* Star of Bethlehem beams (behind everything) */}
+      <path d="M325 112 L317 28 L333 28 Z" fill="#f5c54e" opacity=".45"/>
+      <path d="M318 118 L312 232 L338 232 Z" fill="#f5c54e" opacity=".28"/>
+      <path d="M270 112 L180 104 L180 120 Z" fill="#f5c54e" opacity=".38"/>
+      <path d="M380 112 L470 104 L470 120 Z" fill="#f5c54e" opacity=".38"/>
+      {/* Star glow */}
+      <ellipse cx="325" cy="112" rx="52" ry="52" fill="url(#xmas-star-halo)" />
+      {/* 5-pointed star */}
+      <path className="xmas-star-top" d="M325 83 L333 105 L355 105 L337 119 L344 141 L325 128 L306 141 L313 119 L295 105 L317 105 Z" fill="#f5c54e"/>
+      {/* Rolling hills */}
+      <path d="M0 450 Q80 415 160 440 Q240 465 320 428 Q400 391 480 428 Q560 465 650 445 L650 560 H0Z" fill="#1a3d26"/>
+      <path d="M0 490 Q120 468 240 482 Q360 496 480 472 Q560 452 650 468 L650 560 H0Z" fill="#0f2318"/>
+      {/* Stable roof */}
+      <path d="M196 288 L325 232 L454 288 Z" fill="#5a3015"/>
+      <path d="M196 288 L204 285 L325 237 L446 285 L454 288" fill="none" stroke="#6b3a1a" strokeWidth="4"/>
+      {/* Stable side posts */}
+      <rect x="196" y="287" width="13" height="150" rx="3" fill="#7a4530"/>
+      <rect x="441" y="287" width="13" height="150" rx="3" fill="#7a4530"/>
+      {/* Stable back wall (dark interior) */}
+      <rect x="209" y="287" width="232" height="150" fill="#1e0e04"/>
+      {/* Interior warm light overlay */}
+      <rect x="209" y="287" width="232" height="150" fill="url(#xmas-warm-glow)" opacity=".75"/>
+      {/* Hay on stable floor */}
+      <path d="M209 428 Q250 418 290 426 Q325 416 360 426 Q402 418 441 428 L441 437 L209 437Z" fill="#7a5520" opacity=".8"/>
+      <path d="M220 428 Q224 420 228 428" fill="none" stroke="#c4902a" strokeWidth="2.5" opacity=".7"/>
+      <path d="M240 428 Q244 418 248 428" fill="none" stroke="#c4902a" strokeWidth="2" opacity=".6"/>
+      <path d="M400 428 Q404 420 408 428" fill="none" stroke="#c4902a" strokeWidth="2.5" opacity=".7"/>
+      <path d="M420 428 Q424 418 428 428" fill="none" stroke="#c4902a" strokeWidth="2" opacity=".6"/>
+      {/* Manger / feed box */}
+      <path d="M294 358 L356 358 L360 397 L290 397 Z" fill="#8b5020"/>
+      <line x1="308" y1="358" x2="304" y2="397" stroke="#6b3810" strokeWidth="3" opacity=".7"/>
+      <line x1="325" y1="358" x2="325" y2="397" stroke="#6b3810" strokeWidth="3" opacity=".7"/>
+      <line x1="342" y1="358" x2="346" y2="397" stroke="#6b3810" strokeWidth="3" opacity=".7"/>
+      <rect x="294" y="397" width="8" height="22" rx="2" fill="#7a4015"/>
+      <rect x="348" y="397" width="8" height="22" rx="2" fill="#7a4015"/>
+      {/* Hay in manger */}
+      <path d="M290 360 Q325 350 360 360" fill="none" stroke="#c4a030" strokeWidth="7" strokeLinecap="round" opacity=".85"/>
+      {/* Baby (swaddled, glowing) */}
+      <ellipse cx="325" cy="371" rx="30" ry="14" fill="#f5c54e" opacity=".35"/>
+      <ellipse cx="325" cy="372" rx="20" ry="9" fill="#fff8e8"/>
+      <circle cx="323" cy="364" r="7" fill="#f0c888"/>
+      <path d="M305 373 Q325 378 345 373" fill="none" stroke="#e8e0d0" strokeWidth="5" strokeLinecap="round" opacity=".9"/>
+      {/* Mary (kneeling, left) */}
+      <path d="M220 326 Q244 310 265 324 Q278 345 274 420 Q255 428 236 420 Q218 408 220 326Z" fill="#1a3060"/>
+      <circle cx="252" cy="310" r="14" fill="#1e3870"/>
+      <path d="M229 312 Q252 290 275 312 Q270 346 252 356 Q234 346 229 312Z" fill="#2a4a88"/>
+      <ellipse cx="252" cy="310" rx="8" ry="9" fill="#d4a070" opacity=".75"/>
+      <path d="M262 348 Q274 356 290 364" fill="none" stroke="#1a3060" strokeWidth="9" strokeLinecap="round"/>
+      {/* Joseph (standing, right) */}
+      <line x1="413" y1="280" x2="416" y2="435" stroke="#7a4520" strokeWidth="6" strokeLinecap="round"/>
+      <path d="M378 306 Q400 292 420 306 L424 435 Q400 442 376 435 Z" fill="#1a3045"/>
+      <circle cx="400" cy="285" r="17" fill="#1a3045"/>
+      <path d="M374 288 Q400 266 426 288 Q422 318 400 324 Q378 318 374 288Z" fill="#243a60"/>
+      <ellipse cx="400" cy="285" rx="10" ry="11" fill="#c49060" opacity=".7"/>
+      <path d="M390 295 Q400 306 410 295" fill="none" stroke="#8a5030" strokeWidth="4" strokeLinecap="round" opacity=".8"/>
+      {/* Sparkles */}
+      <XmasSpark x={296} y={48} s={.9} /><XmasSpark x={356} y={52} s={.8} color="#c8d8ff" />
+      <XmasSpark x={158} y={178} s={1.0} /><XmasSpark x={500} y={165} s={.95} color="#f9d070" />
+      <XmasSpark x={118} y={440} s={.8} color="#d8eecc" /><XmasSpark x={535} y={430} s={.75} color="#d8eecc" />
     </svg>
   );
 }
@@ -189,7 +212,7 @@ export default function ChristmasBanquetPage() {
             <p className="xmas-hero-footnote"><span className="xmas-candle-dot" /> Sunday, December 13 · 6:00 PM · Free</p>
           </div>
           <div className="xmas-hero-visual" data-spc-parallax="soft">
-            <TreeIllustration />
+            <MangerIllustration />
             <span className="xmas-art-label xmas-art-label--top">GLORY TO GOD <span aria-hidden="true">✷</span></span>
             <span className="xmas-art-label xmas-art-label--bottom">DECEMBER 13 · 6:00 PM</span>
           </div>
